@@ -7,13 +7,20 @@ function App() {
     return (
         <div className="min-h-screen bg-[#d0d3d4] text-[#424242]">
             {/* Basic Navbar Placeholder */}
-            <nav className="bg-[#404041] px-4 h-[60px] text-white sticky top-0 z-50 shadow-md flex items-center">
+            <nav className="bg-white px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
-                    <div className="font-bold text-xl">Avalon Travel</div>
-                    <div className="hidden md:flex gap-6 text-sm uppercase tracking-wide">
-                        <a href="#hero" className="hover:text-[#64a1e0] transition-colors font-semibold">HOME</a>
+                    <div className="flex flex-col items-center justify-center leading-none">
+                        <div className="font-extrabold text-[32px] tracking-tighter text-[#cc1616]">
+                            KCG
+                        </div>
+                        <div className="italic font-serif text-[22px] text-black -mt-2 ml-6">
+                            tours
+                        </div>
+                    </div>
+                    <div className="hidden md:flex gap-6 text-sm uppercase tracking-wide font-medium">
+                        <a href="#hero" className="hover:text-[#cc1616] transition-colors">HOME</a>
                         {tourCategories.map(cat => (
-                            <a key={cat.id} href={`#${cat.id}`} className="hover:text-[#64a1e0] transition-colors">{cat.title}</a>
+                            <a key={cat.id} href={`#${cat.id}`} className="hover:text-[#cc1616] transition-colors">{cat.title}</a>
                         ))}
                     </div>
                 </div>
@@ -75,7 +82,7 @@ function App() {
             </main>
 
             <footer className="bg-white py-12 text-center text-[#303030]">
-                <p>&copy; 2026 Avalon Travel.</p>
+                <p>&copy; 2026 KCG Tours.</p>
             </footer>
         </div>
     );
