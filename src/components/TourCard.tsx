@@ -55,7 +55,7 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCa
         const SLIDE_DURATION = 5000;
         const UPDATE_INTERVAL = 50;
 
-        let intervalId: NodeJS.Timeout;
+        let intervalId: ReturnType<typeof setInterval>;
         if (!isHovered) {
             intervalId = setInterval(() => {
                 setProgress((prev) => {
