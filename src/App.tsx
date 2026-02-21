@@ -43,9 +43,9 @@ function App() {
             <main>
                 <div>
                     {tourCategories.map((category) => (
-                        <section id={category.id} key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[40px] scroll-mt-[60px]">
+                        <section id={category.id} key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[20px] scroll-mt-[60px]">
                             <motion.div
-                                className="text-center mb-12 flex-none"
+                                className="text-center mb-6 flex-none"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}

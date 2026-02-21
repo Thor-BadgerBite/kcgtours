@@ -187,12 +187,12 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
             </div>
 
             {/* Card Footer Content (New Structure) */}
-            <div className="p-6 md:p-8 flex flex-col items-start gap-1 bg-[#e4e4e4] z-10 flex-none pb-8">
+            <div className="p-5 md:p-6 flex flex-col items-start gap-1 bg-[#e4e4e4] z-10 flex-none pb-6">
                 <span className="text-[#3b4b5e] uppercase tracking-wide font-bold text-sm">PRIVATE TOUR</span>
                 <p className="text-[#64a1e0] font-light text-md mt-1">{slides[0]?.subtitle || 'Caves, Culture & Scenic Highlights'}</p>
                 <p className="text-sm text-gray-500 mt-1 font-light"><span className="text-gray-400">Duration:</span> {duration}</p>
 
-                <div className="w-full flex justify-end mt-6">
+                <div className="w-full flex justify-end mt-4">
                     <button
                         onClick={handleBookNow}
                         className="text-white text-center py-2 px-6 font-bold bg-[#6caae9] hover:bg-[#5b9bdc] rounded shadow-sm transition-colors duration-300 ease-out text-sm"
