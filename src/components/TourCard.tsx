@@ -101,7 +101,7 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
 
             {/* Slider Section Container */}
             <div
-                className="relative w-full flex-1 min-h-[200px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
+                className="relative w-full aspect-[4/3] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
             >
                 <div className="overflow-hidden h-full" ref={emblaRef}>
                     <div className="flex h-full w-full touch-pan-y">
