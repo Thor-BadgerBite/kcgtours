@@ -9,13 +9,8 @@ function App() {
             {/* Basic Navbar Placeholder */}
             <nav className="bg-white px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
-                    <div className="flex flex-col items-center justify-center leading-none">
-                        <div className="font-extrabold text-[32px] tracking-tighter text-[#cc1616]">
-                            KCG
-                        </div>
-                        <div className="italic font-serif text-[22px] text-black -mt-2 ml-6">
-                            tours
-                        </div>
+                    <div className="flex items-center">
+                        <img src="/images/logo.png" alt="KCG Tours" className="h-[50px] md:h-[60px] w-auto" />
                     </div>
                     <div className="hidden md:flex gap-6 text-sm uppercase tracking-wide font-medium">
                         <a href="#hero" className="hover:text-[#cc1616] transition-colors">HOME</a>
