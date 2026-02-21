@@ -7,19 +7,20 @@ function App() {
     return (
         <div className="min-h-screen bg-[#d0d3d4] text-[#424242]">
             {/* Basic Navbar Placeholder */}
-            <nav className="bg-[#404041] p-4 text-white sticky top-0 z-50 shadow-md">
-                <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
+            <nav className="bg-[#404041] px-4 h-[60px] text-white sticky top-0 z-50 shadow-md flex items-center">
+                <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
                     <div className="font-bold text-xl">Avalon Travel</div>
-                    <div className="hidden md:flex gap-6">
-                        <a href="#" className="hover:text-[#64a1e0] transition-colors">HOME</a>
-                        <a href="#" className="hover:text-[#64a1e0] transition-colors">TOURS</a>
-                        <a href="#" className="hover:text-[#64a1e0] transition-colors">CONTACT</a>
+                    <div className="hidden md:flex gap-6 text-sm uppercase tracking-wide">
+                        <a href="#hero" className="hover:text-[#64a1e0] transition-colors font-semibold">HOME</a>
+                        {tourCategories.map(cat => (
+                            <a key={cat.id} href={`#${cat.id}`} className="hover:text-[#64a1e0] transition-colors">{cat.title}</a>
+                        ))}
                     </div>
                 </div>
             </nav>
 
             {/* Basic Hero Placeholder */}
-            <header className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
+            <header id="hero" className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img
                         src="https://avalontravel-kefalonia.gr/images/2024/05/06/depositphotos_359881686_xl.jpg"
@@ -42,7 +43,7 @@ function App() {
             <main>
                 <div>
                     {tourCategories.map((category) => (
-                        <section key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[40px]">
+                        <section id={category.id} key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[40px] scroll-mt-[60px]">
                             <motion.div
                                 className="text-center mb-12 flex-none"
                                 initial={{ opacity: 0, y: 20 }}

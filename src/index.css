@@ -3,7 +3,7 @@
 @theme {
   --font-sans: "News Cycle", sans-serif;
   --font-heading: "Maven Pro", "News Cycle", sans-serif;
-  
+
   --color-primary: #5d95d0;
   --color-primary-hover: #404041;
   --color-dark: #404041;
@@ -16,6 +16,15 @@ body {
   color: #424242;
 }
 
-h1, h2, h3, h4, h5, h6 {
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
