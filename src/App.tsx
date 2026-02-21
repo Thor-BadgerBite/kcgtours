@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TourCard } from './components/TourCard';
 import { tourCategories } from './data/tours';
+import { TailoredExperiences } from './components/TailoredExperiences';
+import { Footer } from './components/Footer';
 
 function App() {
     return (
@@ -74,11 +76,11 @@ function App() {
                         </section>
                     ))}
                 </div>
+                {/* Tailored Experiences Contact Form */}
+                <TailoredExperiences />
             </main>
 
-            <footer className="bg-white py-12 text-center text-[#303030]">
-                <p>&copy; 2026 KCG Tours.</p>
-            </footer>
+            <Footer />
         </div>
     );
 }
