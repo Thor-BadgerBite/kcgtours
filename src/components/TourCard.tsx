@@ -9,9 +9,10 @@ interface TourCardProps {
     tourTitle: string;
     duration: string;
     bokunProductId: string;
+    short_description?: string;
 }
 
-export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCardProps) {
+export function TourCard({ slides, tourTitle, duration, bokunProductId, short_description }: TourCardProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
@@ -93,14 +94,14 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCa
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Top Text Header Block - NEW Structure */}
-            <div className="bg-[#e4e4e4] px-4 py-8 text-center flex-none">
+            <div className="bg-[#e4e4e4] px-4 py-6 md:py-8 text-center flex-none">
                 <h3 className="text-[#3b4b5e] font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
-                <p className="text-[#64a1e0] font-light text-sm">{slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
+                <p className="text-[#64a1e0] font-light text-sm">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
             </div>
 
             {/* Slider Section Container */}
             <div
-                className="relative w-full aspect-square md:aspect-[4/3] flex-grow shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
+                className="relative w-full flex-1 min-h-[200px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
             >
                 <div className="overflow-hidden h-full" ref={emblaRef}>
                     <div className="flex h-full w-full touch-pan-y">

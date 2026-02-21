@@ -54,7 +54,7 @@ function App() {
                                 <h4 className="text-[24px] font-normal text-[#5d95d0]">{category.subtitle}</h4>
                             </motion.div>
 
-                            <div className="w-full px-0 md:px-[40px] xl:px-[80px]">
+                            <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch justify-center h-full">
                                     {category.tours.map((tour, idx) => (
                                         <div key={idx} className="flex h-full">
@@ -62,6 +62,7 @@ function App() {
                                                 tourTitle={tour.tourTitle}
                                                 duration={tour.duration}
                                                 bokunProductId={tour.bokunProductId}
+                                                short_description={tour.short_description}
                                                 slides={tour.slides}
                                             />
                                         </div>
