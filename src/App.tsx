@@ -42,7 +42,7 @@ function App() {
             <main>
                 <div>
                     {tourCategories.map((category) => (
-                        <section key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[25px]">
+                        <section key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[40px]">
                             <motion.div
                                 className="text-center mb-12 flex-none"
                                 initial={{ opacity: 0, y: 20 }}
