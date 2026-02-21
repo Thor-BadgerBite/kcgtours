@@ -5,7 +5,7 @@ import { tourCategories } from './data/tours';
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#f1f3f5] text-[#424242]">
+        <div className="min-h-screen bg-[#d0d3d4] text-[#424242]">
             {/* Basic Navbar Placeholder */}
             <nav className="bg-[#404041] p-4 text-white sticky top-0 z-50 shadow-md">
                 <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
@@ -39,12 +39,12 @@ function App() {
             </header>
 
             {/* Tour Categories */}
-            <main className="py-20">
-                <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+            <main>
+                <div>
                     {tourCategories.map((category) => (
-                        <section key={category.id} className="mb-24">
+                        <section key={category.id} className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[25px]">
                             <motion.div
-                                className="text-center mb-12"
+                                className="text-center mb-12 flex-none"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
@@ -53,16 +53,19 @@ function App() {
                                 <h4 className="text-[24px] font-normal text-[#5d95d0]">{category.subtitle}</h4>
                             </motion.div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-                                {category.tours.map((tour, idx) => (
-                                    <TourCard
-                                        key={idx}
-                                        tourTitle={tour.tourTitle}
-                                        duration={tour.duration}
-                                        bokunProductId={tour.bokunProductId}
-                                        slides={tour.slides}
-                                    />
-                                ))}
+                            <div className="w-full px-0 md:px-[40px] xl:px-[80px]">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch justify-center h-full">
+                                    {category.tours.map((tour, idx) => (
+                                        <div key={idx} className="flex h-full">
+                                            <TourCard
+                                                tourTitle={tour.tourTitle}
+                                                duration={tour.duration}
+                                                bokunProductId={tour.bokunProductId}
+                                                slides={tour.slides}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </section>
                     ))}

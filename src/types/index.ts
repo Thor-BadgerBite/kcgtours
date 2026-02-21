@@ -8,6 +8,7 @@ export interface Tour {
     tourTitle: string;
     duration: string;
     bokunProductId: string;
+    short_description?: string;
     slides: TourSlide[];
 }
 

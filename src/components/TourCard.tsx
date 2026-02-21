@@ -83,7 +83,7 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCa
 
     return (
         <motion.div
-            className="bg-white group overflow-hidden w-full flex flex-col h-full shadow-[0px_3px_3px_0px_rgba(0,0,0,0.4)] relative"
+            className="bg-[#e4e4e4] group overflow-hidden w-full flex flex-col h-full shadow-[0px_4px_15px_rgba(0,0,0,0.15)] relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -92,8 +92,15 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCa
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
+            {/* Top Text Header Block - NEW Structure */}
+            <div className="bg-[#e4e4e4] px-4 py-8 text-center flex-none">
+                <h3 className="text-[#3b4b5e] font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
+                <p className="text-[#64a1e0] font-light text-sm">{slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
+            </div>
+
+            {/* Slider Section Container */}
             <div
-                className="relative w-full h-[350px] md:h-[600px] lg:h-[550px]"
+                className="relative w-full aspect-square md:aspect-[4/3] flex-grow shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
             >
                 <div className="overflow-hidden h-full" ref={emblaRef}>
                     <div className="flex h-full w-full touch-pan-y">
@@ -113,52 +120,42 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCa
                                         alt={slide.title}
                                         className="object-cover w-full h-full"
                                     />
-                                    <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+                                    <div className="absolute inset-0 bg-black/10 pointer-events-none" />
                                 </motion.div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Captions */}
+                {/* Central Captions instead of bottom */}
                 <AnimatePresence mode="wait">
                     {slides[selectedIndex] && (
                         <motion.div
                             key={selectedIndex}
-                            className="absolute bottom-16 left-8 right-8 z-10 pointer-events-none text-white drop-shadow-lg"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
+                            className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-white drop-shadow-md"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 1.05 }}
                             transition={{ duration: 0.6 }}
                         >
                             <motion.h3
-                                className="text-[25px] font-normal mb-1 leading-tight"
-                                initial={{ opacity: 0, y: 20 }}
+                                className="text-[22px] md:text-[28px] font-normal leading-tight mx-12 text-center"
+                                initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1, duration: 0.5 }}
                             >
                                 {slides[selectedIndex].title}
                             </motion.h3>
-                            {slides[selectedIndex].subtitle && (
-                                <motion.p
-                                    className="text-lg opacity-90"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.3, duration: 0.5 }}
-                                >
-                                    {slides[selectedIndex].subtitle}
-                                </motion.p>
-                            )}
                         </motion.div>
                     )}
                 </AnimatePresence>
 
-                {/* Navigation Arrows */}
-                <div className="absolute top-1/2 left-4 right-4 -translate-y-1/2 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                {/* Navigation Arrows (Sides) */}
+                <div className="absolute top-1/2 left-4 right-4 -translate-y-1/2 flex justify-between items-center z-20 pointer-events-none">
                     <button
                         type="button"
                         onClick={scrollPrev}
-                        className="w-10 h-10 rounded-full border border-white/70 bg-black/15 hover:bg-black/40 flex items-center justify-center text-white transition-colors pointer-events-auto"
+                        className="w-12 h-12 rounded-full border border-white/50 bg-black/20 hover:bg-black/50 flex items-center justify-center text-white transition-colors pointer-events-auto"
                         aria-label="Previous slide"
                     >
                         <ChevronLeft className="w-6 h-6" />
@@ -166,49 +163,42 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId }: TourCa
                     <button
                         type="button"
                         onClick={scrollNext}
-                        className="w-10 h-10 rounded-full border border-white/70 bg-black/15 hover:bg-black/40 flex items-center justify-center text-white transition-colors pointer-events-auto"
+                        className="w-12 h-12 rounded-full border border-white/50 bg-black/20 hover:bg-black/50 flex items-center justify-center text-white transition-colors pointer-events-auto"
                         aria-label="Next slide"
                     >
                         <ChevronRight className="w-6 h-6" />
                     </button>
                 </div>
 
-                {/* Dots */}
-                <div className="absolute bottom-8 left-8 flex gap-2 z-20">
+                {/* Dots (Bottom Center Over Image) */}
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
                     {slides.map((_, idx) => (
                         <button
                             key={idx}
                             type="button"
                             onClick={() => scrollTo(idx)}
-                            className={`w-3 h-3 rounded-[18px] border-2 border-white/60 transition-colors duration-300 ${selectedIndex === idx ? 'bg-white' : 'bg-transparent'
+                            className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full border border-white/80 transition-colors duration-300 shadow-sm ${selectedIndex === idx ? 'bg-white' : 'bg-transparent/20'
                                 }`}
                             aria-label={`Go to slide ${idx + 1}`}
                         />
                     ))}
                 </div>
-
-                {/* Progress bar */}
-                <div className="absolute bottom-0 left-0 w-full h-[4px] bg-white/30 z-20">
-                    <div
-                        className="h-full bg-white transition-all duration-75 ease-linear"
-                        style={{ width: `${progress}%` }}
-                    />
-                </div>
             </div>
 
-            {/* Card Footer Content */}
-            <div className="p-6 flex flex-col justify-between items-start gap-4 bg-white z-10 flex-grow pt-8">
-                <div>
-                    <h4 className="text-xl font-bold text-[#404041] hover:text-[#5d95d0] transition-colors">{tourTitle}</h4>
-                    <p className="text-sm text-gray-500 mt-2 font-light">{duration}</p>
-                </div>
+            {/* Card Footer Content (New Structure) */}
+            <div className="p-6 md:p-8 flex flex-col items-start gap-1 bg-[#e4e4e4] z-10 flex-none pb-8">
+                <span className="text-[#3b4b5e] uppercase tracking-wide font-bold text-sm">PRIVATE TOUR</span>
+                <p className="text-[#64a1e0] font-light text-md mt-1">{slides[0]?.subtitle || 'Caves, Culture & Scenic Highlights'}</p>
+                <p className="text-sm text-gray-500 mt-1 font-light"><span className="text-gray-400">Duration:</span> {duration}</p>
 
-                <button
-                    onClick={handleBookNow}
-                    className="w-full text-white text-center py-3 px-8 font-bold bg-[#5d95d0] hover:shadow-[inset_400px_0px_0_0px_#404041] rounded-[30px] transition-all duration-300 ease-out mt-4"
-                >
-                    Book Now
-                </button>
+                <div className="w-full flex justify-end mt-6">
+                    <button
+                        onClick={handleBookNow}
+                        className="text-white text-center py-2 px-6 font-bold bg-[#6caae9] hover:bg-[#5b9bdc] rounded shadow-sm transition-colors duration-300 ease-out text-sm"
+                    >
+                        View More & Book
+                    </button>
+                </div>
             </div>
         </motion.div>
     );
