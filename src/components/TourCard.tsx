@@ -84,7 +84,7 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
 
     return (
         <motion.div
-            className="bg-[#e4e4e4] group overflow-hidden w-full flex flex-col h-full shadow-[0px_4px_15px_rgba(0,0,0,0.15)] relative"
+            className="bg-[#e4e4e4] group overflow-hidden w-full flex flex-col h-full rounded-md shadow-[0px_4px_15px_rgba(0,0,0,0.15)] relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
