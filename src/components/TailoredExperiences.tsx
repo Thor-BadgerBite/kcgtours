@@ -24,7 +24,7 @@ export function TailoredExperiences() {
     };
 
     return (
-        <section id="contact" className="py-20 bg-white">
+        <section id="contact" className="py-20 bg-sage">
             <div className="max-w-7xl mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
@@ -36,12 +36,12 @@ export function TailoredExperiences() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-light text-[#3b4b5e] mb-2 leading-tight">
-                            Tailored <span className="font-semibold text-[#cc1616]">Experiences</span>
+                        <h2 className="text-3xl md:text-5xl font-light text-white mb-2 leading-tight">
+                            Tailored <span className="font-semibold text-white">Experiences</span>
                         </h2>
-                        <h3 className="text-xl text-[#6caae9] mb-6 font-light">Crafting Your Perfect Kefalonia Journey</h3>
+                        <h3 className="text-xl text-white/80 mb-6 font-light">Crafting Your Perfect Kefalonia Journey</h3>
 
-                        <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                        <p className="text-white/90 mb-8 leading-relaxed text-lg">
                             At KCG Tours, we believe that every traveler is unique.
                             If you have specific destinations in mind or prefer to create your own itinerary,
                             we are here to bring your vision to life. From secluded beaches and hidden gems
@@ -50,21 +50,21 @@ export function TailoredExperiences() {
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
-                            <div className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 border border-gray-100 shadow-sm">
-                                <div className="bg-[#cc1616] p-2 rounded-full text-white shrink-0">
+                            <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
+                                <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-[#3b4b5e] mb-1">Pick Your Spots</h4>
+                                    <h4 className="font-bold text-dark mb-1">Pick Your Spots</h4>
                                     <p className="text-gray-500">Myrtos, Assos, Melissani & more.</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 border border-gray-100 shadow-sm">
-                                <div className="bg-[#cc1616] p-2 rounded-full text-white shrink-0">
+                            <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
+                                <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <Clock size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-[#3b4b5e] mb-1">Your Own Pace</h4>
+                                    <h4 className="font-bold text-dark mb-1">Your Own Pace</h4>
                                     <p className="text-gray-500">No rush, spend as much time as you like.</p>
                                 </div>
                             </div>
@@ -79,11 +79,11 @@ export function TailoredExperiences() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="bg-[#f8f9fa] p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div className="bg-card p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
                             {/* Decorative element */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#cc1616] opacity-5 rounded-bl-full pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-primary opacity-5 rounded-bl-full pointer-events-none" />
 
-                            <h3 className="text-2xl text-[#3b4b5e] font-semibold mb-6">Request a Custom Tour</h3>
+                            <h3 className="text-2xl text-dark font-semibold mb-6">Request a Custom Tour</h3>
                             <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div className="space-y-1">
@@ -94,7 +94,7 @@ export function TailoredExperiences() {
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-[#cc1616] focus:border-transparent transition-all outline-none"
+                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                             placeholder="John Doe"
                                         />
                                     </div>
@@ -106,7 +106,7 @@ export function TailoredExperiences() {
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-[#cc1616] focus:border-transparent transition-all outline-none"
+                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                             placeholder="john@example.com"
                                         />
                                     </div>
@@ -120,7 +120,7 @@ export function TailoredExperiences() {
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-[#cc1616] focus:border-transparent transition-all outline-none"
+                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                             placeholder="+1 (xxx)"
                                         />
                                     </div>
@@ -131,7 +131,7 @@ export function TailoredExperiences() {
                                             name="date"
                                             value={formData.date}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-[#cc1616] focus:border-transparent transition-all outline-none text-gray-600"
+                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600"
                                         />
                                     </div>
                                     <div className="space-y-1">
@@ -140,7 +140,7 @@ export function TailoredExperiences() {
                                             name="guests"
                                             value={formData.guests}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-[#cc1616] focus:border-transparent transition-all outline-none text-gray-600 bg-white"
+                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600 bg-white"
                                         >
                                             <option value="">Select</option>
                                             <option value="1-2">1 - 2</option>
@@ -159,14 +159,14 @@ export function TailoredExperiences() {
                                         rows={4}
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-[#cc1616] focus:border-transparent transition-all outline-none resize-none"
+                                        className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
                                         placeholder="Tell us about places you want to visit, special requirements, etc."
                                     ></textarea>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#cc1616] hover:bg-[#a51212] text-white font-bold py-4 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                                    className="w-full bg-primary hover:bg-primary-hover text-white hover:text-dark group font-bold py-4 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                                 >
                                     <span>Send Inquiry</span>
                                     <Mail size={18} />

@@ -7,7 +7,7 @@ import { Footer } from './components/Footer';
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#d0d3d4] text-[#424242]">
+        <div className="min-h-screen">
             {/* Basic Navbar Placeholder */}
             <nav className="bg-white px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
@@ -15,9 +15,9 @@ function App() {
                         <img src="/images/logo.png" alt="KCG Tours" className="h-[50px] md:h-[60px] w-auto" />
                     </div>
                     <div className="hidden md:flex gap-6 text-sm uppercase tracking-wide font-medium">
-                        <a href="#hero" className="hover:text-[#cc1616] transition-colors">HOME</a>
+                        <a href="#hero" className="hover:text-primary transition-colors">HOME</a>
                         {tourCategories.map(cat => (
-                            <a key={cat.id} href={`#${cat.id}`} className="hover:text-[#cc1616] transition-colors">{cat.title}</a>
+                            <a key={cat.id} href={`#${cat.id}`} className="hover:text-primary transition-colors">{cat.title}</a>
                         ))}
                     </div>
                 </div>
@@ -54,8 +54,8 @@ function App() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                             >
-                                <h2 className="text-3xl md:text-[30px] font-normal text-[#404041] mb-2">{category.title}</h2>
-                                <h4 className="text-[24px] font-normal text-[#5d95d0]">{category.subtitle}</h4>
+                                <h2 className="text-3xl md:text-[30px] font-normal text-dark mb-2">{category.title}</h2>
+                                <h4 className="text-[24px] font-normal text-primary">{category.subtitle}</h4>
                             </motion.div>
 
                             <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">

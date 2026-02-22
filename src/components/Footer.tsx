@@ -3,36 +3,36 @@ import { Facebook, Instagram, ShieldCheck, MapPin, Phone, Mail, Award, Star } fr
 
 export function Footer() {
     return (
-        <footer className="bg-[#eef1f3] pt-16 pb-8 border-t border-gray-200">
+        <footer className="bg-sage pt-16 pb-8 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 items-start mb-12">
 
                     {/* Left Column: Contact Details */}
-                    <div className="flex flex-col text-[#404041] space-y-4">
-                        <h4 className="text-lg font-semibold text-[#3b4b5e] mb-2">Contact Details</h4>
+                    <div className="flex flex-col text-white space-y-4">
+                        <h4 className="text-lg font-semibold text-white mb-2">Contact Details</h4>
                         <div className="space-y-3 text-sm">
                             <p className="font-bold">KCG TRAVEL SERVICES</p>
                             <p className="flex items-start gap-2">
-                                <MapPin size={16} className="mt-0.5 shrink-0 text-[#cc1616]" />
+                                <MapPin size={16} className="mt-0.5 shrink-0 text-primary" />
                                 <span>Lassi - 28100 Kefalonia<br />Ionian Islands - Greece</span>
                             </p>
                             <p className="flex items-center gap-2">
-                                <Phone size={16} className="text-[#cc1616]" />
+                                <Phone size={16} className="text-primary" />
                                 <span>Mob: +30 6940 000 000 {/* UPDATE WITH ACTUAL NUMBER */}</span>
                             </p>
                             <p className="flex items-center gap-2">
-                                <Mail size={16} className="text-[#cc1616]" />
-                                <a href="mailto:info@kcgtours.com" className="hover:text-[#cc1616] transition-colors">info@kcgtours.com</a>
+                                <Mail size={16} className="text-primary" />
+                                <a href="mailto:info@kcgtours.com" className="hover:text-primary transition-colors">info@kcgtours.com</a>
                             </p>
                         </div>
 
                         <div className="pt-4">
-                            <h4 className="text-sm font-semibold text-[#3b4b5e] mb-3 uppercase tracking-wider">Follow Us</h4>
+                            <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Follow Us</h4>
                             <div className="flex gap-3">
-                                <a href="#" className="w-9 h-9 bg-[#64a1e0] hover:bg-[#3b4b5e] text-white flex items-center justify-center rounded transition-colors shadow-sm">
+                                <a href="#" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm">
                                     <Facebook size={18} />
                                 </a>
-                                <a href="#" className="w-9 h-9 bg-[#64a1e0] hover:bg-[#3b4b5e] text-white flex items-center justify-center rounded transition-colors shadow-sm">
+                                <a href="#" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm">
                                     <Instagram size={18} />
                                 </a>
                             </div>
@@ -61,7 +61,7 @@ export function Footer() {
 
                                 <div className="text-center">
                                     <p className="text-xs uppercase font-bold text-gray-400 tracking-widest mb-1">Recommended by</p>
-                                    <p className="text-[#000] font-bold text-lg leading-tight group-hover:text-[#cc1616] transition-colors">Top Reviews &bull; 5 Stars</p>
+                                    <p className="text-[#000] font-bold text-lg leading-tight group-hover:text-primary transition-colors">Top Reviews &bull; 5 Stars</p>
                                 </div>
 
                                 <div className="flex items-center gap-1 text-[#34E0A1] bg-[#34E0A1]/10 px-3 py-1.5 rounded-full">
@@ -69,23 +69,23 @@ export function Footer() {
                                         <Star key={star} size={14} fill="currentColor" />
                                     ))}
                                 </div>
-                                <span className="text-xs text-[#000] font-medium mt-1 underline decoration-gray-300 underline-offset-4 group-hover:decoration-[#cc1616] transition-all">Read our latest reviews</span>
+                                <span className="text-xs text-[#000] font-medium mt-1 underline decoration-gray-300 underline-offset-4 group-hover:decoration-primary transition-all">Read our latest reviews</span>
                             </div>
                         </a>
                     </div>
 
                     {/* Right Column: Online Bookings & Policies */}
-                    <div className="flex flex-col md:items-end text-[#404041] space-y-6 md:text-right">
+                    <div className="flex flex-col md:items-end text-white space-y-6 md:text-right">
                         <div>
-                            <h4 className="text-lg font-semibold text-[#3b4b5e] mb-2">Online Bookings</h4>
+                            <h4 className="text-lg font-semibold text-white mb-2">Online Bookings</h4>
                             <p className="text-sm mb-4">Make your online reservation now easily & safe!</p>
 
-                            <a href="#" className="text-sm font-semibold hover:text-[#cc1616] transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-[#6caae9]">
+                            <a href="#" className="text-sm font-semibold hover:text-primary transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
                                 Booking Terms & Privacy Policy
                             </a>
                         </div>
 
-                        <div className="bg-white px-4 py-2 rounded shadow-sm border border-gray-100 flex items-center gap-2 max-w-fit">
+                        <div className="bg-card px-4 py-2 rounded shadow-sm border border-gray-100 flex items-center gap-2 max-w-fit">
                             <ShieldCheck className="text-green-500" size={20} />
                             <span className="text-xs font-bold text-gray-600 block leading-tight">
                                 SECURED BY <br />
@@ -97,7 +97,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom Bar %} */}
-                <div className="border-t border-gray-300 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 text-center md:text-left gap-4">
+                <div className="border-t border-white/20 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/70 text-center md:text-left gap-4">
                     <p>&copy; {new Date().getFullYear()} KCG Travel Services Kefalonia. All rights reserved.</p>
                     <p>License No: <span className="font-semibold">0458E6000000XXXX</span></p>
                 </div>

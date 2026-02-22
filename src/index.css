@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "News Cycle", sans-serif;
-  --font-heading: "Maven Pro", "News Cycle", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
 
-  --color-primary: #5d95d0;
-  --color-primary-hover: #404041;
-  --color-dark: #404041;
-  --color-light: #f1f3f5;
+  --color-primary: #d7393e;
+  --color-primary-hover: #ec7942;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-card: #f7f7f0;
+  --color-sage: #69857a;
 }
 
 body {
   font-family: var(--font-sans);
-  font-size: 17px;
-  color: #424242;
+  font-size: 18px;
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 
 html {

@@ -84,7 +84,7 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
 
     return (
         <motion.div
-            className="bg-[#e4e4e4] group overflow-hidden w-full flex flex-col h-full rounded-md shadow-[0px_4px_15px_rgba(0,0,0,0.15)] relative"
+            className="bg-card group overflow-hidden w-full flex flex-col h-full rounded-md shadow-[0px_4px_15px_rgba(0,0,0,0.15)] relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -94,9 +94,9 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Top Text Header Block - NEW Structure */}
-            <div className="bg-[#e4e4e4] px-4 py-6 md:py-8 text-center flex-none">
-                <h3 className="text-[#3b4b5e] font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
-                <p className="text-[#64a1e0] font-light text-sm">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
+            <div className="bg-card px-4 py-6 md:py-8 text-center flex-none">
+                <h3 className="text-dark font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
+                <p className="text-primary font-light text-sm">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
             </div>
 
             {/* Slider Section Container */}
@@ -187,15 +187,15 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
             </div>
 
             {/* Card Footer Content (New Structure) */}
-            <div className="p-5 md:p-6 flex flex-col items-start gap-1 bg-[#e4e4e4] z-10 flex-none pb-6">
-                <span className="text-[#3b4b5e] uppercase tracking-wide font-bold text-sm">PRIVATE TOUR</span>
-                <p className="text-[#64a1e0] font-light text-md mt-1">{slides[0]?.subtitle || 'Caves, Culture & Scenic Highlights'}</p>
+            <div className="p-5 md:p-6 flex flex-col items-start gap-1 bg-card z-10 flex-none pb-6">
+                <span className="text-dark uppercase tracking-wide font-bold text-sm">PRIVATE TOUR</span>
+                <p className="text-primary font-light text-md mt-1">{slides[0]?.subtitle || 'Caves, Culture & Scenic Highlights'}</p>
                 <p className="text-sm text-gray-500 mt-1 font-light"><span className="text-gray-400">Duration:</span> {duration}</p>
 
                 <div className="w-full flex justify-end mt-4">
                     <button
                         onClick={handleBookNow}
-                        className="text-white text-center py-2 px-6 font-bold bg-[#6caae9] hover:bg-[#5b9bdc] rounded shadow-sm transition-colors duration-300 ease-out text-sm"
+                        className="text-white hover:text-dark py-2 px-6 font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-sm"
                     >
                         View More & Book
                     </button>
