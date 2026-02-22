@@ -27,9 +27,9 @@ function App() {
             <header id="hero" className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img
-                        src="https://avalontravel-kefalonia.gr/images/2024/05/06/depositphotos_359881686_xl.jpg"
-                        className="w-full h-full object-cover opacity-50"
-                        alt="Hero background"
+                        src="/images/hero2.jpg"
+                        className="w-full h-full object-cover object-top opacity-50"
+                        alt="Kefalonia Hero"
                     />
                 </div>
                 <motion.div
@@ -38,8 +38,8 @@ function App() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h1 className="text-4xl md:text-6xl font-light mb-4">Discover Kefalonia</h1>
-                    <p className="text-xl md:text-2xl opacity-90">Private Tours & Excursions</p>
+                    <h1 className="text-4xl md:text-6xl font-light mb-4">Your Kefalonia. Perfectly Planned.</h1>
+                    <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">Bus tours, boat cruises & shore excursions — handpicked, expertly guided, unforgettable.</p>
                 </motion.div>
             </header>
 
