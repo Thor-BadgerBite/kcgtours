@@ -104,7 +104,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Top Text Header Block - NEW Structure */}
-            <div className="bg-card px-4 py-6 md:py-8 text-center flex-none">
+            <div className="bg-card p-4 text-center flex-none">
                 <h3 className="text-dark font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
                 <p className="text-primary font-light text-sm">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
             </div>
@@ -221,7 +221,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
             </div>
 
             {/* Card Footer Content */}
-            <div className="p-5 md:p-6 flex flex-col items-start gap-1 bg-card z-10 flex-none pb-6">
+            <div className="p-4 flex flex-col items-start gap-1 bg-card z-10 flex-none">
                 <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
                 <p className="text-primary font-medium text-[18px] mb-2 leading-relaxed">{itinerary}</p>
                 <p className="text-[18px] text-gray-500 font-light"><span className="text-dark font-medium mr-1">Operating:</span> {operatingDays}</p>
