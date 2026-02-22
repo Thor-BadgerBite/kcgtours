@@ -65,9 +65,8 @@ export function Footer() {
                         >
                             <div className="absolute top-0 inset-x-0 h-1 bg-[#34E0A1]"></div>
                             <div className="flex flex-col items-center gap-3">
-                                <div className="flex items-end justify-center gap-2">
-                                    <Award className="text-[#34E0A1] mb-1" size={24} />
-                                    <span className="font-extrabold text-[#000] text-xl tracking-tight text-center leading-tight">Tripadvisor<br /><span className="text-xs text-gray-500 font-bold uppercase tracking-wider">Excellence Award</span></span>
+                                <div className="flex justify-center mb-2">
+                                    <img src="/images/tripadvisor.png" alt="Tripadvisor Excellence Award" className="h-[60px] md:h-[80px] w-auto object-contain" />
                                 </div>
 
                                 <div className="text-center">
