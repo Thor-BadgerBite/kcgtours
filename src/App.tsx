@@ -64,7 +64,12 @@ function App() {
                                         <div key={idx} className="flex h-full">
                                             <TourCard
                                                 tourTitle={tour.tourTitle}
+                                                tourType={tour.tourType}
+                                                itinerary={tour.itinerary}
+                                                operatingDays={tour.operatingDays}
                                                 duration={tour.duration}
+                                                from_price={tour.from_price}
+                                                badges={tour.badges}
                                                 bokunProductId={tour.bokunProductId}
                                                 short_description={tour.short_description}
                                                 slides={tour.slides}

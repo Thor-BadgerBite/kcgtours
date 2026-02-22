@@ -10,6 +10,11 @@
   --color-light: #ffffff;
   --color-card: #f7f7f0;
   --color-sage: #69857a;
+
+  --color-price-bg: #d7393e;
+  --color-badge-exclusive: #34495e;
+  --color-badge-bestseller: #e67e22;
+  --color-badge-special: #2ecc71;
 }
 
 body {

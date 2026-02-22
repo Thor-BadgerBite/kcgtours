@@ -8,6 +8,11 @@ export const tourCategories: TourCategory[] = [
         tours: [
             {
                 tourTitle: "Private Tour of Kefalonia's Treasures",
+                tourType: "PRIVATE TOUR",
+                itinerary: "Caves • Villages • Wine • Cultural Highlights",
+                operatingDays: "Every: Tuesdays and Fridays",
+                from_price: 250.00,
+                badges: { isBestSeller: true },
                 short_description: "Caves, Villages, Wine & Cultural Highlights",
                 duration: "6 Hours",
                 bokunProductId: "PLACEHOLDER_BUS_1",
@@ -18,6 +23,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "The Jewels of Kefalonia",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Assos • Fiscardo • Melissani Lake",
+                operatingDays: "Every: Mondays, Wednesdays & Saturdays",
+                from_price: 65.00,
+                badges: { isSpecialOffer: true },
                 short_description: "Assos, Fiscardo & Melissani Lake",
                 duration: "8 Hours",
                 bokunProductId: "PLACEHOLDER_BUS_2",
@@ -28,6 +38,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Private Vineyard Experience",
+                tourType: "PRIVATE TOUR",
+                itinerary: "Robola Winery • Orealios Gaea • Haritatos Estate",
+                operatingDays: "Daily On Request",
+                from_price: 180.00,
+                badges: { isExclusive: true },
                 short_description: "Wine, Culture & Tradition",
                 duration: "4 Hrs & 30 min",
                 bokunProductId: "PLACEHOLDER_BUS_3",
@@ -45,6 +60,11 @@ export const tourCategories: TourCategory[] = [
         tours: [
             {
                 tourTitle: "Ithaca Coastal Discovery",
+                tourType: "CRUISE",
+                itinerary: "Vathi • Kioni • Gidaki Beach",
+                operatingDays: "Every: Tuesdays, Thursdays, Sundays",
+                from_price: 75.00,
+                badges: { isBestSeller: true },
                 short_description: "Swim Stops & Hidden Coves",
                 duration: "Full Day",
                 bokunProductId: "PLACEHOLDER_CRUISE_1",
@@ -55,6 +75,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Zakynthos Shipwreck Sail",
+                tourType: "CRUISE",
+                itinerary: "Navagio Beach • Blue Caves • Alykes",
+                operatingDays: "Every: Wednesdays, Fridays",
+                from_price: 80.00,
+                badges: {},
                 short_description: "Navagio Beach & Blue Caves",
                 duration: "8 Hours",
                 bokunProductId: "PLACEHOLDER_CRUISE_2",
@@ -65,6 +90,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Sunset Dinner Cruise",
+                tourType: "PRIVATE CRUISE",
+                itinerary: "Argostoli Gulf • Lassi Coast • Makris Gialos",
+                operatingDays: "Daily On Request",
+                from_price: 400.00,
+                badges: { isExclusive: true, isSpecialOffer: true },
                 short_description: "Argostoli Gulf Evening Sail",
                 duration: "4 Hours",
                 bokunProductId: "PLACEHOLDER_CRUISE_3",
@@ -82,6 +112,11 @@ export const tourCategories: TourCategory[] = [
         tours: [
             {
                 tourTitle: "Argostoli Highlights Half-Day",
+                tourType: "SHORE EXCURSION",
+                itinerary: "St. Gerasimos • Robola Winery • Koutavos Lagoon",
+                operatingDays: "Cruise Ship Arrival Days",
+                from_price: 45.00,
+                badges: { isBestSeller: true },
                 short_description: "Robola Winery & St. Gerasimos",
                 duration: "4 Hours",
                 bokunProductId: "PLACEHOLDER_SHORE_1",
@@ -92,6 +127,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Express Myrtos & Melissani",
+                tourType: "SHORE EXCURSION",
+                itinerary: "Myrtos Photo Stop • Melissani Lake",
+                operatingDays: "Cruise Ship Arrival Days",
+                from_price: 55.00,
+                badges: {},
                 short_description: "Must-sees for short layovers",
                 duration: "5 Hours",
                 bokunProductId: "PLACEHOLDER_SHORE_2",
@@ -102,6 +142,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Fiscardo VIP Access",
+                tourType: "PRIVATE EXCURSION",
+                itinerary: "Argostoli • Myrtos Coastline • Fiscardo",
+                operatingDays: "Daily On Request",
+                from_price: 220.00,
+                badges: { isExclusive: true },
                 short_description: "Private transfer & Village walk",
                 duration: "6 Hours",
                 bokunProductId: "PLACEHOLDER_SHORE_3",
@@ -119,6 +164,11 @@ export const tourCategories: TourCategory[] = [
         tours: [
             {
                 tourTitle: "Private VIP Transfer",
+                tourType: "TRANSFER",
+                itinerary: "Airport to Resort • Port to Villa",
+                operatingDays: "24/7 Service",
+                from_price: 40.00,
+                badges: { isBestSeller: true },
                 short_description: "Airport & Port Premium Shuttles",
                 duration: "Flexible",
                 bokunProductId: "PLACEHOLDER_ACT_1",
@@ -129,6 +179,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Culinary Tasting Class",
+                tourType: "ACTIVITY",
+                itinerary: "Local Farm • Traditional Kitchen • Wine Tasting",
+                operatingDays: "Every: Mondays & Thursdays",
+                from_price: 90.00,
+                badges: { isExclusive: true },
                 short_description: "Local gastronomy masterclass",
                 duration: "3 Hours",
                 bokunProductId: "PLACEHOLDER_ACT_2",
@@ -139,6 +194,11 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Guided Mount Ainos Hike",
+                tourType: "ACTIVITY",
+                itinerary: "Ainos National Park • Enos Peak • Pine Forests",
+                operatingDays: "Every: Wednesdays, Saturdays",
+                from_price: 60.00,
+                badges: { isSpecialOffer: true },
                 short_description: "National Park summit trails",
                 duration: "5 Hours",
                 bokunProductId: "PLACEHOLDER_ACT_3",

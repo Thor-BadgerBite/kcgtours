@@ -7,12 +7,22 @@ import type { TourSlide } from '../types';
 interface TourCardProps {
     slides: TourSlide[];
     tourTitle: string;
+    tourType: string;
+    itinerary: string;
+    operatingDays: string;
     duration: string;
+    from_price: number | string;
+    badges?: {
+        isExclusive?: boolean;
+        isBestSeller?: boolean;
+        isSpecialOffer?: boolean;
+        [key: string]: boolean | undefined;
+    };
     bokunProductId: string;
     short_description?: string;
 }
 
-export function TourCard({ slides, tourTitle, duration, bokunProductId, short_description }: TourCardProps) {
+export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, short_description }: TourCardProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
@@ -103,6 +113,30 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
             <div
                 className="relative w-full aspect-[4/3] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
             >
+                {/* Price Pill */}
+                <div className="absolute top-4 left-4 z-30 bg-[color:var(--color-price-bg)] text-white px-3 py-1.5 rounded-sm shadow-md font-bold text-sm tracking-wide">
+                    FROM: {typeof from_price === 'number' ? from_price.toFixed(2) : from_price}€
+                </div>
+
+                {/* Badges Stack */}
+                <div className="absolute top-4 right-4 z-30 flex flex-col gap-2 items-end">
+                    {badges?.isExclusive && (
+                        <span className="bg-[color:var(--color-badge-exclusive)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">
+                            Exclusive
+                        </span>
+                    )}
+                    {badges?.isBestSeller && (
+                        <span className="bg-[color:var(--color-badge-bestseller)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">
+                            Best Seller
+                        </span>
+                    )}
+                    {badges?.isSpecialOffer && (
+                        <span className="bg-[color:var(--color-badge-special)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">
+                            Special Offer
+                        </span>
+                    )}
+                </div>
+
                 <div className="overflow-hidden h-full" ref={emblaRef}>
                     <div className="flex h-full w-full touch-pan-y">
                         {slides.map((slide, idx) => (
@@ -186,11 +220,12 @@ export function TourCard({ slides, tourTitle, duration, bokunProductId, short_de
                 </div>
             </div>
 
-            {/* Card Footer Content (New Structure) */}
+            {/* Card Footer Content */}
             <div className="p-5 md:p-6 flex flex-col items-start gap-1 bg-card z-10 flex-none pb-6">
-                <span className="text-dark uppercase tracking-wide font-bold text-sm">PRIVATE TOUR</span>
-                <p className="text-primary font-light text-md mt-1">{slides[0]?.subtitle || 'Caves, Culture & Scenic Highlights'}</p>
-                <p className="text-sm text-gray-500 mt-1 font-light"><span className="text-gray-400">Duration:</span> {duration}</p>
+                <span className="text-dark uppercase tracking-wide font-bold text-[13px] mb-1">{tourType}</span>
+                <p className="text-primary font-medium text-sm mb-2 leading-relaxed">{itinerary}</p>
+                <p className="text-sm text-gray-500 font-light"><span className="text-dark font-medium block">Operating:</span> {operatingDays}</p>
+                <p className="text-sm text-gray-500 mt-1 font-light"><span className="text-dark font-medium">Duration:</span> {duration}</p>
 
                 <div className="w-full flex justify-end mt-4">
                     <button

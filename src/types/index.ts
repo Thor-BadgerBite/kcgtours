@@ -6,7 +6,17 @@ export interface TourSlide {
 
 export interface Tour {
     tourTitle: string;
+    tourType: string;
+    itinerary: string;
+    operatingDays: string;
     duration: string;
+    from_price: number | string;
+    badges?: {
+        isExclusive?: boolean;
+        isBestSeller?: boolean;
+        isSpecialOffer?: boolean;
+        [key: string]: boolean | undefined;
+    };
     bokunProductId: string;
     short_description?: string;
     slides: TourSlide[];
