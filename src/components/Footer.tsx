@@ -67,12 +67,12 @@ export function Footer() {
                             <div className="flex flex-col items-center gap-3">
                                 <div className="flex items-end justify-center gap-2">
                                     <Award className="text-[#34E0A1] mb-1" size={24} />
-                                    <span className="font-extrabold text-[#000] text-xl tracking-tight">Tripadvisor</span>
+                                    <span className="font-extrabold text-[#000] text-xl tracking-tight text-center leading-tight">Tripadvisor<br /><span className="text-xs text-gray-500 font-bold uppercase tracking-wider">Excellence Award</span></span>
                                 </div>
 
                                 <div className="text-center">
                                     <p className="text-xs uppercase font-bold text-gray-400 tracking-widest mb-1">Recommended by</p>
-                                    <p className="text-[#000] font-bold text-lg leading-tight group-hover:text-primary transition-colors">Top Reviews &bull; 5 Stars</p>
+                                    <p className="text-[#000] font-bold text-lg leading-tight group-hover:text-primary transition-colors">94% of travellers</p>
                                 </div>
 
                                 <div className="flex items-center gap-1 text-[#34E0A1] bg-[#34E0A1]/10 px-3 py-1.5 rounded-full">
@@ -96,11 +96,19 @@ export function Footer() {
                             </a>
                         </div>
 
-                        <div className="bg-card px-4 py-2 rounded shadow-sm border border-gray-100 flex items-center gap-2 max-w-fit">
-                            <ShieldCheck className="text-green-500" size={20} />
-                            <span className="text-xs font-bold text-gray-600 block leading-tight">
-                                SECURED BY <br />
-                                <span className="text-black text-sm">SECTIGO</span>
+                        <div className="pt-2">
+                            <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">Partners</h4>
+                            <ul className="space-y-2 text-sm flex flex-col md:items-end">
+                                <li><a href="https://kcgtravel.gr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">KCG Travel</a></li>
+                                <li><a href="https://kefaloniatransfers.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">Kefalonia Transfers</a></li>
+                                <li><a href="https://kcgcarhire.gr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">KCG Car Hire</a></li>
+                            </ul>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 px-5 py-3 rounded-lg inline-flex flex-col md:items-end mt-2">
+                            <span className="text-[10px] text-white/60 uppercase tracking-widest font-semibold mb-0.5">Proud to be</span>
+                            <span className="text-white font-bold text-sm whitespace-nowrap tracking-wide">
+                                part of <span className="text-primary text-base">KCG Family</span>
                             </span>
                         </div>
                     </div>
@@ -110,7 +118,7 @@ export function Footer() {
                 {/* Bottom Bar %} */}
                 <div className="border-t border-white/20 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/70 text-center md:text-left gap-4">
                     <p>&copy; {new Date().getFullYear()} KCG Travel Services Kefalonia. All rights reserved.</p>
-                    <p>License No: <span className="font-semibold">0458E6000000XXXX</span></p>
+                    <p>License No: <span className="font-semibold">0458E60000064100</span></p>
                 </div>
             </div>
         </footer>
