@@ -7,100 +7,220 @@ export const tourCategories: TourCategory[] = [
         subtitle: "Discover the island's highlights in comfort",
         tours: [
             {
-                tourTitle: "Private Tour of Kefalonia's Treasures",
-                tourType: "PRIVATE TOUR",
-                itinerary: "Caves • Villages • Wine • Cultural Highlights",
-                operatingDays: "Every: Tuesdays and Fridays",
-                from_price: 250.00,
+                tourTitle: "Fiscardo Island Tour",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
+                operatingDays: "Every: Tuesday & Friday",
+                from_price: 35.00,
                 badges: { isBestSeller: true },
-                short_description: "Caves, Villages, Wine & Cultural Highlights",
-                duration: "6 Hours",
-                bokunProductId: "PLACEHOLDER_BUS_1",
+                short_description: "North Kefalonia's finest villages & caves in one full day",
+                duration: "8 Hours",
+                bokunProductId: "PLACEHOLDER_BUS_FISCARDO",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Majestic Vistas" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Myrtos Beach View" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Assos Village" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Melissani Lake" }
                 ]
             },
             {
-                tourTitle: "The Jewels of Kefalonia",
+                tourTitle: "Sunday Island Tour",
                 tourType: "ORGANIZED TOUR",
-                itinerary: "Assos • Fiscardo • Melissani Lake",
-                operatingDays: "Every: Mondays, Wednesdays & Saturdays",
-                from_price: 65.00,
-                badges: { isSpecialOffer: true },
-                short_description: "Assos, Fiscardo & Melissani Lake",
+                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
+                operatingDays: "Every: Sunday",
+                from_price: 35.00,
+                badges: {},
+                short_description: "The complete northern island experience — every Sunday",
                 duration: "8 Hours",
-                bokunProductId: "PLACEHOLDER_BUS_2",
+                bokunProductId: "PLACEHOLDER_BUS_SUNDAY",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Colorful Buildings" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Myrtos Beach" },
                     { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Underground Lake" }
                 ]
             },
             {
-                tourTitle: "Private Vineyard Experience",
-                tourType: "PRIVATE TOUR",
-                itinerary: "Robola Winery • Orealios Gaea • Haritatos Estate",
-                operatingDays: "Daily On Request",
-                from_price: 180.00,
-                badges: { isExclusive: true },
-                short_description: "Wine, Culture & Tradition",
-                duration: "4 Hrs & 30 min",
-                bokunProductId: "PLACEHOLDER_BUS_3",
+                tourTitle: "Kefalonian Adventure",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Lixouri • Kipouria • Petani • Myrtos • Agia Efimia • St. Gerasimos • Winery",
+                operatingDays: "Every: Thursday",
+                from_price: 35.00,
+                badges: { isSpecialOffer: true },
+                short_description: "West coast monasteries, panoramic views & Robola wine tasting",
+                duration: "8 Hours",
+                bokunProductId: "PLACEHOLDER_BUS_ADVENTURE",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/14/small-wine-1.jpg", title: "Elegant & Tranquil" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/15/haristatos-estate-5-1520x800.jpg", title: "Local Wineries" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Petani Panorama" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/14/small-wine-1.jpg", title: "Orealios Gaea Winery" }
+                ]
+            },
+            {
+                tourTitle: "Kefalonia Entdecken",
+                tourType: "PRIVATE TOUR",
+                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
+                operatingDays: "On Request",
+                from_price: 450.00,
+                badges: { isExclusive: true },
+                short_description: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
+                duration: "8 Hours",
+                bokunProductId: "PLACEHOLDER_BUS_ENTDECKEN",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Assos Dorf" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Melissani See" }
+                ]
+            },
+            {
+                tourTitle: "Discover Ithaca — Cruise & Tour",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
+                operatingDays: "Every: Wednesday",
+                from_price: 55.00,
+                badges: { isBestSeller: true },
+                short_description: "Ferry to mythical Ithaca — sail to Gidaki, stroll Kioni & Vathy",
+                duration: "10 Hours",
+                bokunProductId: "PLACEHOLDER_BUS_ITHACA_CRUISE_TOUR",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Ithaca — Island of Odysseus" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Kioni Village" }
+                ]
+            },
+            {
+                tourTitle: "Discover Ithaca — Bus Tour",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Vathy • Kioni • Stavros • Polis Bay",
+                operatingDays: "Every: Wednesday",
+                from_price: 45.00,
+                badges: {},
+                short_description: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
+                duration: "10 Hours",
+                bokunProductId: "PLACEHOLDER_BUS_ITHACA_BUS",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Vathy Harbour" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Kioni Bay" }
                 ]
             }
         ]
     },
     {
         id: "cruises",
-        title: "Island Cruises",
-        subtitle: "Sail the Ionian Sea in style",
+        title: "Ionian Cruises",
+        subtitle: "Set sail on the crystal waters of the Ionian Sea",
         tours: [
             {
-                tourTitle: "Ithaca Coastal Discovery",
+                tourTitle: "Queen Bee — Argostoli Bay",
                 tourType: "CRUISE",
-                itinerary: "Vathi • Kioni • Gidaki Beach",
-                operatingDays: "Every: Tuesdays, Thursdays, Sundays",
-                from_price: 75.00,
+                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                operatingDays: "Daily",
+                from_price: 45.00,
                 badges: { isBestSeller: true },
-                short_description: "Swim Stops & Hidden Coves",
-                duration: "Full Day",
-                bokunProductId: "PLACEHOLDER_CRUISE_1",
+                short_description: "Classic Argostoli bay cruise aboard the 43ft Gobbi Queen Bee",
+                duration: "Full Day / Sunset",
+                bokunProductId: "PLACEHOLDER_CRUISE_QUEENBEE",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Mythical Island" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Blue Waters" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Queen Bee" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Xi Beach" }
                 ]
             },
             {
-                tourTitle: "Zakynthos Shipwreck Sail",
+                tourTitle: "Artemis — Argostoli Bay",
                 tourType: "CRUISE",
-                itinerary: "Navagio Beach • Blue Caves • Alykes",
-                operatingDays: "Every: Wednesdays, Fridays",
-                from_price: 80.00,
+                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                operatingDays: "Daily",
+                from_price: 50.00,
                 badges: {},
-                short_description: "Navagio Beach & Blue Caves",
-                duration: "8 Hours",
-                bokunProductId: "PLACEHOLDER_CRUISE_2",
+                short_description: "Sun, sea & Xi's red clay beach — cruise Argostoli Bay on Artemis",
+                duration: "Full Day / Sunset",
+                bokunProductId: "PLACEHOLDER_CRUISE_ARTEMIS",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Shipwreck View" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/08/drogarati-small-1.jpg", title: "Crystal Sea" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Artemis Cruises" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Xi Beach Clay Spa" }
                 ]
             },
             {
-                tourTitle: "Sunset Dinner Cruise",
-                tourType: "PRIVATE CRUISE",
-                itinerary: "Argostoli Gulf • Lassi Coast • Makris Gialos",
-                operatingDays: "Daily On Request",
-                from_price: 400.00,
-                badges: { isExclusive: true, isSpecialOffer: true },
-                short_description: "Argostoli Gulf Evening Sail",
-                duration: "4 Hours",
-                bokunProductId: "PLACEHOLDER_CRUISE_3",
+                tourTitle: "Lady O — Argostoli Bay",
+                tourType: "CRUISE",
+                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                operatingDays: "Daily",
+                from_price: 50.00,
+                badges: {},
+                short_description: "Relax & swim in turquoise waters on the stylish Lady O cruise",
+                duration: "Full Day / Sunset",
+                bokunProductId: "PLACEHOLDER_CRUISE_LADYO",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Golden Hour" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Romantic Evening" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Lady O Cruises" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Ionian Waters" }
+                ]
+            },
+            {
+                tourTitle: "Efplia — Argostoli Bay",
+                tourType: "CRUISE",
+                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                operatingDays: "Daily",
+                from_price: 45.00,
+                badges: {},
+                short_description: "Glass-bottom views & BBQ lunch on the Efplia bay cruise",
+                duration: "Full Day",
+                bokunProductId: "PLACEHOLDER_CRUISE_EFPLIA",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Efplia Cruises" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Vardiani Island" }
+                ]
+            },
+            {
+                tourTitle: "Fiscardo Cruise from Skala",
+                tourType: "CRUISE",
+                itinerary: "Skala • Sami • Fiscardo • Koutsoupia Beach",
+                operatingDays: "Every: Tuesday & Saturday",
+                from_price: 55.00,
+                badges: { isSpecialOffer: true },
+                short_description: "Sail north from Skala past stunning coastlines to cosmopolitan Fiscardo",
+                duration: "Full Day",
+                bokunProductId: "PLACEHOLDER_CRUISE_FISCARDO_SKALA",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Fiscardo Village" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Koutsoupia Beach" }
+                ]
+            },
+            {
+                tourTitle: "Zante Cruise from Skala",
+                tourType: "CRUISE",
+                itinerary: "Skala • Navagio Shipwreck • Blue Caves • Alykes",
+                operatingDays: "Every: Thursday",
+                from_price: 55.00,
+                badges: { isExclusive: true },
+                short_description: "Navagio & Blue Caves — Zakynthos' icons in one epic day at sea",
+                duration: "Full Day",
+                bokunProductId: "PLACEHOLDER_CRUISE_ZANTE_SKALA",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Navagio Shipwreck" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Blue Caves" }
+                ]
+            },
+            {
+                tourTitle: "Ithaca Cruise from Skala",
+                tourType: "CRUISE",
+                itinerary: "Skala • Gidaki Beach • Vathy • Kioni • Koutsoupia Beach",
+                operatingDays: "Every: Wednesday, Friday & Sunday",
+                from_price: 55.00,
+                badges: {},
+                short_description: "Sail to mythical Ithaca — swim Gidaki, explore Vathy & Kioni",
+                duration: "Full Day",
+                bokunProductId: "PLACEHOLDER_CRUISE_ITHACA_SKALA",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Ithaca Island" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Gidaki Beach" }
+                ]
+            },
+            {
+                tourTitle: "Lobster Fishing Cruise",
+                tourType: "CRUISE",
+                itinerary: "Agia Pelagia • Net Points • Beach Anchor • Fresh Seafood Lunch",
+                operatingDays: "Daily (Weather Permitting)",
+                from_price: 100.00,
+                badges: { isExclusive: true },
+                short_description: "Live a fisherman's day — pull the nets & feast on the fresh catch",
+                duration: "8 Hours",
+                bokunProductId: "PLACEHOLDER_CRUISE_LOBSTER",
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Authentic Fishing Experience" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Fresh Seafood on Board" }
                 ]
             }
         ]
@@ -108,51 +228,36 @@ export const tourCategories: TourCategory[] = [
     {
         id: "shore-excursions",
         title: "Shore Excursions",
-        subtitle: "Maximize your cruise stopover",
+        subtitle: "Make the most of your time ashore",
         tours: [
             {
-                tourTitle: "Argostoli Highlights Half-Day",
+                tourTitle: "Assos & Fiscardo",
                 tourType: "SHORE EXCURSION",
-                itinerary: "St. Gerasimos • Robola Winery • Koutavos Lagoon",
-                operatingDays: "Cruise Ship Arrival Days",
-                from_price: 45.00,
+                itinerary: "Assos Village • Fiscardo • Myrtos Photo Stop",
+                operatingDays: "On Request / Cruise Ship Days",
+                from_price: 285.00,
                 badges: { isBestSeller: true },
-                short_description: "Robola Winery & St. Gerasimos",
-                duration: "4 Hours",
-                bokunProductId: "PLACEHOLDER_SHORE_1",
+                short_description: "Two of Kefalonia's most beautiful villages in one scenic half-day",
+                duration: "5–6 Hours",
+                bokunProductId: "PLACEHOLDER_SHORE_ASSOS_FISCARDO",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/15/kipoureon-monastery-kefalonia.jpg", title: "Monastery Stop" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Island Culture" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Assos Village" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Fiscardo Harbour" }
                 ]
             },
             {
-                tourTitle: "Express Myrtos & Melissani",
+                tourTitle: "Kefalonia Mini Adventure",
                 tourType: "SHORE EXCURSION",
-                itinerary: "Myrtos Photo Stop • Melissani Lake",
-                operatingDays: "Cruise Ship Arrival Days",
-                from_price: 55.00,
+                itinerary: "Robola Winery • Melissani Lake • Agia Efimia • Myrtos View",
+                operatingDays: "On Request / Cruise Ship Days",
+                from_price: 300.00,
                 badges: {},
-                short_description: "Must-sees for short layovers",
-                duration: "5 Hours",
-                bokunProductId: "PLACEHOLDER_SHORE_2",
+                short_description: "Kefalonia's must-see wonders packed into one unforgettable half-day",
+                duration: "4.5–5 Hours",
+                bokunProductId: "PLACEHOLDER_SHORE_MINI_ADVENTURE",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Cave Excursion" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Best Beach" }
-                ]
-            },
-            {
-                tourTitle: "Fiscardo VIP Access",
-                tourType: "PRIVATE EXCURSION",
-                itinerary: "Argostoli • Myrtos Coastline • Fiscardo",
-                operatingDays: "Daily On Request",
-                from_price: 220.00,
-                badges: { isExclusive: true },
-                short_description: "Private transfer & Village walk",
-                duration: "6 Hours",
-                bokunProductId: "PLACEHOLDER_SHORE_3",
-                slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/15/haristatos-estate-5-1520x800.jpg", title: "Luxury Stop" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Northern Port" }
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Melissani Cave Lake" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Myrtos Panorama" }
                 ]
             }
         ]
