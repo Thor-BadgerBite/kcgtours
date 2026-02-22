@@ -222,10 +222,10 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
             {/* Card Footer Content */}
             <div className="p-5 md:p-6 flex flex-col items-start gap-1 bg-card z-10 flex-none pb-6">
-                <span className="text-dark uppercase tracking-wide font-bold text-[13px] mb-1">{tourType}</span>
-                <p className="text-primary font-medium text-sm mb-2 leading-relaxed">{itinerary}</p>
-                <p className="text-sm text-gray-500 font-light"><span className="text-dark font-medium block">Operating:</span> {operatingDays}</p>
-                <p className="text-sm text-gray-500 mt-1 font-light"><span className="text-dark font-medium">Duration:</span> {duration}</p>
+                <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
+                <p className="text-primary font-medium text-[18px] mb-2 leading-relaxed">{itinerary}</p>
+                <p className="text-[18px] text-gray-500 font-light"><span className="text-dark font-medium mr-1">Operating:</span> {operatingDays}</p>
+                <p className="text-[18px] text-gray-500 mt-1 font-light"><span className="text-dark font-medium mr-1">Duration:</span> {duration}</p>
 
                 <div className="w-full flex justify-end mt-4">
                     <button
