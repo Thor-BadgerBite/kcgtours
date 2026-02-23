@@ -17,15 +17,15 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1125444",
                 slides: [
-                    { image: "/images/1125444/assos.webp", title: "Assos" },
-                    { image: "/images/1125444/assos2.webp", title: "Assos" },
-                    { image: "/images/1125444/drogarati.webp", title: "Drogarati" },
-                    { image: "/images/1125444/fiscardo.webp", title: "Fiscardo" },
-                    { image: "/images/1125444/fiscardo2.webp", title: "Fiscardo" },
-                    { image: "/images/1125444/fiscardo3.webp", title: "Fiscardo" },
-                    { image: "/images/1125444/melissani.webp", title: "Melissani" },
-                    { image: "/images/1125444/myrtos.webp", title: "Myrtos" },
-                    { image: "/images/1125444/myrtos2.webp", title: "Myrtos" }
+                    { image: "/images/1125444/assos.webp", title: "A Moment Worth Staying For" },
+                    { image: "/images/1125444/assos2.webp", title: "Where the Mountain Meets the Sea" },
+                    { image: "/images/1125444/drogarati.webp", title: "A Million Years in the Making" },
+                    { image: "/images/1125444/fiscardo.webp", title: "Colours of the North" },
+                    { image: "/images/1125444/fiscardo2.webp", title: "Where the Ionian Yachts Sleep" },
+                    { image: "/images/1125444/fiscardo3.webp", title: "A Quiet Evening in the Village" },
+                    { image: "/images/1125444/melissani.webp", title: "Ancient, Still & Breathtaking" },
+                    { image: "/images/1125444/myrtos.webp", title: "The View That Stops You" },
+                    { image: "/images/1125444/myrtos2.webp", title: "Endless Shades of Blue" }
                 ]
             },
             {
@@ -39,14 +39,14 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1155681",
                 slides: [
-                    { image: "/images/1155681/assos.webp", title: "Assos" },
-                    { image: "/images/1155681/assos2.webp", title: "Assos" },
-                    { image: "/images/1155681/drogarati.webp", title: "Drogarati" },
-                    { image: "/images/1155681/fiscardo.webp", title: "Fiscardo" },
-                    { image: "/images/1155681/fiscardo2.webp", title: "Fiscardo" },
-                    { image: "/images/1155681/melissani.webp", title: "Melissani" },
-                    { image: "/images/1155681/myrtos.webp", title: "Myrtos" },
-                    { image: "/images/1155681/myrtos2.webp", title: "Myrtos" }
+                    { image: "/images/1155681/assos.webp", title: "A Village Framed in Green & Blue" },
+                    { image: "/images/1155681/assos2.webp", title: "Painted in Turquoise" },
+                    { image: "/images/1155681/drogarati.webp", title: "Deep, Dark & Magnificent" },
+                    { image: "/images/1155681/fiscardo.webp", title: "Sunday Colours at the Harbour" },
+                    { image: "/images/1155681/fiscardo2.webp", title: "Rooftops & Rigging" },
+                    { image: "/images/1155681/melissani.webp", title: "Light from Another World" },
+                    { image: "/images/1155681/myrtos.webp", title: "The Coastline You'll Never Forget" },
+                    { image: "/images/1155681/myrtos2.webp", title: "Blue Beyond Blue" }
                 ]
             },
             {
@@ -60,14 +60,14 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1125442",
                 slides: [
-                    { image: "/images/1125442/ag.efimia.webp", title: "Ag Efimia" },
-                    { image: "/images/1125442/kipouria.webp", title: "Kipouria" },
-                    { image: "/images/1125442/lixouri.webp", title: "Lixouri" },
-                    { image: "/images/1125442/petani.webp", title: "Petani" },
-                    { image: "/images/1125442/st.gerasimos.webp", title: "St Gerasimos" },
-                    { image: "/images/1125442/st.gerasimos2.webp", title: "St Gerasimos" },
-                    { image: "/images/1125442/winery.webp", title: "Winery" },
-                    { image: "/images/1125442/winery2.webp", title: "Winery" }
+                    { image: "/images/1125442/ag.efimia.webp", title: "A Peaceful Corner of the Ionian" },
+                    { image: "/images/1125442/kipouria.webp", title: "Faith on the Edge" },
+                    { image: "/images/1125442/lixouri.webp", title: "The Island's Other Soul" },
+                    { image: "/images/1125442/petani.webp", title: "Wild, Hidden & Unforgettable" },
+                    { image: "/images/1125442/st.gerasimos.webp", title: "Where the Island Prays" },
+                    { image: "/images/1125442/st.gerasimos2.webp", title: "Gold, Light & Devotion" },
+                    { image: "/images/1125442/winery.webp", title: "A Thousand Bottles of Kefalonia" },
+                    { image: "/images/1125442/winery2.webp", title: "The Taste You'll Remember" }
                 ]
             },
             {
@@ -81,14 +81,14 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1144488",
                 slides: [
-                    { image: "/images/1144448/assos.webp", title: "Assos" },
-                    { image: "/images/1144448/assos2.webp", title: "Assos" },
-                    { image: "/images/1144448/drogarati.webp", title: "Drogarati" },
-                    { image: "/images/1144448/fiscardo.webp", title: "Fiscardo" },
-                    { image: "/images/1144448/fiscardo2.webp", title: "Fiscardo" },
-                    { image: "/images/1144448/melissani.webp", title: "Melissani" },
-                    { image: "/images/1144448/myrtos.webp", title: "Myrtos" },
-                    { image: "/images/1144448/myrtos2.webp", title: "Myrtos" }
+                    { image: "/images/1144448/assos.webp", title: "Ein Dorf wie gemalt" },
+                    { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
+                    { image: "/images/1144448/drogarati.webp", title: "Eine Million Jahre alt" },
+                    { image: "/images/1144448/fiscardo.webp", title: "Venezianisches Flair im Norden" },
+                    { image: "/images/1144448/fiscardo2.webp", title: "Wo die Yachten ankern" },
+                    { image: "/images/1144448/melissani.webp", title: "Uralt, still und atemberaubend" },
+                    { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick der Insel" },
+                    { image: "/images/1144448/myrtos2.webp", title: "Endlose Blautöne" }
                 ]
             },
             {
@@ -102,12 +102,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "1125443",
                 slides: [
-                    { image: "/images/1125443/kioni.webp", title: "Kioni" },
-                    { image: "/images/1125443/odysseus.webp", title: "Odysseus" },
-                    { image: "/images/1125443/sami.webp", title: "Sami" },
-                    { image: "/images/1125443/stavros.webp", title: "Stavros" },
-                    { image: "/images/1125443/vathy.webp", title: "Vathy" },
-                    { image: "/images/1125443/vathy2.webp", title: "Vathy" }
+                    { image: "/images/1125443/kioni.webp", title: "Tucked Away & Perfectly Beautiful" },
+                    { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
+                    { image: "/images/1125443/sami.webp", title: "Where Every Journey Begins" },
+                    { image: "/images/1125443/stavros.webp", title: "Peaceful, Timeless, Ithaca" },
+                    { image: "/images/1125443/vathy.webp", title: "A Harbour Steeped in Myth" },
+                    { image: "/images/1125443/vathy2.webp", title: "The Bay That Holds a Thousand Stories" }
                 ]
             },
             {
@@ -121,12 +121,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "1125441",
                 slides: [
-                    { image: "/images/1125441/kioni.webp", title: "Kioni" },
-                    { image: "/images/1125441/odysseus.webp", title: "Odysseus" },
-                    { image: "/images/1125441/sami.webp", title: "Sami" },
-                    { image: "/images/1125441/stavros.webp", title: "Stavros" },
-                    { image: "/images/1125441/vathy.webp", title: "Vathy" },
-                    { image: "/images/1125441/vathy2.webp", title: "Vathy" }
+                    { image: "/images/1125441/kioni.webp", title: "A Village That Feels Like a Secret" },
+                    { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },
+                    { image: "/images/1125441/sami.webp", title: "The Journey Begins Here" },
+                    { image: "/images/1125441/stavros.webp", title: "Village Church, Infinite View" },
+                    { image: "/images/1125441/vathy.webp", title: "Where Odysseus Once Returned" },
+                    { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
                 ]
             }
         ]
@@ -147,13 +147,13 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day / Sunset",
                 bokunProductId: "1156361",
                 slides: [
-                    { image: "/images/1156361/queenbee1.webp", title: "Queen Bee" },
-                    { image: "/images/1156361/queenbee2.webp", title: "Queen Bee" },
-                    { image: "/images/1156361/queenbee3.webp", title: "Queen Bee" },
-                    { image: "/images/1156361/queenbee4.webp", title: "Queen Bee" },
-                    { image: "/images/1156361/queenbee5.webp", title: "Queen Bee" },
-                    { image: "/images/1156361/queenbee6.webp", title: "Queen Bee" },
-                    { image: "/images/1156361/queenbee7.webp", title: "Queen Bee" }
+                    { image: "/images/1156361/queenbee1.webp", title: "Where Every Good Day Begins" },
+                    { image: "/images/1156361/queenbee2.webp", title: "Ready to Cast Off" },
+                    { image: "/images/1156361/queenbee3.webp", title: "Out in the Open Ionian" },
+                    { image: "/images/1156361/queenbee4.webp", title: "Crystal Clear & Calling" },
+                    { image: "/images/1156361/queenbee5.webp", title: "Framed by Ancient Stone" },
+                    { image: "/images/1156361/queenbee6.webp", title: "Good Company, Open Skies" },
+                    { image: "/images/1156361/queenbee7.webp", title: "The Golden Hour Send-Off" }
                 ]
             },
             {
@@ -167,12 +167,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day / Sunset",
                 bokunProductId: "1156340",
                 slides: [
-                    { image: "/images/1156340/artemis1.webp", title: "Artemis" },
-                    { image: "/images/1156340/artemis2.webp", title: "Artemis" },
-                    { image: "/images/1156340/artemis3.webp", title: "Artemis" },
-                    { image: "/images/1156340/artemis4.webp", title: "Artemis" },
-                    { image: "/images/1156340/artemis5.webp", title: "Artemis" },
-                    { image: "/images/1156340/artemis6.webp", title: "Artemis" }
+                    { image: "/images/1156340/artemis1.webp", title: "Wild, White & Wonderfully Remote" },
+                    { image: "/images/1156340/artemis2.webp", title: "Anchored in Paradise" },
+                    { image: "/images/1156340/artemis3.webp", title: "All to Ourselves" },
+                    { image: "/images/1156340/artemis4.webp", title: "Built for This Kind of Day" },
+                    { image: "/images/1156340/artemis5.webp", title: "Come On In, the Water's Perfect" },
+                    { image: "/images/1156340/artemis6.webp", title: "A Timeless Welcome" }
                 ]
             },
             {
@@ -186,15 +186,15 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day / Sunset",
                 bokunProductId: "1153752",
                 slides: [
-                    { image: "/images/1153752/ladyo1.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo2.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo3.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo4.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo5.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo6.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo7.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo8.webp", title: "Lady O" },
-                    { image: "/images/1153752/ladyo9.webp", title: "Lady O" }
+                    { image: "/images/1153752/ladyo1.webp", title: "Anchored in Turquoise" },
+                    { image: "/images/1153752/ladyo2.webp", title: "Warm Wood & Open Water" },
+                    { image: "/images/1153752/ladyo3.webp", title: "Music, Laughter & Sunshine" },
+                    { image: "/images/1153752/ladyo4.webp", title: "A Perfect Summer Afternoon" },
+                    { image: "/images/1153752/ladyo5.webp", title: "Elegant on Every Sea" },
+                    { image: "/images/1153752/ladyo6.webp", title: "A Floating Home Away From Home" },
+                    { image: "/images/1153752/ladyo7.webp", title: "From the Captain's Seat" },
+                    { image: "/images/1153752/ladyo8.webp", title: "The Finest BBQ in the Ionian" },
+                    { image: "/images/1153752/ladyo9.webp", title: "Live Music, Golden Light & Good Food" }
                 ]
             },
             {
@@ -208,13 +208,13 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156321",
                 slides: [
-                    { image: "/images/1156321/efplia1.webp", title: "Efplia" },
-                    { image: "/images/1156321/efplia2.webp", title: "Efplia" },
-                    { image: "/images/1156321/efplia3.webp", title: "Efplia" },
-                    { image: "/images/1156321/efplia4.webp", title: "Efplia" },
-                    { image: "/images/1156321/efplia5.webp", title: "Efplia" },
-                    { image: "/images/1156321/efplia6.webp", title: "Efplia" },
-                    { image: "/images/1156321/efplia7.webp", title: "Efplia" }
+                    { image: "/images/1156321/efplia1.webp", title: "Morning at the Marina" },
+                    { image: "/images/1156321/efplia2.webp", title: "Just the Two of You & the Sea" },
+                    { image: "/images/1156321/efplia3.webp", title: "Setting the Table for a Perfect Day" },
+                    { image: "/images/1156321/efplia4.webp", title: "Shimmering Ahead" },
+                    { image: "/images/1156321/efplia5.webp", title: "Little Treats, Big Flavours" },
+                    { image: "/images/1156321/efplia6.webp", title: "Sun Deck Bliss" },
+                    { image: "/images/1156321/efplia7.webp", title: "Proud, Blue & Beautiful" }
                 ]
             },
             {
@@ -228,13 +228,13 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156322",
                 slides: [
-                    { image: "/images/1156322/fiscardocruise1.webp", title: "Fiscardo Cruise" },
-                    { image: "/images/1156322/fiscardocruise2.webp", title: "Fiscardo Cruise" },
-                    { image: "/images/1156322/fiscardocruise3.webp", title: "Fiscardo Cruise" },
-                    { image: "/images/1156322/fiscardocruise4.webp", title: "Fiscardo Cruise" },
-                    { image: "/images/1156322/fiscardocruise5.webp", title: "Fiscardo Cruise" },
-                    { image: "/images/1156322/fiscardocruise6.webp", title: "Fiscardo Cruise" },
-                    { image: "/images/1156322/fiscardocruise7.webp", title: "Fiscardo Cruise" }
+                    { image: "/images/1156322/fiscardocruise1.webp", title: "The Village in Full Swing" },
+                    { image: "/images/1156322/fiscardocruise2.webp", title: "A Hidden Beach All to Yourself" },
+                    { image: "/images/1156322/fiscardocruise3.webp", title: "Pulling into Port" },
+                    { image: "/images/1156322/fiscardocruise4.webp", title: "Where the Sky Opens Up" },
+                    { image: "/images/1156322/fiscardocruise5.webp", title: "Somewhere Lovely to Swim" },
+                    { image: "/images/1156322/fiscardocruise6.webp", title: "A Marina Full of Dreams" },
+                    { image: "/images/1156322/fiscardocruise7.webp", title: "Tucked Away & Gloriously Quiet" }
                 ]
             },
             {
@@ -248,11 +248,11 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156323",
                 slides: [
-                    { image: "/images/1156323/zantecruise1.webp", title: "Zante Cruise" },
-                    { image: "/images/1156323/zantecruise2.webp", title: "Zante Cruise" },
-                    { image: "/images/1156323/zantecruise3.webp", title: "Zante Cruise" },
-                    { image: "/images/1156323/zantecruise4.webp", title: "Zante Cruise" },
-                    { image: "/images/1156323/zantecruise5.webp", title: "Zante Cruise" }
+                    { image: "/images/1156323/zantecruise1.webp", title: "The Most Famous Shipwreck in the World" },
+                    { image: "/images/1156323/zantecruise2.webp", title: "Navagio from Above" },
+                    { image: "/images/1156323/zantecruise3.webp", title: "Nature's Arches" },
+                    { image: "/images/1156323/zantecruise4.webp", title: "A Warm Little Harbour Stop" },
+                    { image: "/images/1156323/zantecruise5.webp", title: "The Whole Boat Jumped In" }
                 ]
             },
             {
@@ -266,12 +266,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156324",
                 slides: [
-                    { image: "/images/1156324/ithacacruise1.webp", title: "Ithaca Cruise" },
-                    { image: "/images/1156324/ithacacruise2.jpg", title: "Ithaca Cruise" },
-                    { image: "/images/1156324/ithacacruise3.jpg", title: "Ithaca Cruise" },
-                    { image: "/images/1156324/ithacacruise4.jpg", title: "Ithaca Cruise" },
-                    { image: "/images/1156324/ithacacruise5.jpg", title: "Ithaca Cruise" },
-                    { image: "/images/1156324/ithacacruise6.jpg", title: "Ithaca Cruise" }
+                    { image: "/images/1156324/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
+                    { image: "/images/1156324/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
+                    { image: "/images/1156324/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
+                    { image: "/images/1156324/ithacacruise4.webp", title: "The Perfect Swim Stop" },
+                    { image: "/images/1156324/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
+                    { image: "/images/1156324/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
                 ]
             },
             {
@@ -307,10 +307,10 @@ export const tourCategories: TourCategory[] = [
                 duration: "5–6 Hours",
                 bokunProductId: "1156326",
                 slides: [
-                    { image: "/images/1156326/assos.webp", title: "Assos" },
-                    { image: "/images/1156326/assos2.webp", title: "Assos" },
-                    { image: "/images/1156326/fiscardo.webp", title: "Fiscardo" },
-                    { image: "/images/1156326/fiscardo2.webp", title: "Fiscardo" }
+                    { image: "/images/1156326/assos.webp", title: "An Afternoon Worth Lingering For" },
+                    { image: "/images/1156326/assos2.webp", title: "Green Hills, Turquoise Bay" },
+                    { image: "/images/1156326/fiscardo.webp", title: "Life at the Waterfront" },
+                    { image: "/images/1156326/fiscardo2.webp", title: "Terracotta Rooftops & Sailboats" }
                 ]
             },
             {
@@ -324,11 +324,11 @@ export const tourCategories: TourCategory[] = [
                 duration: "4.5–5 Hours",
                 bokunProductId: "1156327",
                 slides: [
-                    { image: "/images/1156327/ag.efimia.webp", title: "Ag Efimia" },
-                    { image: "/images/1156327/st.gerasimos.webp", title: "St Gerasimos" },
-                    { image: "/images/1156327/st.gerasimos2.webp", title: "St Gerasimos" },
-                    { image: "/images/1156327/winery.webp", title: "Winery" },
-                    { image: "/images/1156327/winery2.webp", title: "Winery" }
+                    { image: "/images/1156327/ag.efimia.webp", title: "Calm Waters, Warm Welcome" },
+                    { image: "/images/1156327/st.gerasimos.webp", title: "Sacred & Serene" },
+                    { image: "/images/1156327/st.gerasimos2.webp", title: "Gilded with History" },
+                    { image: "/images/1156327/winery.webp", title: "Rows of Kefalonian Gold" },
+                    { image: "/images/1156327/winery2.webp", title: "A Sip of Something Special" }
                 ]
             }
         ]
