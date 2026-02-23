@@ -162,19 +162,19 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
                     </div>
                 </div>
 
-                {/* Central Captions instead of bottom */}
+                {/* Image Captions (Bottom instead of Center) */}
                 <AnimatePresence mode="wait">
                     {slides[selectedIndex] && (
                         <motion.div
                             key={selectedIndex}
-                            className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-white drop-shadow-md"
+                            className="absolute inset-x-0 bottom-12 flex justify-center z-10 pointer-events-none text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] px-8"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 1.05 }}
                             transition={{ duration: 0.6 }}
                         >
                             <motion.h3
-                                className="text-[22px] md:text-[28px] font-normal leading-tight mx-12 text-center"
+                                className="text-[20px] md:text-[24px] font-normal leading-tight text-center"
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1, duration: 0.5 }}
