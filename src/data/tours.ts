@@ -17,8 +17,15 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1125444",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Assos Village" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Melissani Lake" }
+                    { image: "/images/1125444/assos.webp", title: "Assos" },
+                    { image: "/images/1125444/assos2.webp", title: "Assos" },
+                    { image: "/images/1125444/drogarati.webp", title: "Drogarati" },
+                    { image: "/images/1125444/fiscardo.webp", title: "Fiscardo" },
+                    { image: "/images/1125444/fiscardo2.webp", title: "Fiscardo" },
+                    { image: "/images/1125444/fiscardo3.webp", title: "Fiscardo" },
+                    { image: "/images/1125444/melissani.webp", title: "Melissani" },
+                    { image: "/images/1125444/myrtos.webp", title: "Myrtos" },
+                    { image: "/images/1125444/myrtos2.webp", title: "Myrtos" }
                 ]
             },
             {
@@ -32,8 +39,14 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1155681",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Myrtos Beach" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Underground Lake" }
+                    { image: "/images/1155681/assos.webp", title: "Assos" },
+                    { image: "/images/1155681/assos2.webp", title: "Assos" },
+                    { image: "/images/1155681/drogarati.webp", title: "Drogarati" },
+                    { image: "/images/1155681/fiscardo.webp", title: "Fiscardo" },
+                    { image: "/images/1155681/fiscardo2.webp", title: "Fiscardo" },
+                    { image: "/images/1155681/melissani.webp", title: "Melissani" },
+                    { image: "/images/1155681/myrtos.webp", title: "Myrtos" },
+                    { image: "/images/1155681/myrtos2.webp", title: "Myrtos" }
                 ]
             },
             {
@@ -47,8 +60,14 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1125442",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Petani Panorama" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/14/small-wine-1.jpg", title: "Orealios Gaea Winery" }
+                    { image: "/images/1125442/ag.efimia.webp", title: "Ag Efimia" },
+                    { image: "/images/1125442/kipouria.webp", title: "Kipouria" },
+                    { image: "/images/1125442/lixouri.webp", title: "Lixouri" },
+                    { image: "/images/1125442/petani.webp", title: "Petani" },
+                    { image: "/images/1125442/st.gerasimos.webp", title: "St Gerasimos" },
+                    { image: "/images/1125442/st.gerasimos2.webp", title: "St Gerasimos" },
+                    { image: "/images/1125442/winery.webp", title: "Winery" },
+                    { image: "/images/1125442/winery2.webp", title: "Winery" }
                 ]
             },
             {
@@ -62,8 +81,14 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1144488",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Assos Dorf" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Melissani See" }
+                    { image: "/images/1144448/assos.webp", title: "Assos" },
+                    { image: "/images/1144448/assos2.webp", title: "Assos" },
+                    { image: "/images/1144448/drogarati.webp", title: "Drogarati" },
+                    { image: "/images/1144448/fiscardo.webp", title: "Fiscardo" },
+                    { image: "/images/1144448/fiscardo2.webp", title: "Fiscardo" },
+                    { image: "/images/1144448/melissani.webp", title: "Melissani" },
+                    { image: "/images/1144448/myrtos.webp", title: "Myrtos" },
+                    { image: "/images/1144448/myrtos2.webp", title: "Myrtos" }
                 ]
             },
             {
@@ -77,8 +102,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "1125443",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Ithaca — Island of Odysseus" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Kioni Village" }
+                    { image: "/images/1125443/kioni.webp", title: "Kioni" },
+                    { image: "/images/1125443/odysseus.webp", title: "Odysseus" },
+                    { image: "/images/1125443/sami.webp", title: "Sami" },
+                    { image: "/images/1125443/stavros.webp", title: "Stavros" },
+                    { image: "/images/1125443/vathy.webp", title: "Vathy" },
+                    { image: "/images/1125443/vathy2.webp", title: "Vathy" }
                 ]
             },
             {
@@ -92,8 +121,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "1125441",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Vathy Harbour" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Kioni Bay" }
+                    { image: "/images/1125441/kioni.webp", title: "Kioni" },
+                    { image: "/images/1125441/odysseus.webp", title: "Odysseus" },
+                    { image: "/images/1125441/sami.webp", title: "Sami" },
+                    { image: "/images/1125441/stavros.webp", title: "Stavros" },
+                    { image: "/images/1125441/vathy.webp", title: "Vathy" },
+                    { image: "/images/1125441/vathy2.webp", title: "Vathy" }
                 ]
             }
         ]
@@ -114,8 +147,13 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day / Sunset",
                 bokunProductId: "1156361",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Queen Bee" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Xi Beach" }
+                    { image: "/images/1156361/queenbee1.webp", title: "Queen Bee" },
+                    { image: "/images/1156361/queenbee2.webp", title: "Queen Bee" },
+                    { image: "/images/1156361/queenbee3.webp", title: "Queen Bee" },
+                    { image: "/images/1156361/queenbee4.webp", title: "Queen Bee" },
+                    { image: "/images/1156361/queenbee5.webp", title: "Queen Bee" },
+                    { image: "/images/1156361/queenbee6.webp", title: "Queen Bee" },
+                    { image: "/images/1156361/queenbee7.webp", title: "Queen Bee" }
                 ]
             },
             {
@@ -129,8 +167,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day / Sunset",
                 bokunProductId: "1156340",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Artemis Cruises" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Xi Beach Clay Spa" }
+                    { image: "/images/1156340/artemis1.webp", title: "Artemis" },
+                    { image: "/images/1156340/artemis2.webp", title: "Artemis" },
+                    { image: "/images/1156340/artemis3.webp", title: "Artemis" },
+                    { image: "/images/1156340/artemis4.webp", title: "Artemis" },
+                    { image: "/images/1156340/artemis5.webp", title: "Artemis" },
+                    { image: "/images/1156340/artemis6.webp", title: "Artemis" }
                 ]
             },
             {
@@ -144,8 +186,15 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day / Sunset",
                 bokunProductId: "1153752",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Lady O Cruises" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Ionian Waters" }
+                    { image: "/images/1153752/ladyo1.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo2.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo3.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo4.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo5.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo6.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo7.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo8.webp", title: "Lady O" },
+                    { image: "/images/1153752/ladyo9.webp", title: "Lady O" }
                 ]
             },
             {
@@ -159,8 +208,13 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156321",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Efplia Cruises" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Vardiani Island" }
+                    { image: "/images/1156321/efplia1.webp", title: "Efplia" },
+                    { image: "/images/1156321/efplia2.webp", title: "Efplia" },
+                    { image: "/images/1156321/efplia3.webp", title: "Efplia" },
+                    { image: "/images/1156321/efplia4.webp", title: "Efplia" },
+                    { image: "/images/1156321/efplia5.webp", title: "Efplia" },
+                    { image: "/images/1156321/efplia6.webp", title: "Efplia" },
+                    { image: "/images/1156321/efplia7.webp", title: "Efplia" }
                 ]
             },
             {
@@ -174,8 +228,13 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156322",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Fiscardo Village" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Koutsoupia Beach" }
+                    { image: "/images/1156322/fiscardocruise1.webp", title: "Fiscardo Cruise" },
+                    { image: "/images/1156322/fiscardocruise2.webp", title: "Fiscardo Cruise" },
+                    { image: "/images/1156322/fiscardocruise3.webp", title: "Fiscardo Cruise" },
+                    { image: "/images/1156322/fiscardocruise4.webp", title: "Fiscardo Cruise" },
+                    { image: "/images/1156322/fiscardocruise5.webp", title: "Fiscardo Cruise" },
+                    { image: "/images/1156322/fiscardocruise6.webp", title: "Fiscardo Cruise" },
+                    { image: "/images/1156322/fiscardocruise7.webp", title: "Fiscardo Cruise" }
                 ]
             },
             {
@@ -189,8 +248,11 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156323",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Navagio Shipwreck" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Blue Caves" }
+                    { image: "/images/1156323/zantecruise1.webp", title: "Zante Cruise" },
+                    { image: "/images/1156323/zantecruise2.webp", title: "Zante Cruise" },
+                    { image: "/images/1156323/zantecruise3.webp", title: "Zante Cruise" },
+                    { image: "/images/1156323/zantecruise4.webp", title: "Zante Cruise" },
+                    { image: "/images/1156323/zantecruise5.webp", title: "Zante Cruise" }
                 ]
             },
             {
@@ -204,8 +266,12 @@ export const tourCategories: TourCategory[] = [
                 duration: "Full Day",
                 bokunProductId: "1156324",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Ithaca Island" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Gidaki Beach" }
+                    { image: "/images/1156324/ithacacruise1.webp", title: "Ithaca Cruise" },
+                    { image: "/images/1156324/ithacacruise2.jpg", title: "Ithaca Cruise" },
+                    { image: "/images/1156324/ithacacruise3.jpg", title: "Ithaca Cruise" },
+                    { image: "/images/1156324/ithacacruise4.jpg", title: "Ithaca Cruise" },
+                    { image: "/images/1156324/ithacacruise5.jpg", title: "Ithaca Cruise" },
+                    { image: "/images/1156324/ithacacruise6.jpg", title: "Ithaca Cruise" }
                 ]
             },
             {
@@ -241,8 +307,10 @@ export const tourCategories: TourCategory[] = [
                 duration: "5–6 Hours",
                 bokunProductId: "1156326",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/11/10/bigstock-landscape-with-assos-village-o-475850305.jpg", title: "Assos Village" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Fiscardo Harbour" }
+                    { image: "/images/1156326/assos.webp", title: "Assos" },
+                    { image: "/images/1156326/assos2.webp", title: "Assos" },
+                    { image: "/images/1156326/fiscardo.webp", title: "Fiscardo" },
+                    { image: "/images/1156326/fiscardo2.webp", title: "Fiscardo" }
                 ]
             },
             {
@@ -256,8 +324,11 @@ export const tourCategories: TourCategory[] = [
                 duration: "4.5–5 Hours",
                 bokunProductId: "1156327",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/03/melissani-14.jpg", title: "Melissani Cave Lake" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/04/myrtos.jpg", title: "Myrtos Panorama" }
+                    { image: "/images/1156327/ag.efimia.webp", title: "Ag Efimia" },
+                    { image: "/images/1156327/st.gerasimos.webp", title: "St Gerasimos" },
+                    { image: "/images/1156327/st.gerasimos2.webp", title: "St Gerasimos" },
+                    { image: "/images/1156327/winery.webp", title: "Winery" },
+                    { image: "/images/1156327/winery2.webp", title: "Winery" }
                 ]
             }
         ]
