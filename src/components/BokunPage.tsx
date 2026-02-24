@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface BokunPageProps {
     productId: string;
@@ -6,24 +6,34 @@ interface BokunPageProps {
 }
 
 export function BokunPage({ productId, onBack }: BokunPageProps) {
+    const containerRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-        const scriptId = 'bokun-widget-loader';
-        if (!document.getElementById(scriptId)) {
-            const script = document.createElement('script');
-            script.id = scriptId;
-            script.type = 'text/javascript';
-            script.src = 'https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641';
-            script.async = true;
-            document.body.appendChild(script);
-        } else {
-            // If the script already exists, BokunWidgetsLoader might need to re-initialize widgets
-            // @ts-ignore
-            if (window.BokunWidgetLoader && typeof window.BokunWidgetLoader.loadWidgets === 'function') {
-                // @ts-ignore
-                window.BokunWidgetLoader.loadWidgets();
+        if (!containerRef.current) return;
+
+        // Clear container completely
+        containerRef.current.innerHTML = '';
+
+        // Create the widget div
+        const widgetDiv = document.createElement('div');
+        widgetDiv.className = 'bokunWidget';
+        widgetDiv.setAttribute('data-src', `https://widgets.bokun.io/online-sales/d65e9e41-1414-4365-86b6-bd24c446e641/experience/${productId}`);
+
+        // Create the script tag
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641';
+        script.async = true;
+
+        containerRef.current.appendChild(widgetDiv);
+        containerRef.current.appendChild(script);
+
+        return () => {
+            if (containerRef.current) {
+                containerRef.current.innerHTML = '';
             }
-        }
-    }, [productId]); // re-run if productId changes just in case, though it only renders once per click
+        };
+    }, [productId]);
 
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
@@ -42,12 +52,11 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             </nav>
 
             <div className="max-w-5xl mx-auto p-4 md:p-8 mt-4">
-                <div className="bg-white rounded-lg shadow-sm p-4 md:p-8 min-h-[600px]">
-                    <div
-                        className="bokunWidget"
-                        data-src={`https://widgets.bokun.io/online-sales/d65e9e41-1414-4365-86b6-bd24c446e641/experience/${productId}`}
-                    ></div>
-                    <noscript>Please enable javascript in your browser to book</noscript>
+                <div
+                    ref={containerRef}
+                    className="bg-white rounded-lg shadow-sm p-4 md:p-8 min-h-[600px]"
+                >
+                    {/* Bokun widget will be injected here by useEffect */}
                 </div>
             </div>
         </div>
