@@ -106,7 +106,9 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
             {/* Top Text Header Block - NEW Structure */}
             <div className="bg-card p-4 text-center flex-none">
                 <h3 className="text-dark font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
-                <p className="text-primary font-light text-lg">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</p>
+                <p className="text-primary font-light text-lg min-h-[56px] flex items-center justify-center">
+                    <span className="line-clamp-2">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</span>
+                </p>
             </div>
 
             {/* Slider Section Container */}
