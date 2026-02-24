@@ -56,7 +56,7 @@ export const tourCategories: TourCategory[] = [
                 operatingDays: "Every: Thursday",
                 from_price: 37.50,
                 badges: { isSpecialOffer: true },
-                short_description: "West coast monasteries, panoramic views & Robola wine tasting",
+                short_description: "West coast monasteries, panoramic views & wine tasting",
                 duration: "8 Hours",
                 bokunProductId: "1125442",
                 slides: [

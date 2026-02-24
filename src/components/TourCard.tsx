@@ -111,7 +111,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
             {/* Slider Section Container */}
             <div
-                className="relative w-full aspect-[4/3] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
+                className="relative w-full aspect-[16/10] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
             >
                 {/* Price Pill */}
                 <div className="absolute top-4 left-4 z-30 bg-[color:var(--color-price-bg)] text-white px-3 py-1.5 rounded-sm shadow-md font-bold text-sm tracking-wide">
