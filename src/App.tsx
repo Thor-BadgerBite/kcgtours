@@ -4,8 +4,15 @@ import { TourCard } from './components/TourCard';
 import { tourCategories } from './data/tours';
 import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
+import { BokunPage } from './components/BokunPage';
 
 function App() {
+    const [selectedProductId, setSelectedProductId] = React.useState<string | null>(null);
+
+    if (selectedProductId) {
+        return <BokunPage productId={selectedProductId} onBack={() => setSelectedProductId(null)} />;
+    }
+
     return (
         <div className="min-h-screen">
             {/* Basic Navbar Placeholder */}
@@ -73,6 +80,7 @@ function App() {
                                                 bokunProductId={tour.bokunProductId}
                                                 short_description={tour.short_description}
                                                 slides={tour.slides}
+                                                onBook={() => setSelectedProductId(tour.bokunProductId)}
                                             />
                                         </div>
                                     ))}

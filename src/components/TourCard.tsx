@@ -20,9 +20,10 @@ interface TourCardProps {
     };
     bokunProductId: string;
     short_description?: string;
+    onBook?: () => void;
 }
 
-export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, short_description }: TourCardProps) {
+export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, short_description, onBook }: TourCardProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
@@ -84,7 +85,9 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     }, [isHovered, scrollNext]);
 
     const handleBookNow = () => {
-        if (window.BokunWidget) {
+        if (onBook) {
+            onBook();
+        } else if (window.BokunWidget) {
             window.BokunWidget.open(bokunProductId);
         } else {
             console.warn('BokunWidget not loaded');
