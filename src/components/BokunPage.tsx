@@ -51,10 +51,10 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
                 </div>
             </nav>
 
-            <div className="max-w-5xl mx-auto p-4 md:p-8 mt-4">
+            <div className="w-full">
                 <div
                     ref={containerRef}
-                    className="bg-white rounded-lg shadow-sm p-4 md:p-8 min-h-[600px]"
+                    className="w-full bg-white min-h-[600px]"
                 >
                     {/* Bokun widget will be injected here by useEffect */}
                 </div>
