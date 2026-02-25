@@ -69,28 +69,31 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
     useEffect(() => {
         const fetchViews = async () => {
+            // Get or create the base fake count for this tour so it doesn't jump randomly
+            let baseCount = 0;
+            const storedBase = localStorage.getItem(`tour_base_views_${bokunProductId}`);
+            if (storedBase) {
+                baseCount = parseInt(storedBase, 10);
+            } else {
+                baseCount = Math.floor(Math.random() * 800) + 120;
+                localStorage.setItem(`tour_base_views_${bokunProductId}`, baseCount.toString());
+            }
+
             try {
                 // Ensure the product ID is URL safe
                 const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
                 const response = await fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}`);
+
                 if (response.ok) {
                     const data = await response.json();
-
-                    if (data && typeof data.count === 'number' && data.count > 0) {
-                        setViewCount(data.count);
-                    } else {
-                        // If it's a new item or count is 0, give it a realistic random start.
-                        // We will increment it via the API on their first test click so it registers it globally.
-                        const randomInitial = Math.floor(Math.random() * 800) + 120;
-                        setViewCount(randomInitial);
-                    }
+                    const globalCount = (data && typeof data.count === 'number') ? data.count : 0;
+                    setViewCount(baseCount + globalCount);
                 } else {
-                    // Fallback to a random number if the API fails
-                    setViewCount(Math.floor(Math.random() * 800) + 120);
+                    setViewCount(baseCount);
                 }
             } catch (error) {
                 console.error("Failed to fetch tour views", error);
-                setViewCount(Math.floor(Math.random() * 800) + 120);
+                setViewCount(baseCount);
             }
         };
 
@@ -119,8 +122,8 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     }, [isHovered, scrollNext]);
 
     const handleBookNow = () => {
-        const updatedCount = viewCount + 1;
-        setViewCount(updatedCount);
+        // Optimistic UI update
+        setViewCount(prev => prev + 1);
 
         // Fire & Forget: Increment globally using the API
         const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
