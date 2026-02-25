@@ -24,6 +24,9 @@ interface TourCardProps {
 }
 
 export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, short_description, onBook }: TourCardProps) {
+    const carouselMode = false;
+    const showBadges = false;
+
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
@@ -68,7 +71,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
         const UPDATE_INTERVAL = 50;
 
         let intervalId: ReturnType<typeof setInterval>;
-        if (!isHovered) {
+        if (!isHovered && carouselMode) {
             intervalId = setInterval(() => {
                 setProgress((prev) => {
                     const next = prev + (UPDATE_INTERVAL / SLIDE_DURATION) * 100;
@@ -119,23 +122,23 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
                 className="relative w-full aspect-[16/10] shadow-[0_4px_10px_rgba(0,0,0,0.1)] z-10"
             >
                 {/* Price Pill */}
-                <div className="absolute top-4 left-4 z-30 bg-[color:var(--color-price-bg)] text-white px-3 py-1.5 rounded-sm shadow-md font-bold text-sm tracking-wide">
+                <div className="absolute top-4 right-4 z-30 bg-[color:var(--color-price-bg)] text-white px-3 py-1.5 rounded-sm shadow-md font-bold text-sm tracking-wide">
                     FROM: {typeof from_price === 'number' ? from_price.toFixed(2) : from_price}€
                 </div>
 
                 {/* Badges Stack */}
-                <div className="absolute top-4 right-4 z-30 flex flex-col gap-2 items-end">
-                    {badges?.isExclusive && (
+                <div className="absolute top-4 left-4 z-30 flex flex-col gap-2 items-start">
+                    {showBadges && badges?.isExclusive && (
                         <span className="bg-[color:var(--color-badge-exclusive)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">
                             Exclusive
                         </span>
                     )}
-                    {badges?.isBestSeller && (
+                    {showBadges && badges?.isBestSeller && (
                         <span className="bg-[color:var(--color-badge-bestseller)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">
                             Best Seller
                         </span>
                     )}
-                    {badges?.isSpecialOffer && (
+                    {showBadges && badges?.isSpecialOffer && (
                         <span className="bg-[color:var(--color-badge-special)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">
                             Special Offer
                         </span>
@@ -144,7 +147,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
                 <div className="overflow-hidden h-full" ref={emblaRef}>
                     <div className="flex h-full w-full touch-pan-y">
-                        {slides.map((slide, idx) => (
+                        {(carouselMode ? slides : [slides[0]]).map((slide, idx) => (
                             <div
                                 key={idx}
                                 className="relative flex-[0_0_100%] min-w-0 h-full overflow-hidden"
@@ -169,7 +172,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
                 {/* Image Captions (Bottom instead of Center) */}
                 <AnimatePresence mode="wait">
-                    {slides[selectedIndex] && (
+                    {carouselMode && slides[selectedIndex] && (
                         <motion.div
                             key={selectedIndex}
                             className="absolute inset-x-0 bottom-12 flex justify-center z-10 pointer-events-none text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] px-8"
@@ -191,51 +194,55 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
                 </AnimatePresence>
 
                 {/* Navigation Arrows (Sides) */}
-                <div className="absolute top-1/2 left-4 right-4 -translate-y-1/2 flex justify-between items-center z-20 pointer-events-none">
-                    <button
-                        type="button"
-                        onClick={scrollPrev}
-                        className="w-12 h-12 rounded-full border border-white/50 bg-black/20 hover:bg-black/50 flex items-center justify-center text-white transition-colors pointer-events-auto"
-                        aria-label="Previous slide"
-                    >
-                        <ChevronLeft className="w-6 h-6" />
-                    </button>
-                    <button
-                        type="button"
-                        onClick={scrollNext}
-                        className="w-12 h-12 rounded-full border border-white/50 bg-black/20 hover:bg-black/50 flex items-center justify-center text-white transition-colors pointer-events-auto"
-                        aria-label="Next slide"
-                    >
-                        <ChevronRight className="w-6 h-6" />
-                    </button>
-                </div>
+                {carouselMode && (
+                    <div className="absolute top-1/2 left-4 right-4 -translate-y-1/2 flex justify-between items-center z-20 pointer-events-none">
+                        <button
+                            type="button"
+                            onClick={scrollPrev}
+                            className="w-12 h-12 rounded-full border border-white/50 bg-black/20 hover:bg-black/50 flex items-center justify-center text-white transition-colors pointer-events-auto"
+                            aria-label="Previous slide"
+                        >
+                            <ChevronLeft className="w-6 h-6" />
+                        </button>
+                        <button
+                            type="button"
+                            onClick={scrollNext}
+                            className="w-12 h-12 rounded-full border border-white/50 bg-black/20 hover:bg-black/50 flex items-center justify-center text-white transition-colors pointer-events-auto"
+                            aria-label="Next slide"
+                        >
+                            <ChevronRight className="w-6 h-6" />
+                        </button>
+                    </div>
+                )}
 
                 {/* Dots (Bottom Center Over Image) */}
-                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
-                    {slides.map((_, idx) => (
-                        <button
-                            key={idx}
-                            type="button"
-                            onClick={() => scrollTo(idx)}
-                            className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full border border-white/80 transition-colors duration-300 shadow-sm ${selectedIndex === idx ? 'bg-white' : 'bg-transparent/20'
-                                }`}
-                            aria-label={`Go to slide ${idx + 1}`}
-                        />
-                    ))}
-                </div>
+                {carouselMode && (
+                    <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+                        {slides.map((_, idx) => (
+                            <button
+                                key={idx}
+                                type="button"
+                                onClick={() => scrollTo(idx)}
+                                className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full border border-white/80 transition-colors duration-300 shadow-sm ${selectedIndex === idx ? 'bg-white' : 'bg-transparent/20'
+                                    }`}
+                                aria-label={`Go to slide ${idx + 1}`}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Card Footer Content */}
-            <div className="p-4 flex flex-col items-start gap-1 bg-card z-10 flex-none">
+            <div className="p-4 flex flex-col items-center gap-1 bg-card z-10 flex-none text-center">
                 <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
                 <p className="text-primary font-medium text-[18px] mb-2 leading-relaxed">{itinerary}</p>
                 <p className="text-[18px] text-gray-500 font-light"><span className="text-dark font-medium mr-1">Operating:</span> {operatingDays}</p>
                 <p className="text-[18px] text-gray-500 mt-1 font-light"><span className="text-dark font-medium mr-1">Duration:</span> {duration}</p>
 
-                <div className="w-full flex justify-end mt-4">
+                <div className="w-full flex justify-center mt-4">
                     <button
                         onClick={handleBookNow}
-                        className="text-white hover:text-dark py-2 px-6 font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-sm"
+                        className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-base"
                     >
                         View More & Book
                     </button>
