@@ -35,7 +35,7 @@ function App() {
                 <div className="absolute inset-0">
                     <img
                         src="/images/hero.webp"
-                        className="w-full h-full object-cover object-top opacity-50"
+                        className="w-full h-full object-cover object-bottom opacity-50"
                         alt="Kefalonia Hero"
                     />
                 </div>
