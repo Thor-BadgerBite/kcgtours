@@ -87,7 +87,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
             try {
                 // Ensure the product ID is URL safe
                 const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-                const response = await fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}`);
+                const response = await fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}?_=${Date.now()}`);
 
                 if (response.ok) {
                     const data = await response.json();
@@ -132,7 +132,8 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
         // Fire & Forget: Increment globally using the API
         const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-        fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up`).catch(e => console.error("Counter API Up failed", e));
+        fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`)
+            .catch(e => console.error("Counter API Up failed", e));
         if (onBook) {
             onBook();
         } else if (window.BokunWidget) {
