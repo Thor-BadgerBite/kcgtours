@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
 
 /**
@@ -18,6 +18,8 @@ function getBaseCount(tourId: string): number {
 
 /**
  * Fetches the real-time view count for a tour, and increments it once per browser session.
+ * Re-fetches (WITHOUT incrementing) whenever the page becomes visible again —
+ * so navigating back from the Bokun widget shows the latest count immediately.
  *
  * @param tourId  - The unique tour identifier (bokunProductId)
  * @returns       - The current view count (base offset + real DB count), or 0 while loading
@@ -25,31 +27,40 @@ function getBaseCount(tourId: string): number {
 export function useViewCounter(tourId: string): number {
     const [viewCount, setViewCount] = useState<number>(0);
 
+    // Separate the "fetch only" logic so we can reuse it for visibility re-sync
+    const fetchCount = useCallback(async () => {
+        if (!tourId) return;
+        const base = getBaseCount(tourId);
+        try {
+            const { data, error } = await supabase
+                .from('tour_views')
+                .select('view_count')
+                .eq('tour_id', tourId)
+                .maybeSingle();
+            if (error) throw error;
+            setViewCount(base + (data?.view_count ?? 0));
+        } catch (err) {
+            console.error('[useViewCounter] fetch error:', err);
+        }
+    }, [tourId]);
+
+    // On first mount: increment if new session, otherwise just read
     useEffect(() => {
         if (!tourId) return;
 
         const sessionKey = `viewed_${tourId}`;
         const alreadyViewed = sessionStorage.getItem(sessionKey);
+        const base = getBaseCount(tourId);
 
         const run = async () => {
-            const base = getBaseCount(tourId);
-
             try {
                 if (alreadyViewed) {
-                    // Already counted this session — just READ the current count
-                    const { data, error } = await supabase
-                        .from('tour_views')
-                        .select('view_count')
-                        .eq('tour_id', tourId)
-                        .maybeSingle();
-
-                    if (error) throw error;
-                    setViewCount(base + (data?.view_count ?? 0));
+                    // Already counted this session — just READ
+                    await fetchCount();
                 } else {
                     // First visit this session — atomically INCREMENT via RPC
                     const { data, error } = await supabase
                         .rpc('increment_tour_view', { p_tour_id: tourId });
-
                     if (error) throw error;
                     sessionStorage.setItem(sessionKey, '1');
                     setViewCount(base + (data ?? 0));
@@ -62,7 +73,21 @@ export function useViewCounter(tourId: string): number {
         };
 
         run();
-    }, [tourId]);
+    }, [tourId, fetchCount]);
+
+    // Re-sync count when user returns to the tab/page (e.g. after closing Bokun widget)
+    useEffect(() => {
+        if (!tourId) return;
+
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'visible') {
+                fetchCount();
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    }, [tourId, fetchCount]);
 
     return viewCount;
 }
