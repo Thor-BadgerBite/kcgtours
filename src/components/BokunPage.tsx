@@ -16,7 +16,13 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
         const hasClicked = localStorage.getItem(`tour_clicked_${productId}`);
         if (!hasClicked) {
             const safeId = encodeURIComponent(productId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-            fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`)
+            fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
+                },
+                keepalive: true
+            })
                 .then(() => {
                     localStorage.setItem(`tour_clicked_${productId}`, 'true');
                 })

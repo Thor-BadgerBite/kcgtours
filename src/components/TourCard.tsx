@@ -87,7 +87,11 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
             try {
                 // Ensure the product ID is URL safe
                 const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-                const response = await fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}?_=${Date.now()}`);
+                const response = await fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}?_=${Date.now()}`, {
+                    headers: {
+                        'Authorization': 'Bearer ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
+                    }
+                });
 
                 if (response.ok) {
                     const data = await response.json();
