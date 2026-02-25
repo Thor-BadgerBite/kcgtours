@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import type { TourSlide } from '../types';
 
 interface TourCardProps {
@@ -180,6 +180,12 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
                             Special Offer
                         </span>
                     )}
+                </div>
+
+                {/* View Counter */}
+                <div className="absolute bottom-4 left-4 z-30 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded text-sm font-medium shadow-sm transition-all duration-300">
+                    <Eye className="w-4 h-4" />
+                    <span>{viewCount} views</span>
                 </div>
 
                 <div className="overflow-hidden h-full" ref={emblaRef}>
