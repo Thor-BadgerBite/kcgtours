@@ -20,11 +20,12 @@ interface TourCardProps {
         [key: string]: boolean | undefined;
     };
     bokunProductId: string;
+    baseViews?: number;
     short_description?: string;
     onBook?: () => void;
 }
 
-export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, short_description, onBook }: TourCardProps) {
+export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, baseViews, short_description, onBook }: TourCardProps) {
     const carouselMode = false;
     const showBadges = false;
 
@@ -32,7 +33,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [progress, setProgress] = useState(0);
-    const { viewCount, incrementView } = useViewCounter(bokunProductId);
+    const { viewCount, incrementView } = useViewCounter(bokunProductId, baseViews);
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) {

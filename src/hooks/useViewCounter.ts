@@ -2,17 +2,17 @@ import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
 
 /**
- * Deterministic base offset so tours start from a realistic-looking number.
- * Derived purely from the tour ID — same result for every visitor.
+ * Fallback: deterministic base offset from tour ID hash (250–950).
+ * Used only when no explicit baseViews is provided in tours.ts.
  */
-function getBaseCount(tourId: string): number {
+function getHashBase(tourId: string): number {
     let hash = 0;
     for (let i = 0; i < tourId.length; i++) {
         const char = tourId.charCodeAt(i);
         hash = ((hash << 5) - hash) + char;
         hash = hash & hash;
     }
-    return 250 + (Math.abs(hash) % 700); // 250–950
+    return 250 + (Math.abs(hash) % 700);
 }
 
 /**
@@ -20,19 +20,22 @@ function getBaseCount(tourId: string): number {
  *
  * - On mount: reads the current count from Supabase (no increment).
  * - `incrementView()`: atomically increments in DB and updates local state.
- *   Call this every time the user opens the tour detail (e.g. clicks "View More & Book").
+ *   Call this every time the user opens the tour detail.
  *   No deduplication — every open counts, even from the same user.
  * - Re-syncs with DB whenever the user returns to the tab.
  *
- * @param tourId  The unique tour identifier (bokunProductId)
- * @returns       { viewCount, incrementView }
+ * @param tourId    The unique tour identifier (bokunProductId)
+ * @param baseViews Manual starting count (set in tours.ts). Falls back to hash if omitted.
  */
-export function useViewCounter(tourId: string): {
+export function useViewCounter(
+    tourId: string,
+    baseViews?: number
+): {
     viewCount: number;
     incrementView: () => Promise<void>;
 } {
+    const base = baseViews ?? getHashBase(tourId);
     const [viewCount, setViewCount] = useState<number>(0);
-    const base = getBaseCount(tourId);
 
     // READ — fetch the latest count without incrementing
     const fetchCount = useCallback(async () => {
@@ -54,7 +57,7 @@ export function useViewCounter(tourId: string): {
     // WRITE — increment by 1 and update UI instantly (optimistic + confirmed)
     const incrementView = useCallback(async () => {
         if (!tourId) return;
-        // Optimistic update first so the user sees it immediately
+        // Optimistic update so the user sees it immediately
         setViewCount(prev => prev + 1);
         try {
             const { data, error } = await supabase
@@ -64,7 +67,7 @@ export function useViewCounter(tourId: string): {
             setViewCount(base + (data ?? 0));
         } catch (err) {
             console.error('[useViewCounter] increment error:', err);
-            // Optimistic update already applied — just leave it
+            // Optimistic update already applied — leave it
         }
     }, [tourId, base]);
 

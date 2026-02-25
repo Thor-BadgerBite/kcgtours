@@ -18,6 +18,7 @@ export interface Tour {
         [key: string]: boolean | undefined;
     };
     bokunProductId: string;
+    baseViews?: number;
     short_description?: string;
     slides: TourSlide[];
 }
