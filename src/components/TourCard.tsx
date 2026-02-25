@@ -32,7 +32,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [progress, setProgress] = useState(0);
-    const viewCount = useViewCounter(bokunProductId);
+    const { viewCount, incrementView } = useViewCounter(bokunProductId);
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) {
@@ -92,6 +92,9 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     }, [isHovered, scrollNext]);
 
     const handleBookNow = () => {
+        // Count every open — even repeated visits from the same user
+        incrementView();
+
         if (onBook) {
             onBook();
         } else if (window.BokunWidget) {
