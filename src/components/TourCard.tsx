@@ -69,15 +69,20 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
 
     useEffect(() => {
         const fetchViews = async () => {
-            // Get or create the base fake count for this tour so it doesn't jump randomly
-            let baseCount = 0;
-            const storedBase = localStorage.getItem(`tour_base_views_${bokunProductId}`);
-            if (storedBase) {
-                baseCount = parseInt(storedBase, 10);
-            } else {
-                baseCount = Math.floor(Math.random() * 800) + 120;
-                localStorage.setItem(`tour_base_views_${bokunProductId}`, baseCount.toString());
-            }
+            // Generate a deterministic fake base count based on the product ID
+            // This ensures every user gets the exact same base count for a given tour
+            const hashString = (str: string) => {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash;
+                }
+                return Math.abs(hash);
+            };
+
+            // Generate a number between 250 and 950 based on the tour ID
+            const baseCount = 250 + (hashString(bokunProductId) % 700);
 
             try {
                 // Ensure the product ID is URL safe
