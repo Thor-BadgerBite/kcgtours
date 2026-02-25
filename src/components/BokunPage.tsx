@@ -11,6 +11,19 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
     useEffect(() => {
         if (!containerRef.current) return;
 
+        // --- View Counter Increment ---
+        // Fire when the page mounts, ensuring we only increment once per user per tour
+        const hasClicked = localStorage.getItem(`tour_clicked_${productId}`);
+        if (!hasClicked) {
+            const safeId = encodeURIComponent(productId.replace(/[^a-zA-Z0-9_-]/g, '_'));
+            fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`)
+                .then(() => {
+                    localStorage.setItem(`tour_clicked_${productId}`, 'true');
+                })
+                .catch(e => console.error("Counter API Up failed", e));
+        }
+        // ------------------------------
+
         // Clear container completely
         containerRef.current.innerHTML = '';
 
