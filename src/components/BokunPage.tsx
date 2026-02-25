@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Counter } from 'counterapi';
 
 interface BokunPageProps {
     productId: string;
@@ -11,18 +12,18 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
     useEffect(() => {
         if (!containerRef.current) return;
 
-        // --- View Counter Increment ---
+        // --- View Counter Increment (V2 SDK) ---
         // Fire when the page mounts, ensuring we only increment once per user per tour
         const hasClicked = localStorage.getItem(`tour_clicked_${productId}`);
         if (!hasClicked) {
             const safeId = encodeURIComponent(productId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-            fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': 'Bearer ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
-                },
-                keepalive: true
-            })
+
+            const counter = new Counter({
+                workspace: 'thomas-demiss-team-3050',
+                accessToken: 'ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
+            });
+
+            counter.up(safeId)
                 .then(() => {
                     localStorage.setItem(`tour_clicked_${productId}`, 'true');
                 })

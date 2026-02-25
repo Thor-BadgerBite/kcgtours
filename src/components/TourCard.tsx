@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight, Eye } from 'lucide-react';
+import { BadgeCheck, Calendar, Clock, Euro, Tag, Star, ArrowRight, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Counter } from 'counterapi';
 import type { TourSlide } from '../types';
 
 interface TourCardProps {
@@ -87,22 +88,24 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
             try {
                 // Ensure the product ID is URL safe
                 const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-                const response = await fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}?_=${Date.now()}`, {
-                    headers: {
-                        'Authorization': 'Bearer ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
-                    }
+
+                const counter = new Counter({
+                    workspace: 'thomas-demiss-team-3050',
+                    accessToken: 'ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    const globalCount = (data && typeof data.count === 'number') ? data.count : 0;
-                    setViewCount(baseCount + globalCount);
+                const data = await counter.get(safeId);
+                const globalCount = (data && typeof data.value === 'number') ? data.value : 0;
+                setViewCount(baseCount + globalCount);
+
+            } catch (error: any) {
+                if (error?.status === 404) {
+                    // Counter not found (it's new)
+                    setViewCount(baseCount);
                 } else {
+                    console.error("Failed to fetch tour views", error);
                     setViewCount(baseCount);
                 }
-            } catch (error) {
-                console.error("Failed to fetch tour views", error);
-                setViewCount(baseCount);
             }
         };
 
