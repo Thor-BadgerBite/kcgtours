@@ -130,9 +130,9 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
         // Optimistic UI update
         setViewCount(prev => prev + 1);
 
-        // Fire & Forget: Increment globally using the API
+        // Fire & Forget: Increment globally using the API (keepalive ensures it fires even if page unloads)
         const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-        fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`)
+        fetch(`https://api.counterapi.dev/v1/kcgtours/${safeId}/up?_=${Date.now()}`, { method: 'GET', keepalive: true })
             .catch(e => console.error("Counter API Up failed", e));
         if (onBook) {
             onBook();
