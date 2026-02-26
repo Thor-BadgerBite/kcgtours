@@ -34,7 +34,7 @@ function App() {
             <header id="hero" className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img
-                        src="/images/hero.webp"
+                        src="/images/hero3.webp"
                         className="w-full h-full object-cover object-bottom opacity-50"
                         alt="Kefalonia Hero"
                     />
