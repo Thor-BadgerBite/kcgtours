@@ -226,15 +226,15 @@ export const tourCategories: TourCategory[] = [
                 badges: { isSpecialOffer: true },
                 short_description: "Sail north from Skala past stunning coastlines to cosmopolitan Fiscardo",
                 duration: "Full Day",
-                bokunProductId: "1156322",
+                bokunProductId: "1164973",
                 slides: [
-                    { image: "/images/1156322/fiscardocruise1.webp", title: "The Village in Full Swing" },
-                    { image: "/images/1156322/fiscardocruise2.webp", title: "A Hidden Beach All to Yourself" },
-                    { image: "/images/1156322/fiscardocruise3.webp", title: "Pulling into Port" },
-                    { image: "/images/1156322/fiscardocruise4.webp", title: "Where the Sky Opens Up" },
-                    { image: "/images/1156322/fiscardocruise5.webp", title: "Somewhere Lovely to Swim" },
-                    { image: "/images/1156322/fiscardocruise6.webp", title: "A Marina Full of Dreams" },
-                    { image: "/images/1156322/fiscardocruise7.webp", title: "Tucked Away & Gloriously Quiet" }
+                    { image: "/images/1164973/fiscardocruise1.webp", title: "The Village in Full Swing" },
+                    { image: "/images/1164973/fiscardocruise2.webp", title: "A Hidden Beach All to Yourself" },
+                    { image: "/images/1164973/fiscardocruise3.webp", title: "Pulling into Port" },
+                    { image: "/images/1164973/fiscardocruise4.webp", title: "Where the Sky Opens Up" },
+                    { image: "/images/1164973/fiscardocruise5.webp", title: "Somewhere Lovely to Swim" },
+                    { image: "/images/1164973/fiscardocruise6.webp", title: "A Marina Full of Dreams" },
+                    { image: "/images/1164973/fiscardocruise7.webp", title: "Tucked Away & Gloriously Quiet" }
                 ]
             },
             {
@@ -246,32 +246,51 @@ export const tourCategories: TourCategory[] = [
                 badges: { isExclusive: true },
                 short_description: "Navagio & Blue Caves — Zakynthos' icons in one epic day at sea",
                 duration: "Full Day",
-                bokunProductId: "1156323",
+                bokunProductId: "1164937",
                 slides: [
-                    { image: "/images/1156323/zantecruise1.webp", title: "The Most Famous Shipwreck in the World" },
-                    { image: "/images/1156323/zantecruise2.webp", title: "Navagio from Above" },
-                    { image: "/images/1156323/zantecruise3.webp", title: "Nature's Arches" },
-                    { image: "/images/1156323/zantecruise4.webp", title: "A Warm Little Harbour Stop" },
-                    { image: "/images/1156323/zantecruise5.webp", title: "The Whole Boat Jumped In" }
+                    { image: "/images/1164937/zantecruise1.webp", title: "The Most Famous Shipwreck in the World" },
+                    { image: "/images/1164937/zantecruise2.webp", title: "Navagio from Above" },
+                    { image: "/images/1164937/zantecruise3.webp", title: "Nature's Arches" },
+                    { image: "/images/1164937/zantecruise4.webp", title: "A Warm Little Harbour Stop" },
+                    { image: "/images/1164937/zantecruise5.webp", title: "The Whole Boat Jumped In" }
                 ]
             },
             {
                 tourTitle: "Ithaca Cruise from Skala",
                 tourType: "CRUISE",
                 itinerary: "Skala • Gidaki Beach • Vathy • Kioni • Koutsoupia Beach",
-                operatingDays: "Every: Wednesday, Friday & Sunday",
+                operatingDays: "Every: Wednesday & Sunday",
                 from_price: 55.00,
                 badges: {},
                 short_description: "Sail to mythical Ithaca — swim Gidaki, explore Vathy & Kioni",
                 duration: "Full Day",
-                bokunProductId: "1156324",
+                bokunProductId: "1165014",
                 slides: [
-                    { image: "/images/1156324/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
-                    { image: "/images/1156324/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
-                    { image: "/images/1156324/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
-                    { image: "/images/1156324/ithacacruise4.webp", title: "The Perfect Swim Stop" },
-                    { image: "/images/1156324/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
-                    { image: "/images/1156324/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
+                    { image: "/images/1165014/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
+                    { image: "/images/1165014/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
+                    { image: "/images/1165014/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
+                    { image: "/images/1165014/ithacacruise4.webp", title: "The Perfect Swim Stop" },
+                    { image: "/images/1165014/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
+                    { image: "/images/1165014/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
+                ]
+            },
+            {
+                tourTitle: "Ithaca Cruise from Skala No Kioni",
+                tourType: "CRUISE",
+                itinerary: "Skala • Gidaki Beach • Vathy • Koutsoupia Beach",
+                operatingDays: "Every: Monday & Friday",
+                from_price: 55.00,
+                badges: {},
+                short_description: "Sail to mythical Ithaca — 2 swim stops, explore Vathy",
+                duration: "Full Day",
+                bokunProductId: "1165024",
+                slides: [
+                    { image: "/images/1165024/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
+                    { image: "/images/1165024/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
+                    { image: "/images/1165024/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
+                    { image: "/images/1165024/ithacacruise4.webp", title: "The Perfect Swim Stop" },
+                    { image: "/images/1165024/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
+                    { image: "/images/1165024/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
                 ]
             },
             {
