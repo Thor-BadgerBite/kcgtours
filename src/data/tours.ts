@@ -279,7 +279,7 @@ export const tourCategories: TourCategory[] = [
                 tourType: "CRUISE",
                 itinerary: "Skala • Gidaki Beach • Vathy • Koutsoupia Beach",
                 operatingDays: "Every: Monday & Friday",
-                from_price: 55.00,
+                from_price: 45.00,
                 badges: {},
                 short_description: "Sail to mythical Ithaca — 2 swim stops, explore Vathy",
                 duration: "Full Day",
