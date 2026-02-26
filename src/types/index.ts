@@ -19,8 +19,12 @@ export interface Tour {
     };
     bokunProductId: string;
     baseViews?: number;
+    /** Short catchy headline shown at the TOP of the card (1-2 lines max) */
+    card_subtitle?: string;
+    /** For non-Bokun tours: a fuller description shown in the card footer instead of itinerary details */
     short_description?: string;
-    /** true = has a live Bokun booking page; false = on-request only, show "Make a Request" */
+    /** true  → has a live Bokun booking page → show "View More & Book"
+     *  false → on-request only              → show "Make a Request"   */
     isBookableOnBokun: boolean;
     slides: TourSlide[];
 }
@@ -28,6 +32,8 @@ export interface Tour {
 export interface TourSubCategory {
     id: string;
     title: string;
+    /** Short descriptive line shown below the sub-category heading */
+    subtitle?: string;
     tours: Tour[];
 }
 
@@ -35,7 +41,7 @@ export interface TourCategory {
     id: string;
     title: string;
     subtitle: string;
-    /** If present, render subcategories instead of a flat tour list */
+    /** If present, render as sub-category sections instead of a flat grid */
     subCategories?: TourSubCategory[];
     tours?: Tour[];
 }

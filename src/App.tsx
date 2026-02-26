@@ -8,15 +8,7 @@ import { Footer } from './components/Footer';
 import { BokunPage } from './components/BokunPage';
 import type { TourCategory } from './types';
 
-// ── nav helpers ─────────────────────────────────────────────────────────────
-
-/** Collect all anchor IDs for a category (itself + any sub-categories) */
-function anchorIds(cat: TourCategory): string[] {
-    if (cat.subCategories && cat.subCategories.length > 0) {
-        return [cat.id, ...cat.subCategories.map(s => s.id)];
-    }
-    return [cat.id];
-}
+// ── scroll helper ────────────────────────────────────────────────────────────
 
 function scrollToId(id: string) {
     const el = document.getElementById(id);
@@ -29,7 +21,6 @@ function NavItem({ cat }: { cat: TourCategory }) {
     const [open, setOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
-    // close on outside click
     useEffect(() => {
         function handleClick(e: MouseEvent) {
             if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
@@ -38,7 +29,7 @@ function NavItem({ cat }: { cat: TourCategory }) {
         return () => document.removeEventListener('mousedown', handleClick);
     }, []);
 
-    // PRIVATE TOURS → always just scrolls to tailored-experiences
+    // PRIVATE TOURS → scrolls to tailored-experiences
     if (cat.id === 'private-tours') {
         return (
             <button
@@ -50,7 +41,7 @@ function NavItem({ cat }: { cat: TourCategory }) {
         );
     }
 
-    // Has sub-categories → render a dropdown
+    // Has sub-categories → dropdown
     if (cat.subCategories && cat.subCategories.length > 0) {
         return (
             <div ref={ref} className="relative">
@@ -63,8 +54,8 @@ function NavItem({ cat }: { cat: TourCategory }) {
                 </button>
 
                 {open && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md border border-gray-100 min-w-[200px] z-50 py-1">
-                        {/* top-level anchor */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md border border-gray-100 min-w-[210px] z-50 py-1">
+                        {/* Top-level anchor */}
                         <button
                             onClick={() => { scrollToId(cat.id); setOpen(false); }}
                             className="w-full text-left px-4 py-2 text-sm text-[#404041] hover:bg-gray-50 hover:text-primary transition-colors font-medium border-b border-gray-100"
@@ -86,7 +77,7 @@ function NavItem({ cat }: { cat: TourCategory }) {
         );
     }
 
-    // Simple link
+    // Simple button link
     return (
         <button
             onClick={() => scrollToId(cat.id)}
@@ -154,10 +145,10 @@ function App() {
             <main>
                 <div>
                     {tourCategories.map((category) => {
-                        // PRIVATE TOURS → no cards, just skip (the section is TailoredExperiences)
+                        // PRIVATE TOURS → no cards, handled by TailoredExperiences below
                         if (category.id === 'private-tours') return null;
 
-                        // Category has sub-categories (e.g. CRUISES)
+                        // ── Category with sub-categories (CRUISES) ───────────────────────
                         if (category.subCategories && category.subCategories.length > 0) {
                             return (
                                 <section
@@ -165,30 +156,30 @@ function App() {
                                     id={category.id}
                                     className="py-[40px] scroll-mt-[60px]"
                                 >
-                                    {/* Category heading */}
-                                    <motion.div
-                                        className="text-center mb-10 flex-none"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, margin: "-100px" }}
-                                    >
-                                        <h2 className="text-3xl md:text-[30px] font-normal text-dark mb-2">{category.title}</h2>
-                                        <h4 className="text-[24px] font-normal text-primary">{category.subtitle}</h4>
-                                    </motion.div>
-
-                                    {/* Sub-categories */}
-                                    {category.subCategories.map(sub => (
-                                        <div key={sub.id} id={sub.id} className="mb-16 scroll-mt-[80px]">
-                                            {/* Sub-category heading */}
+                                    {/* Sub-categories — NO generic category heading shown */}
+                                    {category.subCategories.map((sub, subIdx) => (
+                                        <div
+                                            key={sub.id}
+                                            id={sub.id}
+                                            className={`scroll-mt-[80px] ${subIdx > 0 ? 'mt-16' : ''}`}
+                                        >
+                                            {/* Sub-category heading + subtitle */}
                                             <motion.div
                                                 className="text-center mb-6"
                                                 initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
-                                                <h3 className="text-xl md:text-2xl font-medium text-dark tracking-wide uppercase border-b border-primary/30 inline-block pb-1 px-4">
+                                                <h2 className="text-3xl md:text-[30px] font-normal text-dark inline-block relative pb-2">
                                                     {sub.title}
-                                                </h3>
+                                                    {/* Red underline */}
+                                                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary rounded-full" />
+                                                </h2>
+                                                {sub.subtitle && (
+                                                    <p className="text-[20px] font-normal text-primary mt-3">
+                                                        {sub.subtitle}
+                                                    </p>
+                                                )}
                                             </motion.div>
 
                                             <div className="w-full px-0 md:px-[40px] xl:px-[80px]">
@@ -204,6 +195,7 @@ function App() {
                                                                 from_price={tour.from_price}
                                                                 badges={tour.badges}
                                                                 bokunProductId={tour.bokunProductId}
+                                                                card_subtitle={tour.card_subtitle}
                                                                 short_description={tour.short_description}
                                                                 isBookableOnBokun={tour.isBookableOnBokun}
                                                                 slides={tour.slides}
@@ -219,7 +211,7 @@ function App() {
                             );
                         }
 
-                        // Standard flat category
+                        // ── Standard flat category ────────────────────────────────────────
                         return (
                             <section
                                 id={category.id}
@@ -249,6 +241,7 @@ function App() {
                                                     from_price={tour.from_price}
                                                     badges={tour.badges}
                                                     bokunProductId={tour.bokunProductId}
+                                                    card_subtitle={tour.card_subtitle}
                                                     short_description={tour.short_description}
                                                     isBookableOnBokun={tour.isBookableOnBokun}
                                                     slides={tour.slides}
@@ -263,7 +256,7 @@ function App() {
                     })}
                 </div>
 
-                {/* Tailored Experiences — also serves as the "Private Tours" anchor */}
+                {/* Tailored Experiences — "Private Tours" scrolls here */}
                 <div id="tailored-experiences">
                     <TailoredExperiences />
                 </div>

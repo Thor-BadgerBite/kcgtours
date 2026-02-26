@@ -21,6 +21,9 @@ interface TourCardProps {
     };
     bokunProductId: string;
     baseViews?: number;
+    /** Short catchy headline shown at the top of the card */
+    card_subtitle?: string;
+    /** For non-Bokun tours: fuller description shown in the card footer */
     short_description?: string;
     /** true  → show itinerary / operating / duration + "View More & Book"
      *  false → show short_description + "Make a Request" */
@@ -40,6 +43,7 @@ export function TourCard({
     badges,
     bokunProductId,
     baseViews,
+    card_subtitle,
     short_description,
     isBookableOnBokun,
     onBook,
@@ -131,7 +135,7 @@ export function TourCard({
             <div className="bg-card p-4 text-center flex-none">
                 <h3 className="text-dark font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
                 <p className="text-primary font-light text-lg min-h-[56px] flex items-center justify-center">
-                    <span className="line-clamp-2">{short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</span>
+                    <span className="line-clamp-2">{card_subtitle || short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</span>
                 </p>
             </div>
 
