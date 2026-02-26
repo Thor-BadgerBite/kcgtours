@@ -8,6 +8,7 @@
         "build": "tsc -b && vite build"
     },
     "dependencies": {
+        "@supabase/supabase-js": "^2.97.0",
         "@tailwindcss/vite": "^4.0.0",
         "counterapi": "^2.1.2",
         "embla-carousel-react": "^8.0.5",

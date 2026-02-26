@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import { BadgeCheck, Calendar, Clock, Euro, Tag, Star, ArrowRight, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Counter } from 'counterapi';
+import { useViewCounter } from '../hooks/useViewCounter';
 import type { TourSlide } from '../types';
 
 interface TourCardProps {
@@ -20,11 +20,12 @@ interface TourCardProps {
         [key: string]: boolean | undefined;
     };
     bokunProductId: string;
+    baseViews?: number;
     short_description?: string;
     onBook?: () => void;
 }
 
-export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, short_description, onBook }: TourCardProps) {
+export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays, duration, from_price, badges, bokunProductId, baseViews, short_description, onBook }: TourCardProps) {
     const carouselMode = false;
     const showBadges = false;
 
@@ -32,7 +33,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [progress, setProgress] = useState(0);
-    const [viewCount, setViewCount] = useState<number>(0);
+    const { viewCount, incrementView } = useViewCounter(bokunProductId, baseViews);
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) {
@@ -68,49 +69,7 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
         emblaApi.on('reInit', onSelect);
     }, [emblaApi, onSelect]);
 
-    useEffect(() => {
-        const fetchViews = async () => {
-            // Generate a deterministic fake base count based on the product ID
-            // This ensures every user gets the exact same base count for a given tour
-            const hashString = (str: string) => {
-                let hash = 0;
-                for (let i = 0; i < str.length; i++) {
-                    const char = str.charCodeAt(i);
-                    hash = ((hash << 5) - hash) + char;
-                    hash = hash & hash;
-                }
-                return Math.abs(hash);
-            };
-
-            // Generate a number between 250 and 950 based on the tour ID
-            const baseCount = 250 + (hashString(bokunProductId) % 700);
-
-            try {
-                // Ensure the product ID is URL safe
-                const safeId = encodeURIComponent(bokunProductId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-
-                const counter = new Counter({
-                    workspace: 'thomas-demiss-team-3050',
-                    accessToken: 'ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
-                });
-
-                const data = await counter.get(safeId);
-                const globalCount = (data && typeof data.value === 'number') ? data.value : 0;
-                setViewCount(baseCount + globalCount);
-
-            } catch (error: any) {
-                if (error?.status === 404) {
-                    // Counter not found (it's new)
-                    setViewCount(baseCount);
-                } else {
-                    console.error("Failed to fetch tour views", error);
-                    setViewCount(baseCount);
-                }
-            }
-        };
-
-        fetchViews();
-    }, [bokunProductId]);
+    // View count is handled by useViewCounter hook above
 
     useEffect(() => {
         const SLIDE_DURATION = 5000;
@@ -134,8 +93,8 @@ export function TourCard({ slides, tourTitle, tourType, itinerary, operatingDays
     }, [isHovered, scrollNext]);
 
     const handleBookNow = () => {
-        // Optimistic UI update only. The actual API increment happens when BokunPage mounts!
-        setViewCount(prev => prev + 1);
+        // Count every open — even repeated visits from the same user
+        incrementView();
 
         if (onBook) {
             onBook();
