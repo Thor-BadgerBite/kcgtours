@@ -7,9 +7,9 @@ export interface TourSlide {
 export interface Tour {
     tourTitle: string;
     tourType: string;
-    itinerary: string;
-    operatingDays: string;
-    duration: string;
+    itinerary?: string;
+    operatingDays?: string;
+    duration?: string;
     from_price: number | string;
     badges?: {
         isExclusive?: boolean;
@@ -20,14 +20,24 @@ export interface Tour {
     bokunProductId: string;
     baseViews?: number;
     short_description?: string;
+    /** true = has a live Bokun booking page; false = on-request only, show "Make a Request" */
+    isBookableOnBokun: boolean;
     slides: TourSlide[];
+}
+
+export interface TourSubCategory {
+    id: string;
+    title: string;
+    tours: Tour[];
 }
 
 export interface TourCategory {
     id: string;
     title: string;
     subtitle: string;
-    tours: Tour[];
+    /** If present, render subcategories instead of a flat tour list */
+    subCategories?: TourSubCategory[];
+    tours?: Tour[];
 }
 
 declare global {

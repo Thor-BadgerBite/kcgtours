@@ -1,9 +1,12 @@
 import type { TourCategory } from '../types';
 
 export const tourCategories: TourCategory[] = [
+    // ─────────────────────────────────────────────
+    //  BUS TOURS  (our own organised tours)
+    // ─────────────────────────────────────────────
     {
         id: "bus-tours",
-        title: "Kefalonia Bus Tours",
+        title: "Bus Tours",
         subtitle: "Discover the island's highlights in comfort",
         tours: [
             {
@@ -16,6 +19,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "North Kefalonia's finest villages & caves in one full day",
                 duration: "8 Hours",
                 bokunProductId: "1125444",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1125444/assos.webp", title: "A Moment Worth Staying For" },
                     { image: "/images/1125444/assos2.webp", title: "Where the Mountain Meets the Sea" },
@@ -38,6 +42,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "The complete northern island experience — every Sunday",
                 duration: "8 Hours",
                 bokunProductId: "1155681",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1155681/assos.webp", title: "A Village Framed in Green & Blue" },
                     { image: "/images/1155681/assos2.webp", title: "Painted in Turquoise" },
@@ -59,6 +64,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "West coast monasteries, panoramic views & wine tasting",
                 duration: "8 Hours",
                 bokunProductId: "1125442",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1125442/ag.efimia.webp", title: "A Peaceful Corner of the Ionian" },
                     { image: "/images/1125442/kipouria.webp", title: "Faith on the Edge" },
@@ -80,6 +86,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
                 duration: "8 Hours",
                 bokunProductId: "1144488",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1144448/assos.webp", title: "Ein Dorf wie gemalt" },
                     { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
@@ -101,6 +108,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Ferry to mythical Ithaca — sail to Gidaki, stroll Kioni & Vathy",
                 duration: "10 Hours",
                 bokunProductId: "1125443",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1125443/kioni.webp", title: "Tucked Away & Perfectly Beautiful" },
                     { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
@@ -120,6 +128,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
                 duration: "10 Hours",
                 bokunProductId: "1125441",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1125441/kioni.webp", title: "A Village That Feels Like a Secret" },
                     { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },
@@ -131,185 +140,198 @@ export const tourCategories: TourCategory[] = [
             }
         ]
     },
+
+    // ─────────────────────────────────────────────
+    //  CRUISES  (with sub-categories)
+    // ─────────────────────────────────────────────
     {
         id: "cruises",
-        title: "Ionian Cruises",
+        title: "Cruises",
         subtitle: "Set sail on the crystal waters of the Ionian Sea",
-        tours: [
+        subCategories: [
             {
-                tourTitle: "Queen Bee — Argostoli Bay",
-                tourType: "CRUISE",
-                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
-                operatingDays: "Daily",
-                from_price: 65.00,
-                badges: { isBestSeller: true },
-                short_description: "Classic Argostoli bay cruise aboard the 43ft Gobbi Queen Bee",
-                duration: "Full Day / Sunset",
-                bokunProductId: "1156361",
-                slides: [
-                    { image: "/images/1156361/queenbee1.webp", title: "Where Every Good Day Begins" },
-                    { image: "/images/1156361/queenbee2.webp", title: "Ready to Cast Off" },
-                    { image: "/images/1156361/queenbee3.webp", title: "Out in the Open Ionian" },
-                    { image: "/images/1156361/queenbee4.webp", title: "Crystal Clear & Calling" },
-                    { image: "/images/1156361/queenbee5.webp", title: "Framed by Ancient Stone" },
-                    { image: "/images/1156361/queenbee6.webp", title: "Good Company, Open Skies" },
-                    { image: "/images/1156361/queenbee7.webp", title: "The Golden Hour Send-Off" }
+                id: "argostoli-bay-cruises",
+                title: "Argostoli Bay Cruises",
+                tours: [
+                    {
+                        tourTitle: "Queen Bee — Argostoli Bay",
+                        tourType: "CRUISE",
+                        itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                        operatingDays: "Daily",
+                        from_price: 65.00,
+                        badges: { isBestSeller: true },
+                        short_description: "Classic Argostoli bay cruise aboard the 43ft Gobbi Queen Bee",
+                        duration: "Full Day / Sunset",
+                        bokunProductId: "1156361",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1156361/queenbee1.webp", title: "Where Every Good Day Begins" },
+                            { image: "/images/1156361/queenbee2.webp", title: "Ready to Cast Off" },
+                            { image: "/images/1156361/queenbee3.webp", title: "Out in the Open Ionian" },
+                            { image: "/images/1156361/queenbee4.webp", title: "Crystal Clear & Calling" },
+                            { image: "/images/1156361/queenbee5.webp", title: "Framed by Ancient Stone" },
+                            { image: "/images/1156361/queenbee6.webp", title: "Good Company, Open Skies" },
+                            { image: "/images/1156361/queenbee7.webp", title: "The Golden Hour Send-Off" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Artemis — Argostoli Bay",
+                        tourType: "CRUISE",
+                        itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                        operatingDays: "Daily",
+                        from_price: 65.00,
+                        badges: {},
+                        short_description: "Sun, sea & Xi's red clay beach — cruise Argostoli Bay on Artemis",
+                        duration: "Full Day / Sunset",
+                        bokunProductId: "1156340",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1156340/artemis1.webp", title: "Wild, White & Wonderfully Remote" },
+                            { image: "/images/1156340/artemis2.webp", title: "Anchored in Paradise" },
+                            { image: "/images/1156340/artemis3.webp", title: "All to Ourselves" },
+                            { image: "/images/1156340/artemis4.webp", title: "Built for This Kind of Day" },
+                            { image: "/images/1156340/artemis5.webp", title: "Come On In, the Water's Perfect" },
+                            { image: "/images/1156340/artemis6.webp", title: "A Timeless Welcome" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Lady O — Argostoli Bay",
+                        tourType: "CRUISE",
+                        itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                        operatingDays: "Daily",
+                        from_price: 65.00,
+                        badges: {},
+                        short_description: "Relax & swim in turquoise waters on the stylish Lady O cruise",
+                        duration: "Full Day / Sunset",
+                        bokunProductId: "1153752",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1153752/ladyo1.webp", title: "Anchored in Turquoise" },
+                            { image: "/images/1153752/ladyo2.webp", title: "Warm Wood & Open Water" },
+                            { image: "/images/1153752/ladyo3.webp", title: "Music, Laughter & Sunshine" },
+                            { image: "/images/1153752/ladyo4.webp", title: "A Perfect Summer Afternoon" },
+                            { image: "/images/1153752/ladyo5.webp", title: "Elegant on Every Sea" },
+                            { image: "/images/1153752/ladyo6.webp", title: "A Floating Home Away From Home" },
+                            { image: "/images/1153752/ladyo7.webp", title: "From the Captain's Seat" },
+                            { image: "/images/1153752/ladyo8.webp", title: "The Finest BBQ in the Ionian" },
+                            { image: "/images/1153752/ladyo9.webp", title: "Live Music, Golden Light & Good Food" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Efplia — Argostoli Bay",
+                        tourType: "CRUISE",
+                        itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
+                        operatingDays: "Daily",
+                        from_price: 70.00,
+                        badges: {},
+                        short_description: "Glass-bottom views & BBQ lunch on the Efplia bay cruise",
+                        duration: "Full Day",
+                        bokunProductId: "1156321",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1156321/efplia1.webp", title: "Morning at the Marina" },
+                            { image: "/images/1156321/efplia2.webp", title: "Just the Two of You & the Sea" },
+                            { image: "/images/1156321/efplia3.webp", title: "Setting the Table for a Perfect Day" },
+                            { image: "/images/1156321/efplia4.webp", title: "Shimmering Ahead" },
+                            { image: "/images/1156321/efplia5.webp", title: "Little Treats, Big Flavours" },
+                            { image: "/images/1156321/efplia6.webp", title: "Sun Deck Bliss" },
+                            { image: "/images/1156321/efplia7.webp", title: "Proud, Blue & Beautiful" }
+                        ]
+                    }
                 ]
             },
             {
-                tourTitle: "Artemis — Argostoli Bay",
-                tourType: "CRUISE",
-                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
-                operatingDays: "Daily",
-                from_price: 65.00,
-                badges: {},
-                short_description: "Sun, sea & Xi's red clay beach — cruise Argostoli Bay on Artemis",
-                duration: "Full Day / Sunset",
-                bokunProductId: "1156340",
-                slides: [
-                    { image: "/images/1156340/artemis1.webp", title: "Wild, White & Wonderfully Remote" },
-                    { image: "/images/1156340/artemis2.webp", title: "Anchored in Paradise" },
-                    { image: "/images/1156340/artemis3.webp", title: "All to Ourselves" },
-                    { image: "/images/1156340/artemis4.webp", title: "Built for This Kind of Day" },
-                    { image: "/images/1156340/artemis5.webp", title: "Come On In, the Water's Perfect" },
-                    { image: "/images/1156340/artemis6.webp", title: "A Timeless Welcome" }
-                ]
-            },
-            {
-                tourTitle: "Lady O — Argostoli Bay",
-                tourType: "CRUISE",
-                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
-                operatingDays: "Daily",
-                from_price: 65.00,
-                badges: {},
-                short_description: "Relax & swim in turquoise waters on the stylish Lady O cruise",
-                duration: "Full Day / Sunset",
-                bokunProductId: "1153752",
-                slides: [
-                    { image: "/images/1153752/ladyo1.webp", title: "Anchored in Turquoise" },
-                    { image: "/images/1153752/ladyo2.webp", title: "Warm Wood & Open Water" },
-                    { image: "/images/1153752/ladyo3.webp", title: "Music, Laughter & Sunshine" },
-                    { image: "/images/1153752/ladyo4.webp", title: "A Perfect Summer Afternoon" },
-                    { image: "/images/1153752/ladyo5.webp", title: "Elegant on Every Sea" },
-                    { image: "/images/1153752/ladyo6.webp", title: "A Floating Home Away From Home" },
-                    { image: "/images/1153752/ladyo7.webp", title: "From the Captain's Seat" },
-                    { image: "/images/1153752/ladyo8.webp", title: "The Finest BBQ in the Ionian" },
-                    { image: "/images/1153752/ladyo9.webp", title: "Live Music, Golden Light & Good Food" }
-                ]
-            },
-            {
-                tourTitle: "Efplia — Argostoli Bay",
-                tourType: "CRUISE",
-                itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
-                operatingDays: "Daily",
-                from_price: 70.00,
-                badges: {},
-                short_description: "Glass-bottom views & BBQ lunch on the Efplia bay cruise",
-                duration: "Full Day",
-                bokunProductId: "1156321",
-                slides: [
-                    { image: "/images/1156321/efplia1.webp", title: "Morning at the Marina" },
-                    { image: "/images/1156321/efplia2.webp", title: "Just the Two of You & the Sea" },
-                    { image: "/images/1156321/efplia3.webp", title: "Setting the Table for a Perfect Day" },
-                    { image: "/images/1156321/efplia4.webp", title: "Shimmering Ahead" },
-                    { image: "/images/1156321/efplia5.webp", title: "Little Treats, Big Flavours" },
-                    { image: "/images/1156321/efplia6.webp", title: "Sun Deck Bliss" },
-                    { image: "/images/1156321/efplia7.webp", title: "Proud, Blue & Beautiful" }
-                ]
-            },
-            {
-                tourTitle: "Fiscardo Cruise from Skala",
-                tourType: "CRUISE",
-                itinerary: "Skala • Sami • Fiscardo • Koutsoupia Beach",
-                operatingDays: "Every: Tuesday & Saturday",
-                from_price: 55.00,
-                badges: { isSpecialOffer: true },
-                short_description: "Sail north from Skala past stunning coastlines to cosmopolitan Fiscardo",
-                duration: "Full Day",
-                bokunProductId: "1164973",
-                slides: [
-                    { image: "/images/1164973/fiscardocruise1.webp", title: "The Village in Full Swing" },
-                    { image: "/images/1164973/fiscardocruise2.webp", title: "A Hidden Beach All to Yourself" },
-                    { image: "/images/1164973/fiscardocruise3.webp", title: "Pulling into Port" },
-                    { image: "/images/1164973/fiscardocruise4.webp", title: "Where the Sky Opens Up" },
-                    { image: "/images/1164973/fiscardocruise5.webp", title: "Somewhere Lovely to Swim" },
-                    { image: "/images/1164973/fiscardocruise6.webp", title: "A Marina Full of Dreams" },
-                    { image: "/images/1164973/fiscardocruise7.webp", title: "Tucked Away & Gloriously Quiet" }
-                ]
-            },
-            {
-                tourTitle: "Zante Cruise from Skala",
-                tourType: "CRUISE",
-                itinerary: "Skala • Navagio Shipwreck • Blue Caves • Alykes",
-                operatingDays: "Every: Thursday",
-                from_price: 55.00,
-                badges: { isExclusive: true },
-                short_description: "Navagio & Blue Caves — Zakynthos' icons in one epic day at sea",
-                duration: "Full Day",
-                bokunProductId: "1164937",
-                slides: [
-                    { image: "/images/1164937/zantecruise1.webp", title: "The Most Famous Shipwreck in the World" },
-                    { image: "/images/1164937/zantecruise2.webp", title: "Navagio from Above" },
-                    { image: "/images/1164937/zantecruise3.webp", title: "Nature's Arches" },
-                    { image: "/images/1164937/zantecruise4.webp", title: "A Warm Little Harbour Stop" },
-                    { image: "/images/1164937/zantecruise5.webp", title: "The Whole Boat Jumped In" }
-                ]
-            },
-            {
-                tourTitle: "Ithaca Cruise from Skala",
-                tourType: "CRUISE",
-                itinerary: "Skala • Gidaki Beach • Vathy • Kioni • Koutsoupia Beach",
-                operatingDays: "Every: Wednesday & Sunday",
-                from_price: 55.00,
-                badges: {},
-                short_description: "Sail to mythical Ithaca — swim Gidaki, explore Vathy & Kioni",
-                duration: "Full Day",
-                bokunProductId: "1165014",
-                slides: [
-                    { image: "/images/1165014/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
-                    { image: "/images/1165014/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
-                    { image: "/images/1165014/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
-                    { image: "/images/1165014/ithacacruise4.webp", title: "The Perfect Swim Stop" },
-                    { image: "/images/1165014/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
-                    { image: "/images/1165014/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
-                ]
-            },
-            {
-                tourTitle: "Ithaca Cruise from Skala No Kioni",
-                tourType: "CRUISE",
-                itinerary: "Skala • Gidaki Beach • Vathy • Koutsoupia Beach",
-                operatingDays: "Every: Monday & Friday",
-                from_price: 45.00,
-                badges: {},
-                short_description: "Sail to mythical Ithaca — 2 swim stops, explore Vathy",
-                duration: "Full Day",
-                bokunProductId: "1165024",
-                slides: [
-                    { image: "/images/1165024/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
-                    { image: "/images/1165024/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
-                    { image: "/images/1165024/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
-                    { image: "/images/1165024/ithacacruise4.webp", title: "The Perfect Swim Stop" },
-                    { image: "/images/1165024/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
-                    { image: "/images/1165024/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
-                ]
-            },
-            {
-                tourTitle: "Lobster Fishing Cruise",
-                tourType: "CRUISE",
-                itinerary: "Agia Pelagia • Net Points • Beach Anchor • Fresh Seafood Lunch",
-                operatingDays: "Daily (Weather Permitting)",
-                from_price: 100.00,
-                badges: { isExclusive: true },
-                short_description: "Live a fisherman's day — pull the nets & feast on the fresh catch",
-                duration: "8 Hours",
-                bokunProductId: "1156325",
-                slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Authentic Fishing Experience" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Fresh Seafood on Board" }
+                id: "skala-cruises",
+                title: "From Skala Cruises",
+                tours: [
+                    {
+                        tourTitle: "Fiscardo Cruise from Skala",
+                        tourType: "CRUISE",
+                        itinerary: "Skala • Sami • Fiscardo • Koutsoupia Beach",
+                        operatingDays: "Every: Tuesday & Saturday",
+                        from_price: 55.00,
+                        badges: { isSpecialOffer: true },
+                        short_description: "Sail north from Skala past stunning coastlines to cosmopolitan Fiscardo",
+                        duration: "Full Day",
+                        bokunProductId: "1164973",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1164973/fiscardocruise1.webp", title: "The Village in Full Swing" },
+                            { image: "/images/1164973/fiscardocruise2.webp", title: "A Hidden Beach All to Yourself" },
+                            { image: "/images/1164973/fiscardocruise3.webp", title: "Pulling into Port" },
+                            { image: "/images/1164973/fiscardocruise4.webp", title: "Where the Sky Opens Up" },
+                            { image: "/images/1164973/fiscardocruise5.webp", title: "Somewhere Lovely to Swim" },
+                            { image: "/images/1164973/fiscardocruise6.webp", title: "A Marina Full of Dreams" },
+                            { image: "/images/1164973/fiscardocruise7.webp", title: "Tucked Away & Gloriously Quiet" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Zante Cruise from Skala",
+                        tourType: "CRUISE",
+                        itinerary: "Skala • Navagio Shipwreck • Blue Caves • Alykes",
+                        operatingDays: "Every: Thursday",
+                        from_price: 55.00,
+                        badges: { isExclusive: true },
+                        short_description: "Navagio & Blue Caves — Zakynthos' icons in one epic day at sea",
+                        duration: "Full Day",
+                        bokunProductId: "1164937",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1164937/zantecruise1.webp", title: "The Most Famous Shipwreck in the World" },
+                            { image: "/images/1164937/zantecruise2.webp", title: "Navagio from Above" },
+                            { image: "/images/1164937/zantecruise3.webp", title: "Nature's Arches" },
+                            { image: "/images/1164937/zantecruise4.webp", title: "A Warm Little Harbour Stop" },
+                            { image: "/images/1164937/zantecruise5.webp", title: "The Whole Boat Jumped In" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Ithaca Cruise from Skala",
+                        tourType: "CRUISE",
+                        itinerary: "Skala • Gidaki Beach • Vathy • Kioni • Koutsoupia Beach",
+                        operatingDays: "Every: Wednesday & Sunday",
+                        from_price: 55.00,
+                        badges: {},
+                        short_description: "Sail to mythical Ithaca — swim Gidaki, explore Vathy & Kioni",
+                        duration: "Full Day",
+                        bokunProductId: "1165014",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1165014/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
+                            { image: "/images/1165014/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
+                            { image: "/images/1165014/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
+                            { image: "/images/1165014/ithacacruise4.webp", title: "The Perfect Swim Stop" },
+                            { image: "/images/1165014/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
+                            { image: "/images/1165014/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Ithaca Cruise from Skala No Kioni",
+                        tourType: "CRUISE",
+                        itinerary: "Skala • Gidaki Beach • Vathy • Koutsoupia Beach",
+                        operatingDays: "Every: Monday & Friday",
+                        from_price: 45.00,
+                        badges: {},
+                        short_description: "Sail to mythical Ithaca — 2 swim stops, explore Vathy",
+                        duration: "Full Day",
+                        bokunProductId: "1165024",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1165024/ithacacruise1.webp", title: "Colourful, Charming & Completely Ithaca" },
+                            { image: "/images/1165024/ithacacruise2.webp", title: "A Quiet Little Bay All to Ourselves" },
+                            { image: "/images/1165024/ithacacruise3.webp", title: "The Hero Still Stands Watch" },
+                            { image: "/images/1165024/ithacacruise4.webp", title: "The Perfect Swim Stop" },
+                            { image: "/images/1165024/ithacacruise5.webp", title: "A Village That Welcomes You Gently" },
+                            { image: "/images/1165024/ithacacruise6.webp", title: "Swimming in the Harbour's Heart" }
+                        ]
+                    }
                 ]
             }
         ]
     },
+
+    // ─────────────────────────────────────────────
+    //  SAILING CRUISES
+    // ─────────────────────────────────────────────
     {
         id: "sailing-cruises",
         title: "Sailing Cruises",
@@ -317,7 +339,7 @@ export const tourCategories: TourCategory[] = [
         tours: [
             {
                 tourTitle: "Full-Day Sailing Cruise",
-                tourType: "PRIVATE CRUISE",
+                tourType: "SAILING CRUISE",
                 itinerary: "Argostoli • South Kefalonia • Remote Beaches",
                 operatingDays: "On Request",
                 from_price: 140.00,
@@ -325,13 +347,14 @@ export const tourCategories: TourCategory[] = [
                 short_description: "8-hour sailing adventure with onboard Kefalonian lunch & two swim stops",
                 duration: "8 Hours",
                 bokunProductId: "1132373",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1132373/anemolia1.webp", title: "" }
                 ]
             },
             {
                 tourTitle: "Half-Day Sailing Cruise",
-                tourType: "PRIVATE CRUISE",
+                tourType: "SAILING CRUISE",
                 itinerary: "Argostoli • Argostoli Gulf • Hidden Coves",
                 operatingDays: "On Request",
                 from_price: 100.00,
@@ -339,13 +362,14 @@ export const tourCategories: TourCategory[] = [
                 short_description: "4-hour morning sail in Argostoli Gulf with two swim stops & refreshments",
                 duration: "4 Hours",
                 bokunProductId: "1132402",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1132402/anemolia1.webp", title: "" }
                 ]
             },
             {
                 tourTitle: "Sunset Sailing Cruise",
-                tourType: "PRIVATE CRUISE",
+                tourType: "SAILING CRUISE",
                 itinerary: "Argostoli • Argostoli Gulf • Sunset Views",
                 operatingDays: "On Request",
                 from_price: 100.00,
@@ -353,12 +377,17 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Romantic 3-hour evening sail with sparkling wine & cheese platter",
                 duration: "3 Hours",
                 bokunProductId: "1132441",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1132441/anemolia1.webp", title: "" }
                 ]
             }
         ]
     },
+
+    // ─────────────────────────────────────────────
+    //  SHOREX  (Shore Excursions)
+    // ─────────────────────────────────────────────
     {
         id: "shore-excursions",
         title: "Shore Excursions",
@@ -374,6 +403,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Two of Kefalonia's most beautiful villages in one scenic half-day",
                 duration: "5–6 Hours",
                 bokunProductId: "1156326",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1156326/assos.webp", title: "An Afternoon Worth Lingering For" },
                     { image: "/images/1156326/assos2.webp", title: "Green Hills, Turquoise Bay" },
@@ -391,6 +421,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Kefalonia's must-see wonders packed into one unforgettable half-day",
                 duration: "4.5–5 Hours",
                 bokunProductId: "1156327",
+                isBookableOnBokun: true,
                 slides: [
                     { image: "/images/1156327/ag.efimia.webp", title: "Calm Waters, Warm Welcome" },
                     { image: "/images/1156327/st.gerasimos.webp", title: "Sacred & Serene" },
@@ -401,21 +432,50 @@ export const tourCategories: TourCategory[] = [
             }
         ]
     },
+
+    // ─────────────────────────────────────────────
+    //  FISHING TOURS
+    // ─────────────────────────────────────────────
+    {
+        id: "fishing-tours",
+        title: "Fishing Tours",
+        subtitle: "Live a real fisherman's day on the Ionian",
+        tours: [
+            {
+                tourTitle: "Lobster Fishing Cruise",
+                tourType: "FISHING TOUR",
+                itinerary: "Agia Pelagia • Net Points • Beach Anchor • Fresh Seafood Lunch",
+                operatingDays: "Daily (Weather Permitting)",
+                from_price: 100.00,
+                badges: { isExclusive: true },
+                short_description: "Live a fisherman's day — pull the nets & feast on the fresh catch",
+                duration: "8 Hours",
+                bokunProductId: "1156325",
+                isBookableOnBokun: true,
+                slides: [
+                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Authentic Fishing Experience" },
+                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/24/small10.jpg", title: "Fresh Seafood on Board" }
+                ]
+            }
+        ]
+    },
+
+    // ─────────────────────────────────────────────
+    //  ACTIVITIES  (on-request, no Bokun page)
+    // ─────────────────────────────────────────────
     {
         id: "activities",
-        title: "Activities & Transfers",
+        title: "Activities",
         subtitle: "Elevate your Kefalonia experience",
         tours: [
             {
                 tourTitle: "Private VIP Transfer",
                 tourType: "TRANSFER",
-                itinerary: "Airport to Resort • Port to Villa",
-                operatingDays: "24/7 Service",
                 from_price: 40.00,
                 badges: { isBestSeller: true },
-                short_description: "Airport & Port Premium Shuttles",
-                duration: "Flexible",
+                short_description: "Door-to-door luxury transfers between the airport, port, hotels and villas. Available 24/7 in premium vehicles — comfort and punctuality guaranteed.",
                 bokunProductId: "PLACEHOLDER_ACT_1",
+                isBookableOnBokun: false,
                 slides: [
                     { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Luxury Vehicles" },
                     { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Arrive in Style" }
@@ -424,13 +484,11 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Culinary Tasting Class",
                 tourType: "ACTIVITY",
-                itinerary: "Local Farm • Traditional Kitchen • Wine Tasting",
-                operatingDays: "Every: Mondays & Thursdays",
                 from_price: 90.00,
                 badges: { isExclusive: true },
-                short_description: "Local gastronomy masterclass",
-                duration: "3 Hours",
+                short_description: "An immersive hands-on cooking class at a local farm. Learn to prepare Kefalonian classics, taste estate olive oils and wines, and take home the recipes.",
                 bokunProductId: "PLACEHOLDER_ACT_2",
+                isBookableOnBokun: false,
                 slides: [
                     { image: "https://avalontravel-kefalonia.gr//images/2025/10/14/small-wine-1.jpg", title: "Taste of Kefalonia" },
                     { image: "https://avalontravel-kefalonia.gr//images/2023/12/08/drogarati-small-1.jpg", title: "Food Artisans" }
@@ -439,18 +497,26 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Guided Mount Ainos Hike",
                 tourType: "ACTIVITY",
-                itinerary: "Ainos National Park • Enos Peak • Pine Forests",
-                operatingDays: "Every: Wednesdays, Saturdays",
                 from_price: 60.00,
                 badges: { isSpecialOffer: true },
-                short_description: "National Park summit trails",
-                duration: "5 Hours",
+                short_description: "Trek through the ancient Ainos National Park with an expert local guide. Dense Kefalonian fir forests, panoramic summit views and fascinating wildlife await.",
                 bokunProductId: "PLACEHOLDER_ACT_3",
+                isBookableOnBokun: false,
                 slides: [
                     { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Mountain Peak" },
                     { image: "https://avalontravel-kefalonia.gr//images/2025/10/15/kipoureon-monastery-kefalonia.jpg", title: "Pine Forest Trails" }
                 ]
             }
         ]
+    },
+
+    // ─────────────────────────────────────────────
+    //  PRIVATE TOURS  (anchor link only → TailoredExperiences section)
+    // ─────────────────────────────────────────────
+    {
+        id: "private-tours",
+        title: "Private Tours",
+        subtitle: "Tailor-made experiences just for you",
+        tours: []          // no tour cards — this link scrolls to TailoredExperiences
     }
 ];
