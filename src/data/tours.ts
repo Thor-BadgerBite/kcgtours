@@ -311,6 +311,55 @@ export const tourCategories: TourCategory[] = [
         ]
     },
     {
+        id: "sailing-cruises",
+        title: "Sailing Cruises",
+        subtitle: "Authentic sailing experiences on the Ionian Sea",
+        tours: [
+            {
+                tourTitle: "Full-Day Sailing Cruise",
+                tourType: "PRIVATE CRUISE",
+                itinerary: "Argostoli • South Kefalonia • Remote Beaches",
+                operatingDays: "On Request",
+                from_price: 140.00,
+                badges: {},
+                short_description: "8-hour sailing adventure with onboard Kefalonian lunch & two swim stops",
+                duration: "8 Hours",
+                bokunProductId: "1132373",
+                slides: [
+                    { image: "/images/1132373/anemolia1.webp", title: "" }
+                ]
+            },
+            {
+                tourTitle: "Half-Day Sailing Cruise",
+                tourType: "PRIVATE CRUISE",
+                itinerary: "Argostoli • Argostoli Gulf • Hidden Coves",
+                operatingDays: "On Request",
+                from_price: 100.00,
+                badges: {},
+                short_description: "4-hour morning sail in Argostoli Gulf with two swim stops & refreshments",
+                duration: "4 Hours",
+                bokunProductId: "1132402",
+                slides: [
+                    { image: "/images/1132402/anemolia1.webp", title: "" }
+                ]
+            },
+            {
+                tourTitle: "Sunset Sailing Cruise",
+                tourType: "PRIVATE CRUISE",
+                itinerary: "Argostoli • Argostoli Gulf • Sunset Views",
+                operatingDays: "On Request",
+                from_price: 100.00,
+                badges: {},
+                short_description: "Romantic 3-hour evening sail with sparkling wine & cheese platter",
+                duration: "3 Hours",
+                bokunProductId: "1132441",
+                slides: [
+                    { image: "/images/1132441/anemolia1.webp", title: "" }
+                ]
+            }
+        ]
+    },
+    {
         id: "shore-excursions",
         title: "Shore Excursions",
         subtitle: "Make the most of your time ashore",
