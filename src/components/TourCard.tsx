@@ -52,7 +52,11 @@ export function TourCard({
     const carouselMode = false;
     const showBadges = false;
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 });
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: true,
+        duration: 20,
+        active: carouselMode && slides.length > 1
+    });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [progress, setProgress] = useState(0);
