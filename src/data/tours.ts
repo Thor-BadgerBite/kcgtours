@@ -471,16 +471,16 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1167681",
                 slides: [
-                    { image: "/images/1167681/lobster1.webp", title: "" },
-                    { image: "/images/1167681/lobster2.webp", title: "" },
-                    { image: "/images/1167681/lobster3.webp", title: "" },
-                    { image: "/images/1167681/lobster4.webp", title: "" },
-                    { image: "/images/1167681/lobster5.webp", title: "" },
-                    { image: "/images/1167681/lobster6.webp", title: "" },
-                    { image: "/images/1167681/lobster7.webp", title: "" },
-                    { image: "/images/1167681/lobster8.webp", title: "" },
-                    { image: "/images/1167681/lobster9.webp", title: "" },
-                    { image: "/images/1167681/lobster10.webp", title: "" }
+                    { image: "/images/1167681/Lobster1.webp", title: "" },
+                    { image: "/images/1167681/Lobster2.webp", title: "" },
+                    { image: "/images/1167681/Lobster3.webp", title: "" },
+                    { image: "/images/1167681/Lobster4.webp", title: "" },
+                    { image: "/images/1167681/Lobster5.webp", title: "" },
+                    { image: "/images/1167681/Lobster6.webp", title: "" },
+                    { image: "/images/1167681/Lobster7.webp", title: "" },
+                    { image: "/images/1167681/Lobster8.webp", title: "" },
+                    { image: "/images/1167681/Lobster9.webp", title: "" },
+                    { image: "/images/1167681/Lobster10.webp", title: "" }
                 ]
             },
             {
@@ -496,16 +496,16 @@ export const tourCategories: TourCategory[] = [
                 duration: "6 Hours",
                 bokunProductId: "1167717",
                 slides: [
-                    { image: "/images/1167717/lobster1.webp", title: "" },
-                    { image: "/images/1167717/lobster2.webp", title: "" },
-                    { image: "/images/1167717/lobster3.webp", title: "" },
-                    { image: "/images/1167717/lobster4.webp", title: "" },
-                    { image: "/images/1167717/lobster5.webp", title: "" },
-                    { image: "/images/1167717/lobster6.webp", title: "" },
-                    { image: "/images/1167717/lobster7.webp", title: "" },
-                    { image: "/images/1167717/lobster8.webp", title: "" },
-                    { image: "/images/1167717/lobster9.webp", title: "" },
-                    { image: "/images/1167717/lobster10.webp", title: "" }
+                    { image: "/images/1167717/Lobster1.webp", title: "" },
+                    { image: "/images/1167717/Lobster2.webp", title: "" },
+                    { image: "/images/1167717/Lobster3.webp", title: "" },
+                    { image: "/images/1167717/Lobster4.webp", title: "" },
+                    { image: "/images/1167717/Lobster5.webp", title: "" },
+                    { image: "/images/1167717/Lobster6.webp", title: "" },
+                    { image: "/images/1167717/Lobster7.webp", title: "" },
+                    { image: "/images/1167717/Lobster8.webp", title: "" },
+                    { image: "/images/1167717/Lobster9.webp", title: "" },
+                    { image: "/images/1167717/Lobster10.webp", title: "" }
                 ]
             }
         ]
