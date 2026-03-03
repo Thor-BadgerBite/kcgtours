@@ -454,53 +454,60 @@ export const tourCategories: TourCategory[] = [
     //  FISHING TOURS
     // ─────────────────────────────────────────────
     {
-        tourTitle: "Lobster Fishing Day Trip",
-        tourType: "FISHING TOUR",
-        itinerary: "Agia Pelagia • Net Hauling • Secluded Beach • Seafood Lunch",
-        operatingDays: "Daily (Weather Permitting)",
-        from_price: 100.00,
-        badges: { isExclusive: true },
-        isBookableOnBokun: true,
-        card_subtitle: "Pull the nets & feast on lobster spaghetti fresh from the sea",
-        short_description: "Pull the nets with Captain Michalis & feast on lobster spaghetti at sea",
-        duration: "8 Hours",
-        bokunProductId: "1167681",
-        slides: [
-            { image: "/images/1167681/lobster1.webp", title: "" },
-            { image: "/images/1167681/lobster2.webp", title: "" },
-            { image: "/images/1167681/lobster3.webp", title: "" },
-            { image: "/images/1167681/lobster4.webp", title: "" },
-            { image: "/images/1167681/lobster5.webp", title: "" },
-            { image: "/images/1167681/lobster6.webp", title: "" },
-            { image: "/images/1167681/lobster7.webp", title: "" },
-            { image: "/images/1167681/lobster8.webp", title: "" },
-            { image: "/images/1167681/lobster9.webp", title: "" },
-            { image: "/images/1167681/lobster10.webp", title: "" }
-        ]
-    },
-    {
-        tourTitle: "Sunset Lobster Fishing Trip",
-        tourType: "FISHING TOUR",
-        itinerary: "Agia Pelagia • Net Hauling at Sunset • Secluded Beach • Seafood Dinner",
-        operatingDays: "Daily (Weather Permitting)",
-        from_price: 100.00,
-        badges: { isExclusive: true },
-        isBookableOnBokun: true,
-        card_subtitle: "Golden hour, nets at sea & dinner under the Ionian stars",
-        short_description: "Haul the nets at golden hour & dine on fresh seafood under the stars",
-        duration: "6 Hours",
-        bokunProductId: "1167717",
-        slides: [
-            { image: "/images/1167717/lobster1.webp", title: "" },
-            { image: "/images/1167717/lobster2.webp", title: "" },
-            { image: "/images/1167717/lobster3.webp", title: "" },
-            { image: "/images/1167717/lobster4.webp", title: "" },
-            { image: "/images/1167717/lobster5.webp", title: "" },
-            { image: "/images/1167717/lobster6.webp", title: "" },
-            { image: "/images/1167717/lobster7.webp", title: "" },
-            { image: "/images/1167717/lobster8.webp", title: "" },
-            { image: "/images/1167717/lobster9.webp", title: "" },
-            { image: "/images/1167717/lobster10.webp", title: "" }
+        id: "fishing-tours",
+        title: "Fishing Tours",
+        subtitle: "Live a real fisherman's day on the Ionian",
+        tours: [
+            {
+                tourTitle: "Lobster Fishing Day Trip",
+                tourType: "FISHING TOUR",
+                itinerary: "Agia Pelagia • Net Hauling • Secluded Beach • Seafood Lunch",
+                operatingDays: "Daily (Weather Permitting)",
+                from_price: 100.00,
+                badges: { isExclusive: true },
+                isBookableOnBokun: true,
+                card_subtitle: "Pull the nets & feast on lobster spaghetti fresh from the sea",
+                short_description: "Pull the nets with Captain Michalis & feast on lobster spaghetti at sea",
+                duration: "8 Hours",
+                bokunProductId: "1167681",
+                slides: [
+                    { image: "/images/1167681/lobster1.webp", title: "" },
+                    { image: "/images/1167681/lobster2.webp", title: "" },
+                    { image: "/images/1167681/lobster3.webp", title: "" },
+                    { image: "/images/1167681/lobster4.webp", title: "" },
+                    { image: "/images/1167681/lobster5.webp", title: "" },
+                    { image: "/images/1167681/lobster6.webp", title: "" },
+                    { image: "/images/1167681/lobster7.webp", title: "" },
+                    { image: "/images/1167681/lobster8.webp", title: "" },
+                    { image: "/images/1167681/lobster9.webp", title: "" },
+                    { image: "/images/1167681/lobster10.webp", title: "" }
+                ]
+            },
+            {
+                tourTitle: "Sunset Lobster Fishing Trip",
+                tourType: "FISHING TOUR",
+                itinerary: "Agia Pelagia • Net Hauling at Sunset • Secluded Beach • Seafood Dinner",
+                operatingDays: "Daily (Weather Permitting)",
+                from_price: 100.00,
+                badges: { isExclusive: true },
+                isBookableOnBokun: true,
+                card_subtitle: "Golden hour, nets at sea & dinner under the Ionian stars",
+                short_description: "Haul the nets at golden hour & dine on fresh seafood under the stars",
+                duration: "6 Hours",
+                bokunProductId: "1167717",
+                slides: [
+                    { image: "/images/1167717/lobster1.webp", title: "" },
+                    { image: "/images/1167717/lobster2.webp", title: "" },
+                    { image: "/images/1167717/lobster3.webp", title: "" },
+                    { image: "/images/1167717/lobster4.webp", title: "" },
+                    { image: "/images/1167717/lobster5.webp", title: "" },
+                    { image: "/images/1167717/lobster6.webp", title: "" },
+                    { image: "/images/1167717/lobster7.webp", title: "" },
+                    { image: "/images/1167717/lobster8.webp", title: "" },
+                    { image: "/images/1167717/lobster9.webp", title: "" },
+                    { image: "/images/1167717/lobster10.webp", title: "" }
+                ]
+            }
         ]
     },
 
