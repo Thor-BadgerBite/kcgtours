@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { TourCard } from './components/TourCard';
@@ -8,6 +9,12 @@ import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
 import { BokunPage } from './components/BokunPage';
 import type { TourCategory } from './types';
+
+// ── slug helper ──────────────────────────────────────────────────────────────
+
+export function slugify(text: string) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+}
 
 // ── scroll helper ────────────────────────────────────────────────────────────
 
@@ -89,14 +96,15 @@ function NavItem({ cat }: { cat: TourCategory }) {
     );
 }
 
-// ── Main App ─────────────────────────────────────────────────────────────────
+// ── HomePage component ───────────────────────────────────────────────────────
 
-function App() {
-    const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+function HomePage() {
+    const navigate = useNavigate();
 
-    if (selectedProductId) {
-        return <BokunPage productId={selectedProductId} onBack={() => setSelectedProductId(null)} />;
-    }
+    // scroll to top on mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="min-h-screen">
@@ -104,7 +112,7 @@ function App() {
             <nav className="bg-white px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
                     <div className="flex items-center">
-                        <img src="/images/logo.png" alt="KCG Tours" className="h-[50px] md:h-[60px] w-auto" />
+                        <img src="/images/logo.png" alt="KCG Tours" className="h-[50px] md:h-[60px] w-auto cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
                     </div>
                     <div className="hidden md:flex gap-6 items-center">
                         <button
@@ -201,7 +209,7 @@ function App() {
                                                             short_description={tour.short_description}
                                                             isBookableOnBokun={tour.isBookableOnBokun}
                                                             slides={tour.slides}
-                                                            onBook={() => setSelectedProductId(tour.bokunProductId)}
+                                                            onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                                         />
                                                     ))}
                                                 />
@@ -247,7 +255,7 @@ function App() {
                                                 short_description={tour.short_description}
                                                 isBookableOnBokun={tour.isBookableOnBokun}
                                                 slides={tour.slides}
-                                                onBook={() => setSelectedProductId(tour.bokunProductId)}
+                                                onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                             />
                                         ))}
                                     />
@@ -265,6 +273,78 @@ function App() {
 
             <Footer />
         </div>
+    );
+}
+
+// ── TourRoute Component ───────────────────────────────────────────────────────
+
+function TourRoute() {
+    const { slug } = useParams<{ slug: string }>();
+    const navigate = useNavigate();
+
+    // Find productId and match
+    let foundProductId: string | null = null;
+    let foundTourTitle = "";
+
+    for (const cat of tourCategories) {
+        if (cat.subCategories) {
+            for (const sub of cat.subCategories) {
+                const match = sub.tours.find(t => slugify(t.tourTitle) === slug);
+                if (match) {
+                    foundProductId = match.bokunProductId;
+                    foundTourTitle = match.tourTitle;
+                    break;
+                }
+            }
+        }
+        if (cat.tours) {
+            const match = cat.tours.find(t => slugify(t.tourTitle) === slug);
+            if (match) {
+                foundProductId = match.bokunProductId;
+                foundTourTitle = match.tourTitle;
+                break;
+            }
+        }
+        if (foundProductId) break;
+    }
+
+    // Dynamic SEO doc title
+    useEffect(() => {
+        window.scrollTo(0, 0); // make sure it scrolls to top on new page load
+        if (foundTourTitle) {
+            document.title = `${foundTourTitle} | KCG Tours`;
+        }
+        return () => { document.title = "KCG Tours Kefalonia"; };
+    }, [foundTourTitle]);
+
+    if (!foundProductId) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+                <h1 className="text-3xl font-light mb-4 text-[#404041]">Tour not found</h1>
+                <button
+                    onClick={() => navigate('/')}
+                    className="text-white hover:text-dark py-2 px-8 font-bold bg-primary hover:bg-primary-hover rounded shadow transition-colors"
+                >
+                    Return Home
+                </button>
+            </div>
+        );
+    }
+
+    // Standard behavior: going back returns to previous route history
+    return <BokunPage productId={foundProductId} onBack={() => navigate(-1)} />;
+}
+
+// ── Root App Routing Structure ────────────────────────────────────────────────
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/tour/:slug" element={<TourRoute />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
