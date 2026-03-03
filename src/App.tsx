@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { TourCard } from './components/TourCard';
+import { CategoryCarousel } from './components/CategoryCarousel';
 import { tourCategories } from './data/tours';
 import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
@@ -183,27 +184,27 @@ function App() {
                                             </motion.div>
 
                                             <div className="w-full px-0 md:px-[40px] xl:px-[80px]">
-                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch justify-center">
-                                                    {sub.tours.map((tour, idx) => (
-                                                        <div key={idx} className="flex h-full">
-                                                            <TourCard
-                                                                tourTitle={tour.tourTitle}
-                                                                tourType={tour.tourType}
-                                                                itinerary={tour.itinerary}
-                                                                operatingDays={tour.operatingDays}
-                                                                duration={tour.duration}
-                                                                from_price={tour.from_price}
-                                                                badges={tour.badges}
-                                                                bokunProductId={tour.bokunProductId}
-                                                                card_subtitle={tour.card_subtitle}
-                                                                short_description={tour.short_description}
-                                                                isBookableOnBokun={tour.isBookableOnBokun}
-                                                                slides={tour.slides}
-                                                                onBook={() => setSelectedProductId(tour.bokunProductId)}
-                                                            />
-                                                        </div>
+                                                <CategoryCarousel
+                                                    isBusTours={category.id === 'bus-tours'}
+                                                    items={sub.tours.map((tour, idx) => (
+                                                        <TourCard
+                                                            key={idx}
+                                                            tourTitle={tour.tourTitle}
+                                                            tourType={tour.tourType}
+                                                            itinerary={tour.itinerary}
+                                                            operatingDays={tour.operatingDays}
+                                                            duration={tour.duration}
+                                                            from_price={tour.from_price}
+                                                            badges={tour.badges}
+                                                            bokunProductId={tour.bokunProductId}
+                                                            card_subtitle={tour.card_subtitle}
+                                                            short_description={tour.short_description}
+                                                            isBookableOnBokun={tour.isBookableOnBokun}
+                                                            slides={tour.slides}
+                                                            onBook={() => setSelectedProductId(tour.bokunProductId)}
+                                                        />
                                                     ))}
-                                                </div>
+                                                />
                                             </div>
                                         </div>
                                     ))}
@@ -229,27 +230,27 @@ function App() {
                                 </motion.div>
 
                                 <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch justify-center h-full">
-                                        {(category.tours ?? []).map((tour, idx) => (
-                                            <div key={idx} className="flex h-full">
-                                                <TourCard
-                                                    tourTitle={tour.tourTitle}
-                                                    tourType={tour.tourType}
-                                                    itinerary={tour.itinerary}
-                                                    operatingDays={tour.operatingDays}
-                                                    duration={tour.duration}
-                                                    from_price={tour.from_price}
-                                                    badges={tour.badges}
-                                                    bokunProductId={tour.bokunProductId}
-                                                    card_subtitle={tour.card_subtitle}
-                                                    short_description={tour.short_description}
-                                                    isBookableOnBokun={tour.isBookableOnBokun}
-                                                    slides={tour.slides}
-                                                    onBook={() => setSelectedProductId(tour.bokunProductId)}
-                                                />
-                                            </div>
+                                    <CategoryCarousel
+                                        isBusTours={category.id === 'bus-tours'}
+                                        items={(category.tours ?? []).map((tour, idx) => (
+                                            <TourCard
+                                                key={idx}
+                                                tourTitle={tour.tourTitle}
+                                                tourType={tour.tourType}
+                                                itinerary={tour.itinerary}
+                                                operatingDays={tour.operatingDays}
+                                                duration={tour.duration}
+                                                from_price={tour.from_price}
+                                                badges={tour.badges}
+                                                bokunProductId={tour.bokunProductId}
+                                                card_subtitle={tour.card_subtitle}
+                                                short_description={tour.short_description}
+                                                isBookableOnBokun={tour.isBookableOnBokun}
+                                                slides={tour.slides}
+                                                onBook={() => setSelectedProductId(tour.bokunProductId)}
+                                            />
                                         ))}
-                                    </div>
+                                    />
                                 </div>
                             </section>
                         );
