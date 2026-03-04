@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Eye, ChevronLeft, ChevronRight, Send, ChevronDown, Sparkles, X } from 'lucide-react';
+import { Eye, ChevronLeft, ChevronRight, Send, ChevronDown, MapPinCheckInside, X } from 'lucide-react';
 import { useViewCounter } from '../hooks/useViewCounter';
 import type { TourSlide } from '../types';
 
@@ -287,13 +287,13 @@ export function TourCard({
                                                 </button>
 
                                                 {dropdownOpen && (
-                                                    <div className="absolute bottom-full right-0 mb-2 w-[220px] bg-white border border-gray-100 shadow-xl rounded z-50 overflow-hidden">
+                                                    <div className="absolute bottom-full left-0 right-0 mb-2 bg-white border border-gray-100 shadow-xl rounded z-50 overflow-hidden">
                                                         <button
                                                             onClick={() => { setIsFlipped(true); setDropdownOpen(false); }}
-                                                            className="w-full text-left px-4 py-3 text-sm font-medium text-[#404041] hover:text-primary hover:bg-gray-50 flex items-center justify-between transition-colors"
+                                                            className="w-full py-2 px-4 text-[18px] font-bold text-white bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] flex items-center justify-center gap-2 transition-colors duration-300"
                                                         >
+                                                            <MapPinCheckInside className="w-5 h-5" />
                                                             <span>Request Private Option</span>
-                                                            <Sparkles className="w-4 h-4 text-primary" />
                                                         </button>
                                                     </div>
                                                 )}
@@ -301,7 +301,7 @@ export function TourCard({
                                         ) : (
                                             <button
                                                 onClick={handleBookNow}
-                                                className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-base"
+                                                className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                             >
                                                 View More &amp; Book
                                             </button>
@@ -316,7 +316,7 @@ export function TourCard({
                                     <div className="w-full flex justify-center mt-4">
                                         <button
                                             onClick={handleRequest}
-                                            className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 ease-out text-base"
+                                            className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                         >
                                             <Send className="w-4 h-4" />
                                             Make a Request
@@ -339,7 +339,7 @@ export function TourCard({
                         {/* Header */}
                         <div className="p-4 bg-[color:var(--color-dark)] text-white flex justify-between items-center flex-none">
                             <h3 className="font-bold text-[18px] flex items-center gap-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                                <Sparkles className="w-5 h-5 text-primary" />
+                                <MapPinCheckInside className="w-5 h-5 text-primary" />
                                 Private Request
                             </h3>
                             <button
