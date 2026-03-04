@@ -131,12 +131,13 @@ export function TourCard({
     return (
         <div className="w-full h-full relative [perspective:1500px] group">
             <motion.div
-                className={`w-full h-full relative transition-transform duration-700 [transform-style:preserve-3d] ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                className="w-full h-full relative [transform-style:preserve-3d]"
+                initial={{ opacity: 0, y: 30, rotateY: 0 }}
+                whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                animate={{ rotateY: isFlipped ? 180 : 0, scale: isFlipped ? 1 : 1 }}
                 whileHover={{ scale: isFlipped ? 1 : 1.02 }}
-                transition={{ duration: 0.5 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, ease: 'easeInOut' }}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => { setIsHovered(false); setDropdownOpen(false); }}
             >
