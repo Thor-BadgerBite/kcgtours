@@ -52,11 +52,9 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
     // For bus-tours, display exactly as original (grid-cols-1 md:grid-cols-2 lg:grid-cols-3)
     if (isBusTours || !shouldScroll) {
         return (
-            <div className={`grid grid-cols-1 gap-6 md:gap-8 items-stretch justify-center h-full ${
-                // If it's 2 items on desktop, it uses max 3 columns anyway. We just center them.
-                items.length === 1 ? 'md:grid-cols-1 max-w-sm mx-auto' :
-                    items.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' :
-                        'md:grid-cols-2 lg:grid-cols-3'
+            <div className={`grid gap-6 md:gap-8 items-stretch justify-center h-full mx-auto ${items.length === 1 ? 'grid-cols-1 md:w-1/2 lg:w-1/3' :
+                    items.length === 2 ? 'grid-cols-1 md:grid-cols-2 lg:w-2/3' :
+                        'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full'
                 }`}>
                 {items.map((item, idx) => (
                     <div key={idx} className="flex h-full w-full">
