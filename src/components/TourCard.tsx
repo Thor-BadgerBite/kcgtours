@@ -310,7 +310,7 @@ export function TourCard({
                                 </>
                             ) : (
                                 <>
-                                    <p className="text-gray-500 font-light text-[16px] leading-relaxed mt-1 px-2 line-clamp-3">
+                                    <p className="text-gray-500 font-light text-[16px] leading-relaxed mt-1 px-2">
                                         {short_description}
                                     </p>
                                     <div className="w-full flex justify-center mt-auto pt-4">
