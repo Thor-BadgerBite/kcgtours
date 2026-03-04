@@ -256,7 +256,7 @@ export function TourCard({
                         </div>
 
                         {/* ── Card Footer ── */}
-                        <div className="p-4 flex flex-col items-center gap-1 bg-card z-10 flex-none text-center">
+                        <div className="p-4 flex flex-col items-center gap-1 bg-card z-10 flex-1 text-center">
                             <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
 
                             {isBookableOnBokun ? (
@@ -269,7 +269,7 @@ export function TourCard({
                                         <span className="text-dark font-medium mr-1">Duration:</span>{duration}
                                     </p>
 
-                                    <div className="w-full flex justify-center mt-4">
+                                    <div className="w-full flex justify-center mt-auto pt-4">
                                         {isPrivateAvailable ? (
                                             <div className="flex w-[90%] max-w-[320px] shadow-sm rounded relative">
                                                 <button
@@ -313,7 +313,7 @@ export function TourCard({
                                     <p className="text-gray-500 font-light text-[16px] leading-relaxed mt-1 px-2 line-clamp-3">
                                         {short_description}
                                     </p>
-                                    <div className="w-full flex justify-center mt-4">
+                                    <div className="w-full flex justify-center mt-auto pt-4">
                                         <button
                                             onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
                                             className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
