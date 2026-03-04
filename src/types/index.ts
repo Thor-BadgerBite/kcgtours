@@ -28,6 +28,8 @@ export interface Tour {
     isBookableOnBokun: boolean;
     /** true  → offers a private, on-request option for this tour */
     isPrivateAvailable?: boolean;
+    /** Short description shown inside the private request form */
+    private_description?: string;
     slides: TourSlide[];
 }
 

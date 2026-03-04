@@ -29,6 +29,8 @@ interface TourCardProps {
      *  false → show short_description + "Make a Request" */
     isBookableOnBokun: boolean;
     isPrivateAvailable?: boolean;
+    /** Short description shown in the private request form */
+    private_description?: string;
     onBook?: () => void;
     onRequest?: () => void;
 }
@@ -48,6 +50,7 @@ export function TourCard({
     short_description,
     isBookableOnBokun,
     isPrivateAvailable,
+    private_description,
     onBook,
     onRequest,
 }: TourCardProps) {
@@ -327,7 +330,7 @@ export function TourCard({
                     /* ── Back Face: Private Request Form ── */
                     <motion.div
                         key="back"
-                        className="w-full h-full bg-[#f8f9fa] rounded-md shadow-[0px_4px_15px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden"
+                        className="w-full h-full bg-[color:var(--color-card)] rounded-md shadow-[0px_4px_15px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden"
                         initial={{ opacity: 0, scale: 0.97 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.97 }}
@@ -335,7 +338,7 @@ export function TourCard({
                     >
                         {/* Header */}
                         <div className="p-4 bg-[color:var(--color-dark)] text-white flex justify-between items-center flex-none">
-                            <h3 className="font-bold text-lg flex items-center gap-2">
+                            <h3 className="font-bold text-[18px] flex items-center gap-2" style={{ fontFamily: 'Inter, sans-serif' }}>
                                 <Sparkles className="w-5 h-5 text-primary" />
                                 Private Request
                             </h3>
@@ -349,14 +352,17 @@ export function TourCard({
                         </div>
 
                         {/* Form Body */}
-                        <div className="p-5 flex-1 overflow-y-auto flex flex-col justify-center">
-                            <p className="text-sm text-gray-600 mb-5 text-center leading-relaxed">
-                                Interested in a private experience for <br />
-                                <b className="text-dark">{tourTitle}</b>?<br />
-                                Let us know your details and we'll send you a custom offer.
+                        <div className="p-4 flex-1 overflow-y-auto flex flex-col">
+                            <p className="text-[18px] text-dark mb-4 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                <span className="font-medium">Private experience for </span>
+                                <span className="text-primary font-semibold">{tourTitle}</span>
+                                {private_description && (
+                                    <span className="block mt-2 font-light text-[#404041]">{private_description}</span>
+                                )}
                             </p>
                             <form
-                                className="flex flex-col gap-3.5"
+                                className="flex flex-col gap-3 flex-1"
+                                style={{ fontFamily: 'Inter, sans-serif' }}
                                 onSubmit={(e) => {
                                     e.preventDefault();
                                     alert('Private request sent for: ' + tourTitle);
@@ -367,13 +373,13 @@ export function TourCard({
                                     type="text"
                                     placeholder="Your Name"
                                     required
-                                    className="w-full border border-gray-200 rounded px-3 py-2 text-sm text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                    className="w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
                                 />
                                 <input
                                     type="email"
                                     placeholder="Your Email"
                                     required
-                                    className="w-full border border-gray-200 rounded px-3 py-2 text-sm text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                    className="w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
                                 />
                                 <div className="flex gap-2 w-full">
                                     <input
@@ -381,22 +387,18 @@ export function TourCard({
                                         placeholder="Guests"
                                         min="1"
                                         required
-                                        className="w-1/3 border border-gray-200 rounded px-3 py-2 text-sm text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                        className="w-1/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
                                     />
                                     <input
                                         type="date"
                                         required
-                                        className="w-2/3 border border-gray-200 rounded px-3 py-2 text-sm text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-gray-500"
+                                        className="w-2/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-gray-500 bg-white"
                                     />
                                 </div>
-                                <textarea
-                                    placeholder="Additional requests (optional)"
-                                    rows={2}
-                                    className="w-full border border-gray-200 rounded px-3 py-2.5 text-sm text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none"
-                                />
+                                <div className="flex-1" />
                                 <button
                                     type="submit"
-                                    className="mt-2 w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded transition-colors text-[15px] flex items-center justify-center gap-2 shadow-md"
+                                    className="w-full text-white hover:text-dark py-2 px-8 font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2"
                                 >
                                     <Send className="w-4 h-4" /> Send Request
                                 </button>

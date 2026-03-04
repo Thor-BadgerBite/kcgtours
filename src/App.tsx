@@ -213,6 +213,7 @@ function HomePage() {
                                                             short_description={tour.short_description}
                                                             isBookableOnBokun={tour.isBookableOnBokun}
                                                             isPrivateAvailable={tour.isPrivateAvailable}
+                                                            private_description={tour.private_description}
                                                             slides={tour.slides}
                                                             onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                                         />
@@ -260,6 +261,7 @@ function HomePage() {
                                                 short_description={tour.short_description}
                                                 isBookableOnBokun={tour.isBookableOnBokun}
                                                 isPrivateAvailable={tour.isPrivateAvailable}
+                                                private_description={tour.private_description}
                                                 slides={tour.slides}
                                                 onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                             />

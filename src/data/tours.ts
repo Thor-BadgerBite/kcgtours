@@ -22,6 +22,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "1125444",
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                private_description: "Enjoy the entire Fiscardo Island Tour exclusively with your group — no crowds, your own pace. From the jaw-dropping cliff road down to Myrtos, through the medieval lanes of Assos and on to cosmopolitan Fiscardo, with Melissani Lake & Drogarati Cave included. We'll tailor the stops and timing entirely around you.",
                 slides: [
                     { image: "/images/1125444/assos.webp", title: "A Moment Worth Staying For" },
                     { image: "/images/1125444/assos2.webp", title: "Where the Mountain Meets the Sea" },
@@ -47,6 +48,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "1155681",
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                private_description: "Take the Sunday Island Tour as a private experience, just for your family or group. The best of northern Kefalonia — Myrtos, Assos, Fiscardo, Melissani & Drogarati — with complete flexibility on pace, photo stops and lunch breaks. Perfect for families, couples or small groups seeking a more personal adventure.",
                 slides: [
                     { image: "/images/1155681/assos.webp", title: "A Village Framed in Green & Blue" },
                     { image: "/images/1155681/assos2.webp", title: "Painted in Turquoise" },
@@ -71,6 +73,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "1125442",
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                private_description: "Experience the Kefalonian Adventure privately — the west coast, the monastery of Kipouria perched above the sea, panoramic views, an authentic winery visit and wine tasting, with no time pressure. Ideal for groups who want to linger longer at the places that matter most.",
                 slides: [
                     { image: "/images/1125442/ag.efimia.webp", title: "A Peaceful Corner of the Ionian" },
                     { image: "/images/1125442/kipouria.webp", title: "Faith on the Edge" },
@@ -95,6 +98,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "1144488",
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                private_description: "Erleben Sie Kefalonia auf Deutsch, ganz privat für Ihre Gruppe. Vom Myrtos-Strand über das venezianische Dörfchen Assos bis hin zum Yachthafen Fiscardo, der Melissani-Höhle und der Tropfsteinhöhle Drogarati — alles in Ihrem Tempo, mit persönlicher Begleitung und ohne Sprachbarrieren.",
                 slides: [
                     { image: "/images/1144448/assos.webp", title: "Ein Dorf wie gemalt" },
                     { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
@@ -119,6 +123,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "1125443",
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                private_description: "Discover mythical Ithaca privately — take the ferry across the Ionian and explore at your own leisure. Swim at wild Gidaki Beach, wander the charming harbour of Kioni and the Venetian capital Vathy, stopping wherever your curiosity leads. A deeply personal journey into the island of Odysseus.",
                 slides: [
                     { image: "/images/1125443/kioni.webp", title: "Tucked Away & Perfectly Beautiful" },
                     { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
@@ -141,6 +146,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "1125441",
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                private_description: "See all of Ithaca by private coach — Vathy, Kioni, the village of Stavros where Odysseus is said to have grown up, and Polis Bay. A relaxed, fully private island loop with your own guide, your own itinerary and no strangers sharing your day.",
                 slides: [
                     { image: "/images/1125441/kioni.webp", title: "A Village That Feels Like a Secret" },
                     { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },
