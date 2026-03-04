@@ -274,7 +274,7 @@ export function TourCard({
                                             <div className="flex w-[90%] max-w-[320px] shadow-sm rounded relative">
                                                 <button
                                                     onClick={handleBookNow}
-                                                    className="flex-1 text-white py-2 px-4 font-bold bg-primary hover:bg-primary-hover rounded-l transition-colors duration-300 ease-out text-[15px] border-r border-white/20 whitespace-nowrap"
+                                                    className="flex-1 text-white py-2 px-4 font-bold bg-primary hover:bg-primary-hover rounded-l transition-colors duration-300 ease-out text-[18px] border-r border-white/20 whitespace-nowrap"
                                                 >
                                                     View More &amp; Book
                                                 </button>
@@ -395,13 +395,18 @@ export function TourCard({
                                         className="w-2/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-gray-500 bg-white"
                                     />
                                 </div>
-                                <div className="flex-1" />
-                                <button
-                                    type="submit"
-                                    className="w-full text-white hover:text-dark py-2 px-8 font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2"
-                                >
-                                    <Send className="w-4 h-4" /> Send Request
-                                </button>
+                                <textarea
+                                    placeholder="Tell us about your group — anything that will help us personalise your experience"
+                                    className="flex-1 min-h-[60px] w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white resize-none"
+                                />
+                                <div className="w-full flex justify-center">
+                                    <button
+                                        type="submit"
+                                        className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2"
+                                    >
+                                        <Send className="w-4 h-4" /> Send Request
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </motion.div>
