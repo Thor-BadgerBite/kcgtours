@@ -432,6 +432,8 @@ export const tourCategories: TourCategory[] = [
                 duration: "5–6 Hours",
                 bokunProductId: "1156326",
                 isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "This shore excursion is available exclusively for your cruise ship party — a private minivan or minibus, your timetable, your pace. We'll coordinate seamlessly with your ship's schedule so you're back on board with time to spare, memories to spare.",
                 slides: [
                     { image: "/images/1156326/assos.webp", title: "An Afternoon Worth Lingering For" },
                     { image: "/images/1156326/assos2.webp", title: "Green Hills, Turquoise Bay" },
@@ -451,6 +453,8 @@ export const tourCategories: TourCategory[] = [
                 duration: "4.5–5 Hours",
                 bokunProductId: "1156327",
                 isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Book the Kefalonia Mini Adventure just for your group straight from the pier. Robola winery, the emerald cave of Melissani and a panoramic stop at Myrtos — all in a private vehicle with a personal guide and a schedule that bends around your ship's departure.",
                 slides: [
                     { image: "/images/1156327/ag.efimia.webp", title: "Calm Waters, Warm Welcome" },
                     { image: "/images/1156327/st.gerasimos.webp", title: "Sacred & Serene" },
@@ -540,6 +544,8 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Door-to-door luxury transfers between the airport, port, hotels and villas. Available 24/7 in premium vehicles — comfort and punctuality guaranteed.",
                 bokunProductId: "PLACEHOLDER_ACT_1",
                 isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Need a premium pickup for your family, villa guests or corporate group? We'll arrange a dedicated vehicle — from a luxury sedan to a minibus — for airports, ports or inter-island connections. Available 24/7, no crowds, no stress.",
                 slides: [
                     { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Luxury Vehicles" },
                     { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Arrive in Style" }
@@ -554,6 +560,8 @@ export const tourCategories: TourCategory[] = [
                 short_description: "An immersive hands-on cooking class at a local farm. Learn to prepare Kefalonian classics, taste estate olive oils and wines, and take home the recipes.",
                 bokunProductId: "PLACEHOLDER_ACT_2",
                 isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Book a private culinary class just for your group at a local Kefalonian farm. Hands-on cooking, estate wine and olive oil tasting, traditional recipes to take home — a truly personal taste of the island, at your own pace and with your own people.",
                 slides: [
                     { image: "https://avalontravel-kefalonia.gr//images/2025/10/14/small-wine-1.jpg", title: "Taste of Kefalonia" },
                     { image: "https://avalontravel-kefalonia.gr//images/2023/12/08/drogarati-small-1.jpg", title: "Food Artisans" }
@@ -568,6 +576,8 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Trek through the ancient Ainos National Park with an expert local guide. Dense Kefalonian fir forests, panoramic summit views and fascinating wildlife await.",
                 bokunProductId: "PLACEHOLDER_ACT_3",
                 isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Hire an expert local guide exclusively for your group to summit Mount Ainos. Set your own start time, choose your trail difficulty and linger as long as you like among the ancient fir trees and panoramic Ionian views — no other hikers, just your group and the mountain.",
                 slides: [
                     { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Mountain Peak" },
                     { image: "https://avalontravel-kefalonia.gr//images/2025/10/15/kipoureon-monastery-kefalonia.jpg", title: "Pine Forest Trails" }

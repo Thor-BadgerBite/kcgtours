@@ -315,10 +315,10 @@ export function TourCard({
                                     </p>
                                     <div className="w-full flex justify-center mt-4">
                                         <button
-                                            onClick={handleRequest}
+                                            onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
                                             className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                         >
-                                            <Send className="w-4 h-4" />
+                                            <MapPinCheckInside className="w-4 h-4" />
                                             Make a Request
                                         </button>
                                     </div>
