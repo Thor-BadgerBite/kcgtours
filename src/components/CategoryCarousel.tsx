@@ -15,10 +15,10 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
     useEffect(() => {
         function checkLimit() {
             let limit = 1; // mobile
-            if (window.innerWidth >= 1024) {
-                limit = 3; // lg
+            if (window.innerWidth >= 1280) {
+                limit = 3; // xl
             } else if (window.innerWidth >= 768) {
-                limit = 2; // md
+                limit = 2; // md, lg
             }
             setShouldScroll(items.length > limit);
         }
@@ -52,9 +52,9 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
     // For bus-tours, display exactly as original (grid-cols-1 md:grid-cols-2 lg:grid-cols-3)
     if (isBusTours || !shouldScroll) {
         return (
-            <div className={`grid gap-6 md:gap-8 items-stretch justify-center h-full mx-auto ${items.length === 1 ? 'grid-cols-1 md:w-1/2 lg:w-1/3' :
-                    items.length === 2 ? 'grid-cols-1 md:grid-cols-2 lg:w-2/3' :
-                        'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full'
+            <div className={`grid gap-6 md:gap-8 items-stretch justify-center h-full mx-auto ${items.length === 1 ? 'grid-cols-1 md:w-1/2 xl:w-1/3' :
+                items.length === 2 ? 'grid-cols-1 md:grid-cols-2 xl:w-2/3' :
+                    'grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full'
                 }`}>
                 {items.map((item, idx) => (
                     <div key={idx} className="flex h-full w-full">
@@ -72,7 +72,7 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
                     {displayItems.map((item, idx) => (
                         <div
                             key={idx}
-                            className="flex-none w-full md:w-1/2 lg:w-1/3 pl-6 md:pl-8 h-full"
+                            className="flex-none w-full md:w-1/2 xl:w-1/3 pl-6 md:pl-8 h-full"
                             style={{ minWidth: 0 }}
                         >
                             <div className="h-full flex flex-col justify-stretch">
