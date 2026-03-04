@@ -21,6 +21,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1125444",
                 isBookableOnBokun: true,
+                isPrivateAvailable: true,
                 slides: [
                     { image: "/images/1125444/assos.webp", title: "A Moment Worth Staying For" },
                     { image: "/images/1125444/assos2.webp", title: "Where the Mountain Meets the Sea" },
@@ -45,6 +46,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1155681",
                 isBookableOnBokun: true,
+                isPrivateAvailable: true,
                 slides: [
                     { image: "/images/1155681/assos.webp", title: "A Village Framed in Green & Blue" },
                     { image: "/images/1155681/assos2.webp", title: "Painted in Turquoise" },
@@ -68,6 +70,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1125442",
                 isBookableOnBokun: true,
+                isPrivateAvailable: true,
                 slides: [
                     { image: "/images/1125442/ag.efimia.webp", title: "A Peaceful Corner of the Ionian" },
                     { image: "/images/1125442/kipouria.webp", title: "Faith on the Edge" },
@@ -91,6 +94,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "8 Hours",
                 bokunProductId: "1144488",
                 isBookableOnBokun: true,
+                isPrivateAvailable: true,
                 slides: [
                     { image: "/images/1144448/assos.webp", title: "Ein Dorf wie gemalt" },
                     { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
@@ -114,6 +118,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "1125443",
                 isBookableOnBokun: true,
+                isPrivateAvailable: true,
                 slides: [
                     { image: "/images/1125443/kioni.webp", title: "Tucked Away & Perfectly Beautiful" },
                     { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
@@ -135,6 +140,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "1125441",
                 isBookableOnBokun: true,
+                isPrivateAvailable: true,
                 slides: [
                     { image: "/images/1125441/kioni.webp", title: "A Village That Feels Like a Secret" },
                     { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },

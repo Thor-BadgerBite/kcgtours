@@ -212,6 +212,7 @@ function HomePage() {
                                                             card_subtitle={tour.card_subtitle}
                                                             short_description={tour.short_description}
                                                             isBookableOnBokun={tour.isBookableOnBokun}
+                                                            isPrivateAvailable={tour.isPrivateAvailable}
                                                             slides={tour.slides}
                                                             onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                                         />
@@ -258,6 +259,7 @@ function HomePage() {
                                                 card_subtitle={tour.card_subtitle}
                                                 short_description={tour.short_description}
                                                 isBookableOnBokun={tour.isBookableOnBokun}
+                                                isPrivateAvailable={tour.isPrivateAvailable}
                                                 slides={tour.slides}
                                                 onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                             />

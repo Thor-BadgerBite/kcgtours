@@ -26,6 +26,8 @@ export interface Tour {
     /** true  → has a live Bokun booking page → show "View More & Book"
      *  false → on-request only              → show "Make a Request"   */
     isBookableOnBokun: boolean;
+    /** true  → offers a private, on-request option for this tour */
+    isPrivateAvailable?: boolean;
     slides: TourSlide[];
 }
 
