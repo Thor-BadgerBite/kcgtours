@@ -72,8 +72,12 @@ export function TailoredExperiences() {
             : `${selectedPlaces.length} places selected`;
 
     return (
-        <section id="contact" className="py-6 bg-sage">
-            <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+        <section id="contact" className="py-6 bg-sage relative overflow-hidden">
+            {/* Background texture image */}
+            <div className="absolute inset-0 opacity-15 pointer-events-none">
+                <img src="/images/beach.jpg" className="w-full h-full object-cover grayscale" alt="" />
+            </div>
+            <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
                     {/* Left Column: Information & Inspiration */}
