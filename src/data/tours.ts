@@ -355,6 +355,113 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
+                id: "sami-cruises",
+                title: "Private Cruises from Sami",
+                subtitle: "Your own private speedboat — explore Ithaca, Atokos & Kefalonia's coastline from Sami port",
+                tours: [
+                    {
+                        tourTitle: "South Ithaca Private Cruise",
+                        tourType: "PRIVATE CRUISE",
+                        itinerary: "Sami • Pera Pigadi • Vathy • Gidaki",
+                        operatingDays: "On Request",
+                        from_price: 480.00,
+                        badges: {},
+                        card_subtitle: "3 Ithaca beaches & Vathy town — your private boat, your pace",
+                        short_description: "4-hour private speedboat cruise to South Ithaca. Swim at Pera Pigadi & Gidaki, explore charming Vathy — entire boat for up to 9 guests.",
+                        duration: "4 Hours",
+                        bokunProductId: "1132501",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1132501/luminita1.webp", title: "Your Private Gateway to Ithaca" },
+                            { image: "/images/1132501/luminita2.webp", title: "Crystal Waters, No Crowds" },
+                            { image: "/images/1132501/luminita3.webp", title: "Speed, Freedom & Open Sea" },
+                            { image: "/images/1132501/luminita4.webp", title: "Where the Ionian Hides Its Secrets" },
+                            { image: "/images/1132501/luminita5.webp", title: "A Bay Worth Finding" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Full Round of Ithaca Cruise",
+                        tourType: "PRIVATE CRUISE",
+                        itinerary: "Sami • Agia Sofia • Fiscardo • Kioni • Vathy • Gidaki",
+                        operatingDays: "On Request",
+                        from_price: 720.00,
+                        badges: { isBestSeller: true },
+                        card_subtitle: "Complete Ithaca circumnavigation — 4 beaches, 3 villages, 8 hours",
+                        short_description: "Full-day private speedboat circumnavigation of Ithaca. Swim at 4 beaches, visit Kioni, Vathy & Fiscardo — entire boat for up to 9 guests.",
+                        duration: "8 Hours",
+                        bokunProductId: "1132521",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1132521/luminita1.webp", title: "A Full Day on the Ionian" },
+                            { image: "/images/1132521/luminita2.webp", title: "Ithaca Reveals Herself Slowly" },
+                            { image: "/images/1132521/luminita3.webp", title: "Into the Blue" },
+                            { image: "/images/1132521/luminita4.webp", title: "Every Stop Better Than the Last" },
+                            { image: "/images/1132521/luminita5.webp", title: "The Island, All the Way Round" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Full Round of Kefalonia Cruise",
+                        tourType: "PRIVATE CRUISE",
+                        itinerary: "Sami • Fiscardo • Assos • Myrtos • Platia Ammos • Skala",
+                        operatingDays: "On Request",
+                        from_price: 1200.00,
+                        badges: { isExclusive: true },
+                        card_subtitle: "The ultimate day at sea — circumnavigate Kefalonia in 9 hours",
+                        short_description: "9-hour private circumnavigation of Kefalonia. 4 swim stops, Fiscardo & Assos, Myrtos cliffs & beach lunch — entire boat for up to 9 guests.",
+                        duration: "9 Hours",
+                        bokunProductId: "1168716",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1168716/luminita1.webp", title: "Kefalonia from the Sea" },
+                            { image: "/images/1168716/luminita2.webp", title: "Myrtos — Only Reachable by Water" },
+                            { image: "/images/1168716/luminita3.webp", title: "The Long Way Round" },
+                            { image: "/images/1168716/luminita4.webp", title: "Every Cove a New Discovery" },
+                            { image: "/images/1168716/luminita5.webp", title: "Nine Hours Well Spent" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Atokos & South Ithaca Cruise",
+                        tourType: "PRIVATE CRUISE",
+                        itinerary: "Sami • Gidaki • Atokos Island • Vathy • Antisamos",
+                        operatingDays: "On Request",
+                        from_price: 900.00,
+                        badges: { isSpecialOffer: true },
+                        card_subtitle: "Uninhabited Atokos island & South Ithaca — off the beaten path",
+                        short_description: "7-hour private cruise to wild Atokos island & South Ithaca. 3 swim stops, lunch in Vathy — entire boat for up to 9 guests.",
+                        duration: "7 Hours",
+                        bokunProductId: "1168745",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1168745/luminita1.webp", title: "Bound for the Uninhabited" },
+                            { image: "/images/1168745/luminita2.webp", title: "Atokos — Few Ever Come Here" },
+                            { image: "/images/1168745/luminita3.webp", title: "Raw, Wild & Completely Yours" },
+                            { image: "/images/1168745/luminita4.webp", title: "The Ionian at Its Most Untouched" },
+                            { image: "/images/1168745/luminita5.webp", title: "A Day Beyond the Ordinary" }
+                        ]
+                    },
+                    {
+                        tourTitle: "Koutsoupia & Xilomata Cruise",
+                        tourType: "PRIVATE CRUISE",
+                        itinerary: "Sami • Koutsoupia • Poros • Xilomata",
+                        operatingDays: "On Request",
+                        from_price: 480.00,
+                        badges: {},
+                        card_subtitle: "East coast half-day — 2 secluded beaches & coffee in Poros",
+                        short_description: "4-hour private speedboat cruise along Kefalonia's quiet east coast. 2 swim stops, coffee in Poros — entire boat for up to 9 guests.",
+                        duration: "4 Hours",
+                        bokunProductId: "1168781",
+                        isBookableOnBokun: true,
+                        slides: [
+                            { image: "/images/1168781/luminita1.webp", title: "The Quiet Side of Kefalonia" },
+                            { image: "/images/1168781/luminita2.webp", title: "Calm Waters & No Crowds" },
+                            { image: "/images/1168781/luminita3.webp", title: "A Perfect Half-Day at Sea" },
+                            { image: "/images/1168781/luminita4.webp", title: "Tucked Away on the East Coast" },
+                            { image: "/images/1168781/luminita5.webp", title: "Worth Every Minute" }
+                        ]
+                    }
+                ]
+            },
+            {
                 id: "sailing-cruises",
                 title: "Sailing Cruises",
                 subtitle: "Authentic sailing on the Ionian — half-day, full-day & romantic sunset options",
