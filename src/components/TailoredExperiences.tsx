@@ -72,7 +72,7 @@ export function TailoredExperiences() {
             : `${selectedPlaces.length} places selected`;
 
     return (
-        <section id="contact" className="py-6 bg-sage relative overflow-hidden">
+        <section id="contact" className="py-6 bg-white relative overflow-hidden">
             {/* Background texture image */}
             <div className="absolute inset-0 opacity-15 pointer-events-none">
                 <img src="/images/beach.jpg" className="w-full h-full object-cover grayscale" alt="" />
@@ -88,12 +88,12 @@ export function TailoredExperiences() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-light text-white mb-2 leading-tight">
-                            Tailored <span className="font-semibold text-white">Experiences</span>
+                        <h2 className="text-3xl md:text-5xl font-light text-dark mb-2 leading-tight">
+                            Tailored <span className="font-semibold text-primary">Experiences</span>
                         </h2>
-                        <h3 className="text-xl text-white/80 mb-6 font-light">Crafting Your Perfect Kefalonia Journey</h3>
+                        <h3 className="text-xl text-gray-500 mb-6 font-light">Crafting Your Perfect Kefalonia Journey</h3>
 
-                        <p className="text-white/90 mb-8 leading-relaxed text-lg">
+                        <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                             At KCG Tours, we believe that every traveler is unique.
                             If you have specific destinations in mind or prefer to create your own itinerary,
                             we are here to bring your vision to life. From secluded beaches and hidden gems
