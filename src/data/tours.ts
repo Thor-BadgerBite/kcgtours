@@ -643,15 +643,16 @@ export const tourCategories: TourCategory[] = [
         subtitle: "Elevate your Kefalonia experience",
         tours: [
             {
-                tourTitle: "Horse Riding at Mounda Beach",
+                tourTitle: "Horse Riding",
                 tourType: "HORSE RIDING",
                 from_price: 35.00,
                 badges: {},
-                card_subtitle: "Sunset beach rides, clifftop hacks & village trails near Skala",
-                short_description: "Experience Kefalonia on horseback — from a gentle 30-minute local hack to a full 75-minute sunset ride along the breaking waves of Mounda Beach. Choose from 4 rides: Local Hack (30min, €35), Cape Mounda Ride (65min, €65), Mounda Beach Ride (70min, €75) or Old Skala Ride (75min, €80). 15% discount for children aged 7–15.",
+                card_subtitle: "Explore Kefalonia on horseback — beach rides, coastal trails & hidden villages",
+                short_description: "Saddle up and discover Kefalonia's most beautiful landscapes on horseback. Whether you're a first-timer or an experienced rider, our guided rides take you through stunning coastal scenery, ancient olive groves and hidden corners of the island you'd never find on foot. Suitable for all ages — 15% discount for children aged 7–15.",
                 bokunProductId: "PLACEHOLDER_HR_1",
                 isBookableOnBokun: false,
-                isPrivateAvailable: false,
+                isPrivateAvailable: true,
+                private_description: "Looking for a private riding experience for your group, family or couple? We'll arrange an exclusive guided ride tailored to your group's ability and interests — beach, countryside or village trails. Get in touch and we'll put together the perfect outing for you.",
                 slides: [
                     { image: "/images/horseriding/horseriding1.webp", title: "Hooves, Waves & Golden Light" }
                 ]
