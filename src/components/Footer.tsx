@@ -51,7 +51,7 @@ export function Footer() {
                     </div>
 
                     {/* Center Column: Logo & TripAdvisor */}
-                    <div className="flex flex-col items-center justify-center text-center space-y-8">
+                    <div className="flex flex-col items-center justify-center text-center space-y-4">
                         <div>
                             <img src="/images/logo.png" alt="KCG Tours" className="h-[80px] md:h-[100px] w-auto mx-auto" />
                         </div>
@@ -61,10 +61,10 @@ export function Footer() {
                             href="https://www.tripadvisor.co.uk/Attraction_Review-g644214-d10413398-Reviews-KCG_Travel_Services-Lassi_Kefalonia_Ionian_Islands.html"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block bg-white p-5 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow border border-gray-100 group relative overflow-hidden max-w-[280px] w-full"
+                            className="block bg-white p-3 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow border border-gray-100 group relative overflow-hidden max-w-[280px] w-full"
                         >
                             <div className="absolute top-0 inset-x-0 h-1 bg-[#34E0A1]"></div>
-                            <div className="flex flex-col items-center gap-3">
+                            <div className="flex flex-col items-center gap-2">
                                 <div className="flex justify-center mb-2">
                                     <img src="/images/tripadvisor.png" alt="Tripadvisor Excellence Award" className="h-[60px] md:h-[80px] w-auto object-contain" />
                                 </div>
