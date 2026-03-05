@@ -20,7 +20,10 @@ export function slugify(text: string) {
 
 function scrollToId(id: string) {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (!el) return;
+    const navHeight = 60;
+    const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
 }
 
 // ── NavItem with optional dropdown ───────────────────────────────────────────
