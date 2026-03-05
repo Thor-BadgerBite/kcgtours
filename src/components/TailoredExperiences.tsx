@@ -78,7 +78,7 @@ export function TailoredExperiences() {
 
                     {/* Left Column: Information & Inspiration */}
                     <motion.div
-                        className="flex-1 flex flex-col justify-center"
+                        className="flex-1 flex flex-col justify-between"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -97,7 +97,7 @@ export function TailoredExperiences() {
                             private tour that perfectly matches your pace and interests.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-sm">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
                                 <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <MapPin size={20} />
