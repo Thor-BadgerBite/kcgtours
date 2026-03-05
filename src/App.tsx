@@ -209,6 +209,7 @@ function HomePage() {
                                                             from_price={tour.from_price}
                                                             badges={tour.badges}
                                                             bokunProductId={tour.bokunProductId}
+                                                            baseViews={tour.baseViews}
                                                             card_subtitle={tour.card_subtitle}
                                                             short_description={tour.short_description}
                                                             isBookableOnBokun={tour.isBookableOnBokun}
@@ -257,6 +258,7 @@ function HomePage() {
                                                 from_price={tour.from_price}
                                                 badges={tour.badges}
                                                 bokunProductId={tour.bokunProductId}
+                                                baseViews={tour.baseViews}
                                                 card_subtitle={tour.card_subtitle}
                                                 short_description={tour.short_description}
                                                 isBookableOnBokun={tour.isBookableOnBokun}
