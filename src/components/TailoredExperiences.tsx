@@ -139,13 +139,13 @@ export function TailoredExperiences() {
 
                     {/* Right Column: Contact Form */}
                     <motion.div
-                        className="flex-1"
+                        className="flex-1 flex flex-col"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="bg-card p-4 rounded-2xl shadow-lg border border-gray-100 relative overflow-visible">
+                        <div className="bg-card p-4 rounded-2xl shadow-lg border border-gray-100 relative overflow-visible flex flex-col flex-1">
                             {/* Decorative element */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary opacity-5 rounded-bl-full pointer-events-none" />
 
