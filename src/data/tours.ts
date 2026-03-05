@@ -24,10 +24,10 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Enjoy the entire Fiscardo Island Tour exclusively with your group — no crowds, your own pace. From the jaw-dropping cliff road down to Myrtos, through the medieval lanes of Assos and on to cosmopolitan Fiscardo, with Melissani Lake & Drogarati Cave included. We'll tailor the stops and timing entirely around you.",
                 slides: [
-                    { image: "/images/1125444/assos.webp", title: "A Moment Worth Staying For" },
+                    { image: "/images/1125444/fiscardo.webp", title: "A Moment Worth Staying For" },
                     { image: "/images/1125444/assos2.webp", title: "Where the Mountain Meets the Sea" },
                     { image: "/images/1125444/drogarati.webp", title: "A Million Years in the Making" },
-                    { image: "/images/1125444/fiscardo.webp", title: "Colours of the North" },
+                    { image: "/images/1125444/assos.webp", title: "Colours of the North" },
                     { image: "/images/1125444/fiscardo2.webp", title: "Where the Ionian Yachts Sleep" },
                     { image: "/images/1125444/fiscardo3.webp", title: "A Quiet Evening in the Village" },
                     { image: "/images/1125444/melissani.webp", title: "Ancient, Still & Breathtaking" },
@@ -75,10 +75,10 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Experience the Kefalonian Adventure privately — the west coast, the monastery of Kipouria perched above the sea, panoramic views, an authentic winery visit and wine tasting, with no time pressure. Ideal for groups who want to linger longer at the places that matter most.",
                 slides: [
-                    { image: "/images/1125442/ag.efimia.webp", title: "A Peaceful Corner of the Ionian" },
+                    { image: "/images/1125442/petani.webp", title: "A Peaceful Corner of the Ionian" },
                     { image: "/images/1125442/kipouria.webp", title: "Faith on the Edge" },
                     { image: "/images/1125442/lixouri.webp", title: "The Island's Other Soul" },
-                    { image: "/images/1125442/petani.webp", title: "Wild, Hidden & Unforgettable" },
+                    { image: "/images/1125442/ag.efimia.webp", title: "Wild, Hidden & Unforgettable" },
                     { image: "/images/1125442/st.gerasimos.webp", title: "Where the Island Prays" },
                     { image: "/images/1125442/st.gerasimos2.webp", title: "Gold, Light & Devotion" },
                     { image: "/images/1125442/winery.webp", title: "A Thousand Bottles of Kefalonia" },
@@ -90,7 +90,7 @@ export const tourCategories: TourCategory[] = [
                 tourType: "PRIVATE TOUR",
                 itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
                 operatingDays: "On Request",
-                from_price: 37.50,
+                from_price: 55.00,
                 badges: { isExclusive: true },
                 card_subtitle: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
                 short_description: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
@@ -100,7 +100,7 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Erleben Sie Kefalonia auf Deutsch, ganz privat für Ihre Gruppe. Vom Myrtos-Strand über das venezianische Dörfchen Assos bis hin zum Yachthafen Fiscardo, der Melissani-Höhle und der Tropfsteinhöhle Drogarati — alles in Ihrem Tempo, mit persönlicher Begleitung und ohne Sprachbarrieren.",
                 slides: [
-                    { image: "/images/1144448/assos.webp", title: "Ein Dorf wie gemalt" },
+                    { image: "/images/1144448/fiscardo3.webp", title: "Ein Dorf wie gemalt" },
                     { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
                     { image: "/images/1144448/drogarati.webp", title: "Eine Million Jahre alt" },
                     { image: "/images/1144448/fiscardo.webp", title: "Venezianisches Flair im Norden" },
@@ -125,12 +125,12 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Discover mythical Ithaca privately — take the ferry across the Ionian and explore at your own leisure. Swim at wild Gidaki Beach, wander the charming harbour of Kioni and the Venetian capital Vathy, stopping wherever your curiosity leads. A deeply personal journey into the island of Odysseus.",
                 slides: [
-                    { image: "/images/1125443/kioni.webp", title: "Tucked Away & Perfectly Beautiful" },
+                    { image: "/images/1125443/vathy2.webp", title: "Tucked Away & Perfectly Beautiful" },
                     { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
                     { image: "/images/1125443/sami.webp", title: "Where Every Journey Begins" },
                     { image: "/images/1125443/stavros.webp", title: "Peaceful, Timeless, Ithaca" },
                     { image: "/images/1125443/vathy.webp", title: "A Harbour Steeped in Myth" },
-                    { image: "/images/1125443/vathy2.webp", title: "The Bay That Holds a Thousand Stories" }
+                    { image: "/images/1125443/kioni.webp", title: "The Bay That Holds a Thousand Stories" }
                 ]
             },
             {
@@ -148,11 +148,11 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "See all of Ithaca by private coach — Vathy, Kioni, the village of Stavros where Odysseus is said to have grown up, and Polis Bay. A relaxed, fully private island loop with your own guide, your own itinerary and no strangers sharing your day.",
                 slides: [
-                    { image: "/images/1125441/kioni.webp", title: "A Village That Feels Like a Secret" },
+                    { image: "/images/1125441/vathy.webp", title: "A Village That Feels Like a Secret" },
                     { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },
                     { image: "/images/1125441/sami.webp", title: "The Journey Begins Here" },
                     { image: "/images/1125441/stavros.webp", title: "Village Church, Infinite View" },
-                    { image: "/images/1125441/vathy.webp", title: "Where Odysseus Once Returned" },
+                    { image: "/images/1125441/kioni.webp", title: "Where Odysseus Once Returned" },
                     { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
                 ]
             }
@@ -542,8 +542,8 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Experience Assos and Fiscardo exclusively with your own cruise group. With a private vehicle, you dictate the pace — spend more time photographing Myrtos or lingering over lunch in Fiscardo, with peace of mind knowing you'll return to your ship perfectly on time.",
                 slides: [
-                    { image: "/images/1156326/assos.webp", title: "An Afternoon Worth Lingering For" },
-                    { image: "/images/1156326/assos2.webp", title: "Green Hills, Turquoise Bay" },
+                    { image: "/images/1156326/assos2.webp", title: "An Afternoon Worth Lingering For" },
+                    { image: "/images/1156326/assos.webp", title: "Green Hills, Turquoise Bay" },
                     { image: "/images/1156326/fiscardo.webp", title: "Life at the Waterfront" },
                     { image: "/images/1156326/fiscardo2.webp", title: "Terracotta Rooftops & Sailboats" }
                 ]
