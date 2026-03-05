@@ -643,19 +643,17 @@ export const tourCategories: TourCategory[] = [
         subtitle: "Elevate your Kefalonia experience",
         tours: [
             {
-                tourTitle: "Private VIP Transfer",
-                tourType: "TRANSFER",
-                from_price: 40.00,
-                badges: { isBestSeller: true },
-                card_subtitle: "Airport & Port Premium Transfers",
-                short_description: "Door-to-door luxury transfers between the airport, port, hotels and villas. Available 24/7 in premium vehicles — comfort and punctuality guaranteed.",
-                bokunProductId: "PLACEHOLDER_ACT_1",
+                tourTitle: "Horse Riding at Mounda Beach",
+                tourType: "HORSE RIDING",
+                from_price: 35.00,
+                badges: {},
+                card_subtitle: "Sunset beach rides, clifftop hacks & village trails near Skala",
+                short_description: "Experience Kefalonia on horseback — from a gentle 30-minute local hack to a full 75-minute sunset ride along the breaking waves of Mounda Beach. Choose from 4 rides: Local Hack (30min, €35), Cape Mounda Ride (65min, €65), Mounda Beach Ride (70min, €75) or Old Skala Ride (75min, €80). 15% discount for children aged 7–15.",
+                bokunProductId: "PLACEHOLDER_HR_1",
                 isBookableOnBokun: false,
-                isPrivateAvailable: true,
-                private_description: "Need a premium pickup for your family, villa guests or corporate group? We'll arrange a dedicated vehicle — from a luxury sedan to a minibus — for airports, ports or inter-island connections. Available 24/7, no crowds, no stress.",
+                isPrivateAvailable: false,
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/18/kefalonia_discover_private_tour_001.jpg", title: "Luxury Vehicles" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/05/06/depositphotos_359881686_xl.jpg", title: "Arrive in Style" }
+                    { image: "/images/horseriding/horseriding1.webp", title: "Hooves, Waves & Golden Light" }
                 ]
             },
             {
