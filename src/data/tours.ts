@@ -670,24 +670,24 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Book a private culinary class just for your group at a local Kefalonian farm. Hands-on cooking, estate wine and olive oil tasting, traditional recipes to take home — a truly personal taste of the island, at your own pace and with your own people.",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/14/small-wine-1.jpg", title: "Taste of Kefalonia" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2023/12/08/drogarati-small-1.jpg", title: "Food Artisans" }
+                    { image: "/images/culinary/culinary1.webp", title: "Taste of Kefalonia" },
+                    { image: "/images/culinary/culinary2.webp", title: "Food Artisans" }
                 ]
             },
             {
-                tourTitle: "Guided Mount Ainos Hike",
+                tourTitle: "Wine Tasting Experience",
                 tourType: "ACTIVITY",
                 from_price: 60.00,
                 badges: { isSpecialOffer: true },
-                card_subtitle: "Summit views above the ancient Kefalonian fir forest",
-                short_description: "Trek through the ancient Ainos National Park with an expert local guide. Dense Kefalonian fir forests, panoramic summit views and fascinating wildlife await.",
+                card_subtitle: "Taste the soul of Kefalonia — award-winning Robola & Muscat wines",
+                short_description: "A guided winery visit in the heart of Kefalonia. Discover the story behind the island's celebrated Robola wine, stroll the vineyards and enjoy a curated tasting of estate wines and local delicacies.",
                 bokunProductId: "PLACEHOLDER_ACT_3",
                 isBookableOnBokun: false,
                 isPrivateAvailable: true,
-                private_description: "Hire an expert local guide exclusively for your group to summit Mount Ainos. Set your own start time, choose your trail difficulty and linger as long as you like among the ancient fir trees and panoramic Ionian views — no other hikers, just your group and the mountain.",
+                private_description: "Book a private winery experience just for your group — a guided tour of the vineyards, an introduction to Kefalonian winemaking and a generous tasting of Robola, Muscat and red estate wines, paired with local cheese and charcuterie. Relaxed, personal and utterly delicious.",
                 slides: [
-                    { image: "https://avalontravel-kefalonia.gr//images/2024/01/04/338034533_954071412292503_750301414178413546_n.jpg", title: "Mountain Peak" },
-                    { image: "https://avalontravel-kefalonia.gr//images/2025/10/15/kipoureon-monastery-kefalonia.jpg", title: "Pine Forest Trails" }
+                    { image: "/images/winery/winery1.webp", title: "" },
+                    { image: "/images/winery/winery2.webp", title: "" }
                 ]
             }
         ]
