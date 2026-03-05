@@ -1,16 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Clock } from 'lucide-react';
+import { MapPin, Mail, Clock, ChevronDown, Check } from 'lucide-react';
+
+const PLACES_OF_INTEREST = [
+    'Myrtos Beach',
+    'Assos Village',
+    'Fiscardo',
+    'Melissani Lake',
+    'Drogarati Cave',
+    'Antisamos Beach',
+    'Skala Beach',
+    'Lourdas Beach',
+    'Xi Beach (Red Sand)',
+    'Agia Efimia',
+    'Argostoli Town',
+    'Lixouri',
+    'Saint Gerasimos Monastery',
+    'Robola Winery',
+    'Kipouria Monastery',
+    'Ithaca Island',
+    'Petani Beach',
+    'Ainos National Park',
+    'Poros Village',
+    'Ainos National Park',
+    'Saint George Castle',
+];
 
 export function TailoredExperiences() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '',
         date: '',
         guests: '',
-        message: ''
+        message: '',
     });
+    const [selectedPlaces, setSelectedPlaces] = useState<string[]>([]);
+    const [placesOpen, setPlacesOpen] = useState(false);
+    const placesRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleOutside(e: MouseEvent) {
+            if (placesRef.current && !placesRef.current.contains(e.target as Node)) {
+                setPlacesOpen(false);
+            }
+        }
+        if (placesOpen) document.addEventListener('mousedown', handleOutside);
+        return () => document.removeEventListener('mousedown', handleOutside);
+    }, [placesOpen]);
+
+    const togglePlace = (place: string) => {
+        setSelectedPlaces(prev =>
+            prev.includes(place) ? prev.filter(p => p !== place) : [...prev, place]
+        );
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,14 +60,20 @@ export function TailoredExperiences() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Implement email sending logic here
         alert('Thank you! Your inquiry for a tailored experience has been submitted. We will get back to you shortly.');
-        setFormData({ name: '', email: '', phone: '', date: '', guests: '', message: '' });
+        setFormData({ name: '', email: '', date: '', guests: '', message: '' });
+        setSelectedPlaces([]);
     };
 
+    const placesLabel = selectedPlaces.length === 0
+        ? 'Select places…'
+        : selectedPlaces.length === 1
+            ? selectedPlaces[0]
+            : `${selectedPlaces.length} places selected`;
+
     return (
-        <section id="contact" className="py-20 bg-sage">
-            <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <section id="contact" className="py-6 bg-sage">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
                     {/* Left Column: Information & Inspiration */}
@@ -79,13 +127,15 @@ export function TailoredExperiences() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="bg-card p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div className="bg-card p-4 rounded-2xl shadow-lg border border-gray-100 relative overflow-visible">
                             {/* Decorative element */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary opacity-5 rounded-bl-full pointer-events-none" />
 
-                            <h3 className="text-2xl text-dark font-semibold mb-6">Request a Custom Tour</h3>
-                            <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <h3 className="text-2xl text-dark font-semibold mb-4">Request a Custom Tour</h3>
+                            <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+
+                                {/* Row 1: Name + Email */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="space-y-1">
                                         <label className="text-sm font-medium text-gray-700">Name *</label>
                                         <input
@@ -94,7 +144,7 @@ export function TailoredExperiences() {
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                            className="w-full px-3 py-2.5 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                             placeholder="John Doe"
                                         />
                                     </div>
@@ -106,24 +156,14 @@ export function TailoredExperiences() {
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                            className="w-full px-3 py-2.5 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                             placeholder="john@example.com"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                                    <div className="space-y-1">
-                                        <label className="text-sm font-medium text-gray-700">Phone</label>
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                            placeholder="+1 (xxx)"
-                                        />
-                                    </div>
+                                {/* Row 2: Date + Guests + Places of Interest */}
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div className="space-y-1">
                                         <label className="text-sm font-medium text-gray-700">Date</label>
                                         <input
@@ -131,7 +171,7 @@ export function TailoredExperiences() {
                                             name="date"
                                             value={formData.date}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600"
+                                            className="w-full px-3 py-2.5 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600"
                                         />
                                     </div>
                                     <div className="space-y-1">
@@ -140,17 +180,53 @@ export function TailoredExperiences() {
                                             name="guests"
                                             value={formData.guests}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600 bg-white"
+                                            className="w-full px-3 py-2.5 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600 bg-white"
                                         >
                                             <option value="">Select</option>
-                                            <option value="1-2">1 - 2</option>
-                                            <option value="3-4">3 - 4</option>
-                                            <option value="5-8">5 - 8</option>
+                                            <option value="1-2">1 – 2</option>
+                                            <option value="3-4">3 – 4</option>
+                                            <option value="5-8">5 – 8</option>
                                             <option value="9+">9+</option>
                                         </select>
                                     </div>
+
+                                    {/* Places of Interest Dropdown */}
+                                    <div className="space-y-1" ref={placesRef}>
+                                        <label className="text-sm font-medium text-gray-700">Places of Interest</label>
+                                        <div className="relative">
+                                            <button
+                                                type="button"
+                                                onClick={() => setPlacesOpen(v => !v)}
+                                                className="w-full px-3 py-2.5 rounded-md border border-gray-200 bg-white text-left text-gray-600 text-sm flex items-center justify-between focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                            >
+                                                <span className="truncate">{placesLabel}</span>
+                                                <ChevronDown className={`w-4 h-4 shrink-0 ml-1 transition-transform duration-200 ${placesOpen ? 'rotate-180' : ''}`} />
+                                            </button>
+
+                                            {placesOpen && (
+                                                <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-xl z-50 max-h-56 overflow-y-auto">
+                                                    {PLACES_OF_INTEREST.map(place => (
+                                                        <button
+                                                            key={place}
+                                                            type="button"
+                                                            onClick={() => togglePlace(place)}
+                                                            className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left hover:bg-gray-50 transition-colors"
+                                                        >
+                                                            <span className={`w-4 h-4 shrink-0 rounded border flex items-center justify-center transition-colors ${selectedPlaces.includes(place) ? 'bg-primary border-primary' : 'border-gray-300'}`}>
+                                                                {selectedPlaces.includes(place) && <Check className="w-3 h-3 text-white" />}
+                                                            </span>
+                                                            <span className={selectedPlaces.includes(place) ? 'text-primary font-medium' : 'text-gray-700'}>
+                                                                {place}
+                                                            </span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
 
+                                {/* Row 3: Message */}
                                 <div className="space-y-1">
                                     <label className="text-sm font-medium text-gray-700">Your Ideas / Needs *</label>
                                     <textarea
@@ -159,14 +235,14 @@ export function TailoredExperiences() {
                                         rows={4}
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
-                                        placeholder="Tell us about places you want to visit, special requirements, etc."
-                                    ></textarea>
+                                        className="w-full px-3 py-2.5 rounded-md border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
+                                        placeholder="Tell us about special requirements, preferred pace, dietary needs, etc."
+                                    />
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-primary hover:bg-primary-hover text-white hover:text-dark group font-bold py-4 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                                    className="w-full bg-primary hover:bg-primary-hover text-white hover:text-dark font-bold py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                                 >
                                     <span>Send Inquiry</span>
                                     <Mail size={18} />
