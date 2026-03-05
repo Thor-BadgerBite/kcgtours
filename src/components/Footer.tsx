@@ -3,7 +3,7 @@ import { Facebook, Instagram, ShieldCheck, MapPin, Phone, Mail, Award, Star, You
 
 export function Footer() {
     return (
-        <footer className="bg-sage pt-6 pb-8 border-t border-gray-200">
+        <footer className="bg-sage pt-6 pb-4 border-t border-gray-200">
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 items-start mb-6">
 
@@ -115,7 +115,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom Bar %} */}
-                <div className="border-t border-white/20 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/70 text-center md:text-left gap-4">
+                <div className="border-t border-white/20 pt-3 mt-3 flex flex-col md:flex-row justify-between items-center text-xs text-white/70 text-center md:text-left gap-2">
                     <p>&copy; {new Date().getFullYear()} KCG Travel Services Kefalonia. All rights reserved.</p>
                     <p>License No: <span className="font-semibold">0458E60000064100</span></p>
                 </div>
