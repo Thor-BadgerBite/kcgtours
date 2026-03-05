@@ -102,40 +102,40 @@ export function TailoredExperiences() {
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                            <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
+                            <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
                                 <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-dark mb-1">Pick Your Spots</h4>
-                                    <p className="text-gray-500">Myrtos, Assos, Melissani & more — you choose.</p>
+                                    <h4 className="font-bold text-white mb-1">Pick Your Spots</h4>
+                                    <p className="text-white/80">Myrtos, Assos, Melissani & more — you choose.</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
+                            <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
                                 <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <Clock size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-dark mb-1">Your Own Pace</h4>
-                                    <p className="text-gray-500">No fixed schedule. Linger as long as you like.</p>
+                                    <h4 className="font-bold text-white mb-1">Your Own Pace</h4>
+                                    <p className="text-white/80">No fixed schedule. Linger as long as you like.</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
+                            <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
                                 <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <Stars size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-dark mb-1">Crafted by Experts</h4>
-                                    <p className="text-gray-500">Our local team builds the perfect trip around your wishes.</p>
+                                    <h4 className="font-bold text-white mb-1">Crafted by Experts</h4>
+                                    <p className="text-white/80">Our local team builds the perfect trip around your wishes.</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-sm">
+                            <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
                                 <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <Sparkles size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-dark mb-1">Anything Goes</h4>
-                                    <p className="text-gray-500">Beach, caves, wine, villages — dream it, we'll make it happen.</p>
+                                    <h4 className="font-bold text-white mb-1">Anything Goes</h4>
+                                    <p className="text-white/80">Beach, caves, wine, villages — dream it, we'll make it happen.</p>
                                 </div>
                             </div>
                         </div>
