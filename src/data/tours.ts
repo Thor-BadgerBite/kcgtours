@@ -356,7 +356,7 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 id: "sami-cruises",
-                title: "Private Cruises from Sami",
+                title: "Cruises from Sami",
                 subtitle: "Your own private speedboat — explore Ithaca, Atokos & Kefalonia's coastline from Sami port",
                 tours: [
                     {
