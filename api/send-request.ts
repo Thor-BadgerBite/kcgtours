@@ -19,8 +19,8 @@ export interface RequestPayload {
 // TODO: Upload each HTML file from /email-templates/ to Resend Dashboard → Templates,
 //       then paste the published Template ID below.
 const TEMPLATE_IDS = {
-  privateTourRequest: 'PLACEHOLDER_PRIVATE_TOUR_TEMPLATE_ID',
-  tailoredExperience: 'PLACEHOLDER_TAILORED_EXPERIENCE_TEMPLATE_ID',
+  privateTourRequest: 'f901732a-7935-4b3a-865d-29d4cc1100a0',
+  tailoredExperience: '00946a3c-10f6-4c7c-b92b-09070a15d158',
 };
 
 // ─── Handler ──────────────────────────────────────────────────────────────────
