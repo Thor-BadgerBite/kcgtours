@@ -30,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_EMAIL || 'info@kcgtours.com';
+  const toEmail = process.env.CONTACT_EMAIL || 'info@kcgtours.gr';
 
   if (!apiKey) {
     console.error('RESEND_API_KEY is not set');
@@ -50,7 +50,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (isTourRequest) {
       // ── Template 1: Private Tour Request ──────────────────────────────
       const { error } = await resend.emails.send({
-        from: 'KCG Tours <noreply@kcgtours.com>',
+        from: 'KCG Tours <noreply@kcgtours.gr>',
         to: [toEmail],
         replyTo: data.email,
         subject: `🏖️ Private Request — ${data.tourTitle || 'Tour'} [${data.name}]`,
@@ -79,7 +79,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         : 'None selected';
 
       const { error } = await resend.emails.send({
-        from: 'KCG Tours <noreply@kcgtours.com>',
+        from: 'KCG Tours <noreply@kcgtours.gr>',
         to: [toEmail],
         replyTo: data.email,
         subject: `✨ Custom Tour Request — ${data.name}`,
