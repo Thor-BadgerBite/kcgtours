@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Eye, ChevronLeft, ChevronRight, Send, ChevronDown, MapPinCheckInside, X, Share2 } from 'lucide-react';
+import { Eye, ChevronLeft, ChevronRight, Send, ChevronDown, MapPinCheckInside, X, Share2, CheckCircle, AlertCircle } from 'lucide-react';
 import { useViewCounter } from '../hooks/useViewCounter';
 import { slugify } from '../App';
 import type { TourSlide } from '../types';
+import { sendMailRequest } from '../lib/mail';
 
 interface TourCardProps {
     slides: TourSlide[];
@@ -71,6 +72,37 @@ export function TourCard({
     const [shareOpen, setShareOpen] = useState(false);
     const shareRef = useRef<HTMLDivElement>(null);
     const { viewCount, incrementView } = useViewCounter(bokunProductId, baseViews);
+
+    // Private request form state
+    const [formFields, setFormFields] = useState({ name: '', email: '', guests: '', date: '', description: '' });
+    const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [formError, setFormError] = useState('');
+
+    const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormFields(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleFormSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setFormStatus('loading');
+        setFormError('');
+        const result = await sendMailRequest({
+            source: 'tour-private-request',
+            tourTitle,
+            name: formFields.name,
+            email: formFields.email,
+            guests: formFields.guests,
+            date: formFields.date,
+            description: formFields.description,
+        });
+        if (result.success) {
+            setFormStatus('success');
+            setFormFields({ name: '', email: '', guests: '', date: '', description: '' });
+        } else {
+            setFormStatus('error');
+            setFormError(result.error || 'Something went wrong. Please try again.');
+        }
+    };
 
     // Close share popup when clicking outside
     useEffect(() => {
@@ -475,54 +507,90 @@ export function TourCard({
                                     <span className="block mt-2 font-light text-[#404041]">{private_description}</span>
                                 )}
                             </p>
-                            <form
-                                className="flex flex-col gap-3 flex-1"
-                                style={{ fontFamily: 'Inter, sans-serif' }}
-                                onSubmit={(e) => {
-                                    e.preventDefault();
-                                    alert('Private request sent for: ' + tourTitle);
-                                    setIsFlipped(false);
-                                }}
-                            >
-                                <input
-                                    type="text"
-                                    placeholder="Your Name"
-                                    required
-                                    className="w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="Your Email"
-                                    required
-                                    className="w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
-                                />
-                                <div className="flex gap-2 w-full">
-                                    <input
-                                        type="number"
-                                        placeholder="Guests"
-                                        min="1"
-                                        required
-                                        className="w-1/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
-                                    />
-                                    <input
-                                        type="date"
-                                        required
-                                        className="w-2/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-gray-500 bg-white"
-                                    />
-                                </div>
-                                <textarea
-                                    placeholder="Tell us about your group — anything that will help us personalise your experience"
-                                    className="flex-1 min-h-[60px] w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white resize-none"
-                                />
-                                <div className="w-full flex justify-center">
+                            {formStatus === 'success' ? (
+                                <div className="flex flex-col items-center justify-center flex-1 gap-4 py-8" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                    <CheckCircle className="w-14 h-14 text-primary" />
+                                    <p className="text-dark font-semibold text-[18px] text-center">Request Sent!</p>
+                                    <p className="text-gray-500 text-[15px] text-center">We'll get back to you very soon.</p>
                                     <button
-                                        type="submit"
-                                        className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2"
+                                        onClick={() => { setIsFlipped(false); setFormStatus('idle'); }}
+                                        className="mt-2 text-white py-2 px-8 font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[16px]"
                                     >
-                                        <Send className="w-4 h-4" /> Send Request
+                                        Close
                                     </button>
                                 </div>
-                            </form>
+                            ) : (
+                                <form
+                                    className="flex flex-col gap-3 flex-1"
+                                    style={{ fontFamily: 'Inter, sans-serif' }}
+                                    onSubmit={handleFormSubmit}
+                                >
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formFields.name}
+                                        onChange={handleFormChange}
+                                        placeholder="Your Name"
+                                        required
+                                        className="w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                                    />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formFields.email}
+                                        onChange={handleFormChange}
+                                        placeholder="Your Email"
+                                        required
+                                        className="w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                                    />
+                                    <div className="flex gap-2 w-full">
+                                        <input
+                                            type="number"
+                                            name="guests"
+                                            value={formFields.guests}
+                                            onChange={handleFormChange}
+                                            placeholder="Guests"
+                                            min="1"
+                                            required
+                                            className="w-1/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                                        />
+                                        <input
+                                            type="date"
+                                            name="date"
+                                            value={formFields.date}
+                                            onChange={handleFormChange}
+                                            required
+                                            className="w-2/3 border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-gray-500 bg-white"
+                                        />
+                                    </div>
+                                    <textarea
+                                        name="description"
+                                        value={formFields.description}
+                                        onChange={handleFormChange}
+                                        placeholder="Tell us about your group — anything that will help us personalise your experience"
+                                        className="flex-1 min-h-[60px] w-full border border-gray-200 rounded px-3 py-2 text-[16px] text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary bg-white resize-none"
+                                    />
+                                    {formStatus === 'error' && (
+                                        <div className="flex items-center gap-2 text-red-600 text-[13px] bg-red-50 border border-red-200 rounded px-3 py-2">
+                                            <AlertCircle className="w-4 h-4 shrink-0" />
+                                            {formError}
+                                        </div>
+                                    )}
+                                    <div className="w-full flex justify-center">
+                                        <button
+                                            type="submit"
+                                            disabled={formStatus === 'loading'}
+                                            className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                                        >
+                                            {formStatus === 'loading' ? (
+                                                <><span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" /> Sending…</>
+                                            ) : (
+                                                <><Send className="w-4 h-4" /> Send Request</>
+                                            )}
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
                         </div>
                     </motion.div>
                 )}

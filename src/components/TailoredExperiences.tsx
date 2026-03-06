@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Clock, ChevronDown, Check, Stars, Sparkles } from 'lucide-react';
+import { MapPin, Mail, Clock, ChevronDown, Check, Stars, Sparkles, CheckCircle, AlertCircle } from 'lucide-react';
+import { sendMailRequest } from '../lib/mail';
 
 const PLACES_OF_INTEREST = [
     'Myrtos Beach',
@@ -37,6 +38,8 @@ export function TailoredExperiences() {
     const [selectedPlaces, setSelectedPlaces] = useState<string[]>([]);
     const [placesOpen, setPlacesOpen] = useState(false);
     const placesRef = useRef<HTMLDivElement>(null);
+    const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [formError, setFormError] = useState('');
 
     useEffect(() => {
         function handleOutside(e: MouseEvent) {
@@ -58,11 +61,27 @@ export function TailoredExperiences() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        alert('Thank you! Your inquiry for a tailored experience has been submitted. We will get back to you shortly.');
-        setFormData({ name: '', email: '', date: '', guests: '', message: '' });
-        setSelectedPlaces([]);
+        setFormStatus('loading');
+        setFormError('');
+        const result = await sendMailRequest({
+            source: 'tailored-experience',
+            name: formData.name,
+            email: formData.email,
+            guests: formData.guests,
+            date: formData.date,
+            places: selectedPlaces,
+            message: formData.message,
+        });
+        if (result.success) {
+            setFormStatus('success');
+            setFormData({ name: '', email: '', date: '', guests: '', message: '' });
+            setSelectedPlaces([]);
+        } else {
+            setFormStatus('error');
+            setFormError(result.error || 'Something went wrong. Please try again.');
+        }
     };
 
     const placesLabel = selectedPlaces.length === 0
@@ -262,13 +281,31 @@ export function TailoredExperiences() {
                                     />
                                 </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full bg-primary hover:bg-primary-hover text-white hover:text-dark font-bold py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-                                >
-                                    <span>Send Inquiry</span>
-                                    <Mail size={18} />
-                                </button>
+                                {formStatus === 'error' && (
+                                    <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-md px-3 py-2">
+                                        <AlertCircle className="w-4 h-4 shrink-0" />
+                                        {formError}
+                                    </div>
+                                )}
+
+                                {formStatus === 'success' ? (
+                                    <div className="flex items-center justify-center gap-3 bg-green-50 border border-green-200 rounded-md py-3.5 text-green-700 font-semibold">
+                                        <CheckCircle className="w-5 h-5" />
+                                        Sent! We'll be in touch very soon.
+                                    </div>
+                                ) : (
+                                    <button
+                                        type="submit"
+                                        disabled={formStatus === 'loading'}
+                                        className="w-full bg-primary hover:bg-primary-hover text-white hover:text-dark font-bold py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                                    >
+                                        {formStatus === 'loading' ? (
+                                            <><span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" /> Sending…</>
+                                        ) : (
+                                            <><span>Send Inquiry</span><Mail size={18} /></>
+                                        )}
+                                    </button>
+                                )}
                             </form>
                         </div>
                     </motion.div>
