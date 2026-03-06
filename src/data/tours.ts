@@ -47,7 +47,7 @@ export const tourCategories: TourCategory[] = [
                 short_description: "Our best-selling Fiscardo Island Tour, with a dedicated route from Skala, Poros & Katelios. Head to Argostoli without needless hours on the bus, and see the exact same stunning sights: Myrtos, Fiscardo, Assos, Melissani and Drogarati.",
                 duration: "8 Hours",
                 bokunProductId: "1155685",
-                baseViews: 1845,
+                baseViews: 1545,
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
                 private_description: "Enjoy the entire Fiscardo Island Tour starting directly from your accommodation in the Skala region. From the jaw-dropping cliff road down to Myrtos, through the medieval lanes of Assos and on to cosmopolitan Fiscardo, with Melissani Lake & Drogarati Cave included. We'll tailor the stops entirely around you.",
