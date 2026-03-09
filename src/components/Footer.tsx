@@ -16,7 +16,7 @@ export function Footer() {
                             </p>
                             <p className="flex items-center gap-2">
                                 <Mail size={16} className="text-primary shrink-0" />
-                                <a href="mailto:info@kcgtravel.gr" className="hover:text-primary transition-colors">info@kcgtravel.gr</a>
+                                <a href="mailto:info@kcgservices.gr" className="hover:text-primary transition-colors">info@kcgservices.gr</a>
                             </p>
                             <p className="flex items-center gap-2">
                                 <Phone size={16} className="text-primary shrink-0" />
