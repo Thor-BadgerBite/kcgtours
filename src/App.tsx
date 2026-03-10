@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import { TourCard } from './components/TourCard';
 import { CategoryCarousel } from './components/CategoryCarousel';
 import { tourCategories } from './data/tours';
@@ -357,6 +358,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/tour/:slug" element={<TourRoute />} />
             </Routes>
+            <Analytics />
         </BrowserRouter>
     );
 }
