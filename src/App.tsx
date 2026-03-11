@@ -113,10 +113,10 @@ function HomePage() {
     return (
         <div className="min-h-screen">
             {/* Navbar */}
-            <nav className="bg-white px-4 h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
-                <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
+            <nav className="bg-white h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
+                <div className="w-full flex justify-between items-center pl-[5px] pr-4 md:pr-8">
                     <div className="flex items-center">
-                        <img src="/images/logo.png" alt="KCG Tours" className="h-[50px] md:h-[60px] w-auto cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
+                        <img src="/images/logo.png" alt="KCG Tours" className="w-[140px] h-[85px] object-contain cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
                     </div>
                     <div className="hidden md:flex gap-6 items-center">
                         <button
