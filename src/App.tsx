@@ -135,15 +135,11 @@ function HomePage() {
             {/* Hero */}
             <header id="hero" className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0">
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
+                    <img
+                        src="/images/hero3.webp"
+                        alt="Kefalonia Hero Background"
                         className="w-full h-full object-cover object-center opacity-50"
-                    >
-                        <source src="/images/intro_hero.mp4" type="video/mp4" />
-                    </video>
+                    />
                 </div>
                 <motion.div
                     className="relative z-10 text-center text-white px-4"
