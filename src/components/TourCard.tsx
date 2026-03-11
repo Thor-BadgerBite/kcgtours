@@ -356,17 +356,17 @@ export function TourCard({
                             )}
                         </div>
 
-                        {/* ── Stats / Actions Bar ── */}
-                        <div className="flex justify-between items-center w-full px-4 pt-3 pb-0 bg-card z-20">
+                        {/* ── Card Footer ── */}
+                        <div className="relative p-4 flex flex-col items-center gap-1 bg-card z-10 flex-1 text-center">
                             {/* View Counter */}
-                            <div className="flex items-center gap-1.5 text-gray-500 hover:text-dark transition-colors text-[14px] font-medium">
+                            <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 text-gray-500 hover:text-dark transition-colors text-[14px] font-medium">
                                 <Eye className="w-[18px] h-[18px]" />
                                 <span>{viewCount} views</span>
                             </div>
 
                             {/* Share Button — only for Bokun bookable tours */}
                             {isBookableOnBokun && (
-                                <div ref={shareRef} className="relative z-30">
+                                <div ref={shareRef} className="absolute top-4 right-4 z-30 text-left">
                                     <button
                                         type="button"
                                         onClick={() => setShareOpen(v => !v)}
@@ -405,10 +405,7 @@ export function TourCard({
                                     </AnimatePresence>
                                 </div>
                             )}
-                        </div>
 
-                        {/* ── Card Footer ── */}
-                        <div className="px-4 pb-4 pt-2 flex flex-col items-center gap-1 bg-card z-10 flex-1 text-center">
                             <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
 
                             {isBookableOnBokun ? (
