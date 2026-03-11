@@ -22,7 +22,7 @@ export function slugify(text: string) {
 function scrollToId(id: string) {
     const el = document.getElementById(id);
     if (!el) return;
-    const navHeight = 60;
+    const navHeight = 100;
     const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
     window.scrollTo({ top, behavior: 'smooth' });
 }
@@ -113,7 +113,7 @@ function HomePage() {
     return (
         <div className="min-h-screen">
             {/* Navbar */}
-            <nav className="bg-white px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
+            <nav className="bg-white px-4 h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
                     <div className="flex items-center">
                         <img src="/images/logo.png" alt="KCG Tours" className="h-[50px] md:h-[60px] w-auto cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
@@ -167,29 +167,29 @@ function HomePage() {
                                 <section
                                     key={category.id}
                                     id={category.id}
-                                    className="py-[40px] scroll-mt-[60px]"
+                                    className="py-[10px] scroll-mt-[100px]"
                                 >
                                     {/* Sub-categories — NO generic category heading shown */}
                                     {category.subCategories.map((sub, subIdx) => (
                                         <div
                                             key={sub.id}
                                             id={sub.id}
-                                            className={`scroll-mt-[80px] ${subIdx > 0 ? 'mt-16' : ''}`}
+                                            className={`scroll-mt-[120px] ${subIdx > 0 ? 'mt-8' : ''}`}
                                         >
                                             {/* Sub-category heading + subtitle */}
                                             <motion.div
-                                                className="text-center mb-6"
+                                                className="text-center mb-2"
                                                 initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
-                                                <h2 className="text-3xl md:text-[30px] font-normal text-dark inline-block relative pb-2">
+                                                <h2 className="text-3xl md:text-[30px] font-normal text-dark inline-block relative pb-1">
                                                     {sub.title}
                                                     {/* Red underline */}
                                                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary rounded-full" />
                                                 </h2>
                                                 {sub.subtitle && (
-                                                    <p className="text-[20px] font-normal text-primary mt-3">
+                                                    <p className="text-[20px] font-normal text-primary mt-1">
                                                         {sub.subtitle}
                                                     </p>
                                                 )}
@@ -232,15 +232,15 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className="min-h-[calc(100vh-60px)] flex flex-col justify-center py-[20px] scroll-mt-[60px]"
+                                className="min-h-[calc(100vh-100px)] flex flex-col justify-center py-[10px] scroll-mt-[100px]"
                             >
                                 <motion.div
-                                    className="text-center mb-6 flex-none"
+                                    className="text-center mb-2 flex-none"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <h2 className="text-3xl md:text-[30px] font-normal text-dark mb-2">{category.title}</h2>
+                                    <h2 className="text-3xl md:text-[30px] font-normal text-dark mb-1">{category.title}</h2>
                                     <h4 className="text-[24px] font-normal text-primary">{category.subtitle}</h4>
                                 </motion.div>
 

@@ -258,7 +258,7 @@ export function TourCard({
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                     >
                         {/* Top Text Header Block */}
-                        <div className="bg-card p-4 text-center flex-none">
+                        <div className="bg-card p-3 text-center flex-none">
                             <h3 className="text-dark font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
                             <p className="text-primary font-light text-lg min-h-[56px] flex items-center justify-center">
                                 <span className="line-clamp-2">{card_subtitle || short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</span>
@@ -357,16 +357,16 @@ export function TourCard({
                         </div>
 
                         {/* ── Card Footer ── */}
-                        <div className="relative p-4 flex flex-col items-center gap-1 bg-card z-10 flex-1 text-center">
+                        <div className="relative p-3 flex flex-col items-center justify-center gap-[2px] bg-card z-10 flex-1 text-center">
                             {/* View Counter */}
-                            <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 text-gray-500 hover:text-dark transition-colors text-[14px] font-medium">
+                            <div className="absolute top-3 left-4 z-20 flex items-center gap-1.5 text-gray-500 hover:text-dark transition-colors text-[14px] font-medium">
                                 <Eye className="w-[18px] h-[18px]" />
                                 <span>{viewCount} views</span>
                             </div>
 
                             {/* Share Button — only for Bokun bookable tours */}
                             {isBookableOnBokun && (
-                                <div ref={shareRef} className="absolute top-4 right-4 z-30 text-left">
+                                <div ref={shareRef} className="absolute top-3 right-4 z-30 text-left">
                                     <button
                                         type="button"
                                         onClick={() => setShareOpen(v => !v)}
@@ -406,19 +406,19 @@ export function TourCard({
                                 </div>
                             )}
 
-                            <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
+                            <span className="text-dark uppercase tracking-wide font-bold text-[18px]">{tourType}</span>
 
                             {isBookableOnBokun ? (
                                 <>
-                                    <p className="text-primary font-medium text-[18px] mb-2 leading-relaxed">{itinerary}</p>
-                                    <p className="text-[18px] text-gray-500 font-light">
+                                    <p className="text-primary font-medium text-[18px] mb-1 leading-relaxed">{itinerary}</p>
+                                    <p className="text-[18px] text-gray-500 font-light leading-snug">
                                         <span className="text-dark font-medium mr-1">Operating:</span>{operatingDays}
                                     </p>
-                                    <p className="text-[18px] text-gray-500 mt-1 font-light">
+                                    <p className="text-[18px] text-gray-500 font-light leading-snug">
                                         <span className="text-dark font-medium mr-1">Duration:</span>{duration}
                                     </p>
 
-                                    <div className="w-full flex justify-center mt-auto pt-4">
+                                    <div className="w-full flex justify-center mt-auto mt-2">
                                         {isPrivateAvailable ? (
                                             <div className="flex w-[90%] max-w-[320px] shadow-sm rounded relative">
                                                 <button
@@ -462,7 +462,7 @@ export function TourCard({
                                     <p className="text-gray-500 font-light text-[16px] leading-relaxed mt-1 px-2">
                                         {short_description}
                                     </p>
-                                    <div className="w-full flex justify-center mt-auto pt-4">
+                                    <div className="w-full flex justify-center mt-auto mt-2">
                                         <button
                                             onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
                                             className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
