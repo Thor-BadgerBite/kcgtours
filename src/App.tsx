@@ -136,9 +136,9 @@ function HomePage() {
             <header id="hero" className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img
-                        src="/images/hero3.webp"
+                        src="/images/hero2.webp"
                         alt="Kefalonia Hero Background"
-                        className="w-full h-full object-cover object-center opacity-50"
+                        className="w-full h-full object-cover object-bottom opacity-50"
                     />
                 </div>
                 <motion.div
