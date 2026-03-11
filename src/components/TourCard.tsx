@@ -285,53 +285,7 @@ export function TourCard({
                                 )}
                             </div>
 
-                            {/* View Counter */}
-                            <div className="absolute bottom-4 left-4 z-30 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded text-sm font-medium shadow-sm transition-all duration-300">
-                                <Eye className="w-4 h-4" />
-                                <span>{viewCount} views</span>
-                            </div>
 
-                            {/* Share Button — only for Bokun bookable tours */}
-                            {isBookableOnBokun && (
-                                <div ref={shareRef} className="absolute bottom-4 right-4 z-30">
-                                    <button
-                                        type="button"
-                                        onClick={() => setShareOpen(v => !v)}
-                                        className="flex items-center gap-1.5 bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded text-sm font-medium shadow-sm hover:bg-black/80 transition-all duration-300"
-                                        aria-label="Share this tour"
-                                    >
-                                        <Share2 className="w-4 h-4" />
-                                        <span>Share</span>
-                                    </button>
-
-                                    <AnimatePresence>
-                                        {shareOpen && (
-                                            <motion.div
-                                                initial={{ opacity: 0, scale: 0.85, y: 6 }}
-                                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                                exit={{ opacity: 0, scale: 0.85, y: 6 }}
-                                                transition={{ duration: 0.18, ease: 'easeOut' }}
-                                                className="absolute bottom-full right-0 mb-2 flex flex-col gap-1.5 bg-white rounded-lg shadow-2xl border border-gray-100 p-2 min-w-[160px]"
-                                            >
-                                                {shareLinks.map(link => (
-                                                    <a
-                                                        key={link.label}
-                                                        href={link.href}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        onClick={() => setShareOpen(false)}
-                                                        className="flex items-center gap-2.5 px-3 py-2 rounded-md text-sm font-medium text-white hover:opacity-90 transition-opacity"
-                                                        style={{ backgroundColor: link.color }}
-                                                    >
-                                                        {link.icon}
-                                                        {link.label}
-                                                    </a>
-                                                ))}
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                            )}
 
                             <div className="overflow-hidden h-full" ref={emblaRef}>
                                 <div className="flex h-full w-full touch-pan-y">
@@ -402,8 +356,59 @@ export function TourCard({
                             )}
                         </div>
 
+                        {/* ── Stats / Actions Bar ── */}
+                        <div className="flex justify-between items-center w-full px-4 pt-3 pb-0 bg-card z-20">
+                            {/* View Counter */}
+                            <div className="flex items-center gap-1.5 text-gray-500 hover:text-dark transition-colors text-[14px] font-medium">
+                                <Eye className="w-[18px] h-[18px]" />
+                                <span>{viewCount} views</span>
+                            </div>
+
+                            {/* Share Button — only for Bokun bookable tours */}
+                            {isBookableOnBokun && (
+                                <div ref={shareRef} className="relative z-30">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShareOpen(v => !v)}
+                                        className="flex items-center gap-1.5 text-gray-500 hover:text-dark transition-colors text-[14px] font-medium"
+                                        aria-label="Share this tour"
+                                    >
+                                        <Share2 className="w-[18px] h-[18px]" />
+                                        <span>Share</span>
+                                    </button>
+
+                                    <AnimatePresence>
+                                        {shareOpen && (
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.85, y: -6 }}
+                                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                                exit={{ opacity: 0, scale: 0.85, y: -6 }}
+                                                transition={{ duration: 0.18, ease: 'easeOut' }}
+                                                className="absolute top-full right-0 mt-2 flex flex-col gap-1.5 bg-white rounded-lg shadow-2xl border border-gray-100 p-2 min-w-[160px] z-50 text-left"
+                                            >
+                                                {shareLinks.map(link => (
+                                                    <a
+                                                        key={link.label}
+                                                        href={link.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        onClick={() => setShareOpen(false)}
+                                                        className="flex items-center gap-2.5 px-3 py-2 rounded-md text-sm font-medium text-white hover:opacity-90 transition-opacity"
+                                                        style={{ backgroundColor: link.color }}
+                                                    >
+                                                        {link.icon}
+                                                        {link.label}
+                                                    </a>
+                                                ))}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            )}
+                        </div>
+
                         {/* ── Card Footer ── */}
-                        <div className="p-4 flex flex-col items-center gap-1 bg-card z-10 flex-1 text-center">
+                        <div className="px-4 pb-4 pt-2 flex flex-col items-center gap-1 bg-card z-10 flex-1 text-center">
                             <span className="text-dark uppercase tracking-wide font-bold text-[18px] mb-1">{tourType}</span>
 
                             {isBookableOnBokun ? (
