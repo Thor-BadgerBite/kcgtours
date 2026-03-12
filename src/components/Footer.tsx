@@ -117,7 +117,7 @@ export function Footer() {
                 {/* Bottom Bar %} */}
                 <div className="border-t border-white/20 pt-3 mt-3 flex flex-col md:flex-row justify-between items-center text-xs text-white/70 text-center md:text-left gap-2">
                     <p>&copy; {new Date().getFullYear()} KCG Travel Services Kefalonia. All rights reserved.</p>
-                    <p>License No: <span className="font-semibold">0458E60000064100</span></p>
+                    <p>MHTE License No: <span className="font-semibold">0458E600001187Y1</span></p>
                 </div>
             </div>
         </footer>
