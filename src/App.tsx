@@ -209,7 +209,7 @@ function HomePage() {
                                 <section
                                     key={category.id}
                                     id={category.id}
-                                    className="py-[10px] scroll-mt-[100px]"
+                                    className="py-[10px] scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                                 >
                                     {/* Sub-categories — NO generic category heading shown */}
                                     {category.subCategories.map((sub, subIdx) => (
@@ -225,13 +225,13 @@ function HomePage() {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
-                                                <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-dark inline-block relative pb-1">
+                                                <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark inline-block relative pb-1">
                                                     {sub.title}
                                                     {/* Red underline */}
-                                                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary rounded-full" />
+                                                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-primary rounded-full" />
                                                 </h2>
                                                 {sub.subtitle && (
-                                                    <p className="text-lg md:text-[20px] font-normal text-primary mt-1">
+                                                    <p className="text-lg md:text-[20px] font-normal text-white md:text-primary mt-1">
                                                         {sub.subtitle}
                                                     </p>
                                                 )}
@@ -274,7 +274,7 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className={`min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[100px] ${category.id === 'bus-tours' ? 'pt-[20px] pb-[10px]' : 'py-[10px]'}`}
+                                className={`min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[100px] ${category.id === 'bus-tours' ? 'pt-[20px] pb-[10px]' : 'py-[10px]'} bg-[var(--color-sage)] md:bg-transparent`}
                             >
                                 <motion.div
                                     className="text-center mb-2 flex-none"
@@ -282,8 +282,8 @@ function HomePage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-dark mb-1">{category.title}</h2>
-                                    <h4 className="text-xl md:text-[24px] font-normal text-primary">{category.subtitle}</h4>
+                                    <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark mb-1">{category.title}</h2>
+                                    <h4 className="text-xl md:text-[24px] font-normal text-white md:text-primary">{category.subtitle}</h4>
                                 </motion.div>
 
                                 <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">
