@@ -232,7 +232,7 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className="min-h-[calc(100vh-100px)] flex flex-col justify-center py-[10px] scroll-mt-[100px]"
+                                className={`min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[100px] ${category.id === 'bus-tours' ? 'pt-[20px] pb-[10px]' : 'py-[10px]'}`}
                             >
                                 <motion.div
                                     className="text-center mb-2 flex-none"
