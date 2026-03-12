@@ -58,6 +58,13 @@ export function TourCard({
 }: TourCardProps) {
     const carouselMode = false;
     const showBadges = false;
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: true,
@@ -241,7 +248,7 @@ export function TourCard({
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ scale: isFlipped ? 1 : 1.02 }}
+            whileHover={isMobile || isFlipped ? {} : { scale: 1.02 }}
             transition={{ duration: 0.5 }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => { setIsHovered(false); setDropdownOpen(false); setShareOpen(false); }}

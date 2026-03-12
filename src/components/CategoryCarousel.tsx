@@ -10,6 +10,7 @@ interface Props {
 
 export function CategoryCarousel({ items, isBusTours = false }: Props) {
     const [shouldScroll, setShouldScroll] = useState(false);
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
     // Determine if we exceed the limit for the current screen size
     useEffect(() => {
@@ -21,6 +22,7 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
                 limit = 2; // md, lg
             }
             setShouldScroll(items.length > limit);
+            setIsMobile(window.innerWidth < 768);
         }
 
         checkLimit();
@@ -49,8 +51,8 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
         emblaApi.reInit();
     }, [emblaApi, shouldScroll, displayItems.length]);
 
-    // For bus-tours, display exactly as original (grid-cols-1 md:grid-cols-2 lg:grid-cols-3)
-    if (isBusTours || !shouldScroll) {
+    // For bus-tours, display exactly as original (grid-cols-1 md:grid-cols-2 lg:grid-cols-3) UNLESS on mobile
+    if ((isBusTours && !isMobile) || (!isBusTours && !shouldScroll)) {
         return (
             <div className={`grid gap-6 md:gap-8 items-stretch justify-center h-full mx-auto ${items.length === 1 ? 'grid-cols-1 md:w-1/2 xl:w-1/3' :
                 items.length === 2 ? 'grid-cols-1 md:grid-cols-2 xl:w-2/3' :
