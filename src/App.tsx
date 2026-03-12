@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
 import { TourCard } from './components/TourCard';
 import { CategoryCarousel } from './components/CategoryCarousel';
@@ -104,6 +104,12 @@ function NavItem({ cat }: { cat: TourCategory }) {
 
 function HomePage() {
     const navigate = useNavigate();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const closeMobileMenuAndScrollTo = (id: string) => {
+        setMobileMenuOpen(false);
+        scrollToId(id);
+    };
 
     // scroll to top on mount
     useEffect(() => {
@@ -129,8 +135,44 @@ function HomePage() {
                             <NavItem key={cat.id} cat={cat} />
                         ))}
                     </div>
+                    {/* Mobile hamburger */}
+                    <button 
+                        className="md:hidden p-2 text-dark hover:text-primary transition-colors"
+                        onClick={() => setMobileMenuOpen(true)}
+                    >
+                        <Menu className="w-8 h-8" />
+                    </button>
                 </div>
             </nav>
+
+            {/* Mobile Menu Overlay */}
+            {mobileMenuOpen && (
+                <div className="fixed inset-0 z-[100] bg-white flex flex-col pt-6 px-6 overflow-y-auto">
+                    <div className="flex justify-between items-center mb-8">
+                        <img src="/images/logo.png" alt="KCG Tours" className="h-[60px] object-contain" />
+                        <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-dark hover:text-primary">
+                            <X className="w-8 h-8" />
+                        </button>
+                    </div>
+                    <div className="flex flex-col gap-6 items-start pb-8">
+                        <button
+                            onClick={() => closeMobileMenuAndScrollTo('hero')}
+                            className="text-2xl hover:text-primary transition-colors uppercase tracking-wide font-normal"
+                        >
+                            HOME
+                        </button>
+                        {tourCategories.map(cat => (
+                            <button
+                                key={cat.id}
+                                onClick={() => closeMobileMenuAndScrollTo(cat.id === 'private-tours' ? 'tailored-experiences' : cat.id)}
+                                className="text-2xl hover:text-primary transition-colors uppercase tracking-wide font-normal text-left"
+                            >
+                                {cat.title}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
 
             {/* Hero */}
             <header id="hero" className="h-[100vh] bg-[#404041] flex items-center justify-center relative overflow-hidden">
