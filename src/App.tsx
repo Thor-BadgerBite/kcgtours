@@ -105,11 +105,36 @@ function NavItem({ cat }: { cat: TourCategory }) {
 function HomePage() {
     const navigate = useNavigate();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [headerVisible, setHeaderVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     const closeMobileMenuAndScrollTo = (id: string) => {
         setMobileMenuOpen(false);
         scrollToId(id);
     };
+
+    // Smart Sticky Header Logic for Mobile
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerWidth >= 768) {
+                setHeaderVisible(true);
+                return;
+            }
+
+            const currentScrollY = window.scrollY;
+            if (currentScrollY < 100) {
+                setHeaderVisible(true);
+            } else if (currentScrollY > lastScrollY) {
+                setHeaderVisible(false); // Scrolling down
+            } else {
+                setHeaderVisible(true); // Scrolling up
+            }
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
 
     // scroll to top on mount
     useEffect(() => {
@@ -119,7 +144,7 @@ function HomePage() {
     return (
         <div className="min-h-screen">
             {/* Navbar */}
-            <nav className="bg-white h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
+            <nav className={`bg-white h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100 transition-transform duration-300 ${!headerVisible ? '-translate-y-full' : 'translate-y-0'}`}>
                 <div className="w-full flex justify-between items-center pl-[5px] pr-4 md:pr-8">
                     <div className="flex items-center">
                         <img src="/images/logo.png" alt="KCG Tours" className="w-[140px] h-[85px] object-contain cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
