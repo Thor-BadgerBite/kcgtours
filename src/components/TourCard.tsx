@@ -420,32 +420,21 @@ export function TourCard({
 
                                     <div className="w-full flex justify-center mt-auto mt-2">
                                         {isPrivateAvailable ? (
-                                            <div className="flex w-[90%] max-w-[320px] shadow-sm rounded relative">
+                                            <div className="flex w-full gap-2 relative">
+                                                <button
+                                                    onClick={() => setIsFlipped(true)}
+                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
+                                                >
+                                                    <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
+                                                    <span className="hidden sm:inline">Private Option</span>
+                                                    <span className="sm:hidden">Private</span>
+                                                </button>
                                                 <button
                                                     onClick={handleBookNow}
-                                                    className="flex-1 text-white py-2 px-4 font-bold bg-primary hover:bg-primary-hover rounded-l transition-colors duration-300 ease-out text-[18px] border-r border-white/20 whitespace-nowrap"
+                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
                                                 >
-                                                    View More &amp; Book
+                                                    View &amp; Book
                                                 </button>
-                                                <button
-                                                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                                                    className="px-3 text-white font-bold bg-primary hover:bg-primary-hover rounded-r transition-colors duration-300 flex items-center justify-center"
-                                                    aria-label="More options"
-                                                >
-                                                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
-                                                </button>
-
-                                                {dropdownOpen && (
-                                                    <div className="absolute bottom-full left-0 right-0 mb-2 bg-white border border-gray-100 shadow-xl rounded z-50 overflow-hidden">
-                                                        <button
-                                                            onClick={() => { setIsFlipped(true); setDropdownOpen(false); }}
-                                                            className="w-full py-2 px-4 text-[18px] font-bold text-white bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] flex items-center justify-center gap-2 transition-colors duration-300"
-                                                        >
-                                                            <MapPinCheckInside className="w-5 h-5" />
-                                                            <span>Request Private Option</span>
-                                                        </button>
-                                                    </div>
-                                                )}
                                             </div>
                                         ) : (
                                             <button
