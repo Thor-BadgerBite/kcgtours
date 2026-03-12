@@ -174,7 +174,7 @@ function HomePage() {
                                         <div
                                             key={sub.id}
                                             id={sub.id}
-                                            className={`scroll-mt-[120px] ${subIdx > 0 ? 'mt-8' : ''}`}
+                                            className={`scroll-mt-[120px] pt-[10px] ${subIdx > 0 ? 'mt-8' : ''}`}
                                         >
                                             {/* Sub-category heading + subtitle */}
                                             <motion.div
