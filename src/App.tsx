@@ -22,7 +22,9 @@ export function slugify(text: string) {
 function scrollToId(id: string) {
     const el = document.getElementById(id);
     if (!el) return;
-    const navHeight = 100;
+    const isMobile = window.innerWidth < 768;
+    // On mobile, header hides during scroll down, so offset should be minimal
+    const navHeight = isMobile ? 10 : 100;
     const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
     window.scrollTo({ top, behavior: 'smooth' });
 }
@@ -234,14 +236,14 @@ function HomePage() {
                                 <section
                                     key={category.id}
                                     id={category.id}
-                                    className="py-[10px] scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
+                                    className="py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                                 >
                                     {/* Sub-categories — NO generic category heading shown */}
                                     {category.subCategories.map((sub, subIdx) => (
                                         <div
                                             key={sub.id}
                                             id={sub.id}
-                                            className={`scroll-mt-[120px] pt-[10px] ${subIdx > 0 ? 'mt-8' : ''}`}
+                                            className={`scroll-mt-[10px] md:scroll-mt-[120px] pt-[10px] ${subIdx > 0 ? 'mt-8' : ''}`}
                                         >
                                             {/* Sub-category heading + subtitle */}
                                             <motion.div
@@ -299,7 +301,7 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className={`min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[100px] ${category.id === 'bus-tours' ? 'pt-[20px] pb-[10px]' : 'py-[10px]'} bg-[var(--color-sage)] md:bg-transparent`}
+                                className={`min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[10px] md:scroll-mt-[100px] ${category.id === 'bus-tours' ? 'pt-[20px] pb-[10px]' : 'py-[10px]'} bg-[var(--color-sage)] md:bg-transparent`}
                             >
                                 <motion.div
                                     className="text-center mb-2 flex-none"
