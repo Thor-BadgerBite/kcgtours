@@ -258,8 +258,8 @@ export function TourCard({
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                     >
                         {/* Top Text Header Block */}
-                        <div className="bg-card p-3 text-center flex-none">
-                            <h3 className="text-dark font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
+                        <div className="bg-card p-3 text-center flex-none mt-2 md:mt-0">
+                            <h3 className="text-dark font-bold md:font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
                             <p className="text-primary font-light text-lg min-h-[56px] flex items-center justify-center">
                                 <span className="line-clamp-2">{card_subtitle || short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</span>
                             </p>
@@ -406,7 +406,7 @@ export function TourCard({
                                 </div>
                             )}
 
-                            <span className="text-dark uppercase tracking-wide font-bold text-[18px]">{tourType}</span>
+                            <span className="text-dark uppercase tracking-wide font-bold text-[16px] md:text-[18px] mt-7 mb-1 md:mt-2 md:mb-0">{tourType}</span>
 
                             {isBookableOnBokun ? (
                                 <>
