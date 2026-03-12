@@ -183,7 +183,7 @@ function HomePage() {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
-                                                <h2 className="text-2xl md:text-[30px] font-normal text-dark inline-block relative pb-1">
+                                                <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-dark inline-block relative pb-1">
                                                     {sub.title}
                                                     {/* Red underline */}
                                                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary rounded-full" />
@@ -240,7 +240,7 @@ function HomePage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <h2 className="text-2xl md:text-[30px] font-normal text-dark mb-1">{category.title}</h2>
+                                    <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-dark mb-1">{category.title}</h2>
                                     <h4 className="text-xl md:text-[24px] font-normal text-primary">{category.subtitle}</h4>
                                 </motion.div>
 
