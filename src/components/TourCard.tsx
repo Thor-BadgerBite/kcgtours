@@ -417,8 +417,8 @@ export function TourCard({
 
                             {isBookableOnBokun ? (
                                 <>
-                                    <div className="h-[60px] flex items-center justify-center w-full mb-1">
-                                        <p className="text-primary font-medium text-[18px] leading-snug line-clamp-2">{itinerary}</p>
+                                    <div className="h-[44px] md:h-[60px] flex items-center justify-center w-full mb-0 md:mb-1">
+                                        <p className="text-primary font-medium text-[16px] md:text-[18px] leading-snug line-clamp-2">{itinerary}</p>
                                     </div>
                                     <p className="text-[18px] text-gray-500 font-light leading-snug">
                                         <span className="text-dark font-medium mr-1">Operating:</span>{operatingDays}
