@@ -183,13 +183,13 @@ function HomePage() {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
-                                                <h2 className="text-3xl md:text-[30px] font-normal text-dark inline-block relative pb-1">
+                                                <h2 className="text-2xl md:text-[30px] font-normal text-dark inline-block relative pb-1">
                                                     {sub.title}
                                                     {/* Red underline */}
                                                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary rounded-full" />
                                                 </h2>
                                                 {sub.subtitle && (
-                                                    <p className="text-[20px] font-normal text-primary mt-1">
+                                                    <p className="text-lg md:text-[20px] font-normal text-primary mt-1">
                                                         {sub.subtitle}
                                                     </p>
                                                 )}
@@ -240,8 +240,8 @@ function HomePage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <h2 className="text-3xl md:text-[30px] font-normal text-dark mb-1">{category.title}</h2>
-                                    <h4 className="text-[24px] font-normal text-primary">{category.subtitle}</h4>
+                                    <h2 className="text-2xl md:text-[30px] font-normal text-dark mb-1">{category.title}</h2>
+                                    <h4 className="text-xl md:text-[24px] font-normal text-primary">{category.subtitle}</h4>
                                 </motion.div>
 
                                 <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">
