@@ -420,10 +420,10 @@ export function TourCard({
                                     <div className="h-[44px] md:h-[60px] flex items-center justify-center w-full mb-0 md:mb-1">
                                         <p className="text-primary font-medium text-[16px] md:text-[18px] leading-snug line-clamp-2">{itinerary}</p>
                                     </div>
-                                    <p className="text-[18px] text-gray-500 font-light leading-snug">
+                                    <p className="text-[18px] text-dark md:text-gray-500 font-normal md:font-light leading-snug">
                                         <span className="text-dark font-medium mr-1">Operating:</span>{operatingDays}
                                     </p>
-                                    <p className="text-[18px] text-gray-500 font-light leading-snug">
+                                    <p className="text-[18px] text-dark md:text-gray-500 font-normal md:font-light leading-snug">
                                         <span className="text-dark font-medium mr-1">Duration:</span>{duration}
                                     </p>
 
@@ -457,7 +457,7 @@ export function TourCard({
                                 </>
                             ) : (
                                 <>
-                                    <p className="text-gray-500 font-light text-[16px] leading-relaxed mt-1 px-2">
+                                    <p className="text-dark md:text-gray-500 font-normal md:font-light text-[16px] leading-relaxed mt-1 px-2">
                                         {short_description}
                                     </p>
                                     <div className="w-full flex justify-center mt-auto mt-2">
