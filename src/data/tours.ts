@@ -37,33 +37,6 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Fiskardo Island Tour [From Skala]",
-                tourType: "ORGANIZED TOUR",
-                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
-                operatingDays: "Every: Tuesday & Friday",
-                from_price: 37.50,
-                badges: { isBestSeller: true },
-                card_subtitle: "The classic northern island tour, perfectly routed from Skala, Poros & Katelios",
-                short_description: "Our best-selling Fiscardo Island Tour, with a dedicated route from Skala, Poros & Katelios. Head to Argostoli without needless hours on the bus, and see the exact same stunning sights: Myrtos, Fiscardo, Assos, Melissani and Drogarati.",
-                duration: "8 Hours",
-                bokunProductId: "1155685",
-                baseViews: 1545,
-                isBookableOnBokun: true,
-                isPrivateAvailable: true,
-                private_description: "Enjoy the entire Fiscardo Island Tour starting directly from your accommodation in the Skala region. From the jaw-dropping cliff road down to Myrtos, through the medieval lanes of Assos and on to cosmopolitan Fiscardo, with Melissani Lake & Drogarati Cave included. We'll tailor the stops entirely around you.",
-                slides: [
-                    { image: "/images/1155685/fiscardo.webp", title: "A Moment Worth Staying For" },
-                    { image: "/images/1155685/assos2.webp", title: "Where the Mountain Meets the Sea" },
-                    { image: "/images/1155685/drogarati.webp", title: "A Million Years in the Making" },
-                    { image: "/images/1155685/assos.webp", title: "Colours of the North" },
-                    { image: "/images/1155685/fiscardo2.webp", title: "Where the Ionian Yachts Sleep" },
-                    { image: "/images/1155685/fiscardo3.webp", title: "A Quiet Evening in the Village" },
-                    { image: "/images/1155685/melissani.webp", title: "Ancient, Still & Breathtaking" },
-                    { image: "/images/1155685/myrtos.webp", title: "The View That Stops You" },
-                    { image: "/images/1155685/myrtos2.webp", title: "Endless Shades of Blue" }
-                ]
-            },
-            {
                 tourTitle: "Sunday Island Tour",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
@@ -170,7 +143,7 @@ export const tourCategories: TourCategory[] = [
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Vathy • Kioni • Stavros • Polis Bay",
                 operatingDays: "Every: Wednesday",
-                from_price: 38.00,
+                from_price: 40.00,
                 badges: {},
                 card_subtitle: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
                 short_description: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
