@@ -90,7 +90,7 @@ export const tourCategories: TourCategory[] = [
             },
             {
                 tourTitle: "Kefalonia Entdecken",
-                tourType: "PRIVATE TOUR",
+                tourType: "EXCLUSIVE GERMAN TOUR",
                 itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
                 operatingDays: "On Request",
                 from_price: 55.00,
@@ -179,7 +179,7 @@ export const tourCategories: TourCategory[] = [
                 subtitle: "Daily departures from Argostoli Marina — swim, sunbathe & discover hidden bays",
                 tours: [
                     {
-                        tourTitle: "Queen Bee — Argostoli Bay",
+                        tourTitle: "Queen Bee I & II",
                         tourType: "CRUISE",
                         itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
                         operatingDays: "Daily",
@@ -201,7 +201,7 @@ export const tourCategories: TourCategory[] = [
                         ]
                     },
                     {
-                        tourTitle: "Artemis — Argostoli Bay",
+                        tourTitle: "Artemis Cruise",
                         tourType: "CRUISE",
                         itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
                         operatingDays: "Daily",
@@ -222,7 +222,7 @@ export const tourCategories: TourCategory[] = [
                         ]
                     },
                     {
-                        tourTitle: "Lady O — Argostoli Bay",
+                        tourTitle: "Lady O BBQ Cruise",
                         tourType: "CRUISE",
                         itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
                         operatingDays: "Daily",
@@ -246,7 +246,7 @@ export const tourCategories: TourCategory[] = [
                         ]
                     },
                     {
-                        tourTitle: "Efplia — Argostoli Bay",
+                        tourTitle: "Efplia Cruise",
                         tourType: "CRUISE",
                         itinerary: "Argostoli • White Rocks • Vardiani Island • Xi Beach",
                         operatingDays: "Daily",
