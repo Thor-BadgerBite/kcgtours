@@ -442,7 +442,7 @@ export function TourCard({
                                                     onClick={handleBookNow}
                                                     className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
                                                 >
-                                                    View &amp; Book
+                                                    Book Now
                                                 </button>
                                             </div>
                                         ) : (
@@ -450,7 +450,7 @@ export function TourCard({
                                                 onClick={handleBookNow}
                                                 className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                             >
-                                                View More &amp; Book
+                                                Book Now
                                             </button>
                                         )}
                                     </div>
