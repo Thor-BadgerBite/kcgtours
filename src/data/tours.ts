@@ -78,13 +78,13 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Experience the Kefalonian Adventure privately — the west coast, the monastery of Kipouria perched above the sea, panoramic views, an authentic winery visit and wine tasting, with no time pressure. Ideal for groups who want to linger longer at the places that matter most.",
                 slides: [
-                    { image: "/images/1125442/petani.webp", title: "A Peaceful Corner of the Ionian" },
+                    { image: "/images/1125442/winery.webp", title: "A Peaceful Corner of the Ionian" },
                     { image: "/images/1125442/kipouria.webp", title: "Faith on the Edge" },
                     { image: "/images/1125442/lixouri.webp", title: "The Island's Other Soul" },
                     { image: "/images/1125442/ag.efimia.webp", title: "Wild, Hidden & Unforgettable" },
                     { image: "/images/1125442/st.gerasimos.webp", title: "Where the Island Prays" },
                     { image: "/images/1125442/st.gerasimos2.webp", title: "Gold, Light & Devotion" },
-                    { image: "/images/1125442/winery.webp", title: "A Thousand Bottles of Kefalonia" },
+                    { image: "/images/1125442/petani.webp", title: "A Thousand Bottles of Kefalonia" },
                     { image: "/images/1125442/winery2.webp", title: "The Taste You'll Remember" }
                 ]
             },
