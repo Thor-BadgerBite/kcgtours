@@ -267,7 +267,7 @@ export function TourCard({
                         {/* Top Text Header Block */}
                         <div className="bg-card p-3 text-center flex-none mt-2 md:mt-0">
                             <h3 className="text-dark font-bold md:font-normal text-xl md:text-2xl mb-1">{tourTitle}</h3>
-                            <p className="text-primary font-light text-lg min-h-[56px] flex items-center justify-center">
+                            <p className="text-dark font-light text-lg min-h-[56px] flex items-center justify-center">
                                 <span className="line-clamp-2">{card_subtitle || short_description || slides[0]?.subtitle || 'Kefalonia Highlights'}</span>
                             </p>
                         </div>
@@ -418,7 +418,7 @@ export function TourCard({
                             {isBookableOnBokun ? (
                                 <>
                                     <div className="h-[44px] md:h-[60px] flex items-center justify-center w-full mb-0 md:mb-1">
-                                        <p className="text-primary font-medium text-[16px] md:text-[18px] leading-snug line-clamp-2">{itinerary}</p>
+                                        <p className="text-dark font-medium text-[16px] md:text-[18px] leading-snug line-clamp-2">{itinerary}</p>
                                     </div>
                                     <p className="text-[18px] text-dark font-normal leading-snug">
                                         <span className="text-dark font-medium mr-1">Operating:</span>{operatingDays}
@@ -432,7 +432,7 @@ export function TourCard({
                                             <div className="flex w-full gap-2 relative">
                                                 <button
                                                     onClick={() => setIsFlipped(true)}
-                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
+                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
                                                 >
                                                     <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
                                                     <span className="hidden sm:inline">Private Option</span>
@@ -440,7 +440,7 @@ export function TourCard({
                                                 </button>
                                                 <button
                                                     onClick={handleBookNow}
-                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
+                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
                                                 >
                                                     View &amp; Book
                                                 </button>
@@ -448,7 +448,7 @@ export function TourCard({
                                         ) : (
                                             <button
                                                 onClick={handleBookNow}
-                                                className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
+                                                className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                             >
                                                 View More &amp; Book
                                             </button>
@@ -463,7 +463,7 @@ export function TourCard({
                                     <div className="w-full flex justify-center mt-auto mt-2">
                                         <button
                                             onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
-                                            className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[color:var(--color-dark)] hover:bg-[color:var(--color-primary)] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
+                                            className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                         >
                                             <MapPinCheckInside className="w-4 h-4" />
                                             Make a Request
@@ -502,7 +502,7 @@ export function TourCard({
                         <div className="p-4 flex-1 overflow-y-auto flex flex-col">
                             <p className="text-[18px] text-dark mb-4 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
                                 <span className="font-medium">Private experience for </span>
-                                <span className="text-primary font-semibold">{tourTitle}</span>
+                                <span className="text-dark font-semibold">{tourTitle}</span>
                                 {private_description && (
                                     <span className="block mt-2 font-light text-[#404041]">{private_description}</span>
                                 )}
@@ -514,7 +514,7 @@ export function TourCard({
                                     <p className="text-gray-500 text-[15px] text-center">We'll get back to you very soon.</p>
                                     <button
                                         onClick={() => { setIsFlipped(false); setFormStatus('idle'); }}
-                                        className="mt-2 text-white py-2 px-8 font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[16px]"
+                                        className="mt-2 text-white py-2 px-8 font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[16px]"
                                     >
                                         Close
                                     </button>
@@ -580,7 +580,7 @@ export function TourCard({
                                         <button
                                             type="submit"
                                             disabled={formStatus === 'loading'}
-                                            className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-primary hover:bg-primary-hover rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                                            className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                                         >
                                             {formStatus === 'loading' ? (
                                                 <><span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" /> Sending…</>
