@@ -410,8 +410,8 @@ function TourRoute() {
         );
     }
 
-    // Standard behavior: going back returns to previous route history
-    return <BokunPage productId={foundProductId} onBack={() => navigate(-1)} />;
+    // Modified: navigate to home instead of going back in history to ensure users don't get stuck if they landed directly on the tour page
+    return <BokunPage productId={foundProductId} onBack={() => navigate('/')} />;
 }
 
 // ── Root App Routing Structure ────────────────────────────────────────────────
