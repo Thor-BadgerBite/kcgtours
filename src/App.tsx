@@ -146,7 +146,7 @@ function HomePage() {
     return (
         <div className="min-h-screen">
             {/* Navbar */}
-            <nav className={`bg-white h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100 transition-transform duration-300 ${!headerVisible ? '-translate-y-full' : 'translate-y-0'}`}>
+            <nav className={`bg-card h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100 transition-transform duration-300 ${!headerVisible ? '-translate-y-full' : 'translate-y-0'}`}>
                 <div className="w-full flex justify-between items-center pl-[5px] pr-4 md:pr-8">
                     <div className="flex-shrink-0 flex items-center">
                         <img src="/images/logo-new.png" alt="KCG Tours" className="w-[140px] h-[85px] object-contain cursor-pointer" onClick={() => window.scrollTo(0, 0)} />
@@ -174,7 +174,7 @@ function HomePage() {
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
-                <div className="fixed inset-0 z-[100] bg-white flex flex-col pt-6 px-6 overflow-y-auto">
+                <div className="fixed inset-0 z-[100] bg-card flex flex-col pt-6 px-6 overflow-y-auto">
                     <div className="flex items-center justify-between p-4 border-b border-gray-100">
                         <img src="/images/logo-new.png" alt="KCG Tours" className="h-[60px] object-contain" />
                         <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-dark hover:text-primary">

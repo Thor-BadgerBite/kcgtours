@@ -58,7 +58,7 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
             {/* Header / Navbar specific to booking page with a back button */}
-            <nav className="bg-white px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
+            <nav className="bg-card px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
                     <button onClick={onBack} className="text-primary hover:text-dark font-medium flex items-center gap-2">
                         <span>&larr;</span> Back to Tours
