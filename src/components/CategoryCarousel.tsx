@@ -108,14 +108,14 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
 
             <button
                 onClick={scrollPrev}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 shadow-lg rounded-full flex items-center justify-center text-[#404041] hover:text-primary transition-colors z-10 md:hidden"
+                className="absolute left-2 top-[250px] -translate-y-1/2 w-10 h-10 bg-white/90 shadow-lg rounded-full flex items-center justify-center text-[#404041] hover:text-primary transition-colors z-10 md:hidden"
                 aria-label="Previous slide"
             >
                 <ChevronLeft className="w-6 h-6" />
             </button>
             <button
                 onClick={scrollNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 shadow-lg rounded-full flex items-center justify-center text-[#404041] hover:text-primary transition-colors z-10 md:hidden"
+                className="absolute right-2 top-[250px] -translate-y-1/2 w-10 h-10 bg-white/90 shadow-lg rounded-full flex items-center justify-center text-[#404041] hover:text-primary transition-colors z-10 md:hidden"
                 aria-label="Next slide"
             >
                 <ChevronRight className="w-6 h-6" />
