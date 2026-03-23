@@ -120,14 +120,14 @@ export function TailoredExperiences() {
                             private tour that perfectly matches your pace and interests.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
                                 <div className="bg-primary p-2 rounded-full text-white shrink-0">
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">Pick Your Spots</h4>
-                                    <p className="text-white/80">Myrtos, Assos, Melissani & more — you choose.</p>
+                                    <h4 className="text-lg md:text-base font-bold text-white mb-1">Pick Your Spots</h4>
+                                    <p className="text-base md:text-sm text-white/80">Myrtos, Assos, Melissani & more — you choose.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
@@ -135,8 +135,8 @@ export function TailoredExperiences() {
                                     <Clock size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">Your Own Pace</h4>
-                                    <p className="text-white/80">No fixed schedule. Linger as long as you like.</p>
+                                    <h4 className="text-lg md:text-base font-bold text-white mb-1">Your Own Pace</h4>
+                                    <p className="text-base md:text-sm text-white/80">No fixed schedule. Linger as long as you like.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
@@ -144,8 +144,8 @@ export function TailoredExperiences() {
                                     <Stars size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">Crafted by Experts</h4>
-                                    <p className="text-white/80">Our local team builds the perfect trip around your wishes.</p>
+                                    <h4 className="text-lg md:text-base font-bold text-white mb-1">Crafted by Experts</h4>
+                                    <p className="text-base md:text-sm text-white/80">Our local team builds the perfect trip around your wishes.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
@@ -153,8 +153,8 @@ export function TailoredExperiences() {
                                     <Sparkles size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">Anything Goes</h4>
-                                    <p className="text-white/80">Beach, caves, wine, villages — dream it, we'll make it happen.</p>
+                                    <h4 className="text-lg md:text-base font-bold text-white mb-1">Anything Goes</h4>
+                                    <p className="text-base md:text-sm text-white/80">Beach, caves, wine, villages — dream it, we'll make it happen.</p>
                                 </div>
                             </div>
                         </div>
