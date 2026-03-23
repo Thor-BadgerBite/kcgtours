@@ -64,7 +64,7 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
                         <span>&larr;</span> Back to Tours
                     </button>
                     <div className="flex items-center">
-                        <img src="/images/logo.png" alt="KCG Tours" className="h-[40px] md:h-[50px] w-auto cursor-pointer" onClick={onBack} />
+                        <img src="/images/logo-new.png" alt="KCG Tours" className="h-[40px] md:h-[50px] w-auto cursor-pointer" onClick={onBack} />
                     </div>
                     {/* Placeholder to keep logo centered */}
                     <div className="w-[120px] hidden md:block"></div>

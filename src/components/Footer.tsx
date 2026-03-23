@@ -53,7 +53,7 @@ export function Footer() {
                     {/* Center Column: Logo & TripAdvisor */}
                     <div className="flex flex-col items-center justify-center text-center space-y-4">
                         <div>
-                            <img src="/images/logo.png" alt="KCG Tours" className="h-[80px] md:h-[100px] w-auto mx-auto" />
+                            <img src="/images/logo-white.png" alt="KCG Tours" className="h-[80px] md:h-[100px] w-auto mx-auto" />
                         </div>
 
                         {/* Custom Outstanding TripAdvisor Badge */}
