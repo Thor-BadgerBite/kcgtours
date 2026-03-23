@@ -178,7 +178,7 @@ export function TailoredExperiences() {
                                 {/* Row 1: Name + Email */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="space-y-1">
-                                        <label className="text-sm font-medium text-gray-700">Name *</label>
+                                        <label className="text-lg md:text-sm font-medium text-gray-700">Name *</label>
                                         <input
                                             required
                                             type="text"
@@ -190,7 +190,7 @@ export function TailoredExperiences() {
                                         />
                                     </div>
                                     <div className="space-y-1">
-                                        <label className="text-sm font-medium text-gray-700">Email *</label>
+                                        <label className="text-lg md:text-sm font-medium text-gray-700">Email *</label>
                                         <input
                                             required
                                             type="email"
@@ -206,7 +206,7 @@ export function TailoredExperiences() {
                                 {/* Row 2: Date + Guests + Places of Interest */}
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div className="space-y-1">
-                                        <label className="text-sm font-medium text-gray-700">Date</label>
+                                        <label className="text-lg md:text-sm font-medium text-gray-700">Date</label>
                                         <input
                                             type="date"
                                             name="date"
@@ -216,7 +216,7 @@ export function TailoredExperiences() {
                                         />
                                     </div>
                                     <div className="space-y-1">
-                                        <label className="text-sm font-medium text-gray-700">Guests</label>
+                                        <label className="text-lg md:text-sm font-medium text-gray-700">Guests</label>
                                         <select
                                             name="guests"
                                             value={formData.guests}
@@ -233,7 +233,7 @@ export function TailoredExperiences() {
 
                                     {/* Places of Interest Dropdown */}
                                     <div className="space-y-1" ref={placesRef}>
-                                        <label className="text-sm font-medium text-gray-700">Places of Interest</label>
+                                        <label className="text-lg md:text-sm font-medium text-gray-700">Places of Interest</label>
                                         <div className="relative">
                                             <button
                                                 type="button"
@@ -269,7 +269,7 @@ export function TailoredExperiences() {
 
                                 {/* Row 3: Message */}
                                 <div className="space-y-1">
-                                    <label className="text-sm font-medium text-gray-700">Your Ideas / Needs *</label>
+                                    <label className="text-lg md:text-sm font-medium text-gray-700">Your Ideas / Needs *</label>
                                     <textarea
                                         required
                                         name="message"
