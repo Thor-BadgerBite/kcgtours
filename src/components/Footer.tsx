@@ -15,15 +15,15 @@ export function Footer() {
                                 Your trusted travel partner in Kefalonia offering accommodation, transfers, car hire and unforgettable island experiences.
                             </p>
                             <p className="flex items-center gap-2">
-                                <Mail size={16} className="text-primary shrink-0" />
+                                <Mail size={16} className="text-white shrink-0" />
                                 <a href="mailto:info@kcgservices.gr" className="hover:text-primary transition-colors">info@kcgservices.gr</a>
                             </p>
                             <p className="flex items-center gap-2">
-                                <Phone size={16} className="text-primary shrink-0" />
+                                <Phone size={16} className="text-white shrink-0" />
                                 <span>+30 2671 025653</span>
                             </p>
                             <p className="flex items-start gap-2">
-                                <MapPin size={16} className="mt-1 shrink-0 text-primary" />
+                                <MapPin size={16} className="mt-1 shrink-0 text-white" />
                                 <span>Argostoli-Aerodromiou, Lassi<br />Kefalonia, Greece, 21800</span>
                             </p>
                         </div>
@@ -31,19 +31,19 @@ export function Footer() {
                         <div className="pt-4 flex flex-col items-center md:items-start text-center md:text-left">
                             <h4 className="text-lg md:text-sm font-semibold text-white mb-3 uppercase tracking-wider">Follow Us</h4>
                             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                                <a href="https://www.facebook.com/kcg.services.kefalonia/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Facebook">
+                                <a href="https://www.facebook.com/kcg.services.kefalonia/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-card hover:bg-[#d7393e] text-dark hover:text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Facebook">
                                     <Facebook size={18} />
                                 </a>
-                                <a href="https://www.instagram.com/kcg.travel.services/?hl=en" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Instagram">
+                                <a href="https://www.instagram.com/kcg.travel.services/?hl=en" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-card hover:bg-[#d7393e] text-dark hover:text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Instagram">
                                     <Instagram size={18} />
                                 </a>
-                                <a href="https://www.tripadvisor.com/Attraction_Review-g644214-d10413398-Reviews-KCG_Travel_Services-Lassi_Kefalonia_Ionian_Islands.html" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Tripadvisor">
+                                <a href="https://www.tripadvisor.com/Attraction_Review-g644214-d10413398-Reviews-KCG_Travel_Services-Lassi_Kefalonia_Ionian_Islands.html" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-card hover:bg-[#d7393e] text-dark hover:text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Tripadvisor">
                                     <svg width="18px" height="18px" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 6.009h-2.829C15.211 4.675 12.813 4 10 4s-5.212.675-7.171 2.009H0c.428.42.827 1.34.993 2.04A4.954 4.954 0 0 0 0 11.008c0 2.757 2.243 5 5 5a4.97 4.97 0 0 0 3.423-1.375L10 17l1.577-2.366A4.97 4.97 0 0 0 15 16.01c2.757 0 5-2.243 5-5 0-1.112-.377-2.13-.993-2.96.166-.7.565-1.62.993-2.04zm-15 8.4c-1.875 0-3.4-1.525-3.4-3.4s1.525-3.4 3.4-3.4 3.4 1.525 3.4 3.4-1.525 3.4-3.4 3.4zm5-3.4a5.008 5.008 0 0 0-4.009-4.9C7.195 5.704 8.53 5.5 10 5.5s2.805.204 4.009.61A5.008 5.008 0 0 0 10 11.008zm5 3.4c-1.875 0-3.4-1.525-3.4-3.4s1.525-3.4 3.4-3.4 3.4 1.525 3.4 3.4-1.525 3.4-3.4 3.4zM5 8.86c-1.185 0-2.15.964-2.15 2.15s.965 2.15 2.15 2.15 2.15-.964 2.15-2.15-.965-2.15-2.15-2.15zm0 2.791a.65.65 0 1 1 0-1.3.65.65 0 0 1 0 1.3zm10-2.791c-1.185 0-2.15.964-2.15 2.15s.965 2.15 2.15 2.15 2.15-.964 2.15-2.15-.965-2.15-2.15-2.15zm0 2.791a.65.65 0 1 1 0-1.3.65.65 0 0 1 0 1.3z"/></svg>
                                 </a>
-                                <a href="https://www.youtube.com/@kcgtravelincomingservices305" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="YouTube">
+                                <a href="https://www.youtube.com/@kcgtravelincomingservices305" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-card hover:bg-[#d7393e] text-dark hover:text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="YouTube">
                                     <Youtube size={18} />
                                 </a>
-                                <a href="https://gr.linkedin.com/company/kcg-travel" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="LinkedIn">
+                                <a href="https://gr.linkedin.com/company/kcg-travel" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-card hover:bg-[#d7393e] text-dark hover:text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="LinkedIn">
                                     <Linkedin size={18} />
                                 </a>
                             </div>

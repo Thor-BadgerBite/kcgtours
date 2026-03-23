@@ -108,7 +108,7 @@ export function TailoredExperiences() {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-3xl md:text-5xl font-light text-dark mb-2 leading-tight">
-                            Tailored <span className="font-semibold text-primary">Experiences</span>
+                            Tailored <span className="font-semibold text-dark">Experiences</span>
                         </h2>
                         <h3 className="text-xl text-gray-500 mb-6 font-light">Crafting Your Perfect Kefalonia Journey</h3>
 
@@ -122,7 +122,7 @@ export function TailoredExperiences() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
-                                <div className="bg-primary p-2 rounded-full text-white shrink-0">
+                                <div className="bg-card p-2 rounded-full text-dark shrink-0">
                                     <MapPin size={20} />
                                 </div>
                                 <div>
@@ -131,7 +131,7 @@ export function TailoredExperiences() {
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
-                                <div className="bg-primary p-2 rounded-full text-white shrink-0">
+                                <div className="bg-card p-2 rounded-full text-dark shrink-0">
                                     <Clock size={20} />
                                 </div>
                                 <div>
@@ -140,7 +140,7 @@ export function TailoredExperiences() {
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
-                                <div className="bg-primary p-2 rounded-full text-white shrink-0">
+                                <div className="bg-card p-2 rounded-full text-dark shrink-0">
                                     <Stars size={20} />
                                 </div>
                                 <div>
@@ -149,7 +149,7 @@ export function TailoredExperiences() {
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-lg bg-sage shadow-sm">
-                                <div className="bg-primary p-2 rounded-full text-white shrink-0">
+                                <div className="bg-card p-2 rounded-full text-dark shrink-0">
                                     <Sparkles size={20} />
                                 </div>
                                 <div>
@@ -297,7 +297,7 @@ export function TailoredExperiences() {
                                     <button
                                         type="submit"
                                         disabled={formStatus === 'loading'}
-                                        className="w-full bg-primary hover:bg-primary-hover text-white hover:text-dark font-bold py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                                        className="w-full bg-[var(--color-sage)] hover:bg-[#d7393e] text-white hover:text-white font-bold py-3.5 rounded-md transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                                     >
                                         {formStatus === 'loading' ? (
                                             <><span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" /> Sending…</>
