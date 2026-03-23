@@ -107,7 +107,7 @@ export function Footer() {
                         <div className="bg-white/5 border border-white/10 px-5 py-3 rounded-lg inline-flex flex-col md:items-end mt-2">
                             <span className="text-sm md:text-[10px] text-white/60 uppercase tracking-widest font-semibold mb-0.5">Proud to be</span>
                             <span className="text-white font-bold text-lg md:text-sm whitespace-nowrap tracking-wide">
-                                part of <span className="text-primary text-xl md:text-base">KCG Family</span>
+                                part of <span className="text-white text-xl md:text-base">KCG Family</span>
                             </span>
                         </div>
                     </div>
