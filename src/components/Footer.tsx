@@ -9,8 +9,8 @@ export function Footer() {
 
                     {/* Left Column: Contact Details */}
                     <div className="flex flex-col text-white space-y-4">
-                        <h4 className="text-xl md:text-lg font-semibold text-white mb-2">KCG Travel</h4>
-                        <div className="space-y-3 text-base md:text-sm">
+                        <h4 className="text-2xl md:text-lg font-semibold text-white mb-2">KCG Travel</h4>
+                        <div className="space-y-3 text-lg md:text-sm">
                             <p className="font-light leading-relaxed mb-4">
                                 Your trusted travel partner in Kefalonia offering accommodation, transfers, car hire and unforgettable island experiences.
                             </p>
@@ -28,9 +28,9 @@ export function Footer() {
                             </p>
                         </div>
 
-                        <div className="pt-4">
-                            <h4 className="text-base md:text-sm font-semibold text-white mb-3 uppercase tracking-wider">Follow Us</h4>
-                            <div className="flex flex-wrap gap-3">
+                        <div className="pt-4 flex flex-col items-center md:items-start text-center md:text-left">
+                            <h4 className="text-lg md:text-sm font-semibold text-white mb-3 uppercase tracking-wider">Follow Us</h4>
+                            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                                 <a href="https://www.facebook.com/kcg.services.kefalonia/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-primary hover:bg-primary-hover hover:text-dark text-white flex items-center justify-center rounded transition-colors shadow-sm" aria-label="Facebook">
                                     <Facebook size={18} />
                                 </a>
@@ -70,8 +70,8 @@ export function Footer() {
                                 </div>
 
                                 <div className="text-center">
-                                    <p className="text-sm md:text-xs uppercase font-bold text-gray-400 tracking-widest mb-1">Recommended by</p>
-                                    <p className="text-[#000] font-bold text-xl md:text-lg leading-tight group-hover:text-primary transition-colors">94% of travellers</p>
+                                    <p className="text-base md:text-xs uppercase font-bold text-gray-400 tracking-widest mb-1">Recommended by</p>
+                                    <p className="text-[#000] font-bold text-2xl md:text-lg leading-tight group-hover:text-primary transition-colors">94% of travellers</p>
                                 </div>
 
                                 <div className="flex items-center gap-1 text-[#34E0A1] bg-[#34E0A1]/10 px-3 py-1.5 rounded-full">
@@ -79,7 +79,7 @@ export function Footer() {
                                         <Star key={star} size={14} fill="currentColor" />
                                     ))}
                                 </div>
-                                <span className="text-sm md:text-xs text-[#000] font-medium mt-1 underline decoration-gray-300 underline-offset-4 group-hover:decoration-primary transition-all">Read our latest reviews</span>
+                                <span className="text-base md:text-xs text-[#000] font-medium mt-1 underline decoration-gray-300 underline-offset-4 group-hover:decoration-primary transition-all">Read our latest reviews</span>
                             </div>
                         </a>
                     </div>
@@ -87,17 +87,17 @@ export function Footer() {
                     {/* Right Column: Online Bookings & Policies */}
                     <div className="flex flex-col md:items-end text-white space-y-6 md:text-right">
                         <div>
-                            <h4 className="text-xl md:text-lg font-semibold text-white mb-2">Online Bookings</h4>
-                            <p className="text-base md:text-sm mb-4">Make your online reservation now easily & safe!</p>
+                            <h4 className="text-2xl md:text-lg font-semibold text-white mb-2">Online Bookings</h4>
+                            <p className="text-lg md:text-sm mb-4">Make your online reservation now easily & safe!</p>
 
-                            <a href="#" className="text-base md:text-sm font-semibold hover:text-primary transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
+                            <a href="#" className="text-lg md:text-sm font-semibold hover:text-primary transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
                                 Booking Terms & Privacy Policy
                             </a>
                         </div>
 
                         <div className="pt-2">
-                            <h4 className="text-base md:text-sm font-semibold text-white mb-3 uppercase tracking-wider">Partners</h4>
-                            <ul className="space-y-2 text-base md:text-sm flex flex-col md:items-end">
+                            <h4 className="text-lg md:text-sm font-semibold text-white mb-3 uppercase tracking-wider">Partners</h4>
+                            <ul className="space-y-2 text-lg md:text-sm flex flex-col md:items-end">
                                 <li><a href="https://kcgtravel.gr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">KCG Travel</a></li>
                                 <li><a href="https://kefaloniatransfers.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">Kefalonia Transfers</a></li>
                                 <li><a href="https://kcgcarhire.gr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">KCG Car Hire</a></li>
@@ -105,9 +105,9 @@ export function Footer() {
                         </div>
 
                         <div className="bg-white/5 border border-white/10 px-5 py-3 rounded-lg inline-flex flex-col md:items-end mt-2">
-                            <span className="text-xs md:text-[10px] text-white/60 uppercase tracking-widest font-semibold mb-0.5">Proud to be</span>
-                            <span className="text-white font-bold text-base md:text-sm whitespace-nowrap tracking-wide">
-                                part of <span className="text-primary text-lg md:text-base">KCG Family</span>
+                            <span className="text-sm md:text-[10px] text-white/60 uppercase tracking-widest font-semibold mb-0.5">Proud to be</span>
+                            <span className="text-white font-bold text-lg md:text-sm whitespace-nowrap tracking-wide">
+                                part of <span className="text-primary text-xl md:text-base">KCG Family</span>
                             </span>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom Bar %} */}
-                <div className="border-t border-white/20 pt-3 mt-3 flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-white/70 text-center md:text-left gap-2">
+                <div className="border-t border-white/20 pt-3 mt-3 flex flex-col md:flex-row justify-between items-center text-base md:text-xs text-white/70 text-center md:text-left gap-2">
                     <p>&copy; {new Date().getFullYear()} KCG Travel Services Kefalonia. All rights reserved.</p>
                     <p>MHTE License No: <span className="font-semibold">0458E600001187Y1</span></p>
                 </div>
