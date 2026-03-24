@@ -247,7 +247,7 @@ function HomePage() {
                                         >
                                             {/* Sub-category heading + subtitle */}
                                             <motion.div
-                                                className="text-center mb-3"
+                                                className="text-center mb-6 md:mb-3"
                                                 initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
@@ -303,7 +303,7 @@ function HomePage() {
                                 className="pt-[30px] md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                             >
                                 <motion.div
-                                    className="text-center mb-3"
+                                    className="text-center mb-6 md:mb-3"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
