@@ -236,25 +236,24 @@ function HomePage() {
                                 <section
                                     key={category.id}
                                     id={category.id}
-                                    className="pt-8 pb-10 md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
+                                    className="pt-[30px] md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                                 >
                                     {/* Sub-categories — NO generic category heading shown */}
                                     {category.subCategories.map((sub, subIdx) => (
                                         <div
                                             key={sub.id}
                                             id={sub.id}
-                                            className={`scroll-mt-[10px] md:scroll-mt-[120px] ${subIdx > 0 ? 'mt-10' : ''}`}
+                                            className={`scroll-mt-[10px] md:scroll-mt-[120px] ${subIdx > 0 ? 'pt-[30px]' : ''}`}
                                         >
                                             {/* Sub-category heading + subtitle */}
                                             <motion.div
-                                                className="text-center mb-5"
+                                                className="text-center mb-3"
                                                 initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
                                                 <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark inline-block relative pb-1">
                                                     {sub.title}
-                                                    {/* Red underline */}
                                                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-primary rounded-full" />
                                                 </h2>
                                                 {sub.subtitle && (
@@ -301,10 +300,10 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className="block scroll-mt-[10px] md:scroll-mt-[100px] pt-8 pb-10 md:py-[10px] bg-[var(--color-sage)] md:bg-transparent"
+                                className="pt-[30px] md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                             >
                                 <motion.div
-                                    className="text-center mb-5 flex-none"
+                                    className="text-center mb-3"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
@@ -316,7 +315,7 @@ function HomePage() {
                                     {category.subtitle && <h4 className="text-xl md:text-[24px] font-normal text-white md:text-dark mt-1">{category.subtitle}</h4>}
                                 </motion.div>
 
-                                <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">
+                                <div className="w-full px-0 md:px-[40px] xl:px-[80px]">
                                     <CategoryCarousel
                                         isBusTours={category.id === 'bus-tours'}
                                         items={(category.tours ?? []).map((tour, idx) => (
