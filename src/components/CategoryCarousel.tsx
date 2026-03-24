@@ -68,13 +68,13 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
     }
 
     return (
-        <div className="relative group overflow-visible w-full">
-            <div className="overflow-hidden md:py-4 px-2 -mx-2" ref={emblaRef}>
-                <div className="flex -ml-6 md:-ml-8 touch-pan-y">
+        <div className="relative group overflow-x-hidden md:overflow-visible w-full">
+            <div className="overflow-hidden md:py-4" ref={emblaRef}>
+                <div className="flex md:-ml-8 touch-pan-y">
                     {displayItems.map((item, idx) => (
                         <div
                             key={idx}
-                            className="flex-none w-full md:w-1/2 xl:w-1/3 pl-6 md:pl-8 h-full"
+                            className="flex-none w-full md:w-1/2 xl:w-1/3 md:pl-8"
                             style={{ minWidth: 0 }}
                         >
                             <div className="h-full flex flex-col justify-stretch">
