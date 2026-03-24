@@ -91,7 +91,7 @@ export function TailoredExperiences() {
             : `${selectedPlaces.length} places selected`;
 
     return (
-        <section id="contact" className="py-6 bg-white relative overflow-hidden">
+        <section id="contact" className="pb-6 md:py-6 bg-white relative overflow-hidden">
             {/* Background texture image */}
             <div className="absolute inset-0 opacity-15 pointer-events-none">
                 <img src="/images/beach.jpg" className="w-full h-full object-cover grayscale" alt="" />
@@ -108,7 +108,7 @@ export function TailoredExperiences() {
                         transition={{ duration: 0.8 }}
                     >
                         {/* Mobile sage header — matches tour section headings */}
-                        <div className="-mx-4 md:mx-0 px-4 md:px-0 pt-[30px] pb-6 md:pt-0 md:pb-0 mb-6 md:mb-0 bg-[var(--color-sage)] md:bg-transparent">
+                        <div className="-mx-4 md:mx-0 px-4 md:px-0 pt-[30px] pb-6 md:pt-0 md:pb-0 mb-6 md:mb-0 bg-[var(--color-sage)] md:bg-transparent text-center md:text-left">
                             <h2 className="text-2xl md:text-5xl font-bold md:font-light text-white md:text-dark mb-1 md:mb-2 leading-tight inline-block relative pb-1">
                                 Tailored <span className="font-bold md:font-semibold text-white md:text-dark">Experiences</span>
                                 <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-transparent rounded-full" />
