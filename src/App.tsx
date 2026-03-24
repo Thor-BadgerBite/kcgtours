@@ -236,7 +236,7 @@ function HomePage() {
                                 <section
                                     key={category.id}
                                     id={category.id}
-                                    className="py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
+                                    className="py-[30px] md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                                 >
                                     {/* Sub-categories — NO generic category heading shown */}
                                     {category.subCategories.map((sub, subIdx) => (
@@ -301,16 +301,19 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className={`min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[10px] md:scroll-mt-[100px] ${category.id === 'bus-tours' ? 'pt-[20px] pb-[10px]' : 'py-[10px]'} bg-[var(--color-sage)] md:bg-transparent`}
+                                className={`md:min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[10px] md:scroll-mt-[100px] py-[30px] md:py-[10px] bg-[var(--color-sage)] md:bg-transparent`}
                             >
                                 <motion.div
-                                    className="text-center mb-2 flex-none"
+                                    className="text-center mb-4 flex-none"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark mb-1">{category.title}</h2>
-                                    <h4 className="text-xl md:text-[24px] font-normal text-white md:text-dark">{category.subtitle}</h4>
+                                    <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark inline-block relative pb-1 mb-1">
+                                        {category.title}
+                                        <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-primary rounded-full" />
+                                    </h2>
+                                    {category.subtitle && <h4 className="text-xl md:text-[24px] font-normal text-white md:text-dark mt-1">{category.subtitle}</h4>}
                                 </motion.div>
 
                                 <div className="w-full px-0 md:px-[40px] xl:px-[80px] h-full">
