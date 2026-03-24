@@ -236,18 +236,18 @@ function HomePage() {
                                 <section
                                     key={category.id}
                                     id={category.id}
-                                    className="py-[30px] md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
+                                    className="pt-8 pb-10 md:py-[10px] scroll-mt-[10px] md:scroll-mt-[100px] bg-[var(--color-sage)] md:bg-transparent"
                                 >
                                     {/* Sub-categories — NO generic category heading shown */}
                                     {category.subCategories.map((sub, subIdx) => (
                                         <div
                                             key={sub.id}
                                             id={sub.id}
-                                            className={`scroll-mt-[10px] md:scroll-mt-[120px] pt-[10px] ${subIdx > 0 ? 'mt-8' : ''}`}
+                                            className={`scroll-mt-[10px] md:scroll-mt-[120px] ${subIdx > 0 ? 'mt-10' : ''}`}
                                         >
                                             {/* Sub-category heading + subtitle */}
                                             <motion.div
-                                                className="text-center mb-2"
+                                                className="text-center mb-5"
                                                 initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
@@ -301,10 +301,10 @@ function HomePage() {
                             <section
                                 id={category.id}
                                 key={category.id}
-                                className={`md:min-h-[calc(100vh-100px)] flex flex-col justify-center scroll-mt-[10px] md:scroll-mt-[100px] py-[30px] md:py-[10px] bg-[var(--color-sage)] md:bg-transparent`}
+                                className="block scroll-mt-[10px] md:scroll-mt-[100px] pt-8 pb-10 md:py-[10px] bg-[var(--color-sage)] md:bg-transparent"
                             >
                                 <motion.div
-                                    className="text-center mb-4 flex-none"
+                                    className="text-center mb-5 flex-none"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
