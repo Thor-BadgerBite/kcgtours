@@ -107,10 +107,14 @@ export function TailoredExperiences() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-light text-dark mb-2 leading-tight">
-                            Tailored <span className="font-semibold text-dark">Experiences</span>
-                        </h2>
-                        <h3 className="text-xl text-gray-500 mb-6 font-light">Crafting Your Perfect Kefalonia Journey</h3>
+                        {/* Mobile sage header — matches tour section headings */}
+                        <div className="-mx-4 md:mx-0 px-4 md:px-0 pt-[30px] pb-6 md:pt-0 md:pb-0 mb-6 md:mb-0 bg-[var(--color-sage)] md:bg-transparent">
+                            <h2 className="text-2xl md:text-5xl font-bold md:font-light text-white md:text-dark mb-1 md:mb-2 leading-tight inline-block relative pb-1">
+                                Tailored <span className="font-bold md:font-semibold text-white md:text-dark">Experiences</span>
+                                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-transparent rounded-full" />
+                            </h2>
+                            <h3 className="text-lg md:text-xl text-white md:text-gray-500 font-normal md:font-light mt-1 md:mt-0 md:mb-6">Crafting Your Perfect Kefalonia Journey</h3>
+                        </div>
 
                         <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                             At KCG Tours, we believe that every traveler is unique.
