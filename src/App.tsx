@@ -138,9 +138,21 @@ function HomePage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
 
-    // scroll to top on mount
+    // Handle URL hash on mount (e.g., for QR codes like kcgtours.gr/#private)
     useEffect(() => {
-        window.scrollTo(0, 0);
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            // Mapping common aliases
+            const targetId = hash === 'private' ? 'tailored-experiences' : hash;
+            
+            // Wait slightly for DOM to be ready
+            const timer = setTimeout(() => {
+                scrollToId(targetId);
+            }, 100);
+            return () => clearTimeout(timer);
+        } else {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     return (
