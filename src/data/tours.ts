@@ -699,6 +699,33 @@ export const tourCategories: TourCategory[] = [
     },
 
     // ─────────────────────────────────────────────
+    //  OPERA YACHT
+    // ─────────────────────────────────────────────
+    {
+        id: "opera-yacht",
+        title: "Opera Yacht",
+        subtitle: "The ultimate luxury Ionian escape",
+        tours: [
+            {
+                tourTitle: "M/Y Opera Private Charter",
+                tourType: "LUXURY PRIVATE YACHT",
+                from_price: 3600.00, // Daily rate starting point (estimated for better UI than 0)
+                badges: { isExclusive: true },
+                card_subtitle: "24m of Italian elegance — your private world on the water",
+                short_description: "Experience the peak of luxury aboard the 80ft M/Y Opera. A masterpiece by Cantieri di Pisa, fully refitted in 2023, featuring 4 cabins for 8 guests and a professional crew of 4.",
+                duration: "Full Day / Weekly",
+                bokunProductId: "PLACEHOLDER_OPERA_1",
+                isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Step aboard the M/Y Opera for a journey of absolute luxury. Built by the prestigious Cantieri di Pisa and completely refitted in 2023, this 24-meter yacht combines classic beauty with modern sophistication. Based in Sami, she is ready to whisk you away to the hidden gems of the Ionian. With 4 cabins (Master, VIP, and 2 Double) and a crew of 4 dedicated professionals, your every wish is catered to. Fully equipped with a tender, jet ski, SUPs, wakeboard, and snorkeling gear, it's the perfect platform for unforgettable memories.",
+                slides: [
+                    { image: "/images/opera/opera1.webp", title: "M/Y Opera: Timeless Luxury at Sea" }
+                ]
+            }
+        ]
+    },
+
+    // ─────────────────────────────────────────────
     //  PRIVATE TOURS  (anchor → TailoredExperiences)
     // ─────────────────────────────────────────────
     {
