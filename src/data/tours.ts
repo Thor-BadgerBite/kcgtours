@@ -709,7 +709,7 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "M/Y Opera Private Charter",
                 tourType: "LUXURY PRIVATE YACHT",
-                from_price: 3600.00, // Daily rate starting point (estimated for better UI than 0)
+                from_price: 0, // Shows 'ON REQUEST'
                 badges: { isExclusive: true },
                 card_subtitle: "24m of Italian elegance — your private world on the water",
                 short_description: "Experience the peak of luxury aboard the 80ft M/Y Opera. A masterpiece by Cantieri di Pisa, fully refitted in 2023, featuring 4 cabins for 8 guests and a professional crew of 4.",
