@@ -6,7 +6,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "bus-tours",
-        title: "Bus Tours",
+        title: "Kefalonia Bus Tours",
         subtitle: "Discover the island's highlights in comfort",
         tours: [
             {
@@ -170,7 +170,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "cruises",
-        title: "Cruises",
+        title: "Kefalonia Boat Cruises",
         subtitle: "Set sail on the crystal waters of the Ionian Sea",
         subCategories: [
             {
@@ -530,8 +530,8 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "shore-excursions",
-        title: "Shore Excursions",
-        subtitle: "Make the most of your time ashore",
+        title: "Cruise Shore Excursions",
+        subtitle: "Make the most of your time ashore in Argostoli",
         tours: [
             {
                 tourTitle: "Assos & Fiscardo",
@@ -584,7 +584,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "fishing-tours",
-        title: "Fishing Tours",
+        title: "Authentic Fishing Trips",
         subtitle: "Live a real fisherman's day on the Ionian",
         tours: [
             {
@@ -645,8 +645,8 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "activities",
-        title: "Activities",
-        subtitle: "Elevate your Kefalonia experience",
+        title: "Kefalonia Island Activities",
+        subtitle: "Elevate your Kefalonia experience with local adventures",
         tours: [
             {
                 tourTitle: "Horse Riding",
@@ -730,8 +730,8 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "private-tours",
-        title: "Private Tours",
-        subtitle: "Tailor-made experiences just for you",
+        title: "Private & VIP Tours",
+        subtitle: "Tailor-made experiences and VIP transfers just for you",
         tours: []
     }
 ];

@@ -6,10 +6,11 @@ import { Analytics } from '@vercel/analytics/react';
 import { TourCard } from './components/TourCard';
 import { CategoryCarousel } from './components/CategoryCarousel';
 import { tourCategories } from './data/tours';
+import { SEO } from './components/SEO';
 import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
 import { BokunPage } from './components/BokunPage';
-import type { TourCategory } from './types';
+import type { TourCategory, Tour } from './types';
 
 // ── slug helper ──────────────────────────────────────────────────────────────
 
@@ -157,6 +158,11 @@ function HomePage() {
 
     return (
         <div className="min-h-screen">
+            <SEO 
+                description="Discover the best of Kefalonia with KCG Tours. Handpicked bus tours, boat cruises, private excursions, and shore excursions. Book your unforgettable Ionian island experience today."
+                keywords="Kefalonia tours, Kefalonia cruises, bus tours Kefalonia, boat trips Kefalonia, Fiscardo tour, Melissani Lake, Assos, Myrtos beach, Ithaca cruise, Zakynthos cruise, private tours Kefalonia, shore excursions Argostoli, KCG Tours"
+                url="https://kcgtours.gr/"
+            />
             {/* Navbar */}
             <nav className={`bg-card h-[100px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100 transition-transform duration-300 ${!headerVisible ? '-translate-y-full' : 'translate-y-0'}`}>
                 <div className="w-full flex justify-between items-center pl-[5px] pr-4 md:pr-8">
@@ -228,7 +234,7 @@ function HomePage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h1 className="text-4xl md:text-6xl font-light mb-4">Your Kefalonia. Perfectly Planned.</h1>
+                    <h1 className="text-4xl md:text-6xl font-light mb-4">Kefalonia Tours & Cruises <br/><span className="text-2xl md:text-4xl opacity-80 italic">Perfectly Planned</span></h1>
                     <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
                         Bus tours, boat cruises &amp; shore excursions — handpicked, expertly guided, unforgettable.
                     </p>
@@ -376,16 +382,14 @@ function TourRoute() {
     const navigate = useNavigate();
 
     // Find productId and match
-    let foundProductId: string | null = null;
-    let foundTourTitle = "";
+    let foundTour: Tour | null = null;
 
     for (const cat of tourCategories) {
         if (cat.subCategories) {
             for (const sub of cat.subCategories) {
                 const match = sub.tours.find(t => slugify(t.tourTitle) === slug);
                 if (match) {
-                    foundProductId = match.bokunProductId;
-                    foundTourTitle = match.tourTitle;
+                    foundTour = match;
                     break;
                 }
             }
@@ -393,24 +397,22 @@ function TourRoute() {
         if (cat.tours) {
             const match = cat.tours.find(t => slugify(t.tourTitle) === slug);
             if (match) {
-                foundProductId = match.bokunProductId;
-                foundTourTitle = match.tourTitle;
+                foundTour = match;
                 break;
             }
         }
-        if (foundProductId) break;
+        if (foundTour) break;
     }
+
+    const foundProductId = foundTour?.bokunProductId;
+    const foundTourTitle = foundTour?.tourTitle;
 
     // Dynamic SEO doc title
     useEffect(() => {
         window.scrollTo(0, 0); // make sure it scrolls to top on new page load
-        if (foundTourTitle) {
-            document.title = `${foundTourTitle} | KCG Tours`;
-        }
-        return () => { document.title = "KCG Tours Kefalonia"; };
     }, [foundTourTitle]);
 
-    if (!foundProductId) {
+    if (!foundTour || !foundProductId) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
                 <h1 className="text-3xl font-light mb-4 text-[#404041]">Tour not found</h1>
@@ -424,8 +426,47 @@ function TourRoute() {
         );
     }
 
-    // Modified: navigate to home instead of going back in history to ensure users don't get stuck if they landed directly on the tour page
-    return <BokunPage productId={foundProductId} onBack={() => navigate('/')} />;
+    // JSON-LD for the specific tour
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Trip",
+        "name": foundTour.tourTitle,
+        "description": foundTour.short_description || foundTour.card_subtitle || `Experience the ${foundTour.tourTitle} in Kefalonia.`,
+        "image": `https://kcgtours.gr${foundTour.slides[0]?.image}`,
+        "offers": {
+            "@type": "Offer",
+            "price": foundTour.from_price,
+            "priceCurrency": "EUR",
+            "url": `https://kcgtours.gr/tour/${slug}`
+        },
+        "itinerary": {
+            "@type": "ItemList",
+            "numberOfItems": foundTour.itinerary?.split(' • ').length || 1,
+            "itemListElement": foundTour.itinerary?.split(' • ').map((item, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "name": item
+            }))
+        },
+        "provider": {
+            "@type": "TravelAgency",
+            "name": "KCG Tours",
+            "url": "https://kcgtours.gr/"
+        }
+    };
+
+    return (
+        <>
+            <SEO 
+                title={foundTourTitle}
+                description={foundTour.short_description || foundTour.card_subtitle}
+                image={`https://kcgtours.gr${foundTour.slides[0]?.image}`}
+                url={`https://kcgtours.gr/tour/${slug}`}
+                jsonLd={jsonLd}
+            />
+            <BokunPage productId={foundProductId} onBack={() => navigate('/')} />
+        </>
+    );
 }
 
 // ── Root App Routing Structure ────────────────────────────────────────────────
