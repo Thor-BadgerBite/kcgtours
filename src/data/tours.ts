@@ -6,7 +6,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "bus-tours",
-        title: "Kefalonia Bus Tours",
+        title: "Bus Tours",
         subtitle: "Discover the island's highlights in comfort",
         tours: [
             {
@@ -170,7 +170,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "cruises",
-        title: "Kefalonia Boat Cruises",
+        title: "Boat Cruises",
         subtitle: "Set sail on the crystal waters of the Ionian Sea",
         subCategories: [
             {
@@ -530,7 +530,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "shore-excursions",
-        title: "Cruise Shore Excursions",
+        title: "Shore Excursions",
         subtitle: "Make the most of your time ashore in Argostoli",
         tours: [
             {
@@ -584,7 +584,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "fishing-tours",
-        title: "Authentic Fishing Trips",
+        title: "Fishing Trips",
         subtitle: "Live a real fisherman's day on the Ionian",
         tours: [
             {
@@ -645,7 +645,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "activities",
-        title: "Kefalonia Island Activities",
+        title: "Island Activities",
         subtitle: "Elevate your Kefalonia experience with local adventures",
         tours: [
             {
@@ -703,7 +703,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "opera-yacht",
-        title: "Opera Yacht",
+        title: "Yacht & Boat Rental",
         subtitle: "The ultimate luxury Ionian escape",
         tours: [
             {
@@ -730,7 +730,7 @@ export const tourCategories: TourCategory[] = [
     // ─────────────────────────────────────────────
     {
         id: "private-tours",
-        title: "Private & VIP Tours",
+        title: "Private Tours",
         subtitle: "Tailor-made experiences and VIP transfers just for you",
         tours: []
     }
