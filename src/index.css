@@ -4,17 +4,76 @@
   --font-sans: "Inter", sans-serif;
   --font-heading: "Inter", sans-serif;
 
-  --color-primary: #d7393e;
-  --color-primary-hover: #ec7942;
+  --color-primary: #69857a;
+  --color-primary-hover: #5a7369;
   --color-dark: #000000;
   --color-light: #ffffff;
   --color-card: #f7f7f0;
   --color-sage: #69857a;
 
-  --color-price-bg: #d7393e;
+  --color-price-bg: #69857a;
   --color-badge-exclusive: #34495e;
   --color-badge-bestseller: #e67e22;
   --color-badge-special: #2ecc71;
+}
+
+/* --- Bokun Widget Customization (Stable Classes) --- */
+.ParticipantSelection,
+.PricingCategories,
+.ParticipantHeader,
+.BokunWidget,
+.BookingSummary,
+.SummaryOverview,
+.SummaryWrapper,
+.checkoutOverview,
+.MonthCalendarHeader {
+    background-color: var(--color-card) !important;
+}
+
+.ProductPageTitle,
+.ParticipantHeader h2,
+.SummaryHeader h2,
+.SummaryTitle,
+.Title p,
+.MonthCalendarHeader h2 {
+    color: var(--color-primary) !important;
+}
+
+.Available {
+    background-color: var(--color-primary) !important;
+    color: var(--color-light) !important;
+    border-radius: 4px;
+    &:before { border: none !important; }
+}
+
+.Selected {
+    background-color: #2E3645 !important;
+    color: var(--color-light) !important;
+    border-radius: 4px;
+    &:before { border: none !important; }
+}
+
+.MainBookingButton,
+.GoToCartButton,
+.Button,
+.SubmitButton {
+    background-color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+    color: var(--color-light) !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+}
+
+.MainBookingButton:hover,
+.GoToCartButton:hover {
+    background-color: #2E3645 !important;
+    border-color: #2E3645 !important;
+}
+
+.MinusButton svg rect, .MinusButton svg path,
+.PlusButton svg rect, .PlusButton svg path {
+    fill: var(--color-primary) !important;
 }
 
 body {
