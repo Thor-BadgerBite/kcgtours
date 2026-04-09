@@ -10,6 +10,7 @@ import { SEO } from './components/SEO';
 import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
 import { BokunPage } from './components/BokunPage';
+import { ThankYou } from './components/ThankYou';
 import type { TourCategory, Tour } from './types';
 
 // ── slug helper ──────────────────────────────────────────────────────────────
@@ -477,6 +478,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/tour/:slug" element={<TourRoute />} />
+                <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
             <Analytics />
         </BrowserRouter>

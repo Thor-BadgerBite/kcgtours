@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Clock, ChevronDown, Check, Stars, Sparkles, CheckCircle, AlertCircle } from 'lucide-react';
 import { sendMailRequest } from '../lib/mail';
@@ -28,6 +29,7 @@ const PLACES_OF_INTEREST = [
 ];
 
 export function TailoredExperiences() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -78,6 +80,9 @@ export function TailoredExperiences() {
             setFormStatus('success');
             setFormData({ name: '', email: '', date: '', guests: '', message: '' });
             setSelectedPlaces([]);
+            // Redirect to thank-you page after a short delay to let them see the "Sent" status if it's very fast
+            // Actually, usually immediate redirect is better for tracking
+            navigate('/thank-you');
         } else {
             setFormStatus('error');
             setFormError(result.error || 'Something went wrong. Please try again.');
