@@ -57,5 +57,6 @@ declare global {
         BokunWidget?: {
             open: (id: string) => void;
         };
+        dataLayer?: Record<string, unknown>[];
     }
 }

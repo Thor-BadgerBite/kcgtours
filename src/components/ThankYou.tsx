@@ -12,7 +12,7 @@ export const ThankYou = () => {
     window.scrollTo(0, 0);
 
     // GTM Conversion Tracking
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer ??= [];
     window.dataLayer.push({
       event: 'thank_you_page_view',
       conversion_type: 'inquiry'
