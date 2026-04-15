@@ -734,7 +734,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "LASSI_DIVERIB_550",
                 isBookableOnBokun: false,
                 externalBookingUrl: "https://www.lassirentaboat.eu",
-                isPrivateAvailable: true,
+                isPrivateAvailable: false,
                 private_description: "Looking for a skippered private experience aboard the DIVERIB 550? Our partner Christos at Lassi Rent A Boat can arrange a guided boat trip tailored to your group. Get in touch and we'll coordinate everything for you.",
                 slides: [
                     { image: "/images/lassi/diverib550.webp", title: "Your Helm, Your Adventure" }
@@ -752,7 +752,7 @@ export const tourCategories: TourCategory[] = [
                 bokunProductId: "LASSI_NIKITA_450",
                 isBookableOnBokun: false,
                 externalBookingUrl: "https://www.lassirentaboat.eu",
-                isPrivateAvailable: true,
+                isPrivateAvailable: false,
                 private_description: "Want a skippered trip on the Nikita 450? Our partner Christos at Lassi Rent A Boat can arrange a guided outing for your family or group — beaches, bays and local tips included. Get in touch and we'll sort the details.",
                 slides: [
                     { image: "/images/lassi/nikita450.webp", title: "A Family Day on the Ionian" }
