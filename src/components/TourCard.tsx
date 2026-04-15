@@ -19,7 +19,9 @@ interface TourCardProps {
         isExclusive?: boolean;
         isBestSeller?: boolean;
         isSpecialOffer?: boolean;
-        [key: string]: boolean | undefined;
+        isDiscount?: boolean;
+        discountLabel?: string;
+        [key: string]: boolean | string | undefined;
     };
     bokunProductId: string;
     baseViews?: number;
@@ -285,6 +287,9 @@ export function TourCard({
 
                             {/* Badges */}
                             <div className="absolute top-4 left-4 z-30 flex flex-col gap-2 items-start">
+                                {badges?.isDiscount && (
+                                    <span className="bg-[#d7393e] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[11px] uppercase tracking-wider animate-pulse">{badges.discountLabel || 'DISCOUNT'}</span>
+                                )}
                                 {showBadges && badges?.isExclusive && (
                                     <span className="bg-[color:var(--color-badge-exclusive)] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[10px] uppercase tracking-wider">Exclusive</span>
                                 )}
