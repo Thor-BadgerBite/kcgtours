@@ -300,6 +300,7 @@ function HomePage() {
                                                             card_subtitle={tour.card_subtitle}
                                                             short_description={tour.short_description}
                                                             isBookableOnBokun={tour.isBookableOnBokun}
+                                                            externalBookingUrl={tour.externalBookingUrl}
                                                             isPrivateAvailable={tour.isPrivateAvailable}
                                                             private_description={tour.private_description}
                                                             slides={tour.slides}
@@ -352,6 +353,7 @@ function HomePage() {
                                                 card_subtitle={tour.card_subtitle}
                                                 short_description={tour.short_description}
                                                 isBookableOnBokun={tour.isBookableOnBokun}
+                                                externalBookingUrl={tour.externalBookingUrl}
                                                 isPrivateAvailable={tour.isPrivateAvailable}
                                                 private_description={tour.private_description}
                                                 slides={tour.slides}
