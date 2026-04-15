@@ -32,6 +32,7 @@ interface TourCardProps {
     /** true  → show itinerary / operating / duration + "View More & Book"
      *  false → show short_description + "Make a Request" */
     isBookableOnBokun: boolean;
+    externalBookingUrl?: string;
     isPrivateAvailable?: boolean;
     /** Short description shown in the private request form */
     private_description?: string;
@@ -53,6 +54,7 @@ export function TourCard({
     card_subtitle,
     short_description,
     isBookableOnBokun,
+    externalBookingUrl,
     isPrivateAvailable,
     private_description,
     onBook,
@@ -470,13 +472,36 @@ export function TourCard({
                                         {short_description}
                                     </p>
                                     <div className="w-full flex justify-center mt-auto mt-2">
-                                        <button
-                                            onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
-                                            className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
-                                        >
-                                            <MapPinCheckInside className="w-4 h-4" />
-                                            Make a Request
-                                        </button>
+                                        {externalBookingUrl ? (
+                                            <div className="flex w-full gap-2">
+                                                {isPrivateAvailable && (
+                                                    <button
+                                                        onClick={() => setIsFlipped(true)}
+                                                        className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
+                                                    >
+                                                        <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
+                                                        <span className="hidden sm:inline">Private Option</span>
+                                                        <span className="sm:hidden">Private</span>
+                                                    </button>
+                                                )}
+                                                <a
+                                                    href={externalBookingUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-center whitespace-nowrap"
+                                                >
+                                                    Book Now
+                                                </a>
+                                            </div>
+                                        ) : (
+                                            <button
+                                                onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
+                                                className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
+                                            >
+                                                <MapPinCheckInside className="w-4 h-4" />
+                                                Make a Request
+                                            </button>
+                                        )}
                                     </div>
                                 </>
                             )}

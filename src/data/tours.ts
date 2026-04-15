@@ -721,6 +721,42 @@ export const tourCategories: TourCategory[] = [
                 slides: [
                     { image: "/images/opera/opera1.webp", title: "M/Y Opera: Timeless Luxury at Sea" }
                 ]
+            },
+            {
+                tourTitle: "DIVERIB 550 — Self-Drive Rental",
+                tourType: "BOAT RENTAL",
+                from_price: 0, // Shows 'ON REQUEST'
+                badges: { isExclusive: true },
+                card_subtitle: "115HP & open sea — take the helm and explore Kefalonia your way",
+                short_description: "No licence required. Take the powerful 5.5m DIVERIB 550 and discover White Rocks, Vardiani Island, Xi Beach & hidden coves at your own pace. Full safety briefing included. Capacity: up to 5 guests. Operated by our partner Lassi Rent A Boat.",
+                duration: "Half Day / Full Day",
+                operatingDays: "Daily (Weather Permitting)",
+                bokunProductId: "LASSI_DIVERIB_550",
+                isBookableOnBokun: false,
+                externalBookingUrl: "https://www.lassirentaboat.eu",
+                isPrivateAvailable: true,
+                private_description: "Looking for a skippered private experience aboard the DIVERIB 550? Our partner Christos at Lassi Rent A Boat can arrange a guided boat trip tailored to your group. Get in touch and we'll coordinate everything for you.",
+                slides: [
+                    { image: "/images/lassi/diverib550.webp", title: "Your Helm, Your Adventure" }
+                ]
+            },
+            {
+                tourTitle: "NIKITA 450 — Self-Drive Rental",
+                tourType: "BOAT RENTAL",
+                from_price: 0, // Shows 'ON REQUEST'
+                badges: {},
+                card_subtitle: "Family-friendly, easy to handle — your own boat day on the Ionian",
+                short_description: "Perfect for families and first-timers. The 4.5m Nikita 450 with a 30HP Mercury engine needs no licence and is effortless to operate. Explore Argostoli Bay, the Lighthouse, hidden beaches and Vardiani Island at your own pace. Capacity: up to 5 guests. Operated by our partner Lassi Rent A Boat.",
+                duration: "Half Day / Full Day",
+                operatingDays: "Daily (Weather Permitting)",
+                bokunProductId: "LASSI_NIKITA_450",
+                isBookableOnBokun: false,
+                externalBookingUrl: "https://www.lassirentaboat.eu",
+                isPrivateAvailable: true,
+                private_description: "Want a skippered trip on the Nikita 450? Our partner Christos at Lassi Rent A Boat can arrange a guided outing for your family or group — beaches, bays and local tips included. Get in touch and we'll sort the details.",
+                slides: [
+                    { image: "/images/lassi/nikita450.webp", title: "A Family Day on the Ionian" }
+                ]
             }
         ]
     },
