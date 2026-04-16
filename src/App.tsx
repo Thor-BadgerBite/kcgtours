@@ -145,7 +145,9 @@ function HomePage() {
         const hash = window.location.hash.replace('#', '');
         if (hash) {
             // Mapping common aliases
-            const targetId = hash === 'private' ? 'tailored-experiences' : hash;
+            const targetId = hash === 'private' ? 'tailored-experiences'
+                : hash === 'shorex' ? 'shore-excursions'
+                : hash;
             
             // Wait slightly for DOM to be ready
             const timer = setTimeout(() => {
