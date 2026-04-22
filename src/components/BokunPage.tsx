@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Counter } from 'counterapi';
 
+const BOKUN_SCRIPT_SRC = 'https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641';
+
 interface BokunPageProps {
     productId: string;
     onBack: () => void;
@@ -8,12 +10,12 @@ interface BokunPageProps {
 
 export function BokunPage({ productId, onBack }: BokunPageProps) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const widgetId = `bokunWidget_${productId}`;
 
     useEffect(() => {
         if (!containerRef.current) return;
 
         // --- View Counter Increment (V2 SDK) ---
-        // Fire when the page mounts, ensuring we only increment once per user per tour
         const hasClicked = localStorage.getItem(`tour_clicked_${productId}`);
         if (!hasClicked) {
             const safeId = encodeURIComponent(productId.replace(/[^a-zA-Z0-9_-]/g, '_'));
@@ -31,23 +33,40 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
         }
         // ------------------------------
 
-        // Clear container completely
+        // Inject widget div with an id so iFrameSizer can locate it
         containerRef.current.innerHTML = '';
 
-        // Create the widget div
         const widgetDiv = document.createElement('div');
+        widgetDiv.id = widgetId;
         widgetDiv.className = 'bokunWidget';
-        widgetDiv.setAttribute('data-src', `https://widgets.bokun.io/online-sales/d65e9e41-1414-4365-86b6-bd24c446e641/experience/${productId}`);
-
-        // Create the script tag
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641';
-        script.async = true;
-
+        widgetDiv.setAttribute(
+            'data-src',
+            `https://widgets.bokun.io/online-sales/d65e9e41-1414-4365-86b6-bd24c446e641/experience/${productId}`
+        );
         containerRef.current.appendChild(widgetDiv);
-        containerRef.current.appendChild(script);
 
+        // Only inject the loader script once — if it's already in the DOM,
+        // call the existing loader API to initialise this new widget instead.
+        const existingScript = document.querySelector<HTMLScriptElement>(
+            `script[src="${BOKUN_SCRIPT_SRC}"]`
+        );
+
+        if (!existingScript) {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = BOKUN_SCRIPT_SRC;
+            script.async = true;
+            containerRef.current.appendChild(script);
+        } else {
+            // Loader already present — ask it to scan for new widgets
+            const w = window as any;
+            if (w.BokunWidgets && typeof w.BokunWidgets.mount === 'function') {
+                w.BokunWidgets.mount();
+            }
+        }
+
+        // Cleanup: clear the widget container but do NOT remove the global
+        // loader script, as that would leave pending XHR requests detached.
         return () => {
             if (containerRef.current) {
                 containerRef.current.innerHTML = '';
