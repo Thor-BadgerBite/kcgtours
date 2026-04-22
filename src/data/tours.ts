@@ -12,7 +12,7 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Fiscardo Island Tour",
                 tourType: "ORGANIZED TOUR",
-                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
+                itinerary: "Myrtos • Assos • Fiscardo • Agia Efimia • Melissani • Drogarati",
                 operatingDays: "Every: Tuesday & Friday",
                 from_price: 32.00,
                 badges: { isBestSeller: true, isDiscount: true, discountLabel: '25% OFF!' },
@@ -39,7 +39,7 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Sunday Island Tour",
                 tourType: "ORGANIZED TOUR",
-                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
+                itinerary: "Myrtos • Assos • Fiscardo • Agia Efimia • Melissani • Drogarati",
                 operatingDays: "Every: Sunday",
                 from_price: 32.00,
                 badges: { isDiscount: true, discountLabel: '25% OFF!' },
@@ -65,7 +65,7 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Kefalonian Adventure",
                 tourType: "ORGANIZED TOUR",
-                itinerary: "Lixouri • Kipouria • Agia Efimia • St. Gerasimos • Winery",
+                itinerary: "Lixouri • Petani • Kipouria • Agia Efimia • St. Gerasimos • Winery",
                 operatingDays: "Every: Saturday",
                 from_price: 32.00,
                 badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '25% OFF!' },
