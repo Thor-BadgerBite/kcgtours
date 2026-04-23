@@ -10,6 +10,7 @@ import { SEO } from './components/SEO';
 import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
 import { BokunPage } from './components/BokunPage';
+import { GoldenPackagePopup } from './components/GoldenPackagePopup';
 import { ThankYou } from './components/ThankYou';
 import type { TourCategory, Tour } from './types';
 
@@ -161,6 +162,7 @@ function HomePage() {
 
     return (
         <div className="min-h-screen">
+            <GoldenPackagePopup />
             <SEO 
                 description="Discover the best of Kefalonia with KCG Tours. Handpicked bus tours, boat cruises, private excursions, and shore excursions. Book your unforgettable Ionian island experience today."
                 keywords="Kefalonia tours, Kefalonia cruises, bus tours Kefalonia, boat trips Kefalonia, Fiscardo tour, Melissani Lake, Assos, Myrtos beach, Ithaca cruise, Zakynthos cruise, private tours Kefalonia, shore excursions Argostoli, KCG Tours"
