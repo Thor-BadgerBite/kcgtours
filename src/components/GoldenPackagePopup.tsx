@@ -78,9 +78,31 @@ export function GoldenPackagePopup() {
                                 <X size={15} strokeWidth={2.5} />
                             </button>
 
+                            {/* ── Panoramic Image Strip ── */}
+                            <div className="relative w-full h-[145px] overflow-hidden">
+                                <img
+                                    src="/images/1125444/myrtos.webp"
+                                    alt="Myrtos Beach, Kefalonia"
+                                    className="w-full h-full object-cover object-center"
+                                />
+                                {/* Gradient fade into the green header below */}
+                                <div
+                                    className="absolute inset-0"
+                                    style={{
+                                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(74,107,95,0.55) 80%, #4a6b5f 100%)'
+                                    }}
+                                />
+                                {/* Overlay text on image */}
+                                <div className="absolute bottom-3 left-4">
+                                    <span className="text-white/80 text-[11px] font-medium tracking-widest uppercase">
+                                        Kefalonia &amp; Ithaca
+                                    </span>
+                                </div>
+                            </div>
+
                             {/* ── Header ── */}
                             <div
-                                className="relative px-5 pt-5 pb-5 overflow-hidden"
+                                className="relative px-5 pt-3 pb-5 overflow-hidden"
                                 style={{ background: 'linear-gradient(135deg, #4a6b5f 0%, #69857A 60%, #7a9b8e 100%)' }}
                             >
                                 {/* Decorative circles */}
