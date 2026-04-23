@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Counter } from 'counterapi';
 
 const BOKUN_SCRIPT_SRC = 'https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641';
 
@@ -14,24 +13,6 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
 
     useEffect(() => {
         if (!containerRef.current) return;
-
-        // --- View Counter Increment (V2 SDK) ---
-        const hasClicked = localStorage.getItem(`tour_clicked_${productId}`);
-        if (!hasClicked) {
-            const safeId = encodeURIComponent(productId.replace(/[^a-zA-Z0-9_-]/g, '_'));
-
-            const counter = new Counter({
-                workspace: 'thomas-demiss-team-3050',
-                accessToken: 'ut_D1NwO2dk4duaKuTf5NJmLBiHLBKEOTrjfGShsqRO'
-            });
-
-            counter.up(safeId)
-                .then(() => {
-                    localStorage.setItem(`tour_clicked_${productId}`, 'true');
-                })
-                .catch(e => console.error("Counter API Up failed", e));
-        }
-        // ------------------------------
 
         // Inject widget div with an id so iFrameSizer can locate it
         containerRef.current.innerHTML = '';
