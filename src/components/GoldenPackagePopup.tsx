@@ -91,10 +91,10 @@ export function GoldenPackagePopup() {
                                     {/* Badge row */}
                                     <div className="flex items-center gap-2 mb-2">
                                         <span className="bg-yellow-400 text-[#2d2d2d] text-[11px] font-black px-2.5 py-0.5 rounded-full tracking-wide uppercase">
-                                            Save 15%
+                                            Save 30%
                                         </span>
                                         <span className="text-white/65 text-[11px]">
-                                            13 May – 15 Oct 2025
+                                            For a Limited Time Only!
                                         </span>
                                     </div>
 
@@ -143,7 +143,7 @@ export function GoldenPackagePopup() {
                                     className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-bold py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[13.5px] tracking-wide"
                                     style={{ transform: 'translateZ(0)' }}
                                 >
-                                    Book Now &amp; Save 15%
+                                    Book Now &amp; Save 30%
                                 </button>
 
                                 <button
