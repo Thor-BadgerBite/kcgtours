@@ -138,7 +138,7 @@ export function GoldenPackagePopup() {
                                         <div key={i} className="flex items-start gap-2.5">
                                             <span className="mt-[3px] text-yellow-500 text-[20px] leading-none flex-shrink-0">●</span>
                                             <div>
-                                                <p className="text-[#404041] font-semibold text-[17px] leading-tight">
+                                                <p className="text-[#404041] font-bold text-[19px] leading-tight">
                                                     {tour.name}
                                                 </p>
                                                 <p className="text-gray-700 text-[15px] mt-0.5 leading-snug">
