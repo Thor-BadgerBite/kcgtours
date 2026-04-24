@@ -151,9 +151,8 @@ export function GoldenPackagePopup() {
 
                                 {/* Pickup info */}
                                 <div className="bg-white rounded-xl px-3.5 py-2.5 mb-4 border border-[#69857A]/15 flex items-start gap-2">
-                                    <span className="text-[17px] mt-0.5 flex-shrink-0">📍</span>
                                     <p className="text-[13.5px] text-gray-500 leading-relaxed">
-                                        <span className="font-semibold text-[#404041]">Pickup included</span> from Argostoli, Lassi &amp; Svoronata Areas{' '}
+                                        <span className="font-semibold text-[#404041]">Pickups</span> from Argostoli, Lassi &amp; Svoronata Areas{' '}
                                     </p>
                                 </div>
 
