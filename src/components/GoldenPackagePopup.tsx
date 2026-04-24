@@ -116,15 +116,15 @@ export function GoldenPackagePopup() {
                                             Save 30%
                                         </span>
                                         <span className="text-white/65 text-[15px]">
-                                            For a Limited Time Only!
+                                            Limited Time Offer!
                                         </span>
                                     </div>
 
                                     <h2 className="text-white text-[26px] font-bold leading-tight tracking-tight">
                                         Golden Island Tour
                                     </h2>
-                                    <p className="text-white/75 text-[17px] mt-1 leading-snug">
-                                        Three unforgettable days — Kefalonia &amp; mythical Ithaca
+                                    <p className="text-white/75 text-[19px] mt-1 leading-snug">
+                                        Three unforgettable days
                                     </p>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@ export function GoldenPackagePopup() {
                                                 <p className="text-[#404041] font-semibold text-[17px] leading-tight">
                                                     {tour.name}
                                                 </p>
-                                                <p className="text-gray-400 text-[15px] mt-0.5 leading-snug">
+                                                <p className="text-gray-700 text-[15px] mt-0.5 leading-snug">
                                                     {tour.stops}
                                                 </p>
                                             </div>
