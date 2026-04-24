@@ -14,22 +14,22 @@ export function GoldenPackageBanner() {
 
                 {/* Left — title + badge */}
                 <div className="flex items-center gap-3 flex-shrink-0">
-                    <span className="bg-yellow-400 text-[#2d2d2d] text-[12px] font-black px-2.5 py-0.5 rounded-full tracking-wide uppercase whitespace-nowrap">
+                    <span className="bg-yellow-400 text-[#2d2d2d] text-[12px] sm:text-[18px] font-black px-2.5 py-0.5 rounded-full tracking-wide uppercase whitespace-nowrap">
                         Save 30%
                     </span>
                     <div>
                         {/* Mobile: sage green text | Desktop: white text */}
-                        <p className="text-[#3d5a51] sm:text-white font-bold text-[16px] leading-tight">
+                        <p className="text-[#3d5a51] sm:text-white font-bold text-[16px] sm:text-[22px] leading-tight">
                             Golden Island Tour
                         </p>
-                        <p className="text-[#69857A]/70 sm:text-white/65 text-[11px] leading-none mt-0.5">
+                        <p className="text-[#69857A]/70 sm:text-white/65 text-[11px] sm:text-[17px] leading-none mt-0.5">
                             Limited Time Offer
                         </p>
                     </div>
                 </div>
 
                 {/* Center — tours (desktop only) */}
-                <div className="hidden md:flex items-center gap-1 text-white/75 text-[12px]">
+                <div className="hidden md:flex items-center gap-1 text-white/75 text-[12px] sm:text-[18px]">
                     <span className="text-yellow-400">●</span>
                     <span>Fiscardo Island Tour</span>
                     <span className="mx-2 text-white/30">|</span>
@@ -45,7 +45,7 @@ export function GoldenPackageBanner() {
                 <button
                     id="golden-package-banner-book-now"
                     onClick={() => navigate('/tour/fiscardo-island-tour')}
-                    className="flex-shrink-0 bg-[#69857A] hover:bg-[#5a7369] text-white sm:bg-[#F7F7F0] sm:hover:bg-white sm:text-[#3d5a51] font-extrabold text-[14px] px-5 py-1.5 rounded-full transition-all duration-200 shadow hover:shadow-md whitespace-nowrap"
+                    className="flex-shrink-0 bg-[#69857A] hover:bg-[#5a7369] text-white sm:bg-[#F7F7F0] sm:hover:bg-white sm:text-[#3d5a51] font-extrabold text-[14px] sm:text-[20px] px-5 py-1.5 rounded-full transition-all duration-200 shadow hover:shadow-md whitespace-nowrap"
                 >
                     Book Now &amp; Save 30%
                 </button>
