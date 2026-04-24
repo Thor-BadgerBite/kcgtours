@@ -94,7 +94,7 @@ export function GoldenPackagePopup() {
                                 />
                                 {/* Overlay text on image */}
                                 <div className="absolute bottom-3 left-4">
-                                    <span className="text-white/80 text-[11px] font-medium tracking-widest uppercase">
+                                    <span className="text-white/80 text-[13px] font-medium tracking-widest uppercase">
                                         Kefalonia &amp; Ithaca
                                     </span>
                                 </div>
@@ -112,18 +112,18 @@ export function GoldenPackagePopup() {
                                 <div className="relative">
                                     {/* Badge row */}
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="bg-yellow-400 text-[#2d2d2d] text-[11px] font-black px-2.5 py-0.5 rounded-full tracking-wide uppercase">
+                                        <span className="bg-yellow-400 text-[#2d2d2d] text-[13px] font-black px-2.5 py-0.5 rounded-full tracking-wide uppercase">
                                             Save 30%
                                         </span>
-                                        <span className="text-white/65 text-[11px]">
+                                        <span className="text-white/65 text-[13px]">
                                             For a Limited Time Only!
                                         </span>
                                     </div>
 
-                                    <h2 className="text-white text-[22px] font-bold leading-tight tracking-tight">
+                                    <h2 className="text-white text-[24px] font-bold leading-tight tracking-tight">
                                         Golden Island Tour
                                     </h2>
-                                    <p className="text-white/75 text-[13px] mt-1 leading-snug">
+                                    <p className="text-white/75 text-[15px] mt-1 leading-snug">
                                         Three unforgettable days — Kefalonia &amp; mythical Ithaca
                                     </p>
                                 </div>
@@ -136,12 +136,12 @@ export function GoldenPackagePopup() {
                                 <div className="space-y-3 mb-4">
                                     {TOURS.map((tour, i) => (
                                         <div key={i} className="flex items-start gap-2.5">
-                                            <span className="mt-[3px] text-yellow-500 text-[16px] leading-none flex-shrink-0">●</span>
+                                            <span className="mt-[3px] text-yellow-500 text-[18px] leading-none flex-shrink-0">●</span>
                                             <div>
-                                                <p className="text-[#404041] font-semibold text-[13px] leading-tight">
+                                                <p className="text-[#404041] font-semibold text-[15px] leading-tight">
                                                     {tour.name}
                                                 </p>
-                                                <p className="text-gray-400 text-[11px] mt-0.5 leading-snug">
+                                                <p className="text-gray-400 text-[13px] mt-0.5 leading-snug">
                                                     {tour.stops}
                                                 </p>
                                             </div>
@@ -151,8 +151,8 @@ export function GoldenPackagePopup() {
 
                                 {/* Pickup info */}
                                 <div className="bg-white rounded-xl px-3.5 py-2.5 mb-4 border border-[#69857A]/15 flex items-start gap-2">
-                                    <span className="text-[15px] mt-0.5 flex-shrink-0">📍</span>
-                                    <p className="text-[11.5px] text-gray-500 leading-relaxed">
+                                    <span className="text-[17px] mt-0.5 flex-shrink-0">📍</span>
+                                    <p className="text-[13.5px] text-gray-500 leading-relaxed">
                                         <span className="font-semibold text-[#404041]">Pickup included</span> from Argostoli, Lassi &amp; Svoronata.{' '}
                                         Staying elsewhere? Private transfer available on request.
                                     </p>
@@ -162,7 +162,7 @@ export function GoldenPackagePopup() {
                                 <button
                                     id="golden-package-book-now"
                                     onClick={handleBook}
-                                    className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-bold py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[13.5px] tracking-wide"
+                                    className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-bold py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[15.5px] tracking-wide"
                                     style={{ transform: 'translateZ(0)' }}
                                 >
                                     Book Now &amp; Save 30%
@@ -170,7 +170,7 @@ export function GoldenPackagePopup() {
 
                                 <button
                                     onClick={close}
-                                    className="w-full mt-2 text-[12px] text-gray-400 hover:text-gray-600 transition-colors py-1"
+                                    className="w-full mt-2 text-[14px] text-gray-400 hover:text-gray-600 transition-colors py-1"
                                 >
                                     No thanks, I'll browse tours
                                 </button>
