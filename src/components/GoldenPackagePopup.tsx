@@ -160,7 +160,7 @@ export function GoldenPackagePopup() {
                                 <button
                                     id="golden-package-book-now"
                                     onClick={handleBook}
-                                    className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-bold py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[17.5px] tracking-wide"
+                                    className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-extrabold py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[19.5px] tracking-wide leading-none"
                                     style={{ transform: 'translateZ(0)' }}
                                 >
                                     Book Now &amp; Save 30%
