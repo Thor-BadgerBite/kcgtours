@@ -102,7 +102,7 @@ export function GoldenPackagePopup() {
 
                             {/* ── Header ── */}
                             <div
-                                className="relative px-5 pt-3 pb-5 overflow-hidden"
+                                className="relative px-5 pt-2 pb-3 overflow-hidden"
                                 style={{ background: 'linear-gradient(135deg, #4a6b5f 0%, #69857A 60%, #7a9b8e 100%)' }}
                             >
                                 {/* Decorative circles */}
@@ -111,7 +111,7 @@ export function GoldenPackagePopup() {
 
                                 <div className="relative">
                                     {/* Badge row */}
-                                    <div className="flex items-center gap-2 mb-2">
+                                    <div className="flex items-center gap-2 mb-1">
                                         <span className="bg-yellow-400 text-[#2d2d2d] text-[15px] font-black px-2.5 py-0.5 rounded-full tracking-wide uppercase">
                                             Save 30%
                                         </span>
@@ -123,17 +123,17 @@ export function GoldenPackagePopup() {
                                     <h2 className="text-white text-[26px] font-bold leading-tight tracking-tight">
                                         Golden Island Tour
                                     </h2>
-                                    <p className="text-white/75 text-[19px] mt-1 leading-snug">
+                                    <p className="text-white/75 text-[19px] leading-snug">
                                         Three unforgettable days
                                     </p>
                                 </div>
                             </div>
 
                             {/* ── Body ── */}
-                            <div className="px-5 pt-4 pb-5">
+                            <div className="px-5 pt-3 pb-4">
 
                                 {/* Tour list */}
-                                <div className="space-y-3 mb-4">
+                                <div className="space-y-2 mb-3">
                                     {TOURS.map((tour, i) => (
                                         <div key={i} className="flex items-start gap-2.5">
                                             <span className="mt-[3px] text-yellow-500 text-[20px] leading-none flex-shrink-0">●</span>
@@ -150,7 +150,7 @@ export function GoldenPackagePopup() {
                                 </div>
 
                                 {/* Pickup info */}
-                                <div className="bg-white rounded-xl px-3.5 py-2.5 mb-4 border border-[#69857A]/15 flex items-start gap-2">
+                                <div className="bg-white rounded-xl px-3.5 py-2 mb-3 border border-[#69857A]/15 flex items-start gap-2">
                                     <p className="text-[13.5px] text-gray-500 leading-relaxed">
                                         <span className="font-semibold text-[#404041]">Pickups</span> from Argostoli, Lassi &amp; Svoronata Areas{' '}
                                     </p>
@@ -160,7 +160,7 @@ export function GoldenPackagePopup() {
                                 <button
                                     id="golden-package-book-now"
                                     onClick={handleBook}
-                                    className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-bold py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[17.5px] tracking-wide"
+                                    className="w-full bg-[#69857A] hover:bg-[#5a7369] active:bg-[#4d6560] text-white font-bold py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg text-[17.5px] tracking-wide"
                                     style={{ transform: 'translateZ(0)' }}
                                 >
                                     Book Now &amp; Save 30%
@@ -168,7 +168,7 @@ export function GoldenPackagePopup() {
 
                                 <button
                                     onClick={close}
-                                    className="w-full mt-2 text-[16px] text-gray-400 hover:text-gray-600 transition-colors py-1"
+                                    className="w-full mt-1 text-[16px] text-gray-400 hover:text-gray-600 transition-colors py-1"
                                 >
                                     No thanks, I'll browse tours
                                 </button>
