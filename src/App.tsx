@@ -11,6 +11,7 @@ import { TailoredExperiences } from './components/TailoredExperiences';
 import { Footer } from './components/Footer';
 import { BokunPage } from './components/BokunPage';
 import { GoldenPackagePopup } from './components/GoldenPackagePopup';
+import { GoldenPackageBanner } from './components/GoldenPackageBanner';
 import { ThankYou } from './components/ThankYou';
 import type { TourCategory, Tour } from './types';
 
@@ -245,6 +246,8 @@ function HomePage() {
                     </p>
                 </motion.div>
             </header>
+
+            <GoldenPackageBanner />
 
             {/* Tour Categories */}
             <main>
