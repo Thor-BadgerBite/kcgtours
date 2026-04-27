@@ -121,7 +121,7 @@ export function GoldenPackagePopup() {
                                     </div>
 
                                     <h2 className="text-white text-[26px] font-bold leading-tight tracking-tight">
-                                        Golden Island Tour
+                                        Economy Ticket
                                     </h2>
                                     <p className="text-white/75 text-[19px] leading-snug">
                                         Three unforgettable days

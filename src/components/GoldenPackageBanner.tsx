@@ -20,7 +20,7 @@ export function GoldenPackageBanner() {
                     <div>
                         {/* Mobile: sage green text | Desktop: white text */}
                         <p className="text-[#3d5a51] sm:text-white font-bold text-[16px] sm:text-[22px] leading-tight">
-                            Golden Island Tour
+                            Economy Ticket
                         </p>
                         <p className="text-[#69857A]/70 sm:text-white/65 text-[11px] sm:text-[17px] leading-none mt-0.5">
                             Limited Time Offer
