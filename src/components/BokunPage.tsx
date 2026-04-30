@@ -46,13 +46,13 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             }
         }
 
-        // Cleanup: clear the widget container but do NOT remove the global
-        // loader script, as that would leave pending XHR requests detached.
-        return () => {
-            if (containerRef.current) {
-                containerRef.current.innerHTML = '';
-            }
-        };
+        // Cleanup: do NOT wipe innerHTML here — Bokun may still have XHR
+        // requests in-flight that would fail with "Document is already detached"
+        // if we destroy the container nodes while they are pending.
+        // The container is cleared at the top of the next effect run (above)
+        // when productId changes, which is safe because the new effect starts
+        // only after React has finished with the previous render cycle.
+        return () => { /* intentionally empty */ };
     }, [productId]);
 
     return (
