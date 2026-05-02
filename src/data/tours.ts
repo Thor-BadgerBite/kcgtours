@@ -67,7 +67,7 @@ export const tourCategories: TourCategory[] = [
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Lixouri • Petani • Kipouria • Agia Efimia • St. Gerasimos • Winery",
                 operatingDays: "Every: Saturday",
-                from_price: 32.00,
+                from_price: 35.00,
                 badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '25% OFF!' },
                 card_subtitle: "West coast monasteries, panoramic views & wine tasting",
                 short_description: "West coast monasteries, panoramic views & wine tasting",
