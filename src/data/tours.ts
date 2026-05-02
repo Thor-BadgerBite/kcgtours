@@ -115,7 +115,7 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Discover Ithaca — Cruise & Tour",
+                tourTitle: "Discover Mythical Ithaca - Cruise & Tour",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
                 operatingDays: "Every: Wednesday",
@@ -139,7 +139,7 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Discover Ithaca — Bus Tour",
+                tourTitle: "Mythical Ithaca - Island Bus Tour",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Vathy • Kioni • Stavros • Polis Bay",
                 operatingDays: "Every: Wednesday",
