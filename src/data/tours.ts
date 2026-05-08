@@ -116,32 +116,6 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Kefalonia Entdecken",
-                tourType: "EXCLUSIVE GERMAN TOUR",
-                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
-                operatingDays: "On Request",
-                from_price: 55.00,
-                badges: { isExclusive: true },
-                card_subtitle: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
-                short_description: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
-                duration: "8 Hours",
-                bokunProductId: "1144488",
-                baseViews: 1521,
-                isBookableOnBokun: true,
-                isPrivateAvailable: true,
-                private_description: "Erleben Sie Kefalonia auf Deutsch, ganz privat für Ihre Gruppe. Vom Myrtos-Strand über das venezianische Dörfchen Assos bis hin zum Yachthafen Fiscardo, der Melissani-Höhle und der Tropfsteinhöhle Drogarati — alles in Ihrem Tempo, mit persönlicher Begleitung und ohne Sprachbarrieren.",
-                slides: [
-                    { image: "/images/1144448/fiscardo3.webp", title: "Ein Dorf wie gemalt" },
-                    { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
-                    { image: "/images/1144448/drogarati.webp", title: "Eine Million Jahre alt" },
-                    { image: "/images/1144448/fiscardo.webp", title: "Venezianisches Flair im Norden" },
-                    { image: "/images/1144448/fiscardo2.webp", title: "Wo die Yachten ankern" },
-                    { image: "/images/1144448/melissani.webp", title: "Uralt, still und atemberaubend" },
-                    { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick der Insel" },
-                    { image: "/images/1144448/myrtos2.webp", title: "Endlose Blautöne" }
-                ]
-            },
-            {
                 tourTitle: "Discover Mythical Ithaca - Cruise & Tour",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
@@ -187,6 +161,32 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1125441/stavros.webp", title: "Village Church, Infinite View" },
                     { image: "/images/1125441/kioni.webp", title: "Where Odysseus Once Returned" },
                     { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
+                ]
+            },
+            {
+                tourTitle: "Kefalonia Entdecken",
+                tourType: "EXCLUSIVE GERMAN TOUR",
+                itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
+                operatingDays: "On Request",
+                from_price: 55.00,
+                badges: { isExclusive: true },
+                card_subtitle: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
+                short_description: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
+                duration: "8 Hours",
+                bokunProductId: "1144488",
+                baseViews: 1521,
+                isBookableOnBokun: true,
+                isPrivateAvailable: true,
+                private_description: "Erleben Sie Kefalonia auf Deutsch, ganz privat für Ihre Gruppe. Vom Myrtos-Strand über das venezianische Dörfchen Assos bis hin zum Yachthafen Fiscardo, der Melissani-Höhle und der Tropfsteinhöhle Drogarati — alles in Ihrem Tempo, mit persönlicher Begleitung und ohne Sprachbarrieren.",
+                slides: [
+                    { image: "/images/1144448/fiscardo3.webp", title: "Ein Dorf wie gemalt" },
+                    { image: "/images/1144448/assos2.webp", title: "Türkis trifft Grün" },
+                    { image: "/images/1144448/drogarati.webp", title: "Eine Million Jahre alt" },
+                    { image: "/images/1144448/fiscardo.webp", title: "Venezianisches Flair im Norden" },
+                    { image: "/images/1144448/fiscardo2.webp", title: "Wo die Yachten ankern" },
+                    { image: "/images/1144448/melissani.webp", title: "Uralt, still und atemberaubend" },
+                    { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick der Insel" },
+                    { image: "/images/1144448/myrtos2.webp", title: "Endlose Blautöne" }
                 ]
             }
         ]
