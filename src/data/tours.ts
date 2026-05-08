@@ -65,7 +65,7 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Kefalonia Highlights",
                 tourType: "ORGANIZED TOUR",
-                itinerary: "Orealios Gaea Winery • St. Gerasimos • Drogarati • Melissani • Agia Efimia • Assos • Myrtos",
+                itinerary: "Winery • St. Gerasimos • Drogarati • Melissani • Agia Efimia • Assos • Myrtos",
                 operatingDays: "Every: Monday",
                 from_price: 37.50,
                 badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!' },
