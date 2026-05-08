@@ -63,6 +63,33 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
+                tourTitle: "Kefalonia Highlights",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Orealios Gaea Winery • St. Gerasimos • Drogarati • Melissani • Agia Efimia • Assos • Myrtos",
+                operatingDays: "Every: Monday",
+                from_price: 37.50,
+                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!' },
+                card_subtitle: "Caves, monastery, wine tasting & Assos — the best of both worlds",
+                short_description: "Caves, monastery, wine tasting & Assos — the best of both worlds",
+                duration: "8 Hours",
+                bokunProductId: "1211764",
+                baseViews: 1743,
+                isBookableOnBokun: true,
+                isPrivateAvailable: true,
+                private_description: "Enjoy the Kefalonia Highlights tour as a private experience — wander the vineyards at Orealios Gaea, visit the sacred monastery of Agios Gerasimos, descend into Drogarati Cave and glide across Melissani Lake, all at your own pace. Lunch in Agia Efimia, free time in Assos and the iconic Myrtos viewpoint to close the day.",
+                slides: [
+                    { image: "/images/1211764/melissani.webp", title: "Ancient, Still & Breathtaking" },
+                    { image: "/images/1211764/winery.webp", title: "A Taste of Kefalonian Tradition" },
+                    { image: "/images/1211764/st_gerasimos.webp", title: "Sacred Ground of the Island" },
+                    { image: "/images/1211764/st_gerasimos2.webp", title: "Gold, Light & Devotion" },
+                    { image: "/images/1211764/drogarati.webp", title: "A Million Years in the Making" },
+                    { image: "/images/1211764/ag_efimia.webp", title: "Lunch by the Harbour" },
+                    { image: "/images/1211764/assos.webp", title: "Colours of the North" },
+                    { image: "/images/1211764/assos2.webp", title: "Where the Mountain Meets the Sea" },
+                    { image: "/images/1211764/myrtos.webp", title: "The View That Stops You" }
+                ]
+            },
+            {
                 tourTitle: "Kefalonian Adventure",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Lixouri • Petani • Kipouria • Agia Efimia • St. Gerasimos • Winery",
