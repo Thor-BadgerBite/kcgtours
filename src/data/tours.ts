@@ -14,8 +14,8 @@ export const tourCategories: TourCategory[] = [
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Myrtos • Assos • Fiscardo • Agia Efimia • Melissani • Drogarati",
                 operatingDays: "Every: Tuesday & Friday",
-                from_price: 32.00,
-                badges: { isBestSeller: true, isDiscount: true, discountLabel: '25% OFF!' },
+                from_price: 37.50,
+                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!' },
                 card_subtitle: "North Kefalonia's finest villages & caves in one full day",
                 short_description: "North Kefalonia's finest villages & caves in one full day",
                 duration: "8 Hours",
@@ -41,8 +41,8 @@ export const tourCategories: TourCategory[] = [
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Myrtos • Assos • Fiscardo • Agia Efimia • Melissani • Drogarati",
                 operatingDays: "Every: Sunday",
-                from_price: 32.00,
-                badges: { isDiscount: true, discountLabel: '25% OFF!' },
+                from_price: 37.50,
+                badges: { isDiscount: true, discountLabel: '20% OFF!' },
                 card_subtitle: "The complete northern island experience — every Sunday",
                 short_description: "The complete northern island experience — every Sunday",
                 duration: "8 Hours",
@@ -63,12 +63,39 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
+                tourTitle: "Kefalonia Highlights",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Winery • St. Gerasimos • Drogarati • Melissani • Agia Efimia • Assos • Myrtos",
+                operatingDays: "Every: Monday",
+                from_price: 37.50,
+                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!' },
+                card_subtitle: "Caves, monastery, wine tasting & Assos — the best of both worlds",
+                short_description: "Caves, monastery, wine tasting & Assos — the best of both worlds",
+                duration: "8 Hours",
+                bokunProductId: "1211764",
+                baseViews: 1743,
+                isBookableOnBokun: true,
+                isPrivateAvailable: true,
+                private_description: "Enjoy the Kefalonia Highlights tour as a private experience — wander the vineyards at Orealios Gaea, visit the sacred monastery of Agios Gerasimos, descend into Drogarati Cave and glide across Melissani Lake, all at your own pace. Lunch in Agia Efimia, free time in Assos and the iconic Myrtos viewpoint to close the day.",
+                slides: [
+                    { image: "/images/1211764/melissani.webp", title: "Ancient, Still & Breathtaking" },
+                    { image: "/images/1211764/winery.webp", title: "A Taste of Kefalonian Tradition" },
+                    { image: "/images/1211764/st_gerasimos.webp", title: "Sacred Ground of the Island" },
+                    { image: "/images/1211764/st_gerasimos2.webp", title: "Gold, Light & Devotion" },
+                    { image: "/images/1211764/drogarati.webp", title: "A Million Years in the Making" },
+                    { image: "/images/1211764/ag_efimia.webp", title: "Lunch by the Harbour" },
+                    { image: "/images/1211764/assos.webp", title: "Colours of the North" },
+                    { image: "/images/1211764/assos2.webp", title: "Where the Mountain Meets the Sea" },
+                    { image: "/images/1211764/myrtos.webp", title: "The View That Stops You" }
+                ]
+            },
+            {
                 tourTitle: "Kefalonian Adventure",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Lixouri • Petani • Kipouria • Agia Efimia • St. Gerasimos • Winery",
                 operatingDays: "Every: Saturday",
-                from_price: 32.00,
-                badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '25% OFF!' },
+                from_price: 37.50,
+                badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '20% OFF!' },
                 card_subtitle: "West coast monasteries, panoramic views & wine tasting",
                 short_description: "West coast monasteries, panoramic views & wine tasting",
                 duration: "8 Hours",
@@ -86,6 +113,54 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1125442/st.gerasimos2.webp", title: "Gold, Light & Devotion" },
                     { image: "/images/1125442/petani.webp", title: "A Thousand Bottles of Kefalonia" },
                     { image: "/images/1125442/winery2.webp", title: "The Taste You'll Remember" }
+                ]
+            },
+            {
+                tourTitle: "Discover Mythical Ithaca - Cruise & Tour",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
+                operatingDays: "Every: Wednesday",
+                from_price: 60.00,
+                badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '15% OFF!' },
+                card_subtitle: "Ferry to mythical Ithaca — sail to Gidaki, stroll Kioni & Vathy",
+                short_description: "Ferry to mythical Ithaca — sail to Gidaki, stroll Kioni & Vathy",
+                duration: "10 Hours",
+                bokunProductId: "1125443",
+                baseViews: 1689,
+                isBookableOnBokun: true,
+                isPrivateAvailable: true,
+                private_description: "Discover mythical Ithaca privately — take the ferry across the Ionian and explore at your own leisure. Swim at wild Gidaki Beach, wander the charming harbour of Kioni and the Venetian capital Vathy, stopping wherever your curiosity leads. A deeply personal journey into the island of Odysseus.",
+                slides: [
+                    { image: "/images/1125443/vathy2.webp", title: "Tucked Away & Perfectly Beautiful" },
+                    { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
+                    { image: "/images/1125443/sami.webp", title: "Where Every Journey Begins" },
+                    { image: "/images/1125443/stavros.webp", title: "Peaceful, Timeless, Ithaca" },
+                    { image: "/images/1125443/vathy.webp", title: "A Harbour Steeped in Myth" },
+                    { image: "/images/1125443/kioni.webp", title: "The Bay That Holds a Thousand Stories" }
+                ]
+            },
+            {
+                tourTitle: "Mythical Ithaca - Island Bus Tour",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "Vathy • Kioni • Stavros • Polis Bay",
+                operatingDays: "Every: Wednesday",
+                from_price: 40.00,
+                badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '20% OFF!' },
+                card_subtitle: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
+                short_description: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
+                duration: "10 Hours",
+                bokunProductId: "1125441",
+                baseViews: 1537,
+                isBookableOnBokun: true,
+                isPrivateAvailable: true,
+                private_description: "See all of Ithaca by private coach — Vathy, Kioni, the village of Stavros where Odysseus is said to have grown up, and Polis Bay. A relaxed, fully private island loop with your own guide, your own itinerary and no strangers sharing your day.",
+                slides: [
+                    { image: "/images/1125441/vathy.webp", title: "A Village That Feels Like a Secret" },
+                    { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },
+                    { image: "/images/1125441/sami.webp", title: "The Journey Begins Here" },
+                    { image: "/images/1125441/stavros.webp", title: "Village Church, Infinite View" },
+                    { image: "/images/1125441/kioni.webp", title: "Where Odysseus Once Returned" },
+                    { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
                 ]
             },
             {
@@ -112,54 +187,6 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1144448/melissani.webp", title: "Uralt, still und atemberaubend" },
                     { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick der Insel" },
                     { image: "/images/1144448/myrtos2.webp", title: "Endlose Blautöne" }
-                ]
-            },
-            {
-                tourTitle: "Discover Ithaca — Cruise & Tour",
-                tourType: "ORGANIZED TOUR",
-                itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
-                operatingDays: "Every: Wednesday",
-                from_price: 58.00,
-                badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '15% OFF!' },
-                card_subtitle: "Ferry to mythical Ithaca — sail to Gidaki, stroll Kioni & Vathy",
-                short_description: "Ferry to mythical Ithaca — sail to Gidaki, stroll Kioni & Vathy",
-                duration: "10 Hours",
-                bokunProductId: "1125443",
-                baseViews: 1689,
-                isBookableOnBokun: true,
-                isPrivateAvailable: true,
-                private_description: "Discover mythical Ithaca privately — take the ferry across the Ionian and explore at your own leisure. Swim at wild Gidaki Beach, wander the charming harbour of Kioni and the Venetian capital Vathy, stopping wherever your curiosity leads. A deeply personal journey into the island of Odysseus.",
-                slides: [
-                    { image: "/images/1125443/vathy2.webp", title: "Tucked Away & Perfectly Beautiful" },
-                    { image: "/images/1125443/odysseus.webp", title: "Greetings from the Hero" },
-                    { image: "/images/1125443/sami.webp", title: "Where Every Journey Begins" },
-                    { image: "/images/1125443/stavros.webp", title: "Peaceful, Timeless, Ithaca" },
-                    { image: "/images/1125443/vathy.webp", title: "A Harbour Steeped in Myth" },
-                    { image: "/images/1125443/kioni.webp", title: "The Bay That Holds a Thousand Stories" }
-                ]
-            },
-            {
-                tourTitle: "Discover Ithaca — Bus Tour",
-                tourType: "ORGANIZED TOUR",
-                itinerary: "Vathy • Kioni • Stavros • Polis Bay",
-                operatingDays: "Every: Wednesday",
-                from_price: 41.00,
-                badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '25% OFF!' },
-                card_subtitle: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
-                short_description: "The full Ithaca island loop by bus — Vathy, Kioni & Odysseus' village",
-                duration: "10 Hours",
-                bokunProductId: "1125441",
-                baseViews: 1537,
-                isBookableOnBokun: true,
-                isPrivateAvailable: true,
-                private_description: "See all of Ithaca by private coach — Vathy, Kioni, the village of Stavros where Odysseus is said to have grown up, and Polis Bay. A relaxed, fully private island loop with your own guide, your own itinerary and no strangers sharing your day.",
-                slides: [
-                    { image: "/images/1125441/vathy.webp", title: "A Village That Feels Like a Secret" },
-                    { image: "/images/1125441/odysseus.webp", title: "In the Footsteps of a Legend" },
-                    { image: "/images/1125441/sami.webp", title: "The Journey Begins Here" },
-                    { image: "/images/1125441/stavros.webp", title: "Village Church, Infinite View" },
-                    { image: "/images/1125441/kioni.webp", title: "Where Odysseus Once Returned" },
-                    { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
                 ]
             }
         ]
