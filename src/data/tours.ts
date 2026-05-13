@@ -188,6 +188,54 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick der Insel" },
                     { image: "/images/1144448/myrtos2.webp", title: "Endlose Blautöne" }
                 ]
+            },
+            {
+                tourTitle: "Discover Mythical Ithaca - Cruise & Tour",
+                tourType: "EXCLUSIVE GERMAN TOUR",
+                itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
+                operatingDays: "Every: Wednesday",
+                from_price: 60.00,
+                badges: { isExclusive: true },
+                card_subtitle: "Exklusiv auf Deutsch — Fähre zum mythischen Ithaka, Segeln nach Gidaki, Vathy & Kioni",
+                short_description: "Exklusiv auf Deutsch — Fähre zum mythischen Ithaka, Segeln nach Gidaki, Vathy & Kioni",
+                duration: "10 Hours",
+                bokunProductId: "PLACEHOLDER_ITHACA_CRUISE",
+                baseViews: 1689,
+                isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Entdecken Sie das mythische Ithaka ganz privat auf Deutsch — nehmen Sie die Fähre über das Ionische Meer und erkunden Sie die Insel in Ihrem eigenen Tempo. Schwimmen Sie am wilden Gidaki-Strand, schlendern Sie durch den charmanten Hafen von Kioni und die venezianische Hauptstadt Vathy. Eine ganz persönliche Reise auf die Insel des Odysseus, exklusiv für Ihre Gruppe.",
+                slides: [
+                    { image: "/images/1125443/vathy2.webp", title: "Versteckt & vollkommen schön" },
+                    { image: "/images/1125443/odysseus.webp", title: "Grüße vom Helden" },
+                    { image: "/images/1125443/sami.webp", title: "Wo jede Reise beginnt" },
+                    { image: "/images/1125443/stavros.webp", title: "Friedliches, zeitloses Ithaka" },
+                    { image: "/images/1125443/vathy.webp", title: "Ein Hafen voller Mythen" },
+                    { image: "/images/1125443/kioni.webp", title: "Die Bucht der tausend Geschichten" }
+                ]
+            },
+            {
+                tourTitle: "Mythical Ithaca - Island Bus Tour",
+                tourType: "EXCLUSIVE GERMAN TOUR",
+                itinerary: "Vathy • Kioni • Stavros • Polis Bay",
+                operatingDays: "Every: Wednesday",
+                from_price: 40.00,
+                badges: { isExclusive: true },
+                card_subtitle: "Exklusiv auf Deutsch — die komplette Ithaka-Inseltour im Bus: Vathy, Kioni & das Dorf des Odysseus",
+                short_description: "Exklusiv auf Deutsch — die komplette Ithaka-Inseltour im Bus: Vathy, Kioni & das Dorf des Odysseus",
+                duration: "10 Hours",
+                bokunProductId: "PLACEHOLDER_ITHACA_BUS",
+                baseViews: 1537,
+                isBookableOnBokun: false,
+                isPrivateAvailable: true,
+                private_description: "Erleben Sie ganz Ithaka im privaten Bus auf Deutsch — Vathy, Kioni, das Dorf Stavros, in dem Odysseus der Legende nach aufwuchs, und die Polis-Bucht. Eine entspannte, komplett private Inselrundfahrt mit Ihrem eigenen Reiseleiter, ohne Sprachbarrieren und fremde Gäste.",
+                slides: [
+                    { image: "/images/1125441/vathy.webp", title: "Ein Dorf, das wie ein Geheimnis wirkt" },
+                    { image: "/images/1125441/odysseus.webp", title: "Auf den Spuren einer Legende" },
+                    { image: "/images/1125441/sami.webp", title: "Die Reise beginnt hier" },
+                    { image: "/images/1125441/stavros.webp", title: "Dorfkirche, grenzenlose Aussicht" },
+                    { image: "/images/1125441/kioni.webp", title: "Wo Odysseus einst zurückkehrte" },
+                    { image: "/images/1125441/vathy2.webp", title: "Die schönste Bucht im Ionischen Meer" }
+                ]
             }
         ]
     },
