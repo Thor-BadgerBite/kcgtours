@@ -201,7 +201,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "PLACEHOLDER_ITHACA_CRUISE",
                 baseViews: 1689,
-                isBookableOnBokun: false,
+                isBookableOnBokun: true,
                 isPrivateAvailable: true,
                 private_description: "Entdecken Sie das mythische Ithaka ganz privat auf Deutsch — nehmen Sie die Fähre über das Ionische Meer und erkunden Sie die Insel in Ihrem eigenen Tempo. Schwimmen Sie am wilden Gidaki-Strand, schlendern Sie durch den charmanten Hafen von Kioni und die venezianische Hauptstadt Vathy. Eine ganz persönliche Reise auf die Insel des Odysseus, exklusiv für Ihre Gruppe.",
                 slides: [
@@ -225,7 +225,7 @@ export const tourCategories: TourCategory[] = [
                 duration: "10 Hours",
                 bokunProductId: "PLACEHOLDER_ITHACA_BUS",
                 baseViews: 1537,
-                isBookableOnBokun: false,
+                isBookableOnBokun: true,
                 isPrivateAvailable: true,
                 private_description: "Erleben Sie ganz Ithaka im privaten Bus auf Deutsch — Vathy, Kioni, das Dorf Stavros, in dem Odysseus der Legende nach aufwuchs, und die Polis-Bucht. Eine entspannte, komplett private Inselrundfahrt mit Ihrem eigenen Reiseleiter, ohne Sprachbarrieren und fremde Gäste.",
                 slides: [
