@@ -167,7 +167,7 @@ export const tourCategories: TourCategory[] = [
                 tourTitle: "Kefalonia Entdecken",
                 tourType: "EXCLUSIVE GERMAN TOUR",
                 itinerary: "Myrtos • Fiscardo • Assos • Melissani • Drogarati",
-                operatingDays: "On Request",
+                operatingDays: "Every: Monday",
                 from_price: 57.50,
                 badges: { isExclusive: true },
                 card_subtitle: "Exklusiv auf Deutsch — die Highlights Kefaloniás privat erleben",
