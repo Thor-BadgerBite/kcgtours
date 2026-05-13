@@ -278,12 +278,12 @@ function HomePage() {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, margin: "-80px" }}
                                             >
-                                                <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark inline-block relative pb-1">
+                                                <h2 className="text-2xl md:text-[30px] font-bold text-white md:text-dark inline-block relative pb-1">
                                                     {sub.title}
                                                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-primary rounded-full" />
                                                 </h2>
                                                 {sub.subtitle && (
-                                                    <p className="text-lg md:text-[20px] font-normal text-white md:text-dark mt-1">
+                                                    <p className="text-lg md:text-[20px] font-bold text-white md:text-dark mt-1">
                                                         {sub.subtitle}
                                                     </p>
                                                 )}
@@ -335,11 +335,11 @@ function HomePage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <h2 className="text-2xl md:text-[30px] font-bold md:font-normal text-white md:text-dark inline-block relative pb-1 mb-1">
+                                    <h2 className="text-2xl md:text-[30px] font-bold text-white md:text-dark inline-block relative pb-1 mb-1">
                                         {category.title}
                                         <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white md:bg-primary rounded-full" />
                                     </h2>
-                                    {category.subtitle && <h4 className="text-xl md:text-[24px] font-normal text-white md:text-dark mt-1">{category.subtitle}</h4>}
+                                    {category.subtitle && <h4 className="text-xl md:text-[24px] font-bold text-white md:text-dark mt-1">{category.subtitle}</h4>}
                                 </motion.div>
 
                                 <div className="w-full px-0 md:px-[40px] xl:px-[80px]">
