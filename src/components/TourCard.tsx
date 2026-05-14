@@ -36,6 +36,8 @@ interface TourCardProps {
     isPrivateAvailable?: boolean;
     /** Short description shown in the private request form */
     private_description?: string;
+    /** Path to a flag SVG shown bottom-left on the card image */
+    languageFlag?: string;
     onBook?: () => void;
     onRequest?: () => void;
 }
@@ -57,6 +59,7 @@ export function TourCard({
     externalBookingUrl,
     isPrivateAvailable,
     private_description,
+    languageFlag,
     onBook,
     onRequest,
 }: TourCardProps) {
@@ -303,8 +306,16 @@ export function TourCard({
                                 )}
                             </div>
 
-
-
+                            {/* Language Flag — bottom-left of image */}
+                            {languageFlag && (
+                                <div className="absolute bottom-3 left-3 z-30">
+                                    <img
+                                        src={languageFlag}
+                                        alt="Tour language"
+                                        className="h-7 w-auto rounded shadow-md border border-white/30"
+                                    />
+                                </div>
+                            )}
                             <div className="overflow-hidden h-full" ref={emblaRef}>
                                 <div className="flex h-full w-full touch-pan-y">
                                     {(carouselMode ? slides : [slides[0]]).map((slide, idx) => (

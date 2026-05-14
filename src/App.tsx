@@ -35,7 +35,7 @@ function scrollToId(id: string) {
 
 // ── NavItem with optional dropdown ───────────────────────────────────────────
 
-function NavItem({ cat }: { cat: TourCategory }) {
+function NavItem({ cat, allCats }: { cat: TourCategory; allCats: TourCategory[] }) {
     const [open, setOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -56,6 +56,41 @@ function NavItem({ cat }: { cat: TourCategory }) {
             >
                 {cat.title}
             </button>
+        );
+    }
+
+    // BUS TOURS → dropdown with Bus Tours + Tours in Your Language
+    if (cat.id === 'bus-tours') {
+        const langCat = allCats.find(c => c.id === 'in-your-language');
+        return (
+            <div ref={ref} className="relative">
+                <button
+                    className="flex items-center gap-1 hover:text-primary transition-colors uppercase tracking-wide font-medium text-sm"
+                    onClick={() => setOpen(v => !v)}
+                >
+                    {cat.title}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+                </button>
+
+                {open && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md border border-gray-100 min-w-[220px] z-50 py-1">
+                        <button
+                            onClick={() => { scrollToId('bus-tours'); setOpen(false); }}
+                            className="w-full text-left px-4 py-2 text-sm text-[#404041] hover:bg-gray-50 hover:text-primary transition-colors font-medium border-b border-gray-100"
+                        >
+                            All Bus Tours
+                        </button>
+                        {langCat && (
+                            <button
+                                onClick={() => { scrollToId('in-your-language'); setOpen(false); }}
+                                className="w-full text-left px-4 py-2 text-sm text-[#404041] hover:bg-gray-50 hover:text-primary transition-colors"
+                            >
+                                {langCat.title}
+                            </button>
+                        )}
+                    </div>
+                )}
+            </div>
         );
     }
 
@@ -182,9 +217,11 @@ function HomePage() {
                         >
                             HOME
                         </button>
-                        {tourCategories.map(cat => (
-                            <NavItem key={cat.id} cat={cat} />
-                        ))}
+                        {tourCategories
+                            .filter(cat => cat.id !== 'in-your-language')
+                            .map(cat => (
+                                <NavItem key={cat.id} cat={cat} allCats={tourCategories} />
+                            ))}
                     </div>
                     {/* Mobile hamburger */}
                     <button 
@@ -212,15 +249,17 @@ function HomePage() {
                         >
                             HOME
                         </button>
-                        {tourCategories.map(cat => (
-                            <button
-                                key={cat.id}
-                                onClick={() => closeMobileMenuAndScrollTo(cat.id === 'private-tours' ? 'tailored-experiences' : cat.id)}
-                                className="text-2xl hover:text-primary transition-colors uppercase tracking-wide font-normal text-left"
-                            >
-                                {cat.title}
-                            </button>
-                        ))}
+                        {tourCategories
+                            .filter(cat => cat.id !== 'in-your-language')
+                            .map(cat => (
+                                <button
+                                    key={cat.id}
+                                    onClick={() => closeMobileMenuAndScrollTo(cat.id === 'private-tours' ? 'tailored-experiences' : cat.id)}
+                                    className="text-2xl hover:text-primary transition-colors uppercase tracking-wide font-normal text-left"
+                                >
+                                    {cat.title}
+                                </button>
+                            ))}
                     </div>
                 </div>
             )}
@@ -255,6 +294,8 @@ function HomePage() {
                     {tourCategories.map((category) => {
                         // PRIVATE TOURS → no cards, handled by TailoredExperiences below
                         if (category.id === 'private-tours') return null;
+                        // IN-YOUR-LANGUAGE → rendered as its own section below, no nav entry
+                        // (already included in tourCategories loop so it gets its own section)
 
                         // ── Category with sub-categories (CRUISES) ───────────────────────
                         if (category.subCategories && category.subCategories.length > 0) {
@@ -364,6 +405,7 @@ function HomePage() {
                                                 isPrivateAvailable={tour.isPrivateAvailable}
                                                 private_description={tour.private_description}
                                                 slides={tour.slides}
+                                                languageFlag={(tour as any).languageFlag}
                                                 onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                             />
                                         ))}

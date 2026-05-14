@@ -163,6 +163,17 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
                 ]
             },
+        ]
+    },
+
+    // ─────────────────────────────────────────────
+    //  TOURS IN YOUR LANGUAGE  (Deutschsprachig)
+    // ─────────────────────────────────────────────
+    {
+        id: "in-your-language",
+        title: "Tours in Your Language",
+        subtitle: "Experience Kefalonia with a guide speaking your language — currently available in German & Austrian",
+        tours: [
             {
                 tourTitle: "Kefalonia Entdecken",
                 tourType: "EXCLUSIVE GERMAN TOUR",
@@ -177,6 +188,7 @@ export const tourCategories: TourCategory[] = [
                 baseViews: 1521,
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                languageFlag: "/images/Flag_of_Germany_and_Austria.svg",
                 private_description: "Erleben Sie Kefalonia auf Deutsch, ganz privat für Ihre Gruppe. Vom Myrtos-Strand über das venezianische Dörfchen Assos bis hin zum Yachthafen Fiscardo, der Melissani-Höhle und der Tropfsteinhöhle Drogarati — alles in Ihrem Tempo, mit persönlicher Begleitung und ohne Sprachbarrieren.",
                 slides: [
                     { image: "/images/1144448/fiscardo3.webp", title: "Ein Dorf wie gemalt" },
@@ -203,6 +215,7 @@ export const tourCategories: TourCategory[] = [
                 baseViews: 1689,
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                languageFlag: "/images/Flag_of_Germany_and_Austria.svg",
                 private_description: "Entdecken Sie das mythische Ithaka ganz privat auf Deutsch — nehmen Sie die Fähre über das Ionische Meer und erkunden Sie die Insel in Ihrem eigenen Tempo. Schwimmen Sie am wilden Gidaki-Strand, schlendern Sie durch den charmanten Hafen von Kioni und die venezianische Hauptstadt Vathy. Eine ganz persönliche Reise auf die Insel des Odysseus, exklusiv für Ihre Gruppe.",
                 slides: [
                     { image: "/images/1125443/vathy2.webp", title: "Versteckt & vollkommen schön" },
@@ -227,6 +240,7 @@ export const tourCategories: TourCategory[] = [
                 baseViews: 1537,
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
+                languageFlag: "/images/Flag_of_Germany_and_Austria.svg",
                 private_description: "Erleben Sie ganz Ithaka im privaten Bus auf Deutsch — Vathy, Kioni, das Dorf Stavros, in dem Odysseus der Legende nach aufwuchs, und die Polis-Bucht. Eine entspannte, komplett private Inselrundfahrt mit Ihrem eigenen Reiseleiter, ohne Sprachbarrieren und fremde Gäste.",
                 slides: [
                     { image: "/images/1125441/vathy.webp", title: "Ein Dorf, das wie ein Geheimnis wirkt" },

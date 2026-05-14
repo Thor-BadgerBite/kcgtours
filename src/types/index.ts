@@ -34,6 +34,8 @@ export interface Tour {
     isPrivateAvailable?: boolean;
     /** Short description shown inside the private request form */
     private_description?: string;
+    /** Path to a flag SVG/image shown bottom-left on the card image (e.g. for language-specific tours) */
+    languageFlag?: string;
     slides: TourSlide[];
 }
 
