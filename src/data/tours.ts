@@ -202,7 +202,7 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Discover Mythical Ithaca - Cruise & Tour",
+                tourTitle: "Mythisches Ithaka Entdecken - Kreuzfahrt & Tour",
                 tourType: "EXCLUSIVE GERMAN TOUR",
                 itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
                 operatingDays: "Every: Wednesday",
@@ -227,7 +227,7 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Mythical Ithaca - Island Bus Tour",
+                tourTitle: "Ithaka Inseltour mit dem Bus",
                 tourType: "EXCLUSIVE GERMAN TOUR",
                 itinerary: "Vathy • Kioni • Stavros • Polis Bay",
                 operatingDays: "Every: Wednesday",
