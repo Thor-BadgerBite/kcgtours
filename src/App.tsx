@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
@@ -529,6 +529,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/tour/:slug" element={<TourRoute />} />
+                {/* Legacy QR-code URLs — redirect permanently to current slugs */}
+                <Route path="/tour/discover-ithaca-cruise-tour" element={<Navigate to="/tour/discover-mythical-ithaca-cruise-tour" replace />} />
+                <Route path="/tour/discover-ithaca-bus-tour" element={<Navigate to="/tour/mythical-ithaca-island-bus-tour" replace />} />
                 <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
             <Analytics />
