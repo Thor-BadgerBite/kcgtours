@@ -172,7 +172,7 @@ export const tourCategories: TourCategory[] = [
     {
         id: "in-your-language",
         title: "Tours in Your Language",
-        subtitle: "Experience Kefalonia with a guide speaking your language — currently available in German & Austrian",
+        subtitle: "Experience Kefalonia with a guide speaking your language",
         tours: [
             {
                 tourTitle: "Kefalonia Entdecken",
