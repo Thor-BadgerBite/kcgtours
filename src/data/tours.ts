@@ -202,7 +202,7 @@ export const tourCategories: TourCategory[] = [
                 ]
             },
             {
-                tourTitle: "Mythisches Ithaka Entdecken - Kreuzfahrt & Tour",
+                tourTitle: "Ithaka Entdecken - Kreuzfahrt & Tour",
                 tourType: "EXCLUSIVE GERMAN TOUR",
                 itinerary: "Vathy • Gidaki Beach • Kioni • Stavros",
                 operatingDays: "Every: Wednesday",
