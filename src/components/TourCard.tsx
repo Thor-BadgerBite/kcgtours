@@ -38,6 +38,17 @@ interface TourCardProps {
     private_description?: string;
     /** Path to a flag SVG shown bottom-left on the card image */
     languageFlag?: string;
+    /** Per-tour UI label overrides (e.g. for German tours) */
+    labels?: {
+        from?: string;
+        onRequest?: string;
+        operating?: string;
+        duration?: string;
+        bookNow?: string;
+        privateOption?: string;
+        privateMobile?: string;
+        makeRequest?: string;
+    };
     onBook?: () => void;
     onRequest?: () => void;
 }
@@ -60,6 +71,7 @@ export function TourCard({
     isPrivateAvailable,
     private_description,
     languageFlag,
+    labels,
     onBook,
     onRequest,
 }: TourCardProps) {
@@ -284,9 +296,9 @@ export function TourCard({
                             {/* Price Pill */}
                             <div className="absolute top-4 right-4 z-30 bg-[color:var(--color-price-bg)] text-white px-3 py-1.5 rounded-sm shadow-md font-bold text-sm tracking-wide">
                                 {from_price === 0 ? (
-                                    "ON REQUEST"
+                                    labels?.onRequest ?? 'ON REQUEST'
                                 ) : (
-                                    <>FROM: {typeof from_price === 'number' ? from_price.toFixed(2) : from_price}€</>
+                                    <>{labels?.from ?? 'FROM:'} {typeof from_price === 'number' ? from_price.toFixed(2) : from_price}€</>
                                 )}
                             </div>
 
@@ -443,10 +455,10 @@ export function TourCard({
                                         <p className="text-dark font-medium text-[16px] md:text-[18px] leading-snug line-clamp-2">{itinerary}</p>
                                     </div>
                                     <p className="text-[18px] text-dark font-normal leading-snug">
-                                        <span className="text-dark font-medium mr-1">Operating:</span>{operatingDays}
+                                        <span className="text-dark font-medium mr-1">{labels?.operating ?? 'Operating:'}</span>{operatingDays}
                                     </p>
                                     <p className="text-[18px] text-dark font-normal leading-snug">
-                                        <span className="text-dark font-medium mr-1">Duration:</span>{duration}
+                                        <span className="text-dark font-medium mr-1">{labels?.duration ?? 'Duration:'}</span>{duration}
                                     </p>
 
                                     <div className="w-full flex justify-center mt-auto mt-2">
@@ -457,14 +469,14 @@ export function TourCard({
                                                     className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
                                                 >
                                                     <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
-                                                    <span className="hidden sm:inline">Private Option</span>
-                                                    <span className="sm:hidden">Private</span>
+                                                    <span className="hidden sm:inline">{labels?.privateOption ?? 'Private Option'}</span>
+                                                    <span className="sm:hidden">{labels?.privateMobile ?? 'Private'}</span>
                                                 </button>
                                                 <button
                                                     onClick={handleBookNow}
                                                     className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
                                                 >
-                                                    Book Now
+                                                    {labels?.bookNow ?? 'Book Now'}
                                                 </button>
                                             </div>
                                         ) : (
@@ -491,8 +503,8 @@ export function TourCard({
                                                         className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
                                                     >
                                                         <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
-                                                        <span className="hidden sm:inline">Private Option</span>
-                                                        <span className="sm:hidden">Private</span>
+                                                        <span className="hidden sm:inline">{labels?.privateOption ?? 'Private Option'}</span>
+                                                        <span className="sm:hidden">{labels?.privateMobile ?? 'Private'}</span>
                                                     </button>
                                                 )}
                                                 <a
@@ -501,7 +513,7 @@ export function TourCard({
                                                     rel="noopener noreferrer"
                                                     className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-center whitespace-nowrap"
                                                 >
-                                                    Book Now
+                                                    {labels?.bookNow ?? 'Book Now'}
                                                 </a>
                                             </div>
                                         ) : (
@@ -510,7 +522,7 @@ export function TourCard({
                                                 className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
                                             >
                                                 <MapPinCheckInside className="w-4 h-4" />
-                                                Make a Request
+                                                {labels?.makeRequest ?? 'Make a Request'}
                                             </button>
                                         )}
                                     </div>

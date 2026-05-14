@@ -36,6 +36,17 @@ export interface Tour {
     private_description?: string;
     /** Path to a flag SVG/image shown bottom-left on the card image (e.g. for language-specific tours) */
     languageFlag?: string;
+    /** Per-tour UI label overrides — use for non-English tours */
+    labels?: {
+        from?: string;          // default "FROM:"
+        onRequest?: string;     // default "ON REQUEST"
+        operating?: string;     // default "Operating:"
+        duration?: string;      // default "Duration:"
+        bookNow?: string;       // default "Book Now"
+        privateOption?: string; // default "Private Option"
+        privateMobile?: string; // default "Private"
+        makeRequest?: string;   // default "Make a Request"
+    };
     slides: TourSlide[];
 }
 

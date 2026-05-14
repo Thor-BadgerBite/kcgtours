@@ -352,6 +352,7 @@ function HomePage() {
                                                             isPrivateAvailable={tour.isPrivateAvailable}
                                                             private_description={tour.private_description}
                                                             slides={tour.slides}
+                                                            labels={tour.labels}
                                                             onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                                         />
                                                     ))}
@@ -406,6 +407,7 @@ function HomePage() {
                                                 private_description={tour.private_description}
                                                 slides={tour.slides}
                                                 languageFlag={(tour as any).languageFlag}
+                                                labels={tour.labels}
                                                 onBook={() => navigate(`/tour/${slugify(tour.tourTitle)}`)}
                                             />
                                         ))}
