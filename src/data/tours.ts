@@ -207,7 +207,7 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1144448/fiscardo.webp", title: "Venezianisches Flair im Norden" },
                     { image: "/images/1144448/fiscardo2.webp", title: "Wo die Yachten ankern" },
                     { image: "/images/1144448/melissani.webp", title: "Uralt, still und atemberaubend" },
-                    { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick der Insel" },
+                    { image: "/images/1144448/myrtos.webp", title: "Der schönste Blick της Insel" },
                     { image: "/images/1144448/myrtos2.webp", title: "Endlose Blautöne" }
                 ]
             },
@@ -221,7 +221,7 @@ export const tourCategories: TourCategory[] = [
                 card_subtitle: "Exklusiv auf Deutsch — Fähre zum mythischen Ithaka, Segeln nach Gidaki, Vathy & Kioni",
                 short_description: "Exklusiv auf Deutsch — Fähre zum mythischen Ithaka, Segeln nach Gidaki, Vathy & Kioni",
                 duration: "10 Stunden",
-                bokunProductId: "PLACEHOLDER_ITHACA_CRUISE",
+                bokunProductId: "1215723",
                 baseViews: 1689,
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
@@ -238,12 +238,12 @@ export const tourCategories: TourCategory[] = [
                 },
                 private_description: "Entdecken Sie das mythische Ithaka ganz privat auf Deutsch — nehmen Sie die Fähre über das Ionische Meer und erkunden Sie die Insel in Ihrem eigenen Tempo. Schwimmen Sie am wilden Gidaki-Strand, schlendern Sie durch den charmanten Hafen von Kioni und die venezianische Hauptstadt Vathy. Eine ganz persönliche Reise auf die Insel des Odysseus, exklusiv für Ihre Gruppe.",
                 slides: [
-                    { image: "/images/1125443/vathy2.webp", title: "Versteckt & vollkommen schön" },
-                    { image: "/images/1125443/odysseus.webp", title: "Grüße vom Helden" },
-                    { image: "/images/1125443/sami.webp", title: "Wo jede Reise beginnt" },
-                    { image: "/images/1125443/stavros.webp", title: "Friedliches, zeitloses Ithaka" },
-                    { image: "/images/1125443/vathy.webp", title: "Ein Hafen voller Mythen" },
-                    { image: "/images/1125443/kioni.webp", title: "Die Bucht der tausend Geschichten" }
+                    { image: "/images/1215723/vathy2.webp", title: "Versteckt & vollkommen schön" },
+                    { image: "/images/1215723/odysseus.webp", title: "Grüße vom Helden" },
+                    { image: "/images/1215723/sami.webp", title: "Wo jede Reise beginnt" },
+                    { image: "/images/1215723/stavros.webp", title: "Friedliches, zeitloses Ithaka" },
+                    { image: "/images/1215723/vathy.webp", title: "Ein Hafen voller Mythen" },
+                    { image: "/images/1215723/kioni.webp", title: "Die Bucht der tausend Geschichten" }
                 ]
             },
             {
@@ -256,7 +256,7 @@ export const tourCategories: TourCategory[] = [
                 card_subtitle: "Exklusiv auf Deutsch — die komplette Ithaka-Inseltour im Bus: Vathy, Kioni & das Dorf des Odysseus",
                 short_description: "Exklusiv auf Deutsch — die komplette Ithaka-Inseltour im Bus: Vathy, Kioni & das Dorf des Odysseus",
                 duration: "10 Stunden",
-                bokunProductId: "PLACEHOLDER_ITHACA_BUS",
+                bokunProductId: "1215592",
                 baseViews: 1537,
                 isBookableOnBokun: true,
                 isPrivateAvailable: true,
@@ -273,12 +273,12 @@ export const tourCategories: TourCategory[] = [
                 },
                 private_description: "Erleben Sie ganz Ithaka im privaten Bus auf Deutsch — Vathy, Kioni, das Dorf Stavros, in dem Odysseus der Legende nach aufwuchs, und die Polis-Bucht. Eine entspannte, komplett private Inselrundfahrt mit Ihrem eigenen Reiseleiter, ohne Sprachbarrieren und fremde Gäste.",
                 slides: [
-                    { image: "/images/1125441/vathy.webp", title: "Ein Dorf, das wie ein Geheimnis wirkt" },
-                    { image: "/images/1125441/odysseus.webp", title: "Auf den Spuren einer Legende" },
-                    { image: "/images/1125441/sami.webp", title: "Die Reise beginnt hier" },
-                    { image: "/images/1125441/stavros.webp", title: "Dorfkirche, grenzenlose Aussicht" },
-                    { image: "/images/1125441/kioni.webp", title: "Wo Odysseus einst zurückkehrte" },
-                    { image: "/images/1125441/vathy2.webp", title: "Die schönste Bucht im Ionischen Meer" }
+                    { image: "/images/1215592/vathy.webp", title: "Ein Dorf, das wie ein Geheimnis wirkt" },
+                    { image: "/images/1215592/odysseus.webp", title: "Auf den Spuren einer Legende" },
+                    { image: "/images/1215592/sami.webp", title: "Die Reise beginnt hier" },
+                    { image: "/images/1215592/stavros.webp", title: "Dorfkirche, grenzenlose Aussicht" },
+                    { image: "/images/1215592/kioni.webp", title: "Wo Odysseus einst zurückkehrte" },
+                    { image: "/images/1215592/vathy2.webp", title: "Die schönste Bucht im Ionischen Meer" }
                 ]
             }
         ]
