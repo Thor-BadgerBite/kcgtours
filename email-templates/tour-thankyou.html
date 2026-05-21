@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Joining Us!</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header {
+            background-color: #7b9c8c; /* Sage green */
+            padding: 30px;
+            text-align: center;
+        }
+        .header img {
+            max-height: 60px;
+        }
+        .content {
+            padding: 40px 30px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e38;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #555555;
+        }
+        .btn-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #d7393e; /* Accent red */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            border-top: 1px solid #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- You can point to your actual logo URL here -->
+            <img src="https://kcgtours.gr/images/logo-new.png" alt="KCG Tours" />
+        </div>
+        <div class="content">
+            <h1>Thank you for joining us, {{first_name}}! 🌿</h1>
+            
+            <p>We hope you had an amazing time on the <strong>{{excursion_name}}</strong> with us on {{tour_date}}.</p>
+            
+            <p>At KCG Tours, we strive to create unforgettable experiences in Kefalonia. If you enjoyed your time with us, it would mean the world to our team if you could take a minute to share your experience.</p>
+            
+            <div class="btn-container">
+                <a href="{{review_link}}" class="btn">Leave a Review on Google</a>
+            </div>
+            
+            <p>Your feedback helps other travelers discover the beauty of our island and helps us continue delivering top-tier service.</p>
+            
+            <p>We hope to welcome you back to Kefalonia in the future!</p>
+            
+            <p>Warm regards,<br><strong>The KCG Tours Team</strong></p>
+        </div>
+        <div class="footer">
+            &copy; 2026 KCG Travel Services. All rights reserved.<br>
+            Argostoli, Kefalonia, Greece
+        </div>
+    </div>
+</body>
+</html>

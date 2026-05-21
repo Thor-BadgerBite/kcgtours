@@ -51,3 +51,32 @@ $$;
 
 -- Grant execute permission to anon role
 GRANT EXECUTE ON FUNCTION increment_tour_view(TEXT) TO anon;
+
+-- ────────────────────────────────────────────────────────────────────────
+-- Admin Campaign Panel Tables
+-- ────────────────────────────────────────────────────────────────────────
+
+CREATE TABLE IF NOT EXISTS email_campaigns (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  excursion_name TEXT NOT NULL,
+  tour_date DATE NOT NULL,
+  total_contacts INTEGER NOT NULL,
+  sent_count INTEGER NOT NULL DEFAULT 0,
+  failed_count INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL DEFAULT 'pending', -- 'pending' | 'sent' | 'failed'
+  sent_at TIMESTAMPTZ
+);
+
+CREATE TABLE IF NOT EXISTS email_sends (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  campaign_id UUID REFERENCES email_campaigns(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  email TEXT NOT NULL,
+  first_name TEXT NOT NULL,
+  last_name TEXT,
+  excursion_name TEXT NOT NULL,
+  tour_date DATE NOT NULL,
+  status TEXT NOT NULL DEFAULT 'sent', -- 'sent' | 'failed'
+  error_message TEXT
+);

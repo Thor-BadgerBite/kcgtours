@@ -13,6 +13,8 @@ import { BokunPage } from './components/BokunPage';
 import { GoldenPackagePopup } from './components/GoldenPackagePopup';
 import { GoldenPackageBanner } from './components/GoldenPackageBanner';
 import { ThankYou } from './components/ThankYou';
+import { AdminLogin } from './components/admin/AdminLogin';
+import { CampaignsManager } from './components/admin/CampaignsManager';
 import type { TourCategory, Tour } from './types';
 
 // ── slug helper ──────────────────────────────────────────────────────────────
@@ -535,6 +537,8 @@ function App() {
                 <Route path="/tour/discover-ithaca-cruise-tour" element={<Navigate to="/tour/discover-mythical-ithaca-cruise-tour" replace />} />
                 <Route path="/tour/discover-ithaca-bus-tour" element={<Navigate to="/tour/mythical-ithaca-island-bus-tour" replace />} />
                 <Route path="/thank-you" element={<ThankYou />} />
+                <Route path="/admin" element={<AdminLogin />} />
+                <Route path="/admin/campaigns" element={<CampaignsManager />} />
             </Routes>
             <Analytics />
         </BrowserRouter>
