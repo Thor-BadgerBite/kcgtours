@@ -11,6 +11,15 @@ interface CSVRow {
     tour_date: string;
 }
 
+interface CampaignHistory {
+    id: string;
+    excursion_name: string;
+    tour_date: string;
+    sent_count: number;
+    status: string;
+    created_at: string;
+}
+
 interface ParsedContact extends CSVRow {
     isValid: boolean;
     errorReason?: string;
@@ -22,12 +31,29 @@ export function CampaignsManager() {
     const [fileName, setFileName] = useState<string | null>(null);
     const [status, setStatus] = useState<'idle' | 'parsing' | 'ready' | 'sending' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [history, setHistory] = useState<CampaignHistory[]>([]);
     const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const fetchHistory = async () => {
+        try {
+            const res = await fetch('/api/admin/get-history');
+            if (res.ok) {
+                const data = await res.json();
+                if (data.history) {
+                    setHistory(data.history);
+                }
+            }
+        } catch (err) {
+            console.error('Failed to fetch history:', err);
+        }
+    };
 
     useEffect(() => {
         const isAdmin = sessionStorage.getItem('kcg_admin');
         if (isAdmin !== 'true') {
             navigate('/admin');
+        } else {
+            fetchHistory();
         }
     }, [navigate]);
 
@@ -111,6 +137,7 @@ export function CampaignsManager() {
 
             if (res.ok) {
                 setStatus('success');
+                fetchHistory(); // Refresh history
             } else {
                 setStatus('error');
                 setErrorMessage(data.error || 'Server error while sending emails');
@@ -272,16 +299,25 @@ export function CampaignsManager() {
                         </div>
 
                         <div className="space-y-3">
-                            <div className="p-3 bg-gray-50 rounded-lg border border-gray-100 flex justify-between items-center group cursor-pointer hover:bg-gray-100">
-                                <div>
-                                    <p className="font-semibold text-dark text-sm">Example Excursion</p>
-                                    <p className="text-xs text-gray-500">12/05/2026</p>
-                                </div>
-                                <div className="text-right flex items-center gap-2">
-                                    <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded">24 sent</span>
-                                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
-                                </div>
-                            </div>
+                            {history.length === 0 ? (
+                                <p className="text-sm text-gray-500 text-center py-4">No campaigns yet.</p>
+                            ) : (
+                                history.map(campaign => (
+                                    <div key={campaign.id} className="p-3 bg-gray-50 rounded-lg border border-gray-100 flex justify-between items-center group hover:bg-gray-100">
+                                        <div>
+                                            <p className="font-semibold text-dark text-sm">{campaign.excursion_name}</p>
+                                            <p className="text-xs text-gray-500">
+                                                {new Date(campaign.tour_date).toLocaleDateString('en-GB')}
+                                            </p>
+                                        </div>
+                                        <div className="text-right flex items-center gap-2">
+                                            <span className={`text-xs font-medium px-2 py-1 rounded ${campaign.status === 'sent' ? 'text-green-600 bg-green-50' : 'text-yellow-600 bg-yellow-50'}`}>
+                                                {campaign.sent_count} sent
+                                            </span>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
                         </div>
                     </div>
                 </div>
