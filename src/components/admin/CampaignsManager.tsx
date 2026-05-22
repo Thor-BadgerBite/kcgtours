@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Papa from 'papaparse';
-import { UploadCloud, Send, CheckCircle, AlertTriangle, FileText, ChevronRight } from 'lucide-react';
+import { UploadCloud, Send, CheckCircle, AlertTriangle, FileText, ChevronRight, ChevronDown } from 'lucide-react';
 
 interface CSVRow {
     email: string;
@@ -32,6 +32,9 @@ export function CampaignsManager() {
     const [status, setStatus] = useState<'idle' | 'parsing' | 'ready' | 'sending' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [history, setHistory] = useState<CampaignHistory[]>([]);
+    const [expandedCampaignId, setExpandedCampaignId] = useState<string | null>(null);
+    const [campaignDetails, setCampaignDetails] = useState<Record<string, any[]>>({});
+    const [loadingDetails, setLoadingDetails] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const fetchHistory = async () => {
@@ -45,6 +48,30 @@ export function CampaignsManager() {
             }
         } catch (err) {
             console.error('Failed to fetch history:', err);
+        }
+    };
+
+    const toggleCampaign = async (id: string) => {
+        if (expandedCampaignId === id) {
+            setExpandedCampaignId(null);
+            return;
+        }
+        setExpandedCampaignId(id);
+        
+        if (!campaignDetails[id]) {
+            setLoadingDetails(true);
+            try {
+                const res = await fetch(`/api/admin/get-campaign-details?id=${id}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.details) {
+                        setCampaignDetails(prev => ({ ...prev, [id]: data.details }));
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to fetch details:', err);
+            }
+            setLoadingDetails(false);
         }
     };
 
@@ -303,18 +330,65 @@ export function CampaignsManager() {
                                 <p className="text-sm text-gray-500 text-center py-4">No campaigns yet.</p>
                             ) : (
                                 history.map(campaign => (
-                                    <div key={campaign.id} className="p-3 bg-gray-50 rounded-lg border border-gray-100 flex justify-between items-center group hover:bg-gray-100">
-                                        <div>
-                                            <p className="font-semibold text-dark text-sm">{campaign.excursion_name}</p>
-                                            <p className="text-xs text-gray-500">
-                                                {new Date(campaign.tour_date).toLocaleDateString('en-GB')}
-                                            </p>
+                                    <div key={campaign.id} className="bg-white rounded-lg border border-gray-100 overflow-hidden shadow-sm">
+                                        <div 
+                                            onClick={() => toggleCampaign(campaign.id)}
+                                            className="p-3 bg-gray-50 flex justify-between items-center group cursor-pointer hover:bg-gray-100 transition-colors"
+                                        >
+                                            <div>
+                                                <p className="font-semibold text-dark text-sm">{campaign.excursion_name}</p>
+                                                <p className="text-xs text-gray-500">
+                                                    {new Date(campaign.tour_date).toLocaleDateString('en-GB')}
+                                                </p>
+                                            </div>
+                                            <div className="text-right flex items-center gap-2">
+                                                <span className={`text-xs font-medium px-2 py-1 rounded ${campaign.status === 'sent' ? 'text-green-600 bg-green-50' : 'text-yellow-600 bg-yellow-50'}`}>
+                                                    {campaign.sent_count} sent
+                                                </span>
+                                                {expandedCampaignId === campaign.id ? (
+                                                    <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
+                                                ) : (
+                                                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
+                                                )}
+                                            </div>
                                         </div>
-                                        <div className="text-right flex items-center gap-2">
-                                            <span className={`text-xs font-medium px-2 py-1 rounded ${campaign.status === 'sent' ? 'text-green-600 bg-green-50' : 'text-yellow-600 bg-yellow-50'}`}>
-                                                {campaign.sent_count} sent
-                                            </span>
-                                        </div>
+                                        
+                                        {/* Accordion Content */}
+                                        {expandedCampaignId === campaign.id && (
+                                            <div className="p-3 border-t border-gray-100 bg-white">
+                                                {loadingDetails && !campaignDetails[campaign.id] ? (
+                                                    <div className="text-center py-4 text-sm text-gray-500">Loading details...</div>
+                                                ) : (
+                                                    <div className="max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+                                                        <table className="w-full text-left text-xs text-gray-600">
+                                                            <thead>
+                                                                <tr className="border-b border-gray-100 text-gray-400">
+                                                                    <th className="pb-2 font-medium">Name</th>
+                                                                    <th className="pb-2 font-medium text-right">Status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {(campaignDetails[campaign.id] || []).map((detail, idx) => (
+                                                                    <tr key={idx} className="border-b border-gray-50 last:border-0">
+                                                                        <td className="py-2">
+                                                                            <div className="font-medium text-gray-800">{detail.first_name} {detail.last_name}</div>
+                                                                            <div className="text-[10px] text-gray-400">{detail.email}</div>
+                                                                        </td>
+                                                                        <td className="py-2 text-right">
+                                                                            {detail.status === 'sent' ? (
+                                                                                 <span className="text-green-500 font-medium">Sent</span>
+                                                                            ) : (
+                                                                                 <span className="text-red-500 font-medium" title={detail.error_message}>Failed</span>
+                                                                            )}
+                                                                        </td>
+                                                                    </tr>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
                                     </div>
                                 ))
                             )}
