@@ -64,17 +64,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const campaignId = campaign.id;
 
-    // Load template
-    let templateHtml = '';
-    try {
-        const templatePath = path.join(process.cwd(), 'email-templates', 'tour-thankyou.html');
-        templateHtml = fs.readFileSync(templatePath, 'utf8');
-    } catch (e) {
-        console.error('Failed to load email template:', e);
-        // Fallback simple HTML
-        templateHtml = `<p>Thank you for joining us, {{first_name}}! Review us here: {{review_link}}</p>`;
-    }
-
+    // Removed manual template load since we now use Resend Template ID
     let sentCount = 0;
     let failedCount = 0;
 
@@ -84,18 +74,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         let errorMessage = null;
 
         try {
-            // Replace variables in template manually since Resend React isn't used
-            let personalizedHtml = templateHtml
-                .replace(/{{first_name}}/g, contact.first_name)
-                .replace(/{{excursion_name}}/g, contact.excursion_name)
-                .replace(/{{tour_date}}/g, contact.tour_date)
-                .replace(/{{review_link}}/g, reviewLink);
-
             const { error: sendError } = await resend.emails.send({
                 from: 'KCG Tours <info@kcgtours.gr>',
                 to: [contact.email],
                 subject: `Thank you for joining us, ${contact.first_name}! 🌿`,
-                html: personalizedHtml,
+                template: {
+                    id: 'bc5bb1f2-3532-4112-8cbc-5bfa9f696b56',
+                    variables: {
+                        first_name: contact.first_name,
+                        excursion_name: contact.excursion_name,
+                        tour_date: contact.tour_date,
+                        review_link: reviewLink
+                    }
+                }
             });
 
             if (sendError) {
