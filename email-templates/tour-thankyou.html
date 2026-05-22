@@ -1,121 +1,359 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for Joining Us!</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding: 0;
-            color: #333333;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .header {
-            background-color: #7b9c8c;
-            /* Sage green */
-            padding: 30px;
-            text-align: center;
-        }
-
-        .header img {
-            max-height: 60px;
-            width: auto;
-            /* ← αυτό λείπει — κρατάει aspect ratio */
-            display: block;
-            margin: 0 auto;
-            /* ← centered */
-        }
-
-        .content {
-            padding: 40px 30px;
-            line-height: 1.6;
-        }
-
-        h1 {
-            color: #2c3e38;
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: #555555;
-        }
-
-        .btn-container {
-            text-align: center;
-            margin: 35px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #7b9c8c;
-            /* ← sage green αντί κόκκινο */
-            color: #ffffff;
-            /* ← λευκά γράμματα */
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .footer {
-            background-color: #f9f9f9;
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #888888;
-            border-top: 1px solid #eeeeee;
-        }
-    </style>
+    <meta content="width=device-width" name="viewport" />
+    <link rel="preload" as="image" href="https://kcgtours.gr/images/logo-new.png" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta content="telephone=no,address=no,email=no,date=no,url=no" name="format-detection" />
 </head>
 
-<body>
-    <div class="container">
-        <div class="header">
-            <!-- You can point to your actual logo URL here -->
-            <img src="https://kcgtours.gr/images/logo-new.png" alt="KCG Tours" />
-        </div>
-        <div class="content">
-            <h1>Thank you for joining us, {{first_name}}! 🌿</h1>
-
-            <p>We hope you had an amazing time on the <strong>{{excursion_name}}</strong> with us on {{tour_date}}.</p>
-
-            <p>At KCG Tours, we strive to create unforgettable experiences in Kefalonia. If you enjoyed your time with
-                us, it would mean the world to our team if you could take a minute to share your experience.</p>
-
-            <div class="btn-container">
-                <a href="{{review_link}}" class="btn">Leave a Review on Google</a>
-            </div>
-
-            <p>Your feedback helps other travelers discover the beauty of our island and helps us continue delivering
-                top-tier service.</p>
-
-            <p>We hope to welcome you back to Kefalonia in the future!</p>
-
-            <p>Warm regards,<br><strong>The KCG Tours Team</strong></p>
-        </div>
-        <div class="footer">
-            &copy; 2026 KCG Travel Services. All rights reserved.<br>
-            Argostoli, Kefalonia, Greece
+<body style="background-color:#ffffff">
+    <!--$--><!--html--><!--head-->
+    <div style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0"
+        data-skip-in-text="true">
+        We&#x27;d love to hear about your experience with KCG Tours
+        <div>
+             ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿
         </div>
     </div>
+    <!--body-->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" role="presentation" align="center">
+        <tbody>
+            <tr>
+                <td style="background-color:#ffffff">
+                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
+                        style="max-width:600px;align:left;width:100%;color:#000000;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-radius:0px;border-color:#000000">
+                        <tbody>
+                            <tr style="width:100%">
+                                <td>
+                                    <div
+                                        style="margin:0;padding:0;display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0">
+                                        <p style="margin:0;padding:0">
+                                            We&#x27;d love to hear about your experience with KCG
+                                            Tours
+                                        </p>
+                                        <div style="margin:0;padding:0">
+                                            <p style="margin:0;padding:0">
+                                                 ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0"
+                                        role="presentation"
+                                        style="margin-top:0;margin-right:auto;margin-bottom:0;margin-left:auto;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                                        <tbody>
+                                            <tr style="margin:0;padding:0">
+                                                <td data-id="__react-email-column"
+                                                    style="margin:0;padding:0;background-color:#ffffff">
+                                                    <table align="left" width="100%" border="0" cellpadding="0"
+                                                        cellspacing="0" role="presentation"
+                                                        style="max-width:600px;align:left;width:100%;color:#000000;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-radius:0px;border-color:#000000">
+                                                        <tbody>
+                                                            <tr style="width:100%">
+                                                                <td>
+                                                                    <table align="center" width="100%" border="0"
+                                                                        cellpadding="0" cellspacing="0"
+                                                                        role="presentation"
+                                                                        style="margin-top:0;margin-right:auto;margin-bottom:0;margin-left:auto;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                                                                        <tbody>
+                                                                            <tr style="margin:0;padding:0">
+                                                                                <td data-id="__react-email-column"
+                                                                                    style="margin:0;padding:0;background-color:#ffffff">
+                                                                                    <table align="left" width="100%"
+                                                                                        border="0" cellpadding="0"
+                                                                                        cellspacing="0"
+                                                                                        role="presentation"
+                                                                                        style="max-width:600px;align:left;width:100%;color:#000000;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-radius:0px;border-color:#000000">
+                                                                                        <tbody>
+                                                                                            <tr style="width:100%">
+                                                                                                <td>
+                                                                                                    <div
+                                                                                                        style="margin:0;padding:0;display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0">
+                                                                                                        <p
+                                                                                                            style="margin:0;padding:0">
+                                                                                                            We&#x27;d
+                                                                                                            love to hear
+                                                                                                            about your
+                                                                                                            experience
+                                                                                                            with KCG
+                                                                                                            Tours
+                                                                                                        </p>
+                                                                                                    </div>
+                                                                                                    <table width="100%"
+                                                                                                        border="0"
+                                                                                                        cellpadding="0"
+                                                                                                        cellspacing="0"
+                                                                                                        role="presentation"
+                                                                                                        style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;background-color:#f4f7f6">
+                                                                                                        <tbody>
+                                                                                                            <tr
+                                                                                                                style="margin:0;padding:0">
+                                                                                                                <td align="center"
+                                                                                                                    data-id="__react-email-column"
+                                                                                                                    style="margin:0;padding:0px 0">
+                                                                                                                    <table
+                                                                                                                        width="600"
+                                                                                                                        border="0"
+                                                                                                                        cellpadding="0"
+                                                                                                                        cellspacing="0"
+                                                                                                                        role="presentation"
+                                                                                                                        style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;max-width:600px;width:100%;background-color:#ffffff;border-radius:8px;overflow:hidden">
+                                                                                                                        <tbody>
+                                                                                                                            <tr
+                                                                                                                                style="margin:0;padding:0">
+                                                                                                                                <td align="center"
+                                                                                                                                    data-id="__react-email-column"
+                                                                                                                                    style="margin:0;padding:5px 30px;background-color:#7b9c8c">
+                                                                                                                                    <table
+                                                                                                                                        align="center"
+                                                                                                                                        width="100%"
+                                                                                                                                        border="0"
+                                                                                                                                        cellpadding="0"
+                                                                                                                                        cellspacing="0"
+                                                                                                                                        role="presentation"
+                                                                                                                                        style="margin-top:0;margin-right:auto;margin-bottom:0;margin-left:auto;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                                                                                                                                        <tbody>
+                                                                                                                                            <tr
+                                                                                                                                                style="margin:0;padding:0;width:100%">
+                                                                                                                                                <td align="center"
+                                                                                                                                                    data-id="__react-email-column"
+                                                                                                                                                    style="margin:0;padding:0">
+                                                                                                                                                    <table
+                                                                                                                                                        align="center"
+                                                                                                                                                        width="100%"
+                                                                                                                                                        border="0"
+                                                                                                                                                        cellpadding="0"
+                                                                                                                                                        cellspacing="0"
+                                                                                                                                                        role="presentation"
+                                                                                                                                                        style="margin-top:0;margin-right:auto;margin-bottom:0;margin-left:auto;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                                                                                                                                                        <tbody>
+                                                                                                                                                            <tr
+                                                                                                                                                                style="margin:0;padding:0;width:100%">
+                                                                                                                                                                <td align="center"
+                                                                                                                                                                    data-id="__react-email-column"
+                                                                                                                                                                    style="margin:0;padding:0">
+                                                                                                                                                                    <img alt="KCG Tours"
+                                                                                                                                                                        height="95"
+                                                                                                                                                                        src="https://kcgtours.gr/images/logo-new.png"
+                                                                                                                                                                        style="display:block;outline:none;border:0;text-decoration:none;max-width:100%;height:80px;width:auto;margin:0 auto"
+                                                                                                                                                                        width="156" />
+                                                                                                                                                                </td>
+                                                                                                                                                            </tr>
+                                                                                                                                                        </tbody>
+                                                                                                                                                    </table>
+                                                                                                                                                </td>
+                                                                                                                                            </tr>
+                                                                                                                                        </tbody>
+                                                                                                                                    </table>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr
+                                                                                                                                style="margin:0;padding:0">
+                                                                                                                                <td data-id="__react-email-column"
+                                                                                                                                    style="margin:0;padding:40px 30px;line-height:1.6">
+                                                                                                                                    <h1
+                                                                                                                                        style="margin:0 0 20px 0;padding:0;color:#2c3e38;font-size:24px;font-weight:600">
+                                                                                                                                        Thank
+                                                                                                                                        you
+                                                                                                                                        for
+                                                                                                                                        joining
+                                                                                                                                        us,
+                                                                                                                                        {{first_name}}!
+                                                                                                                                    </h1>
+                                                                                                                                    <p
+                                                                                                                                        style="margin:0 0 15px 0;padding:0;font-size:16px;color:#555555">
+                                                                                                                                        We
+                                                                                                                                        hope
+                                                                                                                                        you
+                                                                                                                                        had
+                                                                                                                                        an
+                                                                                                                                        amazing
+                                                                                                                                        time
+                                                                                                                                        on
+                                                                                                                                        the
+                                                                                                                                        <strong>{{excursion_name}}</strong>
+                                                                                                                                        with
+                                                                                                                                        us
+                                                                                                                                        on
+                                                                                                                                        {{tour_date}}.
+                                                                                                                                    </p>
+                                                                                                                                    <p
+                                                                                                                                        style="margin:0 0 15px 0;padding:0;font-size:16px;color:#555555">
+                                                                                                                                        At
+                                                                                                                                        KCG
+                                                                                                                                        Tours,
+                                                                                                                                        we
+                                                                                                                                        strive
+                                                                                                                                        to
+                                                                                                                                        create
+                                                                                                                                        unforgettable
+                                                                                                                                        experiences
+                                                                                                                                        in
+                                                                                                                                        Kefalonia.
+                                                                                                                                        If
+                                                                                                                                        you
+                                                                                                                                        enjoyed
+                                                                                                                                        your
+                                                                                                                                        time
+                                                                                                                                        with
+                                                                                                                                        us,
+                                                                                                                                        it
+                                                                                                                                        would
+                                                                                                                                        mean
+                                                                                                                                        the
+                                                                                                                                        world
+                                                                                                                                        to
+                                                                                                                                        our
+                                                                                                                                        team
+                                                                                                                                        if
+                                                                                                                                        you
+                                                                                                                                        could
+                                                                                                                                        take
+                                                                                                                                        a
+                                                                                                                                        minute
+                                                                                                                                        to
+                                                                                                                                        share
+                                                                                                                                        your
+                                                                                                                                        experience.
+                                                                                                                                    </p>
+                                                                                                                                    <table
+                                                                                                                                        width="100%"
+                                                                                                                                        border="0"
+                                                                                                                                        cellpadding="0"
+                                                                                                                                        cellspacing="0"
+                                                                                                                                        role="presentation"
+                                                                                                                                        style="margin-top:35px;margin-right:0;margin-bottom:35px;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                                                                                                                                        <tbody>
+                                                                                                                                            <tr
+                                                                                                                                                style="margin:0;padding:0">
+                                                                                                                                                <td align="center"
+                                                                                                                                                    data-id="__react-email-column"
+                                                                                                                                                    style="margin:0;padding:0">
+                                                                                                                                                    <p
+                                                                                                                                                        style="margin:0;padding:0">
+                                                                                                                                                        <a href="https://g.page/r/CZhgynS1_UZOEBM/review"
+                                                                                                                                                            rel="noopener noreferrer nofollow"
+                                                                                                                                                            style="color:#ffffff;text-decoration-line:none;text-decoration:none;display:inline-block;background-color:#7b9c8c;padding:14px 28px;border-radius:4px;font-weight:bold;font-size:16px;font-family:&#x27;Helvetica Neue&#x27;, Helvetica, Arial, sans-serif"
+                                                                                                                                                            target="_blank">Leave
+                                                                                                                                                            a
+                                                                                                                                                            Review
+                                                                                                                                                            on
+                                                                                                                                                            Google</a>
+                                                                                                                                                    </p>
+                                                                                                                                                </td>
+                                                                                                                                            </tr>
+                                                                                                                                        </tbody>
+                                                                                                                                    </table>
+                                                                                                                                    <p
+                                                                                                                                        style="margin:0 0 15px 0;padding:0;font-size:16px;color:#555555">
+                                                                                                                                        Your
+                                                                                                                                        feedback
+                                                                                                                                        helps
+                                                                                                                                        other
+                                                                                                                                        travelers
+                                                                                                                                        discover
+                                                                                                                                        the
+                                                                                                                                        beauty
+                                                                                                                                        of
+                                                                                                                                        our
+                                                                                                                                        island
+                                                                                                                                        and
+                                                                                                                                        helps
+                                                                                                                                        us
+                                                                                                                                        continue
+                                                                                                                                        delivering
+                                                                                                                                        top-tier
+                                                                                                                                        service.
+                                                                                                                                    </p>
+                                                                                                                                    <p
+                                                                                                                                        style="margin:0 0 15px 0;padding:0;font-size:16px;color:#555555">
+                                                                                                                                        We
+                                                                                                                                        hope
+                                                                                                                                        to
+                                                                                                                                        welcome
+                                                                                                                                        you
+                                                                                                                                        back
+                                                                                                                                        to
+                                                                                                                                        Kefalonia
+                                                                                                                                        in
+                                                                                                                                        the
+                                                                                                                                        future!
+                                                                                                                                    </p>
+                                                                                                                                    <p
+                                                                                                                                        style="margin:0;padding:0;font-size:16px;color:#555555">
+                                                                                                                                        Warm
+                                                                                                                                        regards,<br /><strong>The
+                                                                                                                                            KCG
+                                                                                                                                            Tours
+                                                                                                                                            Team</strong>
+                                                                                                                                    </p>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr
+                                                                                                                                style="margin:0;padding:0">
+                                                                                                                                <td align="center"
+                                                                                                                                    data-id="__react-email-column"
+                                                                                                                                    style="margin:0;padding:20px;background-color:#f9f9f9;border-top:1px solid #eeeeee">
+                                                                                                                                    <p
+                                                                                                                                        style="margin:0;padding:0;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;font-size:12px;color:#888888;text-align:center">
+                                                                                                                                        ©
+                                                                                                                                        2026
+                                                                                                                                        <a href="https://kcgtours.gr/"
+                                                                                                                                            rel="noopener noreferrer nofollow"
+                                                                                                                                            style="color:#0670DB;text-decoration-line:none;text-decoration:underline"
+                                                                                                                                            target="_blank"><u>KCG
+                                                                                                                                                Travel
+                                                                                                                                                Services</u></a>.
+                                                                                                                                        All
+                                                                                                                                        rights
+                                                                                                                                        reserved.<br />Argostoli,
+                                                                                                                                        Kefalonia,
+                                                                                                                                        Greece
+                                                                                                                                    </p>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                    <p
+                                                                                                        style="margin:0;padding:0;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+                                                                                                        <br />
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <p style="margin:0;padding:0"><br /></p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p style="margin:0;padding:0"><br /></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--/$-->
 </body>
 
 </html>
