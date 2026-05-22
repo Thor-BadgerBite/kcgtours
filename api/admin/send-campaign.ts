@@ -40,7 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // based on the brief "Kefalonian Adventure — 16/05/2026". We use the first contact's info.
     const excursionName = contacts[0].excursion_name;
     const tourDateStr = contacts[0].tour_date;
-    
+
     // Parse tour_date from DD/MM/YYYY to YYYY-MM-DD for PostgreSQL DATE column
     const [day, month, year] = tourDateStr.split('/');
     const tourDate = `${year}-${month}-${day}`;
@@ -77,7 +77,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             const { error: sendError } = await resend.emails.send({
                 from: 'KCG Tours <info@kcgtours.gr>',
                 to: [contact.email],
-                subject: `Thank you for joining us, ${contact.first_name}! 🌿`,
+                subject: `How was your experience, ${contact.first_name}?`,
                 template: {
                     id: 'bc5bb1f2-3532-4112-8cbc-5bfa9f696b56',
                     variables: {
@@ -121,7 +121,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // 4. Update campaign status
     const finalStatus = failedCount === contacts.length ? 'failed' : 'sent';
-    
+
     await supabase
         .from('email_campaigns')
         .update({
