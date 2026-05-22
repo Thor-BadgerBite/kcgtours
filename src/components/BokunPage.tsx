@@ -14,7 +14,34 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
     useEffect(() => {
         if (!containerRef.current) return;
 
-        // Inject widget div with an id so iFrameSizer can locate it
+        // Polling interval reference
+        let intervalId: number | undefined;
+
+        // Clean up previous iframe resizers to reduce "IFrame not found" errors
+        // DO NOT wipe the iframe from DOM here if we're unmounting, just let the resizer know
+        // it shouldn't expect messages anymore.
+        const cleanupResizers = () => {
+            if (containerRef.current) {
+                const iframes = containerRef.current.querySelectorAll('iframe');
+                iframes.forEach((iframe: any) => {
+                    if (iframe.iFrameResizer && typeof iframe.iFrameResizer.close === 'function') {
+                        try {
+                            iframe.iFrameResizer.close();
+                        } catch (e) {
+                            console.warn('Could not gracefully close iFrameResizer', e);
+                        }
+                    }
+                });
+            }
+        };
+
+        // Check if the exact widget we want is already injected (helps with React 18 Strict Mode double-invocations)
+        const existingWidget = containerRef.current.querySelector(`#${widgetId}`);
+        if (existingWidget) {
+            return;
+        }
+
+        cleanupResizers();
         containerRef.current.innerHTML = '';
 
         const widgetDiv = document.createElement('div');
@@ -26,8 +53,17 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
         );
         containerRef.current.appendChild(widgetDiv);
 
-        // Only inject the loader script once — if it's already in the DOM,
-        // call the existing loader API to initialise this new widget instead.
+        const tryMount = () => {
+            const w = window as any;
+            if (w.BokunWidgets && typeof w.BokunWidgets.mount === 'function') {
+                w.BokunWidgets.mount();
+                if (intervalId) {
+                    window.clearInterval(intervalId);
+                    intervalId = undefined;
+                }
+            }
+        };
+
         const existingScript = document.querySelector<HTMLScriptElement>(
             `script[src="${BOKUN_SCRIPT_SRC}"]`
         );
@@ -38,22 +74,23 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             script.src = BOKUN_SCRIPT_SRC;
             script.async = true;
             containerRef.current.appendChild(script);
-        } else {
-            // Loader already present — ask it to scan for new widgets
-            const w = window as any;
-            if (w.BokunWidgets && typeof w.BokunWidgets.mount === 'function') {
-                w.BokunWidgets.mount();
-            }
         }
 
-        // Cleanup: do NOT wipe innerHTML here — Bokun may still have XHR
-        // requests in-flight that would fail with "Document is already detached"
-        // if we destroy the container nodes while they are pending.
-        // The container is cleared at the top of the next effect run (above)
-        // when productId changes, which is safe because the new effect starts
-        // only after React has finished with the previous render cycle.
-        return () => { /* intentionally empty */ };
-    }, [productId]);
+        // Start polling for window.BokunWidgets instead of giving up immediately
+        tryMount();
+        if (!(window as any).BokunWidgets) {
+            intervalId = window.setInterval(tryMount, 200);
+        }
+
+        return () => {
+            if (intervalId) {
+                window.clearInterval(intervalId);
+            }
+            // Cleanup: do NOT wipe innerHTML here — Bokun may still have XHR
+            // requests in-flight that would fail with "Document is already detached".
+            // Let the browser handle DOM teardown when the user actually navigates away.
+        };
+    }, [productId, widgetId]);
 
     return (
         <div className="min-h-screen bg-gray-50 pb-20">

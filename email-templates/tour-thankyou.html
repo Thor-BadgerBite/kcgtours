@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,51 +13,68 @@
             padding: 0;
             color: #333333;
         }
+
         .container {
             max-width: 600px;
             margin: 40px auto;
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
+
         .header {
-            background-color: #7b9c8c; /* Sage green */
+            background-color: #7b9c8c;
+            /* Sage green */
             padding: 30px;
             text-align: center;
         }
+
         .header img {
             max-height: 60px;
+            width: auto;
+            /* ← αυτό λείπει — κρατάει aspect ratio */
+            display: block;
+            margin: 0 auto;
+            /* ← centered */
         }
+
         .content {
             padding: 40px 30px;
             line-height: 1.6;
         }
+
         h1 {
             color: #2c3e38;
             font-size: 24px;
             margin-bottom: 20px;
             font-weight: 600;
         }
+
         p {
             margin-bottom: 15px;
             font-size: 16px;
             color: #555555;
         }
+
         .btn-container {
             text-align: center;
             margin: 35px 0;
         }
+
         .btn {
             display: inline-block;
-            background-color: #d7393e; /* Accent red */
+            background-color: #7b9c8c;
+            /* ← sage green αντί κόκκινο */
             color: #ffffff;
+            /* ← λευκά γράμματα */
             text-decoration: none;
             padding: 14px 28px;
             border-radius: 4px;
             font-weight: bold;
             font-size: 16px;
         }
+
         .footer {
             background-color: #f9f9f9;
             padding: 20px;
@@ -67,6 +85,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -75,19 +94,21 @@
         </div>
         <div class="content">
             <h1>Thank you for joining us, {{first_name}}! 🌿</h1>
-            
+
             <p>We hope you had an amazing time on the <strong>{{excursion_name}}</strong> with us on {{tour_date}}.</p>
-            
-            <p>At KCG Tours, we strive to create unforgettable experiences in Kefalonia. If you enjoyed your time with us, it would mean the world to our team if you could take a minute to share your experience.</p>
-            
+
+            <p>At KCG Tours, we strive to create unforgettable experiences in Kefalonia. If you enjoyed your time with
+                us, it would mean the world to our team if you could take a minute to share your experience.</p>
+
             <div class="btn-container">
                 <a href="{{review_link}}" class="btn">Leave a Review on Google</a>
             </div>
-            
-            <p>Your feedback helps other travelers discover the beauty of our island and helps us continue delivering top-tier service.</p>
-            
+
+            <p>Your feedback helps other travelers discover the beauty of our island and helps us continue delivering
+                top-tier service.</p>
+
             <p>We hope to welcome you back to Kefalonia in the future!</p>
-            
+
             <p>Warm regards,<br><strong>The KCG Tours Team</strong></p>
         </div>
         <div class="footer">
@@ -96,4 +117,5 @@
         </div>
     </div>
 </body>
+
 </html>
