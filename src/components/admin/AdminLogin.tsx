@@ -34,6 +34,14 @@ export function AdminLogin() {
 
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+            <button
+                className="fixed bottom-4 right-4 z-50 bg-red-500 text-white p-2 rounded shadow"
+                onClick={() => {
+                    throw new Error('This is a test error to verify Sentry!');
+                }}
+            >
+                Break the world (Sentry Test)
+            </button>
             <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8 border border-gray-100">
                 <div className="flex flex-col items-center mb-8">
                     <div className="bg-sage/10 p-3 rounded-full mb-4">
