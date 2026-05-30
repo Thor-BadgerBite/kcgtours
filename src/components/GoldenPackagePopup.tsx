@@ -13,7 +13,7 @@ const TOURS = [
     },
     {
         name: 'Kefalonian Adventure',
-        stops: 'Lixouri • Kipouria • Petani • St. Gerasimos • Winery',
+        stops: 'Lixouri • Kipouria • Petani • Myrtos • Melissani • Winery',
     },
     {
         name: 'Discover Ithaca — Bus Tour',
