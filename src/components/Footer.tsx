@@ -90,7 +90,7 @@ export function Footer() {
                             <h4 className="text-2xl md:text-lg font-semibold text-white mb-2">Online Bookings</h4>
                             <p className="text-lg md:text-sm mb-4">Make your online reservation now easily & safe!</p>
 
-                            <a href="#" className="text-lg md:text-sm font-semibold hover:text-primary transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
+                            <a href="https://kcgtravel.gr/wp-content/uploads/2025/08/Excursions-Terms-and-Conditions-and-Cancellation-Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-lg md:text-sm font-semibold hover:text-primary transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
                                 Booking Terms & Privacy Policy
                             </a>
                         </div>
