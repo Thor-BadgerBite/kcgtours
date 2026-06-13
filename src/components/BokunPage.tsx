@@ -35,23 +35,28 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             }
         };
 
-        // Check if the exact widget we want is already injected (helps with React 18 Strict Mode double-invocations)
-        const existingWidget = containerRef.current.querySelector(`#${widgetId}`);
-        if (existingWidget) {
+        // Check if the exact widget we want is already injected and mounted (contains an iframe)
+        // This helps handle React 18 double-invocations without clearing the loading interval
+        let widgetDiv = containerRef.current.querySelector(`#${widgetId}`) as HTMLDivElement | null;
+        const isAlreadyMounted = widgetDiv && widgetDiv.querySelector('iframe');
+
+        if (isAlreadyMounted) {
             return;
         }
 
-        cleanupResizers();
-        containerRef.current.innerHTML = '';
+        if (!widgetDiv) {
+            cleanupResizers();
+            containerRef.current.innerHTML = '';
 
-        const widgetDiv = document.createElement('div');
-        widgetDiv.id = widgetId;
-        widgetDiv.className = 'bokunWidget';
-        widgetDiv.setAttribute(
-            'data-src',
-            `https://widgets.bokun.io/online-sales/d65e9e41-1414-4365-86b6-bd24c446e641/experience/${productId}`
-        );
-        containerRef.current.appendChild(widgetDiv);
+            widgetDiv = document.createElement('div');
+            widgetDiv.id = widgetId;
+            widgetDiv.className = 'bokunWidget';
+            widgetDiv.setAttribute(
+                'data-src',
+                `https://widgets.bokun.io/online-sales/d65e9e41-1414-4365-86b6-bd24c446e641/experience/${productId}`
+            );
+            containerRef.current.appendChild(widgetDiv);
+        }
 
         const tryMount = () => {
             const w = window as any;
