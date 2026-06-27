@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const BOKUN_SCRIPT_SRC = 'https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641';
 
@@ -9,13 +9,22 @@ interface BokunPageProps {
 
 export function BokunPage({ productId, onBack }: BokunPageProps) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const retryTracker = useRef<{ productId: string; count: number }>({ productId: '', count: 0 });
+    const [remountKey, setRemountKey] = useState(0);
     const widgetId = `bokunWidget_${productId}`;
 
     useEffect(() => {
         if (!containerRef.current) return;
 
+        // Reset the retry counter if the user navigated to a different product
+        if (retryTracker.current.productId !== productId) {
+            retryTracker.current = { productId, count: 0 };
+        }
+
         // Polling interval reference
         let intervalId: number | undefined;
+        let errorCheckTimeout: number | undefined;
+        let errorCheckInterval: number | undefined;
 
         // Clean up previous iframe resizers to reduce "IFrame not found" errors
         // DO NOT wipe the iframe from DOM here if we're unmounting, just let the resizer know
@@ -87,15 +96,40 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             intervalId = window.setInterval(tryMount, 200);
         }
 
+        // AUTO-REFRESH LOGIC (Safety Net)
+        // Give the widget 6 seconds to initialize and load.
+        errorCheckTimeout = window.setTimeout(() => {
+            errorCheckInterval = window.setInterval(() => {
+                if (!containerRef.current) return;
+                const iframe = containerRef.current.querySelector('iframe');
+                
+                // If the iframe loaded but is suspiciously small (e.g., an "An error occurred" box)
+                // A normal booking calendar is usually > 500px tall.
+                if (iframe && iframe.clientHeight > 10 && iframe.clientHeight < 350) {
+                    if (retryTracker.current.count < 1) {
+                        console.warn('[BokunPage] Widget error detected (small height). Auto-refreshing...');
+                        retryTracker.current.count += 1;
+                        
+                        // Force wipe the broken widget
+                        cleanupResizers();
+                        containerRef.current.innerHTML = '';
+                        
+                        // Trigger a remount
+                        setRemountKey(k => k + 1);
+                    }
+                }
+            }, 2000);
+        }, 6000);
+
         return () => {
-            if (intervalId) {
-                window.clearInterval(intervalId);
-            }
+            if (intervalId) window.clearInterval(intervalId);
+            if (errorCheckTimeout) window.clearTimeout(errorCheckTimeout);
+            if (errorCheckInterval) window.clearInterval(errorCheckInterval);
             // Cleanup: do NOT wipe innerHTML here — Bokun may still have XHR
             // requests in-flight that would fail with "Document is already detached".
             // Let the browser handle DOM teardown when the user actually navigates away.
         };
-    }, [productId, widgetId]);
+    }, [productId, widgetId, remountKey]);
 
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
