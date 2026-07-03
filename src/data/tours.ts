@@ -482,8 +482,74 @@ export const tourCategories: TourCategory[] = [
             {
                 id: "sami-cruises",
                 title: "Cruises from Sami",
-                subtitle: "Your own private speedboat — explore Ithaca, Atokos & Kefalonia's coastline from Sami port",
+                subtitle: "Your own private speedboat or luxury catamaran — explore Ithaca, Atokos & Kefalonia's coastline from Sami port",
                 tours: [
+                    {
+                        tourTitle: "EGOcruise - 5-Hour Day Tour",
+                        tourType: "CATAMARAN CRUISE",
+                        itinerary: "Sami • Ithaca (Pera Pigadi) • Sami",
+                        operatingDays: "Daily",
+                        from_price: 130.00,
+                        badges: {},
+                        card_subtitle: "Relaxing 5-hour day exploring Kefalonia and Ithaca on a Bali 4.1 catamaran",
+                        short_description: "Relaxing 5-hour day exploring Kefalonia and Ithaca on a Bali 4.1 catamaran. Includes snacks, drinks, snorkeling gear, and SUP. Up to 18 guests.",
+                        duration: "5 Hours",
+                        bokunProductId: "egocruise-5hour",
+                        isBookableOnBokun: false,
+                        externalBookingUrl: "https://fareharbor.com/embeds/book/egocruise/?button-tags=kcgtravel-asn&ref=kcgtravel-asn&asn=kcgtravel-eur&asn-ref=kcgtravel-asn&full-items=yes&flow=1458002",
+                        isPrivateAvailable: true,
+                        private_description: "Private 5-hour catamaran cruise for up to 18 guests. Enjoy the entire Bali 4.1 catamaran for your family or group with no other guests onboard.",
+                        slides: [
+                            { image: "/images/egocruise-5hour/1.webp", title: "Bali 4.1 Catamaran" },
+                            { image: "/images/egocruise-5hour/2.webp", title: "Crystal Clear Waters" },
+                            { image: "/images/egocruise-5hour/3.webp", title: "Snorkeling & SUP" },
+                            { image: "/images/egocruise-5hour/4.webp", title: "Relaxing Lounge Space" }
+                        ]
+                    },
+                    {
+                        tourTitle: "EGOcruise - Sunset Cruise",
+                        tourType: "CATAMARAN CRUISE",
+                        itinerary: "Sami • Koutsoupia Beach • Antisamos Beach • Sami",
+                        operatingDays: "Daily",
+                        from_price: 100.00,
+                        badges: {},
+                        card_subtitle: "3-hour sunset yacht cruise with swimming, Greek snacks & local wine",
+                        short_description: "3-hour sunset yacht cruise with swimming, Greek snacks & local wine. Perfect for a magical evening on the Ionian Sea. Up to 18 guests.",
+                        duration: "3 Hours",
+                        bokunProductId: "egocruise-sunset",
+                        isBookableOnBokun: false,
+                        externalBookingUrl: "https://fareharbor.com/embeds/book/egocruise/?button-tags=kcgtravel-asn&ref=kcgtravel-asn&asn=kcgtravel-eur&asn-ref=kcgtravel-asn&full-items=yes&flow=1458002",
+                        isPrivateAvailable: true,
+                        private_description: "Private 3-hour sunset catamaran cruise. Watch the sunset in privacy with your group aboard the Bali 4.1.",
+                        slides: [
+                            { image: "/images/egocruise-sunset/1.webp", title: "Golden Ionian Evening" },
+                            { image: "/images/egocruise-sunset/2.webp", title: "Swim at Koutsoupia" },
+                            { image: "/images/egocruise-sunset/3.webp", title: "Sunset at Antisamos" },
+                            { image: "/images/egocruise-sunset/4.webp", title: "Unforgettable Views" }
+                        ]
+                    },
+                    {
+                        tourTitle: "EGOcruise - Full Day Tour",
+                        tourType: "CATAMARAN CRUISE",
+                        itinerary: "Sami • Gidaki Beach • Agios Ilias • Antisamos Bay • Sami",
+                        operatingDays: "Daily",
+                        from_price: 160.00,
+                        badges: {},
+                        card_subtitle: "8-hour sailing journey discovering stunning locations & crystal-clear waters",
+                        short_description: "8-hour sailing journey discovering Gidaki, Agios Ilias & Antisamos. Includes freshly prepared lunch and light dinner onboard. Up to 18 guests.",
+                        duration: "8 Hours",
+                        bokunProductId: "egocruise-fullday",
+                        isBookableOnBokun: false,
+                        externalBookingUrl: "https://fareharbor.com/embeds/book/egocruise/?button-tags=kcgtravel-asn&ref=kcgtravel-asn&asn=kcgtravel-eur&asn-ref=kcgtravel-asn&full-items=yes&flow=1458002",
+                        isPrivateAvailable: true,
+                        private_description: "Private full-day 8-hour catamaran cruise. Enjoy the ultimate Ionian experience tailored just for your group.",
+                        slides: [
+                            { image: "/images/egocruise-fullday/1.webp", title: "Full Day at Sea" },
+                            { image: "/images/egocruise-fullday/2.webp", title: "Freshly Prepared Lunch" },
+                            { image: "/images/egocruise-fullday/3.webp", title: "Secluded Beaches" },
+                            { image: "/images/egocruise-fullday/4.webp", title: "Relax on the Sun Deck" }
+                        ]
+                    },
                     {
                         tourTitle: "South Ithaca Private Cruise",
                         tourType: "PRIVATE CRUISE",
