@@ -449,7 +449,7 @@ export function TourCard({
 
                             <span className="text-dark uppercase tracking-wide font-bold text-[16px] md:text-[18px] mt-7 mb-1 md:mt-2 md:mb-0">{tourType}</span>
 
-                            {isBookableOnBokun ? (
+                            {itinerary ? (
                                 <>
                                     <div className="md:h-[60px] flex items-center justify-center w-full mb-0 md:mb-1">
                                         <p className="text-dark font-medium text-[16px] md:text-[18px] leading-snug line-clamp-2">{itinerary}</p>
@@ -460,74 +460,71 @@ export function TourCard({
                                     <p className="text-[18px] text-dark font-normal leading-snug">
                                         <span className="text-dark font-medium mr-1">{labels?.duration ?? 'Duration:'}</span>{duration}
                                     </p>
-
-                                    <div className="w-full flex justify-center mt-auto mt-2">
-                                        {isPrivateAvailable ? (
-                                            <div className="flex w-full gap-2 relative">
-                                                <button
-                                                    onClick={() => setIsFlipped(true)}
-                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
-                                                >
-                                                    <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
-                                                    <span className="hidden sm:inline">{labels?.privateOption ?? 'Private Option'}</span>
-                                                    <span className="sm:hidden">{labels?.privateMobile ?? 'Private'}</span>
-                                                </button>
-                                                <button
-                                                    onClick={handleBookNow}
-                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
-                                                >
-                                                    {labels?.bookNow ?? 'Book Now'}
-                                                </button>
-                                            </div>
-                                        ) : (
-                                            <button
-                                                onClick={handleBookNow}
-                                                className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
-                                            >
-                                                Book Now
-                                            </button>
-                                        )}
-                                    </div>
                                 </>
                             ) : (
-                                <>
-                                    <p className="text-dark font-normal text-[16px] leading-relaxed mt-1 px-2">
-                                        {short_description}
-                                    </p>
-                                    <div className="w-full flex justify-center mt-auto mt-2">
-                                        {externalBookingUrl ? (
-                                            <div className="flex w-full gap-2">
-                                                {isPrivateAvailable && (
-                                                    <button
-                                                        onClick={() => setIsFlipped(true)}
-                                                        className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
-                                                    >
-                                                        <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
-                                                        <span className="hidden sm:inline">{labels?.privateOption ?? 'Private Option'}</span>
-                                                        <span className="sm:hidden">{labels?.privateMobile ?? 'Private'}</span>
-                                                    </button>
-                                                )}
-                                                <a
-                                                    href={externalBookingUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-center whitespace-nowrap"
-                                                >
-                                                    {labels?.bookNow ?? 'Book Now'}
-                                                </a>
-                                            </div>
-                                        ) : (
+                                <p className="text-dark font-normal text-[16px] leading-relaxed mt-1 px-2">
+                                    {short_description}
+                                </p>
+                            )}
+
+                            <div className="w-full flex justify-center mt-auto mt-2">
+                                {isBookableOnBokun ? (
+                                    isPrivateAvailable ? (
+                                        <div className="flex w-full gap-2 relative">
                                             <button
-                                                onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
-                                                className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
+                                                onClick={() => setIsFlipped(true)}
+                                                className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
                                             >
-                                                <MapPinCheckInside className="w-4 h-4" />
-                                                {labels?.makeRequest ?? 'Make a Request'}
+                                                <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
+                                                <span className="hidden sm:inline">{labels?.privateOption ?? 'Private Option'}</span>
+                                                <span className="sm:hidden">{labels?.privateMobile ?? 'Private'}</span>
+                                            </button>
+                                            <button
+                                                onClick={handleBookNow}
+                                                className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out whitespace-nowrap"
+                                            >
+                                                {labels?.bookNow ?? 'Book Now'}
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <button
+                                            onClick={handleBookNow}
+                                            className="text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
+                                        >
+                                            Book Now
+                                        </button>
+                                    )
+                                ) : externalBookingUrl ? (
+                                    <div className="flex w-full gap-2">
+                                        {isPrivateAvailable && (
+                                            <button
+                                                onClick={() => setIsFlipped(true)}
+                                                className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 flex items-center justify-center gap-1.5 whitespace-nowrap"
+                                            >
+                                                <MapPinCheckInside className="w-[18px] h-[18px] shrink-0" />
+                                                <span className="hidden sm:inline">{labels?.privateOption ?? 'Private Option'}</span>
+                                                <span className="sm:hidden">{labels?.privateMobile ?? 'Private'}</span>
                                             </button>
                                         )}
+                                        <a
+                                            href={externalBookingUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 text-white py-2 px-1 text-[16px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-center whitespace-nowrap"
+                                        >
+                                            {labels?.bookNow ?? 'Book Now'}
+                                        </a>
                                     </div>
-                                </>
-                            )}
+                                ) : (
+                                    <button
+                                        onClick={() => isPrivateAvailable ? setIsFlipped(true) : handleRequest()}
+                                        className="flex items-center justify-center gap-2 text-white hover:text-dark py-2 px-8 w-[80%] max-w-[300px] font-bold bg-[var(--color-sage)] hover:bg-[#d7393e] rounded shadow-sm transition-colors duration-300 ease-out text-[18px]"
+                                    >
+                                        <MapPinCheckInside className="w-4 h-4" />
+                                        {labels?.makeRequest ?? 'Make a Request'}
+                                    </button>
+                                )}
+                            </div>
                         </div>
                     </motion.div>
                 ) : (
