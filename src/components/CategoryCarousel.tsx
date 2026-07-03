@@ -70,11 +70,11 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
     return (
         <div className="relative group overflow-x-hidden md:overflow-visible w-full">
             <div className="overflow-hidden md:py-4" ref={emblaRef}>
-                <div className="flex md:-ml-8 touch-pan-y">
+                <div className="flex -ml-4 md:-ml-8 touch-pan-y">
                     {displayItems.map((item, idx) => (
                         <div
                             key={idx}
-                            className="flex-none w-full md:w-1/2 xl:w-1/3 md:pl-8"
+                            className="flex-none w-[90%] sm:w-[85%] md:w-1/2 xl:w-1/3 pl-4 md:pl-8"
                             style={{ minWidth: 0 }}
                         >
                             <div className="h-full flex flex-col justify-stretch">
@@ -88,37 +88,37 @@ export function CategoryCarousel({ items, isBusTours = false }: Props) {
             <button
                 onClick={scrollPrev}
                 className="absolute left-[-20px] md:left-[-40px] lg:left-[-60px] top-1/2 -translate-y-1/2 
-                           w-10 h-10 md:w-12 md:h-12 bg-white/90 shadow-lg rounded-full flex items-center justify-center
-                           text-[#404041] hover:text-primary transition-colors opacity-0 group-hover:opacity-100 z-10
+                           w-12 h-12 md:w-14 md:h-14 bg-[var(--color-sage)] shadow-lg rounded-full flex items-center justify-center
+                           text-white hover:bg-[#d7393e] transition-colors opacity-0 group-hover:opacity-100 z-10
                            disabled:opacity-50 disabled:cursor-not-allowed hidden md:flex"
                 aria-label="Previous slide"
             >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
             </button>
             <button
                 onClick={scrollNext}
                 className="absolute right-[-20px] md:right-[-40px] lg:right-[-60px] top-1/2 -translate-y-1/2 
-                           w-10 h-10 md:w-12 md:h-12 bg-white/90 shadow-lg rounded-full flex items-center justify-center
-                           text-[#404041] hover:text-primary transition-colors opacity-0 group-hover:opacity-100 z-10
+                           w-12 h-12 md:w-14 md:h-14 bg-[var(--color-sage)] shadow-lg rounded-full flex items-center justify-center
+                           text-white hover:bg-[#d7393e] transition-colors opacity-0 group-hover:opacity-100 z-10
                            disabled:opacity-50 disabled:cursor-not-allowed hidden md:flex"
                 aria-label="Next slide"
             >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />
             </button>
 
             <button
                 onClick={scrollPrev}
-                className="absolute left-2 top-[250px] -translate-y-1/2 w-10 h-10 bg-white/90 shadow-lg rounded-full flex items-center justify-center text-[#404041] hover:text-primary transition-colors z-10 md:hidden"
+                className="absolute left-2 top-[250px] -translate-y-1/2 w-12 h-12 bg-[var(--color-sage)] shadow-lg rounded-full flex items-center justify-center text-white hover:bg-[#d7393e] transition-colors z-10 md:hidden"
                 aria-label="Previous slide"
             >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-7 h-7" />
             </button>
             <button
                 onClick={scrollNext}
-                className="absolute right-2 top-[250px] -translate-y-1/2 w-10 h-10 bg-white/90 shadow-lg rounded-full flex items-center justify-center text-[#404041] hover:text-primary transition-colors z-10 md:hidden"
+                className="absolute right-2 top-[250px] -translate-y-1/2 w-12 h-12 bg-[var(--color-sage)] shadow-lg rounded-full flex items-center justify-center text-white hover:bg-[#d7393e] transition-colors z-10 md:hidden"
                 aria-label="Next slide"
             >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-7 h-7" />
             </button>
         </div>
     );
