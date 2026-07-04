@@ -21,8 +21,8 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             retryTracker.current = { productId, count: 0 };
         }
 
-        // Polling interval reference
-        let intervalId: number | undefined;
+        // Control variables
+        let mountTimeoutId: number | undefined;
         let errorCheckTimeout: number | undefined;
         let errorCheckInterval: number | undefined;
 
@@ -67,16 +67,8 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             containerRef.current.appendChild(widgetDiv);
         }
 
-        const tryMount = () => {
-            const w = window as any;
-            if (w.BokunWidgets && typeof w.BokunWidgets.mount === 'function') {
-                w.BokunWidgets.mount();
-                if (intervalId) {
-                    window.clearInterval(intervalId);
-                    intervalId = undefined;
-                }
-            }
-        };
+        const w = window as any;
+        const hasBokunWidgets = w.BokunWidgets && typeof w.BokunWidgets.mount === 'function';
 
         const existingScript = document.querySelector<HTMLScriptElement>(
             `script[src="${BOKUN_SCRIPT_SRC}"]`
@@ -87,13 +79,17 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             script.type = 'text/javascript';
             script.src = BOKUN_SCRIPT_SRC;
             script.async = true;
-            containerRef.current.appendChild(script);
+            document.body.appendChild(script);
         }
 
-        // Start polling for window.BokunWidgets instead of giving up immediately
-        tryMount();
-        if (!(window as any).BokunWidgets) {
-            intervalId = window.setInterval(tryMount, 200);
+        if (hasBokunWidgets) {
+            // Script is already loaded, so its automatic mount won't run again.
+            // We run mount() manually after a short delay to let the React DOM update settle.
+            mountTimeoutId = window.setTimeout(() => {
+                if (w.BokunWidgets && typeof w.BokunWidgets.mount === 'function') {
+                    w.BokunWidgets.mount();
+                }
+            }, 50);
         }
 
         // AUTO-REFRESH LOGIC (Safety Net)
@@ -122,7 +118,7 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
         }, 6000);
 
         return () => {
-            if (intervalId) window.clearInterval(intervalId);
+            if (mountTimeoutId) window.clearTimeout(mountTimeoutId);
             if (errorCheckTimeout) window.clearTimeout(errorCheckTimeout);
             if (errorCheckInterval) window.clearInterval(errorCheckInterval);
             // Cleanup: do NOT wipe innerHTML here — Bokun may still have XHR
