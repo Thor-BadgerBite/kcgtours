@@ -220,7 +220,7 @@ function HomePage() {
                             HOME
                         </button>
                         {tourCategories
-                            .filter(cat => cat.id !== 'in-your-language')
+                            .filter(cat => cat.id !== 'in-your-language' && !cat.isDisabled)
                             .map(cat => (
                                 <NavItem key={cat.id} cat={cat} allCats={tourCategories} />
                             ))}
@@ -252,7 +252,7 @@ function HomePage() {
                             HOME
                         </button>
                         {tourCategories
-                            .filter(cat => cat.id !== 'in-your-language')
+                            .filter(cat => cat.id !== 'in-your-language' && !cat.isDisabled)
                             .map(cat => (
                                 <button
                                     key={cat.id}
@@ -294,6 +294,7 @@ function HomePage() {
             <main>
                 <div>
                     {tourCategories.map((category) => {
+                        if (category.isDisabled) return null;
                         // PRIVATE TOURS → no cards, handled by TailoredExperiences below
                         if (category.id === 'private-tours') return null;
                         // IN-YOUR-LANGUAGE → rendered as its own section below, no nav entry
@@ -441,6 +442,7 @@ function TourRoute() {
     let foundTour: Tour | null = null;
 
     for (const cat of tourCategories) {
+        if (cat.isDisabled) continue;
         if (cat.subCategories) {
             for (const sub of cat.subCategories) {
                 const match = sub.tours.find(t => slugify(t.tourTitle) === slug);

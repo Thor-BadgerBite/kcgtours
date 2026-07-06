@@ -62,6 +62,7 @@ export interface TourCategory {
     id: string;
     title: string;
     subtitle: string;
+    isDisabled?: boolean;
     /** If present, render as sub-category sections instead of a flat grid */
     subCategories?: TourSubCategory[];
     tours?: Tour[];

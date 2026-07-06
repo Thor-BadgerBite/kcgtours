@@ -832,6 +832,7 @@ export const tourCategories: TourCategory[] = [
         id: "activities",
         title: "Island Activities",
         subtitle: "Elevate your Kefalonia experience with local adventures",
+        isDisabled: true,
         tours: [
             {
                 tourTitle: "Horse Riding",
