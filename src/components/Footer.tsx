@@ -16,7 +16,7 @@ export function Footer() {
                             </p>
                             <p className="flex items-center gap-2">
                                 <Mail size={16} className="text-white shrink-0" />
-                                <a href="mailto:info@kcgservices.gr" className="hover:text-primary transition-colors">info@kcgservices.gr</a>
+                                <a href="mailto:info@kcgservices.gr" className="text-white/80 hover:text-white transition-colors">info@kcgservices.gr</a>
                             </p>
                             <p className="flex items-center gap-2">
                                 <Phone size={16} className="text-white shrink-0" />
@@ -90,17 +90,17 @@ export function Footer() {
                             <h4 className="text-2xl md:text-lg font-semibold text-white mb-2">Online Bookings</h4>
                             <p className="text-lg md:text-sm mb-4">Make your online reservation now easily & safe!</p>
 
-                            <a href="https://kcgtravel.gr/wp-content/uploads/2025/08/Excursions-Terms-and-Conditions-and-Cancellation-Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-lg md:text-sm font-semibold hover:text-primary transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
-                                Booking Terms & Privacy Policy
+                            <a href="https://kcgtravel.gr/wp-content/uploads/2025/08/Excursions-Terms-and-Conditions-and-Cancellation-Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-lg md:text-sm font-semibold hover:text-white transition-colors border-b border-gray-300 pb-1 inline-block uppercase tracking-wider text-white/80">
+                                Excursions Terms & Conditions
                             </a>
                         </div>
 
                         <div className="pt-2">
                             <h4 className="text-lg md:text-sm font-semibold text-white mb-3 uppercase tracking-wider">Partners</h4>
                             <ul className="space-y-2 text-lg md:text-sm flex flex-col md:items-end">
-                                <li><a href="https://kcgtravel.gr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">KCG Travel</a></li>
-                                <li><a href="https://kefaloniatransfers.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">Kefalonia Transfers</a></li>
-                                <li><a href="https://kcgcarhire.gr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80">KCG Car Hire</a></li>
+                                <li><a href="https://kcgtravel.gr" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">KCG Travel</a></li>
+                                <li><a href="https://kefaloniatransfers.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">Kefalonia Transfers</a></li>
+                                <li><a href="https://kcgcarhire.gr" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">KCG Car Hire</a></li>
                             </ul>
                         </div>
 
