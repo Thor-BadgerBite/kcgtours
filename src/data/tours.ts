@@ -65,7 +65,7 @@ export const tourCategories: TourCategory[] = [
             {
                 tourTitle: "Kefalonian Adventure",
                 tourType: "ORGANIZED TOUR",
-                itinerary: "Lixouri • Petani • Kipouria • Myrtos • Agia Efimia • Melissani • Winery",
+                itinerary: "Lixouri • Petani • Kipouria • Myrtos • Agia Efimia • St. Gerasimos • Winery",
                 operatingDays: "Every: Saturday",
                 from_price: 37.50,
                 badges: { isSpecialOffer: true, isDiscount: true, discountLabel: '20% OFF!' },
