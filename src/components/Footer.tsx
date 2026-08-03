@@ -107,7 +107,7 @@ export function Footer() {
 
                                     <div className="text-center flex-grow flex flex-col justify-center">
                                         <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider mb-0.5">Rating: 5.0 / 5.0</p>
-                                        <p className="text-[#000] font-bold text-sm leading-tight group-hover:text-primary transition-colors">50+ Reviews</p>
+                                        <p className="text-[#000] font-bold text-sm leading-tight group-hover:text-primary transition-colors">80+ Reviews</p>
                                     </div>
 
                                     <div className="flex flex-col items-center gap-1.5 mt-auto">
@@ -139,7 +139,7 @@ export function Footer() {
                             <ul className="space-y-2 text-lg md:text-sm flex flex-col md:items-end">
                                 <li><a href="https://kcgtravel.gr" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">KCG Travel</a></li>
                                 <li><a href="https://kefaloniatransfers.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">Kefalonia Transfers</a></li>
-                                <li><a href="https://kcgcarhire.gr" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">KCG Car Hire</a></li>
+                                <li><a href="https://kcgrentacar.gr/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">KCG Rent a Car</a></li>
                             </ul>
                         </div>
 
