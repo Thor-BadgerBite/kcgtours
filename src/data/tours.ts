@@ -152,7 +152,7 @@ export const tourCategories: TourCategory[] = [
                 isPrivateAvailable: true,
                 private_description: "Enjoy the Kefalonia Highlights tour as a private experience — take in panoramic views from St George's Castle, visit the sacred Monastery of Agios Gerasimos, wander the vineyards at Orealios Gaea, and descend into Drogarati Cave, all at your own pace. Relax with free time and lunch in the port village of Sami, glide across Melissani Lake, and close the day at the iconic Myrtos viewpoint.",
                 slides: [
-                    { image: "/images/1211764/melissani.webp", title: "Ancient, Still & Breathtaking" },
+                    { image: "/images/1211764/StGeorge.webp", title: "Ancient, Still & Breathtaking" },
                     { image: "/images/1211764/winery.webp", title: "A Taste of Kefalonian Tradition" },
                     { image: "/images/1211764/st_gerasimos.webp", title: "Sacred Ground of the Island" },
                     { image: "/images/1211764/st_gerasimos2.webp", title: "Gold, Light & Devotion" },
