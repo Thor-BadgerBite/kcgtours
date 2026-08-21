@@ -17,6 +17,9 @@ export interface Tour {
         isSpecialOffer?: boolean;
         isDiscount?: boolean;
         discountLabel?: string;
+        isNewAddition?: boolean;
+        newAdditionLabel?: string;
+        isNew?: boolean;
         [key: string]: boolean | string | undefined;
     };
     bokunProductId: string;

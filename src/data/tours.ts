@@ -142,7 +142,7 @@ export const tourCategories: TourCategory[] = [
                 itinerary: "St. George's Castle • St. Gerasimos • Winery • Drogarati • Sami • Melissani • Myrtos",
                 operatingDays: "Every: Monday",
                 from_price: 37.50,
-                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!' },
+                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!', isNewAddition: true },
                 card_subtitle: "A hilltop castle, sacred monastery, wine tasting & underground wonders",
                 short_description: "A hilltop castle, sacred monastery, wine tasting & underground wonders",
                 duration: "8 Hours",

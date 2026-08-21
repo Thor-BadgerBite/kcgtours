@@ -304,6 +304,16 @@ export function TourCard({
 
                             {/* Badges */}
                             <div className="absolute top-4 left-4 z-30 flex flex-col gap-2 items-start">
+                                {badges?.isNewAddition && (
+                                    <span className="bg-[#2563eb] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[11px] uppercase tracking-wider animate-pulse">
+                                        {badges.newAdditionLabel || 'NEW ADDITION'}
+                                    </span>
+                                )}
+                                {badges?.isNew && (
+                                    <span className="bg-[#2563eb] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[11px] uppercase tracking-wider animate-pulse">
+                                        NEW
+                                    </span>
+                                )}
                                 {badges?.isDiscount && (
                                     <span className="bg-[#d7393e] text-white px-3 py-1 rounded-sm shadow-md font-bold text-[11px] uppercase tracking-wider animate-pulse">{badges.discountLabel || 'DISCOUNT'}</span>
                                 )}
