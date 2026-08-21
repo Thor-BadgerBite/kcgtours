@@ -10,6 +10,33 @@ export const tourCategories: TourCategory[] = [
         subtitle: "Discover the island's highlights in comfort",
         tours: [
             {
+                tourTitle: "Kefalonia Highlights",
+                tourType: "ORGANIZED TOUR",
+                itinerary: "St. George's Castle • St. Gerasimos • Winery • Drogarati • Sami • Melissani • Myrtos",
+                operatingDays: "Every: Monday",
+                from_price: 37.50,
+                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!', isNewAddition: true },
+                card_subtitle: "A hilltop castle, sacred monastery, wine tasting & underground wonders",
+                short_description: "A hilltop castle, sacred monastery, wine tasting & underground wonders",
+                duration: "8 Hours",
+                bokunProductId: "1211764",
+                baseViews: 1743,
+                isBookableOnBokun: true,
+                isPrivateAvailable: true,
+                private_description: "Enjoy the Kefalonia Highlights tour as a private experience — take in panoramic views from St George's Castle, visit the sacred Monastery of Agios Gerasimos, wander the vineyards at Orealios Gaea, and descend into Drogarati Cave, all at your own pace. Relax with free time and lunch in the port village of Sami, glide across Melissani Lake, and close the day at the iconic Myrtos viewpoint.",
+                slides: [
+                    { image: "/images/1211764/StGeorge.webp", title: "Ancient, Still & Breathtaking" },
+                    { image: "/images/1211764/winery.webp", title: "A Taste of Kefalonian Tradition" },
+                    { image: "/images/1211764/st_gerasimos.webp", title: "Sacred Ground of the Island" },
+                    { image: "/images/1211764/st_gerasimos2.webp", title: "Gold, Light & Devotion" },
+                    { image: "/images/1211764/drogarati.webp", title: "A Million Years in the Making" },
+                    { image: "/images/1211764/ag_efimia.webp", title: "Lunch by the Harbour" },
+                    { image: "/images/1211764/assos.webp", title: "Colours of the North" },
+                    { image: "/images/1211764/assos2.webp", title: "Where the Mountain Meets the Sea" },
+                    { image: "/images/1211764/myrtos.webp", title: "The View That Stops You" }
+                ]
+            },
+            {
                 tourTitle: "Fiscardo Island Tour",
                 tourType: "ORGANIZED TOUR",
                 itinerary: "Myrtos • Assos • Fiscardo • Agia Efimia • Melissani • Drogarati",
@@ -134,33 +161,6 @@ export const tourCategories: TourCategory[] = [
                     { image: "/images/1125441/stavros.webp", title: "Village Church, Infinite View" },
                     { image: "/images/1125441/kioni.webp", title: "Where Odysseus Once Returned" },
                     { image: "/images/1125441/vathy2.webp", title: "The Most Beautiful Bay in the Ionian" }
-                ]
-            },
-            {
-                tourTitle: "Kefalonia Highlights",
-                tourType: "ORGANIZED TOUR",
-                itinerary: "St. George's Castle • St. Gerasimos • Winery • Drogarati • Sami • Melissani • Myrtos",
-                operatingDays: "Every: Monday",
-                from_price: 37.50,
-                badges: { isBestSeller: true, isDiscount: true, discountLabel: '20% OFF!', isNewAddition: true },
-                card_subtitle: "A hilltop castle, sacred monastery, wine tasting & underground wonders",
-                short_description: "A hilltop castle, sacred monastery, wine tasting & underground wonders",
-                duration: "8 Hours",
-                bokunProductId: "1211764",
-                baseViews: 1743,
-                isBookableOnBokun: true,
-                isPrivateAvailable: true,
-                private_description: "Enjoy the Kefalonia Highlights tour as a private experience — take in panoramic views from St George's Castle, visit the sacred Monastery of Agios Gerasimos, wander the vineyards at Orealios Gaea, and descend into Drogarati Cave, all at your own pace. Relax with free time and lunch in the port village of Sami, glide across Melissani Lake, and close the day at the iconic Myrtos viewpoint.",
-                slides: [
-                    { image: "/images/1211764/StGeorge.webp", title: "Ancient, Still & Breathtaking" },
-                    { image: "/images/1211764/winery.webp", title: "A Taste of Kefalonian Tradition" },
-                    { image: "/images/1211764/st_gerasimos.webp", title: "Sacred Ground of the Island" },
-                    { image: "/images/1211764/st_gerasimos2.webp", title: "Gold, Light & Devotion" },
-                    { image: "/images/1211764/drogarati.webp", title: "A Million Years in the Making" },
-                    { image: "/images/1211764/ag_efimia.webp", title: "Lunch by the Harbour" },
-                    { image: "/images/1211764/assos.webp", title: "Colours of the North" },
-                    { image: "/images/1211764/assos2.webp", title: "Where the Mountain Meets the Sea" },
-                    { image: "/images/1211764/myrtos.webp", title: "The View That Stops You" }
                 ]
             }
         ]
