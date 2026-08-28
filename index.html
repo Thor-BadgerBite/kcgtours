@@ -35,6 +35,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
+  <!-- Pre-init dataLayer & defensive Proxy for third-party tag managers (e.g. FareHarbor) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.Proxy !== 'undefined') {
+      window.google_tag_manager = new Proxy(window.google_tag_manager || {}, {
+        get(target, prop, receiver) {
+          const val = Reflect.get(target, prop, receiver);
+          if (typeof prop === 'string' && prop.startsWith('GTM-') && val && typeof val === 'object' && !val.destination) {
+            val.destination = {};
+          }
+          return val;
+        }
+      });
+    }
+  </script>
+
   <!-- Fareharbor script -->
   <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 

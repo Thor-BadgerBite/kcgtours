@@ -7,11 +7,66 @@ interface BokunPageProps {
     onBack: () => void;
 }
 
+const safelyUnmountBokunIframes = (container: HTMLElement | null) => {
+    try {
+        const containerIframes = container ? Array.from(container.querySelectorAll('iframe')) : [];
+        const bodyIframes = Array.from(
+            document.body.querySelectorAll<HTMLIFrameElement>('iframe[id*="bokun"], iframe[src*="bokun"]')
+        );
+
+        const allIframes = Array.from(new Set([...containerIframes, ...bodyIframes]));
+
+        allIframes.forEach((iframe: any) => {
+            try {
+                // Gracefully unregister from iFrameResizer library if present
+                if (iframe.iFrameResizer && typeof iframe.iFrameResizer.close === 'function') {
+                    iframe.iFrameResizer.close();
+                }
+            } catch (e) {
+                // Ignore iFrameResizer error
+            }
+
+            try {
+                // Abort all active XHR/fetch/script execution inside iframe window before detachment
+                if (iframe.contentWindow && typeof iframe.contentWindow.stop === 'function') {
+                    iframe.contentWindow.stop();
+                }
+            } catch (e) {
+                // Ignore cross-origin stop error
+            }
+
+            try {
+                // Replace src to about:blank to force browser to tear down JS context cleanly
+                iframe.src = 'about:blank';
+            } catch (e) {
+                // Ignore src reset error
+            }
+        });
+
+        // Clean up any orphan overlays or modal backdrops created by Bokun widgets
+        const bodyOverlays = document.body.querySelectorAll('.bokun-modal-backdrop, .bokun-overlay, #bokun-widgets-cart-container');
+        bodyOverlays.forEach(el => {
+            try {
+                el.remove();
+            } catch (e) {
+                // Ignore removal error
+            }
+        });
+    } catch (e) {
+        console.warn('[BokunPage] Cleanup error:', e);
+    }
+};
+
 export function BokunPage({ productId, onBack }: BokunPageProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const retryTracker = useRef<{ productId: string; count: number }>({ productId: '', count: 0 });
     const [remountKey, setRemountKey] = useState(0);
     const widgetId = `bokunWidget_${productId}`;
+
+    const handleBack = () => {
+        safelyUnmountBokunIframes(containerRef.current);
+        onBack();
+    };
 
     useEffect(() => {
         if (!containerRef.current) return;
@@ -21,31 +76,11 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             retryTracker.current = { productId, count: 0 };
         }
 
-        // Control variables
         let mountTimeoutId: number | undefined;
         let errorCheckTimeout: number | undefined;
         let errorCheckInterval: number | undefined;
 
-        // Clean up previous iframe resizers to reduce "IFrame not found" errors
-        // DO NOT wipe the iframe from DOM here if we're unmounting, just let the resizer know
-        // it shouldn't expect messages anymore.
-        const cleanupResizers = () => {
-            if (containerRef.current) {
-                const iframes = containerRef.current.querySelectorAll('iframe');
-                iframes.forEach((iframe: any) => {
-                    if (iframe.iFrameResizer && typeof iframe.iFrameResizer.close === 'function') {
-                        try {
-                            iframe.iFrameResizer.close();
-                        } catch (e) {
-                            console.warn('Could not gracefully close iFrameResizer', e);
-                        }
-                    }
-                });
-            }
-        };
-
-        // Check if the exact widget we want is already injected and mounted (contains an iframe)
-        // This helps handle React 18 double-invocations without clearing the loading interval
+        // Clean up any existing widgets in the container before mounting new one
         let widgetDiv = containerRef.current.querySelector(`#${widgetId}`) as HTMLDivElement | null;
         const isAlreadyMounted = widgetDiv && widgetDiv.querySelector('iframe');
 
@@ -54,7 +89,7 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
         }
 
         if (!widgetDiv) {
-            cleanupResizers();
+            safelyUnmountBokunIframes(containerRef.current);
             containerRef.current.innerHTML = '';
 
             widgetDiv = document.createElement('div');
@@ -83,34 +118,31 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
         }
 
         if (hasBokunWidgets) {
-            // Script is already loaded, so its automatic mount won't run again.
-            // We run mount() manually after a short delay to let the React DOM update settle.
             mountTimeoutId = window.setTimeout(() => {
                 if (w.BokunWidgets && typeof w.BokunWidgets.mount === 'function') {
-                    w.BokunWidgets.mount();
+                    try {
+                        w.BokunWidgets.mount();
+                    } catch (err) {
+                        console.warn('[BokunPage] BokunWidgets.mount error:', err);
+                    }
                 }
             }, 50);
         }
 
         // AUTO-REFRESH LOGIC (Safety Net)
-        // Give the widget 6 seconds to initialize and load.
         errorCheckTimeout = window.setTimeout(() => {
             errorCheckInterval = window.setInterval(() => {
                 if (!containerRef.current) return;
                 const iframe = containerRef.current.querySelector('iframe');
                 
-                // If the iframe loaded but is suspiciously small (e.g., an "An error occurred" box)
-                // A normal booking calendar is usually > 500px tall.
                 if (iframe && iframe.clientHeight > 10 && iframe.clientHeight < 350) {
                     if (retryTracker.current.count < 1) {
                         console.warn('[BokunPage] Widget error detected (small height). Auto-refreshing...');
                         retryTracker.current.count += 1;
                         
-                        // Force wipe the broken widget
-                        cleanupResizers();
+                        safelyUnmountBokunIframes(containerRef.current);
                         containerRef.current.innerHTML = '';
                         
-                        // Trigger a remount
                         setRemountKey(k => k + 1);
                     }
                 }
@@ -121,9 +153,9 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             if (mountTimeoutId) window.clearTimeout(mountTimeoutId);
             if (errorCheckTimeout) window.clearTimeout(errorCheckTimeout);
             if (errorCheckInterval) window.clearInterval(errorCheckInterval);
-            // Cleanup: do NOT wipe innerHTML here — Bokun may still have XHR
-            // requests in-flight that would fail with "Document is already detached".
-            // Let the browser handle DOM teardown when the user actually navigates away.
+
+            // Execute clean teardown when unmounting component or navigating away
+            safelyUnmountBokunIframes(containerRef.current);
         };
     }, [productId, widgetId, remountKey]);
 
@@ -132,11 +164,11 @@ export function BokunPage({ productId, onBack }: BokunPageProps) {
             {/* Header / Navbar specific to booking page with a back button */}
             <nav className="bg-card px-4 h-[80px] text-[#404041] sticky top-0 z-50 shadow-md flex items-center border-b border-gray-100">
                 <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-4">
-                    <button onClick={onBack} className="text-primary hover:text-dark font-medium flex items-center gap-2">
+                    <button onClick={handleBack} className="text-primary hover:text-dark font-medium flex items-center gap-2">
                         <span>&larr;</span> Back to Tours
                     </button>
                     <div className="flex items-center">
-                        <img src="/images/logo-new.png" alt="KCG Tours" className="h-[40px] md:h-[50px] w-auto cursor-pointer" onClick={onBack} />
+                        <img src="/images/logo-new.png" alt="KCG Tours" className="h-[40px] md:h-[50px] w-auto cursor-pointer" onClick={handleBack} />
                     </div>
                     {/* Placeholder to keep logo centered */}
                     <div className="w-[120px] hidden md:block"></div>
