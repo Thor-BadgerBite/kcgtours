@@ -16,13 +16,14 @@ Sentry.init({
         'Document is already detached',
         'iFrame requested init',
         'ResizeObserver loop limit exceeded',
+        'Maximum call stack size exceeded',
         'Cannot read properties of undefined (reading \'destination\')',
     ],
     beforeSend(event, hint) {
         const exception = event.exception?.values?.[0];
         if (exception) {
             const val = String(exception.value || '');
-            if (val === 'ia' || val.includes('Document is already detached') || val.includes('destination')) {
+            if (val === 'ia' || val.includes('Document is already detached') || val.includes('destination') || val.includes('call stack size exceeded')) {
                 return null;
             }
         }
