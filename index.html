@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Pre-init dataLayer & defensive patches for Bokun Cart & Google Maps -->
+  <!-- Pre-init dataLayer & defensive patches for Bokun & Google Maps -->
   <script>
     window.dataLayer = window.dataLayer || [];
     if (typeof window.Proxy !== 'undefined') {
@@ -50,7 +50,7 @@
       });
     }
 
-    // 1. Prevent "Element with name 'gmp-internal-...' already defined" when Google Maps API is loaded multiple times
+    // Prevent "Element with name 'gmp-internal-...' already defined" when Google Maps API is loaded multiple times
     if (typeof window.customElements !== 'undefined' && window.customElements.define) {
       const originalCustomElementsDefine = window.customElements.define;
       window.customElements.define = function(name, constructor, options) {
@@ -63,34 +63,6 @@
         }
       };
     }
-
-    // 2. Prototype trap for HTMLIFrameElement.prototype.iFrameResizer
-    // Guarantees onMessage is ALWAYS defined on every iframe's iFrameResizer object,
-    // stopping iFrameResizer from logging "onMessage function not defined" and dropping cart events.
-    (function() {
-      try {
-        const resizerMap = new WeakMap();
-        Object.defineProperty(HTMLIFrameElement.prototype, 'iFrameResizer', {
-          configurable: true,
-          enumerable: true,
-          get() {
-            return resizerMap.get(this);
-          },
-          set(val) {
-            if (val && typeof val === 'object') {
-              if (typeof val.onMessage !== 'function') {
-                val.onMessage = function(msgData) {
-                  // Fallback handler for iFrameResizer cart messages
-                };
-              }
-            }
-            resizerMap.set(this, val);
-          }
-        });
-      } catch (e) {
-        console.warn('[KCG Tours] Could not set HTMLIFrameElement prototype trap', e);
-      }
-    })();
   </script>
 
   <!-- Bokun Widgets Loader Script -->
