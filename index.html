@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Pre-init dataLayer & defensive Proxy for third-party tag managers (e.g. FareHarbor) -->
+  <!-- Pre-init dataLayer & defensive patches for Bokun Cart & Google Maps -->
   <script>
     window.dataLayer = window.dataLayer || [];
     if (typeof window.Proxy !== 'undefined') {
@@ -49,7 +49,69 @@
         }
       });
     }
+
+    // 1. Prevent "Element with name 'gmp-internal-...' already defined" when Google Maps API is loaded multiple times
+    if (typeof window.customElements !== 'undefined' && window.customElements.define) {
+      const originalCustomElementsDefine = window.customElements.define;
+      window.customElements.define = function(name, constructor, options) {
+        if (!window.customElements.get(name)) {
+          try {
+            originalCustomElementsDefine.call(this, name, constructor, options);
+          } catch (e) {
+            // Ignore already defined web component error
+          }
+        }
+      };
+    }
+
+    // 2. Ensure Bokun Cart iframe (bokun-widgets-cart) always has an onMessage handler for iFrameResizer
+    (function() {
+      function patchIFrame(iframe) {
+        if (!iframe) return;
+        let resizerObj = iframe.iFrameResizer;
+        try {
+          Object.defineProperty(iframe, 'iFrameResizer', {
+            configurable: true,
+            enumerable: true,
+            get() { return resizerObj; },
+            set(val) {
+              if (val && typeof val === 'object') {
+                if (!val.onMessage) {
+                  val.onMessage = function(data) {
+                    // Fallback onMessage handler so iFrameResizer never drops Bokun cart messages
+                  };
+                }
+              }
+              resizerObj = val;
+            }
+          });
+        } catch(e) {}
+      }
+
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeName === 'IFRAME') {
+              patchIFrame(node);
+            } else if (node.querySelectorAll) {
+              node.querySelectorAll('iframe').forEach(patchIFrame);
+            }
+          });
+        });
+      });
+
+      if (document.body) {
+        observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+        document.addEventListener('DOMContentLoaded', () => {
+          if (document.body) observer.observe(document.body, { childList: true, subtree: true });
+        });
+      }
+    })();
   </script>
+
+  <!-- Bokun Widgets Loader Script -->
+  <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d65e9e41-1414-4365-86b6-bd24c446e641" async></script>
 
 
 
