@@ -64,48 +64,31 @@
       };
     }
 
-    // 2. Ensure Bokun Cart iframe (bokun-widgets-cart) always has an onMessage handler for iFrameResizer
+    // 2. Prototype trap for HTMLIFrameElement.prototype.iFrameResizer
+    // Guarantees onMessage is ALWAYS defined on every iframe's iFrameResizer object,
+    // stopping iFrameResizer from logging "onMessage function not defined" and dropping cart events.
     (function() {
-      function patchIFrame(iframe) {
-        if (!iframe) return;
-        let resizerObj = iframe.iFrameResizer;
-        try {
-          Object.defineProperty(iframe, 'iFrameResizer', {
-            configurable: true,
-            enumerable: true,
-            get() { return resizerObj; },
-            set(val) {
-              if (val && typeof val === 'object') {
-                if (!val.onMessage) {
-                  val.onMessage = function(data) {
-                    // Fallback onMessage handler so iFrameResizer never drops Bokun cart messages
-                  };
-                }
+      try {
+        const resizerMap = new WeakMap();
+        Object.defineProperty(HTMLIFrameElement.prototype, 'iFrameResizer', {
+          configurable: true,
+          enumerable: true,
+          get() {
+            return resizerMap.get(this);
+          },
+          set(val) {
+            if (val && typeof val === 'object') {
+              if (typeof val.onMessage !== 'function') {
+                val.onMessage = function(msgData) {
+                  // Fallback handler for iFrameResizer cart messages
+                };
               }
-              resizerObj = val;
             }
-          });
-        } catch(e) {}
-      }
-
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          mutation.addedNodes.forEach((node) => {
-            if (node.nodeName === 'IFRAME') {
-              patchIFrame(node);
-            } else if (node.querySelectorAll) {
-              node.querySelectorAll('iframe').forEach(patchIFrame);
-            }
-          });
+            resizerMap.set(this, val);
+          }
         });
-      });
-
-      if (document.body) {
-        observer.observe(document.body, { childList: true, subtree: true });
-      } else {
-        document.addEventListener('DOMContentLoaded', () => {
-          if (document.body) observer.observe(document.body, { childList: true, subtree: true });
-        });
+      } catch (e) {
+        console.warn('[KCG Tours] Could not set HTMLIFrameElement prototype trap', e);
       }
     })();
   </script>
