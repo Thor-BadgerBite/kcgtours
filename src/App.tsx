@@ -288,7 +288,7 @@ function HomePage() {
                 </motion.div>
             </header>
 
-            <GoldenPackageBanner />
+            {/* <GoldenPackageBanner /> */}
 
             {/* Tour Categories */}
             <main>
